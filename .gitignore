@@ -1,18 +1,12 @@
-# Core de WordPress: lo maneja WordPress, no nosotros
-wp-admin/
-wp-includes/
-wp-content/upgrade/
-wp-content/languages/
+# El repo no es la raíz de WordPress: core, plugins de terceros y uploads
+# viven en el volumen Docker wp_data, no acá.
 
-# Fotos de producto: se respaldan, no se versionan
-wp-content/uploads/
+# Plugins: solo los propios (kiwi-*)
+plugins/*
+!plugins/.gitkeep
+!plugins/kiwi-*/
 
-# Plugins de terceros fuera, los propios dentro
-wp-content/plugins/*
-!wp-content/plugins/kiwi-*/
-
-# Configuración con credenciales
-wp-config.php
+# Credenciales
 .env
 
 # Basura del sistema

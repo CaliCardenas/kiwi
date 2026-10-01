@@ -27,9 +27,14 @@ services:
         define('WP_DEBUG_LOG', true);
         define('WP_DEBUG_DISPLAY', false);
         define('DISALLOW_FILE_EDIT', true);
+    entrypoint: ["sh", "/usr/local/bin/kiwi-entrypoint.sh"]
+    command: ["apache2-foreground"]
     volumes:
       - wp_data:/var/www/html
       - ./themes/kiwi:/var/www/html/wp-content/themes/kiwi
+      - ./plugins:/var/www/kiwi-plugins
+      - ./docker/wordpress-entrypoint.sh:/usr/local/bin/kiwi-entrypoint.sh:ro
+      - ./docker/php/uploads.ini:/usr/local/etc/php/conf.d/kiwi-uploads.ini:ro
 
   cli:
     image: wordpress:cli-php8.3
@@ -45,6 +50,8 @@ services:
     volumes:
       - wp_data:/var/www/html
       - ./themes/kiwi:/var/www/html/wp-content/themes/kiwi
+      - ./plugins:/var/www/kiwi-plugins
+      - ./docker/php/uploads.ini:/usr/local/etc/php/conf.d/kiwi-uploads.ini:ro
     entrypoint: ["sh", "-c", "sleep infinity"]
 
 volumes:

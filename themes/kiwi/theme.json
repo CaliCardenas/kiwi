@@ -17,14 +17,23 @@
         { "slug": "crema-alta",  "color": "#FFFDF7", "name": "Crema alta" },
         { "slug": "bruma",       "color": "#CFCBBD", "name": "Bruma" },
         { "slug": "divisor",     "color": "#E3DFD2", "name": "Divisor" },
+        { "slug": "aviso",       "color": "#F1EEE2", "name": "Aviso" },
+        { "slug": "borde-oscuro", "color": "#4A524B", "name": "Borde oscuro" },
         { "slug": "grafito",     "color": "#1C231E", "name": "Grafito" },
         { "slug": "texto-medio", "color": "#3E4740", "name": "Texto medio" },
         { "slug": "texto-muted", "color": "#5C665D", "name": "Texto muted" },
         { "slug": "texto-debil", "color": "#8A9189", "name": "Texto débil" }
       ]
     },
+    "shadow": {
+      "defaultPresets": false,
+      "presets": [
+        { "slug": "favorito", "shadow": "0 1px 3px rgba(28,35,30,.16)", "name": "Favorito flotante" }
+      ]
+    },
     "typography": {
       "customFontSize": false,
+      "defaultFontSizes": false,
       "fluid": true,
       "fontFamilies": [
         {
@@ -57,24 +66,40 @@
         }
       ],
       "fontSizes": [
-        { "slug": "legal",    "size": "12px", "name": "Legal" },
+        { "slug": "10",       "size": "10px", "name": "10" },
         { "slug": "etiqueta", "size": "11px", "name": "Etiqueta" },
+        { "slug": "legal",    "size": "12px", "name": "Legal" },
+        { "slug": "13",       "size": "13px", "name": "13" },
+        { "slug": "14",       "size": "14px", "name": "14" },
+        { "slug": "15",       "size": "15px", "name": "15" },
         { "slug": "cuerpo",   "size": "16px", "name": "Cuerpo" },
+        { "slug": "17",       "size": "17px", "name": "17" },
         { "slug": "h3",       "size": "18px", "name": "H3" },
+        { "slug": "19",       "size": "19px", "name": "19" },
+        { "slug": "21",       "size": "21px", "name": "21" },
         { "slug": "precio",   "size": "22px", "name": "Precio" },
+        { "slug": "24",       "size": "24px", "name": "24" },
+        { "slug": "26",       "size": "26px", "name": "26" },
         { "slug": "h2",       "size": "28px", "name": "H2" },
-        { "slug": "h1",       "size": "44px", "name": "H1" }
+        { "slug": "h1",       "size": "44px", "name": "H1" },
+        { "slug": "52",       "size": "52px", "name": "52" },
+        { "slug": "60",       "size": "60px", "name": "60" }
       ]
     },
     "spacing": {
       "customSpacingSize": false,
+      "defaultSpacingSizes": false,
       "units": ["px", "rem", "%"],
       "spacingSizes": [
         { "slug": "10", "size": "4px",  "name": "4" },
         { "slug": "20", "size": "8px",  "name": "8" },
+        { "slug": "25", "size": "10px", "name": "10" },
         { "slug": "30", "size": "12px", "name": "12" },
+        { "slug": "35", "size": "14px", "name": "14" },
         { "slug": "40", "size": "16px", "name": "16" },
+        { "slug": "45", "size": "18px", "name": "18" },
         { "slug": "50", "size": "20px", "name": "20" },
+        { "slug": "55", "size": "22px", "name": "22" },
         { "slug": "60", "size": "26px", "name": "26" },
         { "slug": "70", "size": "32px", "name": "32" },
         { "slug": "80", "size": "40px", "name": "40" },
