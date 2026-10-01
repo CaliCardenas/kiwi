@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&amp;family=Karla:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<style>
+  body { margin:0; background:#EDEAE0; }
+  a { color:#2F5D3F; text-decoration:underline; text-underline-offset:2px; }
+  a:hover { color:#C0523A; }
+</style>
+</helmet>
+<div style="width:1640px;padding:56px 56px 96px;box-sizing:border-box;background:#EDEAE0;font-family:Karla,sans-serif;color:#1C231E;display:flex;flex-direction:column;gap:44px">
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:40px;border-bottom:1px solid #CFCBBD;padding-bottom:28px">
+    <div style="max-width:860px;display:flex;flex-direction:column;gap:14px">
+      <div style="font-weight:700;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#2F5D3F">Kiwi · flujo de compra · WooCommerce + SINPE Móvil · Setiembre 2026</div>
+      <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:52px;line-height:1;letter-spacing:-0.03em">Carrito, checkout y pago SINPE</div>
+      <div style="font-size:17px;line-height:1.55;color:#3E4740;text-wrap:pretty">Tres pantallas en móvil 375 y escritorio 1440, con los mismos tokens del sistema ya cerrado. El pago no ocurre en el sitio: ocurre en la app bancaria del cliente y se concilia a mano. Por eso la pantalla de gracias es la pantalla de pago, y está diseñada para que el cliente entre y salga de ella varias veces.</div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px;min-width:330px">
+      <div style="background:#F6F3EA;border:1px solid #CFCBBD;padding:10px 14px;border-radius:2px;font-size:14px;color:#3E4740"><span style="font-weight:700;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#2F5D3F">Sin tokens nuevos</span><br>Colores, tipos, escala de 4, radio 2</div>
+      <div style="background:#F6F3EA;border:1px solid #C0523A;padding:10px 14px;border-radius:2px;font-size:14px;color:#3E4740"><span style="font-weight:700;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#C0523A">Pendientes</span><br>4 iconos nuevos · peso de cada pieza · vigencia de la tarjeta de regalo</div>
+    </div>
+  </div>
+  <!-- ============ 08 CARRITO ============ -->
+  <div data-screen-label="08 Carrito" style="display:flex;flex-direction:column;gap:22px">
+    <div style="display:flex;align-items:baseline;gap:16px;flex-wrap:wrap">
+      <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:13px;letter-spacing:0.1em;color:#2F5D3F">08</div>
+      <div style="font-family:Archivo,sans-serif;font-weight:600;font-size:30px;letter-spacing:-0.02em">Carrito</div>
+      <div style="font-size:15px;color:#5C665D">Editar sin salir, decir desde el principio que todo se confecciona por encargo, envío plano visible en el total, y dos salidas: checkout o WhatsApp.</div>
+    </div>
+    <div style="display:flex;gap:24px;align-items:flex-start;flex-wrap:wrap">
+      <!-- móvil carrito -->
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:0.06em;color:#8A9189">MÓVIL 375 · CON ÍTEMS</div>
+        <div style="width:375px;background:#F6F3EA;border:1px solid #CFCBBD;border-radius:2px;overflow:hidden;display:flex;flex-direction:column">
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border-bottom:1px solid #E3DFD2">
+            <div style="display:flex;align-items:center;gap:9px">
+              <div style="width:28px;height:28px;border-radius:50%;box-shadow:inset 0 0 0 5px #2F5D3F;background:repeating-conic-gradient(from 0deg,#2F5D3F 0deg 4deg,#F6F3EA 4deg 45deg);display:grid;place-items:center"><div style="width:9px;height:9px;border-radius:50%;background:#C3DE4E"></div></div>
+              <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:19px;letter-spacing:0.02em;color:#2F5D3F">KIWI</div>
+            </div>
+            <div style="font-weight:700;font-size:13px;color:#5C665D">Cerrar</div>
+          </div>
+          <div style="padding:16px 16px 8px;display:flex;flex-direction:column;gap:6px">
+            <div style="font-family:Archivo,sans-serif;font-weight:600;font-size:24px;letter-spacing:-0.02em">Tu carrito</div>
+            <div style="font-size:13px;color:#5C665D">2 piezas</div><div style="display:flex;gap:10px;align-items:flex-start;padding:10px 12px;background:#F1EEE2;border-radius:2px;margin-top:6px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3F4E7A" stroke-width="1.75" style="flex:none"><path d="M20 12a8 8 0 1 1-3.2-6.4"></path><path d="M4 20l1.6-4"></path><path d="M9 10c1 3 4 5 6 5"></path></svg><div style="font-size:12px;line-height:1.45;color:#1C231E"><strong>Se confecciona por encargo.</strong> No hay fecha de entrega fija: depende del proveedor. ¿Tenés un día en mente? Preguntanos antes de pagar.</div></div>
+          </div>
+          <div style="padding:8px 16px;display:flex;flex-direction:column;gap:16px">
+            <div style="display:flex;gap:12px;padding-bottom:16px;border-bottom:1px solid #E3DFD2">
+              <div style="width:84px;height:84px;flex:none;border-radius:2px;background:repeating-linear-gradient(45deg,#E3DFD2 0 6px,#F1EEE2 6px 12px);display:grid;place-items:center"><span style="font-family:ui-monospace,Menlo,monospace;font-size:8px;color:#8A9189">FOTO 1:1</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;gap:8px">
+                <div style="display:flex;justify-content:space-between;gap:10px;align-items:flex-start">
+                  <div style="font-weight:700;font-size:15px;line-height:1.3">Aro Marina · acero dorado mate</div>
+                  <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:15px;font-variant-numeric:tabular-nums;white-space:nowrap">₡12.500</div>
+                </div>
+                <div style="font-size:12px;color:#5C665D">Talla 4 cm</div>
+                <div style="display:flex;justify-content:space-between;align-items:center;gap:10px">
+                  <div style="display:flex;align-items:center;border:1px solid #CFCBBD;border-radius:2px;background:#FFFDF7;height:44px">
+                    <div style="width:44px;height:44px;display:grid;place-items:center;font-family:Archivo,sans-serif;font-weight:600;font-size:18px;color:#2F5D3F">−</div>
+                    <div style="width:36px;text-align:center;font-family:Archivo,sans-serif;font-weight:700;font-size:15px;font-variant-numeric:tabular-nums">1</div>
+                    <div style="width:44px;height:44px;display:grid;place-items:center;font-family:Archivo,sans-serif;font-weight:600;font-size:18px;color:#2F5D3F">+</div>
+                  </div>
+                  <div style="font-weight:700;font-size:13px;color:#5C665D">Quitar</div>
+                </div>
+              </div>
+            </div>
+            <div style="display:flex;gap:12px">
+              <div style="width:84px;height:84px;flex:none;border-radius:2px;background:repeating-linear-gradient(45deg,#E3DFD2 0 6px,#F1EEE2 6px 12px);display:grid;place-items:center"><span style="font-family:ui-monospace,Menlo,monospace;font-size:8px;color:#8A9189">FOTO 1:1</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;gap:8px">
+                <div style="display:flex;justify-content:space-between;gap:10px;align-items:flex-start">
+                  <div style="font-weight:700;font-size:15px;line-height:1.3">Collar Bruma · cadena corta</div>
+                  <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:15px;font-variant-numeric:tabular-nums;white-space:nowrap">₡8.900</div>
+                </div>
+                <div style="font-size:12px;color:#5C665D">Talla 40 cm</div>
+                <div style="display:flex;justify-content:space-between;align-items:center;gap:10px">
+                  <div style="display:flex;align-items:center;border:1px solid #CFCBBD;border-radius:2px;background:#FFFDF7;height:44px">
+                    <div style="width:44px;height:44px;display:grid;place-items:center;font-family:Archivo,sans-serif;font-weight:600;font-size:18px;color:#2F5D3F">−</div>
+                    <div style="width:36px;text-align:center;font-family:Archivo,sans-serif;font-weight:700;font-size:15px;font-variant-numeric:tabular-nums">1</div>
+                    <div style="width:44px;height:44px;display:grid;place-items:center;font-family:Archivo,sans-serif;font-weight:600;font-size:18px;color:#2F5D3F">+</div>
+                  </div>
+                  <div style="font-weight:700;font-size:13px;color:#5C665D">Quitar</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="padding:16px;display:flex;flex-direction:column;gap:12px">
+            <div style="display:flex;flex-direction:column;gap:10px;padding-top:14px;border-top:1px solid #E3DFD2">
+              <div style="display:flex;justify-content:space-between;font-size:14px;color:#3E4740"><span>Subtotal (2 piezas)</span><span style="font-variant-numeric:tabular-nums">₡21.400</span></div>
+<div style="display:flex;justify-content:space-between;gap:12px;font-size:14px;color:#3E4740"><span>Envío</span><span style="font-variant-numeric:tabular-nums">₡3.000</span></div>
+<div style="font-size:12px;line-height:1.45;color:#5C665D">Tarifa plana por pedido: no cambia con las piezas ni con el destino.</div>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:baseline;padding-top:14px;border-top:1px solid #E3DFD2">
+              <div style="font-weight:700;font-size:15px">Pagás hoy</div>
+              <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:26px;letter-spacing:-0.02em;font-variant-numeric:tabular-nums">₡24.400</div>
+            </div>
+            <div style="height:56px;border-radius:2px;background:#2F5D3F;color:#F6F3EA;display:flex;align-items:center;justify-content:center;gap:10px">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F6F3EA" stroke-width="1.75"><path d="M3 5h3l2.4 10.5h9.4L20 8H7"></path><circle cx="10" cy="19" r="1.6"></circle><circle cx="18" cy="19" r="1.6"></circle></svg>
+              <span style="font-family:Archivo,sans-serif;font-weight:700;font-size:17px">Continuar</span>
+            </div>
+            <div style="height:48px;border-radius:2px;border:1.5px solid #2F5D3F;color:#2F5D3F;display:grid;place-items:center;font-family:Archivo,sans-serif;font-weight:600;font-size:15px">Preguntar por WhatsApp</div>
+            <div style="display:flex;gap:18px;align-items:center;padding-top:12px;border-top:1px solid #E3DFD2">
+              <div style="display:flex;align-items:center;gap:8px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5C665D" stroke-width="1.75"><path d="M4 7h13l-3-3M20 17H7l3 3"></path></svg><span style="font-size:12px;color:#3E4740">Cambio en 15 días</span></div>
+              <div style="display:flex;align-items:center;gap:8px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5C665D" stroke-width="1.75"><rect x="4" y="10" width="16" height="10"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg><span style="font-size:12px;color:#3E4740">Pago por SINPE</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- móvil vacío -->
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:0.06em;color:#8A9189">MÓVIL 375 · VACÍO</div>
+        <div style="width:375px;background:#F6F3EA;border:1px solid #CFCBBD;border-radius:2px;display:flex;flex-direction:column">
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border-bottom:1px solid #E3DFD2">
+            <div style="display:flex;align-items:center;gap:9px">
+              <div style="width:28px;height:28px;border-radius:50%;box-shadow:inset 0 0 0 5px #2F5D3F;background:repeating-conic-gradient(from 0deg,#2F5D3F 0deg 4deg,#F6F3EA 4deg 45deg);display:grid;place-items:center"><div style="width:9px;height:9px;border-radius:50%;background:#C3DE4E"></div></div>
+              <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:19px;letter-spacing:0.02em;color:#2F5D3F">KIWI</div>
+            </div>
+            <div style="font-weight:700;font-size:13px;color:#5C665D">Cerrar</div>
+          </div>
+          <div style="padding:40px 16px;display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center">
+            <div style="width:64px;height:64px;border-radius:50%;box-shadow:inset 0 0 0 10px #CFCBBD;background:repeating-conic-gradient(from 0deg,#CFCBBD 0deg 4deg,#F6F3EA 4deg 45deg)"></div>
+            <div style="font-family:Archivo,sans-serif;font-weight:600;font-size:21px;letter-spacing:-0.02em">Todavía no hay nada acá</div>
+            <div style="font-size:14px;line-height:1.5;color:#3E4740;max-width:280px;text-wrap:pretty">Empezá por lo nuevo, o contános para quién es y te ayudamos a elegir.</div>
+          </div>
+          <div style="padding:0 16px 20px;display:flex;flex-direction:column;gap:10px">
+            <div style="height:52px;border-radius:2px;background:#2F5D3F;color:#F6F3EA;display:grid;place-items:center;font-family:Archivo,sans-serif;font-weight:700;font-size:16px">Ver lo nuevo</div>
+            <div style="padding:18px;background:#C3DE4E;border:1px solid #2F5D3F;border-radius:2px;display:flex;flex-direction:column;gap:8px">
+              <div style="font-family:Archivo,sans-serif;font-weight:600;font-size:18px;color:#1C231E">Es un regalo y no sé la talla</div>
+              <div style="font-size:13px;color:#1C231E">Te preguntamos tres cosas y te decimos qué llevar.</div>
+              <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:14px;color:#1C231E">Guiame →</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- escritorio carrito -->
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:0.06em;color:#8A9189">ESCRITORIO 1440</div>
+        <div style="width:766px;background:#F6F3EA;border:1px solid #CFCBBD;border-radius:2px;overflow:hidden">
+          <div style="width:1440px;zoom:0.532;background:#F6F3EA">
+            <div style="background:#2F5D3F;padding:9px 0;display:flex;align-items:center;justify-content:center;gap:10px"><div style="width:6px;height:6px;border-radius:50%;background:#C3DE4E"></div><div style="font-weight:700;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#F6F3EA">Hecho por encargo · Envío ₡3.000 a todo el país</div></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:18px 40px;border-bottom:1px solid #E3DFD2">
+              <div style="display:flex;align-items:center;gap:11px">
+                <div style="width:36px;height:36px;border-radius:50%;box-shadow:inset 0 0 0 6px #2F5D3F;background:repeating-conic-gradient(from 0deg,#2F5D3F 0deg 4deg,#F6F3EA 4deg 45deg);display:grid;place-items:center"><div style="width:11px;height:11px;border-radius:50%;background:#C3DE4E"></div></div>
+                <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:26px;letter-spacing:0.02em;color:#2F5D3F">KIWI</div>
+              </div>
+              <div style="display:flex;gap:26px;font-weight:700;font-size:14px"><span>Ropa</span><span>Regalos</span><span style="color:#C0523A">Rebajas</span></div>
+              <div style="display:flex;align-items:center;gap:18px">
+                <div style="width:296px;height:42px;border:1px solid #CFCBBD;background:#FFFDF7;border-radius:2px;display:flex;align-items:center;gap:10px;padding:0 12px"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#8A9189" stroke-width="1.75"><circle cx="11" cy="11" r="6"></circle><path d="M16 16l4 4"></path></svg><span style="font-size:14px;color:#5C665D">Buscar en la tienda…</span></div>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1C231E" stroke-width="1.75"><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6L5.6 18.4"></path></svg>
+                <div style="position:relative"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1C231E" stroke-width="1.75"><path d="M3 5h3l2.4 10.5h9.4L20 8H7"></path><circle cx="10" cy="19" r="1.6"></circle><circle cx="18" cy="19" r="1.6"></circle></svg><div style="position:absolute;top:-4px;right:-5px;min-width:16px;height:16px;border-radius:8px;background:#C0523A;color:#F6F3EA;font-family:Archivo,sans-serif;font-weight:700;font-size:10px;display:grid;place-items:center">2</div></div>
+              </div>
+            </div>
+            <div style="padding:32px 40px 52px;display:grid;grid-template-columns:minmax(0,1fr) 396px;gap:32px;align-items:start">
+              <div style="display:flex;flex-direction:column;gap:20px">
+                <div style="display:flex;align-items:baseline;gap:12px"><div style="font-family:Archivo,sans-serif;font-weight:600;font-size:32px;letter-spacing:-0.02em">Tu carrito</div><div style="font-size:14px;color:#5C665D">2 piezas</div><div style="display:flex;gap:10px;align-items:flex-start;padding:10px 12px;background:#F1EEE2;border-radius:2px;margin-top:6px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3F4E7A" stroke-width="1.75" style="flex:none"><path d="M20 12a8 8 0 1 1-3.2-6.4"></path><path d="M4 20l1.6-4"></path><path d="M9 10c1 3 4 5 6 5"></path></svg><div style="font-size:12px;line-height:1.45;color:#1C231E"><strong>Se confecciona por encargo.</strong> No hay fecha de entrega fija: depende del proveedor. ¿Tenés un día en mente? Preguntanos antes de pagar.</div></div></div>
+                <div style="display:grid;grid-template-columns:1fr 130px 130px;gap:12px;padding-bottom:10px;border-bottom:1px solid #E3DFD2;font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#8A9189"><div>Pieza</div><div>Cantidad</div><div style="text-align:right">Total</div></div>
+                <div style="display:grid;grid-template-columns:1fr 130px 130px;gap:12px;align-items:center;padding-bottom:20px;border-bottom:1px solid #E3DFD2">
+                  <div style="display:flex;gap:16px;align-items:center">
+                    <div style="width:96px;height:96px;border-radius:2px;background:repeating-linear-gradient(45deg,#E3DFD2 0 6px,#F1EEE2 6px 12px);display:grid;place-items:center"><span style="font-family:ui-monospace,Menlo,monospace;font-size:9px;color:#8A9189">FOTO 1:1</span></div>
+                    <div style="display:flex;flex-direction:column;gap:6px">
+                      <div style="font-weight:700;font-size:16px">Aro Marina · acero dorado mate</div>
+                      <div style="font-size:13px;color:#5C665D">Talla 4 cm · ₡12.500 c/u</div>
+                      <div style="font-weight:700;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:#3F4E7A">Disponible</div>
+                    </div>
+                  </div>
+                  <div style="display:flex;align-items:center;border:1px solid #CFCBBD;border-radius:2px;background:#FFFDF7;height:44px;width:124px">
+                    <div style="width:42px;height:44px;display:grid;place-items:center;font-family:Archivo,sans-serif;font-weight:600;font-size:18px;color:#2F5D3F">−</div><div style="flex:1;text-align:center;font-family:Archivo,sans-serif;font-weight:700;font-size:15px;font-variant-numeric:tabular-nums">1</div><div style="width:42px;height:44px;display:grid;place-items:center;font-family:Archivo,sans-serif;font-weight:600;font-size:18px;color:#2F5D3F">+</div>
+                  </div>
+                  <div style="text-align:right;display:flex;flex-direction:column;gap:6px;align-items:flex-end"><div style="font-family:Archivo,sans-serif;font-weight:700;font-size:18px;font-variant-numeric:tabular-nums">₡12.500</div><div style="font-weight:700;font-size:13px;color:#5C665D">Quitar</div></div>
+                </div>
+                <div style="display:grid;grid-template-columns:1fr 130px 130px;gap:12px;align-items:center">
+                  <div style="display:flex;gap:16px;align-items:center">
+                    <div style="width:96px;height:96px;border-radius:2px;background:repeating-linear-gradient(45deg,#E3DFD2 0 6px,#F1EEE2 6px 12px);display:grid;place-items:center"><span style="font-family:ui-monospace,Menlo,monospace;font-size:9px;color:#8A9189">FOTO 1:1</span></div>
+                    <div style="display:flex;flex-direction:column;gap:6px">
+                      <div style="font-weight:700;font-size:16px">Collar Bruma · cadena corta</div>
+                      <div style="font-size:13px;color:#5C665D">Talla 40 cm · ₡8.900 c/u</div>
+                      <div style="font-weight:700;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:#3F4E7A">Disponible</div>
+                    </div>
+                  </div>
+                  <div style="display:flex;align-items:center;border:1px solid #CFCBBD;border-radius:2px;background:#FFFDF7;height:44px;width:124px">
+                    <div style="width:42px;height:44px;display:grid;place-items:center;font-family:Archivo,sans-serif;font-weight:600;font-size:18px;color:#2F5D3F">−</div><div style="flex:1;text-align:center;font-family:Archivo,sans-serif;font-weight:700;font-size:15px;font-variant-numeric:tabular-nums">1</div><div style="width:42px;height:44px;display:grid;place-items:center;font-family:Archivo,sans-serif;font-weight:600;font-size:18px;color:#2F5D3F">+</div>
+                  </div>
+                  <div style="text-align:right;display:flex;flex-direction:column;gap:6px;align-items:flex-end"><div style="font-family:Archivo,sans-serif;font-weight:700;font-size:18px;font-variant-numeric:tabular-nums">₡8.900</div><div style="font-weight:700;font-size:13px;color:#5C665D">Quitar</div></div>
+                </div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:16px;background:#FFFDF7;border:1px solid #CFCBBD;border-radius:2px;padding:24px">
+                <div style="font-family:Archivo,sans-serif;font-weight:600;font-size:21px;letter-spacing:-0.02em">Resumen</div>
+                <div style="display:flex;justify-content:space-between;font-size:14px;color:#3E4740"><span>Subtotal (2 piezas)</span><span style="font-variant-numeric:tabular-nums">₡21.400</span></div>
+                <div style="display:flex;flex-direction:column;gap:6px">
+<div style="display:flex;justify-content:space-between;gap:12px;font-size:14px;color:#3E4740"><span>Envío</span><span style="font-variant-numeric:tabular-nums">₡3.000</span></div>
+<div style="font-size:12px;line-height:1.45;color:#5C665D">Tarifa plana por pedido: no cambia con las piezas ni con el destino.</div>
+                </div>
+                <div style="display:flex;justify-content:space-between;align-items:baseline;padding-top:14px;border-top:1px solid #E3DFD2"><div style="font-weight:700;font-size:15px">Pagás hoy</div><div style="font-family:Archivo,sans-serif;font-weight:700;font-size:28px;letter-spacing:-0.02em;font-variant-numeric:tabular-nums">₡24.400</div></div>
+                <div style="height:56px;border-radius:2px;background:#2F5D3F;color:#F6F3EA;display:flex;align-items:center;justify-content:center;gap:10px"><span style="font-family:Archivo,sans-serif;font-weight:700;font-size:17px">Continuar al pago</span></div>
+                <div style="height:48px;border-radius:2px;border:1.5px solid #2F5D3F;color:#2F5D3F;display:grid;place-items:center;font-family:Archivo,sans-serif;font-weight:600;font-size:15px">Preguntar por WhatsApp</div>
+                <div style="display:flex;align-items:center;gap:8px;padding-top:12px;border-top:1px solid #E3DFD2"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3F4E7A" stroke-width="1.75"><rect x="4" y="10" width="16" height="10"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg><span style="font-size:12px;color:#3E4740">Se paga por SINPE Móvil después de confirmar el pedido</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="width:766px;background:#F6F3EA;border:1px solid #CFCBBD;border-radius:2px;overflow:hidden">
+          <div style="width:1440px;zoom:0.532">
+            <div style="padding:64px 40px;display:grid;grid-template-columns:minmax(0,1fr) 460px;gap:40px;align-items:center">
+              <div style="display:flex;flex-direction:column;gap:20px">
+                <div style="width:72px;height:72px;border-radius:50%;box-shadow:inset 0 0 0 12px #CFCBBD;background:repeating-conic-gradient(from 0deg,#CFCBBD 0deg 4deg,#F6F3EA 4deg 45deg)"></div>
+                <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:44px;line-height:1.04;letter-spacing:-0.03em;max-width:560px">Todavía no hay nada en tu carrito</div>
+                <div style="font-size:17px;line-height:1.55;color:#3E4740;max-width:520px;text-wrap:pretty">Empezá por lo nuevo, o contános para quién es y te ayudamos a elegir la talla.</div>
+                <div style="display:flex;gap:12px"><div style="height:52px;padding:0 26px;border-radius:2px;background:#2F5D3F;color:#F6F3EA;display:grid;place-items:center;font-family:Archivo,sans-serif;font-weight:700;font-size:16px">Ver lo nuevo</div><div style="height:52px;padding:0 26px;border-radius:2px;border:1.5px solid #2F5D3F;color:#2F5D3F;display:grid;place-items:center;font-family:Archivo,sans-serif;font-weight:600;font-size:16px">Escribirnos por WhatsApp</div></div>
+              </div>
+              <div style="background:#C3DE4E;border:1px solid #2F5D3F;border-radius:2px;padding:26px;display:flex;flex-direction:column;gap:10px"><div style="font-family:Archivo,sans-serif;font-weight:600;font-size:24px;color:#1C231E">Es un regalo y no sé la talla</div><div style="font-size:15px;line-height:1.5;color:#1C231E">Tres preguntas y te decimos qué llevar. Se hace por encargo y no tiene fecha fija: si es para un evento, escribinos antes.</div><div style="font-family:Archivo,sans-serif;font-weight:700;font-size:15px;color:#1C231E">Guiame →</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ============ 09 CHECKOUT ============ -->
+  <div data-screen-label="09 Checkout" style="display:flex;flex-direction:column;gap:22px">
+    <div style="display:flex;align-items:baseline;gap:16px;flex-wrap:wrap">
+      <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:13px;letter-spacing:0.1em;color:#2F5D3F">09</div>
+      <div style="font-family:Archivo,sans-serif;font-weight:600;font-size:30px;letter-spacing:-0.02em">Checkout de una página</div>
+      <div style="font-size:15px;color:#5C665D">Contacto → entrega → pago (explicado antes del botón) → resumen y confirmación.</div>
+    </div>
+    <div style="display:flex;gap:24px;align-items:flex-start;flex-wrap:wrap">
+      <!-- móvil checkout -->
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:0.06em;color:#8A9189">MÓVIL 375 · DIRECCIÓN EN EL GAM · ENVÍO PLANO</div>
+        <div style="width:375px;background:#F6F3EA;border:1px solid #CFCBBD;border-radius:2px;display:flex;flex-direction:column">
+          <div style="display:flex;align-items:center;gap:9px;padding:14px 16px;border-bottom:1px solid #E3DFD2">
+            <div style="width:28px;height:28px;border-radius:50%;box-shadow:inset 0 0 0 5px #2F5D3F;background:repeating-conic-gradient(from 0deg,#2F5D3F 0deg 4deg,#F6F3EA 4deg 45deg);display:grid;place-items:center"><div style="width:9px;height:9px;border-radius:50%;background:#C3DE4E"></div></div>
+            <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:19px;letter-spacing:0.02em;color:#2F5D3F">KIWI</div>
+            <div style="margin-left:auto;font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#5C665D">Paso 2 de 3</div>
+          </div>
+          <div style="padding:16px;display:flex;flex-direction:column;gap:22px">
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <div style="font-family:Archivo,sans-serif;font-weight:600;font-size:24px;letter-spacing:-0.02em">Tus datos</div>
+              <div style="font-size:13px;color:#5C665D">Las piezas se confirman cuando verificamos tu pago, no antes.</div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:12px">
+              <div style="font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#8A9189">Contacto</div>
+              <div style="height:48px;border:1px solid #CFCBBD;background:#FFFDF7;border-radius:2px;display:flex;align-items:center;padding:0 12px;font-size:15px">Ana Villalobos</div>
+              <div style="height:48px;border:1px solid #CFCBBD;background:#FFFDF7;border-radius:2px;display:flex;align-items:center;padding:0 12px;font-size:15px;font-variant-numeric:tabular-nums">8712 4455</div>
+              <div style="font-size:12px;color:#5C665D">Es el número por el que te confirmamos el pago.</div>
+              <div style="height:48px;border:1px solid #CFCBBD;background:#FFFDF7;border-radius:2px;display:flex;align-items:center;padding:0 12px;font-size:15px;color:#5C665D">Correo</div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:12px">
+              <div style="font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#8A9189">Entrega</div>
+              <div style="display:flex;gap:8px">
+                <div style="flex:1;height:48px;border:1px solid #CFCBBD;background:#FFFDF7;border-radius:2px;display:flex;align-items:center;padding:0 12px;font-size:14px;color:#1C231E">Heredia</div>
+                <div style="flex:1;height:48px;border:1px solid #CFCBBD;background:#FFFDF7;border-radius:2px;display:flex;align-items:center;padding:0 12px;font-size:14px;color:#1C231E">San Pablo</div>
+              </div>
+              <div style="height:48px;border:1px solid #CFCBBD;background:#FFFDF7;border-radius:2px;display:flex;align-items:center;padding:0 12px;font-size:14px;color:#5C665D">Dirección exacta y señas</div>
+              <div style="border:1.5px solid #2F5D3F;background:#FFFDF7;border-radius:2px;padding:14px 14px 4px;display:flex;flex-direction:column;gap:10px">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px">
+                  <div style="display:flex;flex-direction:column;gap:4px"><div style="font-weight:700;font-size:14px">Envío a San Pablo, Heredia</div><div style="font-size:12px;line-height:1.4;color:#5C665D">Tarifa plana por pedido, sin importar las piezas ni el destino. Va dentro del mismo SINPE.</div></div>
+                  <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:15px;color:#1C231E;white-space:nowrap;font-variant-numeric:tabular-nums">₡3.000</div>
+                </div>
+                <div style="height:44px;display:flex;align-items:center;gap:8px;border-top:1px solid #E3DFD2;font-weight:700;font-size:13px;color:#2F5D3F"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2F5D3F" stroke-width="1.75"><path d="M20 12a8 8 0 1 1-3.2-6.4"></path><path d="M4 20l1.6-4"></path><path d="M9 10c1 3 4 5 6 5"></path></svg><span>¿Necesitás una fecha? Escribinos por WhatsApp</span></div>
+              </div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:12px">
+              <div style="font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#8A9189">Pago</div>
+              <div style="border:1.5px solid #2F5D3F;border-radius:2px;background:#FFFDF7;padding:16px;display:flex;flex-direction:column;gap:14px">
+                <div style="display:flex;align-items:center;gap:10px">
+                  <div style="width:18px;height:18px;border-radius:50%;box-shadow:inset 0 0 0 2px #2F5D3F;display:grid;place-items:center"><div style="width:8px;height:8px;border-radius:50%;background:#2F5D3F"></div></div>
+                  <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:17px">SINPE Móvil</div>
+                  <div style="margin-left:auto;font-weight:700;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#5C665D">Único medio</div>
+                </div>
+                <div style="font-size:13px;line-height:1.5;color:#3E4740">Pagás <strong>después</strong> de confirmar, en un solo SINPE por piezas y envío. No pedimos tarjeta ni te sacamos del sitio.</div>
+<div style="display:flex;gap:10px;align-items:flex-start;padding:11px 12px;background:#F1EEE2;border-radius:2px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3F4E7A" stroke-width="1.75" style="flex:none"><path d="M20 12a8 8 0 1 1-3.2-6.4"></path><path d="M4 20l1.6-4"></path><path d="M9 10c1 3 4 5 6 5"></path></svg><div style="font-size:12px;line-height:1.4;color:#1C231E"><strong>Se confecciona por encargo.</strong> Tu pedido se hace cuando pagás, por eso no hay fecha fija: depende del proveedor. Si lo necesitás para un día concreto, escribinos antes de pagar.</div></div>
+                <div style="display:flex;flex-direction:column;gap:10px;padding-top:12px;border-top:1px solid #E3DFD2">
+                  <div style="display:flex;gap:10px;align-items:flex-start"><div style="width:20px;height:20px;flex:none;border-radius:50%;background:#C3DE4E;display:grid;place-items:center;font-family:Archivo,sans-serif;font-weight:700;font-size:11px;color:#1C231E">1</div><div style="font-size:13px;line-height:1.45;color:#3E4740">Confirmás el pedido y en la pantalla siguiente te damos número, monto total y referencia.</div></div>
+                  <div style="display:flex;gap:10px;align-items:flex-start"><div style="width:20px;height:20px;flex:none;border-radius:50%;background:#C3DE4E;display:grid;place-items:center;font-family:Archivo,sans-serif;font-weight:700;font-size:11px;color:#1C231E">2</div><div style="font-size:13px;line-height:1.45;color:#3E4740">Hacés el SINPE y subís la captura o la mandás por WhatsApp.</div></div>
+                  <div style="display:flex;gap:10px;align-items:flex-start"><div style="width:20px;height:20px;flex:none;border-radius:50%;background:#C3DE4E;display:grid;place-items:center;font-family:Archivo,sans-serif;font-weight:700;font-size:11px;color:#1C231E">3</div><div style="font-size:13px;line-height:1.45;color:#3E4740">Verificamos a mano y mandamos a confeccionar tu pedido. Ana te escribe por WhatsApp para contarte cómo sigue.</div></div>
+                </div>
+                <div style="display:flex;gap:10px;align-items:center;padding:11px 12px;background:#F1EEE2;border-radius:2px">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1C231E" stroke-width="1.75"><circle cx="12" cy="12" r="8"></circle><path d="M12 8v4l3 2"></path></svg>
+                  <div style="font-size:12px;line-height:1.4;color:#1C231E"><strong>Pedido abierto 48 h:</strong> si a las 24 h no hay pago te escribimos por WhatsApp; a las 48 h se cancela.</div>
+                </div>
+              </div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:12px;padding-top:16px;border-top:1px solid #E3DFD2">
+              <div style="display:flex;justify-content:space-between;font-size:14px;color:#3E4740"><span>Subtotal</span><span style="font-variant-numeric:tabular-nums">₡21.400</span></div>
+<div style="display:flex;justify-content:space-between;gap:12px;font-size:14px;color:#3E4740"><span>Envío</span><span style="font-variant-numeric:tabular-nums">₡3.000</span></div>
+              <div style="display:flex;justify-content:space-between;align-items:baseline"><div style="font-weight:700;font-size:15px">Pagás hoy</div><div style="font-family:Archivo,sans-serif;font-weight:700;font-size:26px;letter-spacing:-0.02em;font-variant-numeric:tabular-nums">₡24.400</div></div>
+              <div style="height:56px;border-radius:2px;background:#2F5D3F;color:#F6F3EA;display:grid;place-items:center;font-family:Archivo,sans-serif;font-weight:700;font-size:17px;text-align:center">Confirmar pedido</div>
+              <div style="font-size:12px;line-height:1.45;color:#5C665D;text-align:center">Todavía no se cobra nada. En la pantalla siguiente te damos el SINPE por el total: piezas y envío.</div>
+              <div style="height:48px;border-radius:2px;border:1.5px solid #2F5D3F;color:#2F5D3F;display:grid;place-items:center;font-family:Archivo,sans-serif;font-weight:600;font-size:15px">Prefiero cerrarlo por WhatsApp</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- escritorio checkout -->
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:0.06em;color:#8A9189">ESCRITORIO 1440</div>
+        <div style="width:1150px;background:#F6F3EA;border:1px solid #CFCBBD;border-radius:2px;overflow:hidden">
+          <div style="width:1440px;zoom:0.798;background:#F6F3EA">
+            <div style="background:#2F5D3F;padding:9px 0;display:flex;align-items:center;justify-content:center;gap:10px"><div style="width:6px;height:6px;border-radius:50%;background:#C3DE4E"></div><div style="font-weight:700;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#F6F3EA">Pago por SINPE Móvil · verificación a mano · cambio en 15 días</div></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:18px 40px;border-bottom:1px solid #E3DFD2">
+              <div style="display:flex;align-items:center;gap:11px">
+                <div style="width:36px;height:36px;border-radius:50%;box-shadow:inset 0 0 0 6px #2F5D3F;background:repeating-conic-gradient(from 0deg,#2F5D3F 0deg 4deg,#F6F3EA 4deg 45deg);display:grid;place-items:center"><div style="width:11px;height:11px;border-radius:50%;background:#C3DE4E"></div></div>
+                <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:26px;letter-spacing:0.02em;color:#2F5D3F">KIWI</div>
+              </div>
+              <div style="display:flex;align-items:center;gap:12px;font-weight:700;font-size:13px;letter-spacing:0.06em;text-transform:uppercase"><span style="color:#5C665D">Carrito</span><span style="color:#CFCBBD">·</span><span style="color:#1C231E">Datos y pago</span><span style="color:#CFCBBD">·</span><span style="color:#5C665D">SINPE</span></div>
+            </div>
+            <div style="padding:36px 40px 56px;width:1060px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:36px;align-items:start">
+              <div style="display:flex;flex-direction:column;gap:28px">
+                <div style="font-family:Archivo,sans-serif;font-weight:600;font-size:32px;letter-spacing:-0.02em">Tus datos</div>
+                <div style="display:flex;flex-direction:column;gap:14px">
+                  <div style="font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#8A9189">Contacto</div>
+                  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+                    <div style="height:48px;border:1px solid #CFCBBD;background:#FFFDF7;border-radius:2px;display:flex;align-items:center;padding:0 14px;font-size:15px">Ana Villalobos</div>
+                    <div style="height:48px;border:1px solid #CFCBBD;background:#FFFDF7;border-radius:2px;display:flex;align-items:center;padding:0 14px;font-size:15px;font-variant-numeric:tabular-nums">8712 4455</div>
+                  </div>
+                  <div style="height:48px;border:1px solid #CFCBBD;background:#FFFDF7;border-radius:2px;display:flex;align-items:center;padding:0 14px;font-size:15px;color:#5C665D">Correo</div>
+                  <div style="font-size:12px;color:#5C665D">Al número de WhatsApp te confirmamos el pago y el pedido.</div>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:14px">
+                  <div style="font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#8A9189">Entrega</div>
+                  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
+                    <div style="height:48px;border:1px solid #CFCBBD;background:#FFFDF7;border-radius:2px;display:flex;align-items:center;padding:0 14px;font-size:14px;color:#1C231E">Heredia</div>
+                    <div style="height:48px;border:1px solid #CFCBBD;background:#FFFDF7;border-radius:2px;display:flex;align-items:center;padding:0 14px;font-size:14px;color:#1C231E">San Pablo</div>
+                    <div style="height:48px;border:1px solid #CFCBBD;background:#FFFDF7;border-radius:2px;display:flex;align-items:center;padding:0 14px;font-size:14px;color:#1C231E">Rincón de Sabanilla</div>
+                  </div>
+                  <div style="height:48px;border:1px solid #CFCBBD;background:#FFFDF7;border-radius:2px;display:flex;align-items:center;padding:0 14px;font-size:14px;color:#5C665D">Dirección exacta y señas</div>
+                  <div style="border:1.5px solid #2F5D3F;background:#FFFDF7;border-radius:2px;padding:16px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:center">
+                    <div style="display:flex;flex-direction:column;gap:4px"><div style="font-weight:700;font-size:15px">Envío a Rincón de Sabanilla, San Pablo, Heredia</div><div style="font-size:13px;color:#5C665D">Tarifa plana por pedido, sin importar las piezas ni el destino. Va dentro del mismo SINPE.</div></div>
+                    <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:17px;color:#1C231E;white-space:nowrap;font-variant-numeric:tabular-nums">₡3.000</div>
+                    <div style="grid-column:1 / -1;display:flex;align-items:center;gap:8px;padding-top:12px;border-top:1px solid #E3DFD2;font-weight:700;font-size:14px;color:#2F5D3F"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2F5D3F" stroke-width="1.75"><path d="M20 12a8 8 0 1 1-3.2-6.4"></path><path d="M4 20l1.6-4"></path><path d="M9 10c1 3 4 5 6 5"></path></svg><span>¿Necesitás una fecha? Escribinos por WhatsApp</span></div>
+                  </div>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:14px">
+                  <div style="font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#8A9189">Pago</div>
+                  <div style="border:1.5px solid #2F5D3F;background:#FFFDF7;border-radius:2px;padding:22px;display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:24px">
+                    <div style="display:flex;flex-direction:column;gap:14px">
+                      <div style="display:flex;align-items:center;gap:10px">
+                        <div style="width:18px;height:18px;border-radius:50%;box-shadow:inset 0 0 0 2px #2F5D3F;display:grid;place-items:center"><div style="width:8px;height:8px;border-radius:50%;background:#2F5D3F"></div></div>
+                        <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:19px">SINPE Móvil</div>
+                        <div style="font-weight:700;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#5C665D">Único medio</div>
+                      </div>
+                      <div style="font-size:14px;line-height:1.5;color:#3E4740;max-width:520px">Pagás <strong>después</strong> de confirmar, desde tu app bancaria, en un solo SINPE por piezas y envío. No pedimos tarjeta ni te redirigimos a ninguna pasarela.</div>
+<div style="display:flex;gap:10px;align-items:flex-start;padding:11px 12px;background:#F1EEE2;border-radius:2px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3F4E7A" stroke-width="1.75" style="flex:none"><path d="M20 12a8 8 0 1 1-3.2-6.4"></path><path d="M4 20l1.6-4"></path><path d="M9 10c1 3 4 5 6 5"></path></svg><div style="font-size:13px;line-height:1.4;color:#1C231E"><strong>Se confecciona por encargo.</strong> Tu pedido se hace cuando pagás, por eso no hay fecha fija: depende del proveedor. Si lo necesitás para un día concreto, escribinos antes de pagar.</div></div>
+                      <div style="display:flex;flex-direction:column;gap:10px">
+                        <div style="display:flex;gap:10px;align-items:flex-start"><div style="width:20px;height:20px;flex:none;border-radius:50%;background:#C3DE4E;display:grid;place-items:center;font-family:Archivo,sans-serif;font-weight:700;font-size:11px;color:#1C231E">1</div><div style="font-size:14px;color:#3E4740">Confirmás el pedido → te damos número, monto total y referencia.</div></div>
+                        <div style="display:flex;gap:10px;align-items:flex-start"><div style="width:20px;height:20px;flex:none;border-radius:50%;background:#C3DE4E;display:grid;place-items:center;font-family:Archivo,sans-serif;font-weight:700;font-size:11px;color:#1C231E">2</div><div style="font-size:14px;color:#3E4740">Hacés el SINPE desde tu app y mandás la captura.</div></div>
+                        <div style="display:flex;gap:10px;align-items:flex-start"><div style="width:20px;height:20px;flex:none;border-radius:50%;background:#C3DE4E;display:grid;place-items:center;font-family:Archivo,sans-serif;font-weight:700;font-size:11px;color:#1C231E">3</div><div style="font-size:14px;color:#3E4740">Verificamos a mano y mandamos a confeccionar tu pedido. Ana te escribe por WhatsApp para contarte cómo sigue.</div></div>
+                      </div>
+                    </div>
+                    <div style="background:#F1EEE2;border-radius:2px;padding:16px;display:flex;flex-direction:column;gap:10px">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1C231E" stroke-width="1.75"><circle cx="12" cy="12" r="8"></circle><path d="M12 8v4l3 2"></path></svg>
+                      <div style="font-family:Archivo,sans-serif;font-weight:600;font-size:16px;color:#1C231E">Pedido abierto por 48 h</div>
+                      <div style="font-size:13px;line-height:1.45;color:#1C231E">Si a las 24 h no hay pago te escribimos por WhatsApp; a las 48 h se cancela.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div style="background:#FFFDF7;border:1px solid #CFCBBD;border-radius:2px;padding:24px;display:flex;flex-direction:column;gap:16px">
+                <div style="font-family:Archivo,sans-serif;font-weight:600;font-size:21px;letter-spacing:-0.02em">Tu pedido</div>
+                <div style="display:flex;gap:12px;align-items:center">
+                  <div style="width:56px;height:56px;border-radius:2px;background:repeating-linear-gradient(45deg,#E3DFD2 0 6px,#F1EEE2 6px 12px)"></div>
+                  <div style="flex:1;display:flex;flex-direction:column;gap:2px"><div style="font-weight:700;font-size:14px">Aro Marina</div><div style="font-size:12px;color:#5C665D">Talla 4 cm · 1</div></div>
+                  <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:15px;font-variant-numeric:tabular-nums">₡12.500</div>
+                </div>
+                <div style="display:flex;gap:12px;align-items:center">
+                  <div style="width:56px;height:56px;border-radius:2px;background:repeating-linear-gradient(45deg,#E3DFD2 0 6px,#F1EEE2 6px 12px)"></div>
+                  <div style="flex:1;display:flex;flex-direction:column;gap:2px"><div style="font-weight:700;font-size:14px">Collar Bruma</div><div style="font-size:12px;color:#5C665D">Talla 40 cm · 1</div></div>
+                  <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:15px;font-variant-numeric:tabular-nums">₡8.900</div>
+                </div>
+                <div style="display:flex;justify-content:space-between;font-size:14px;color:#3E4740;padding-top:14px;border-top:1px solid #E3DFD2"><span>Subtotal</span><span style="font-variant-numeric:tabular-nums">₡21.400</span></div>
+<div style="display:flex;justify-content:space-between;font-size:14px;color:#3E4740"><span>Envío</span><span style="font-variant-numeric:tabular-nums">₡3.000</span></div>
+                <div style="display:flex;justify-content:space-between;align-items:baseline;padding-top:14px;border-top:1px solid #E3DFD2"><div style="font-weight:700;font-size:15px">Pagás hoy</div><div style="font-family:Archivo,sans-serif;font-weight:700;font-size:28px;letter-spacing:-0.02em;font-variant-numeric:tabular-nums">₡24.400</div></div>
+                <div style="height:56px;border-radius:2px;background:#2F5D3F;color:#F6F3EA;display:grid;place-items:center;font-family:Archivo,sans-serif;font-weight:700;font-size:17px">Confirmar pedido</div>
+                <div style="font-size:12px;color:#5C665D;text-align:center">Todavía no se cobra nada. En la pantalla siguiente te damos los datos del SINPE por el total.</div>
+                <div style="height:48px;border-radius:2px;border:1.5px solid #2F5D3F;color:#2F5D3F;display:grid;place-items:center;font-family:Archivo,sans-serif;font-weight:600;font-size:15px">Prefiero cerrarlo por WhatsApp</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ============ 10 GRACIAS / PAGO ============ -->
+  <div data-screen-label="10 Gracias y pago SINPE" style="display:flex;flex-direction:column;gap:22px">
+    <div style="display:flex;align-items:baseline;gap:16px;flex-wrap:wrap">
+      <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:13px;letter-spacing:0.1em;color:#2F5D3F">10</div>
+      <div style="font-family:Archivo,sans-serif;font-weight:600;font-size:30px;letter-spacing:-0.02em">Gracias = instrucciones de pago</div>
+      <div style="font-size:15px;color:#5C665D">Un solo monto —piezas y envío—, directo a tres datos copiables, y qué pasa después. Después, dos salidas de comprobante y una barra fija para cuando vuelve del banco.</div>
+    </div>
+    <div style="display:flex;gap:24px;align-items:flex-start;flex-wrap:wrap">
+      <!-- móvil estado A -->
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:0.06em;color:#8A9189">MÓVIL 375 · GAM · FALTA EL PAGO</div>
+        <div style="width:375px;background:#F6F3EA;border:1px solid #CFCBBD;border-radius:2px;display:flex;flex-direction:column">
+          <div style="background:#2F5D3F;padding:20px 16px;display:flex;flex-direction:column;gap:8px">
+            <div style="display:flex;align-items:center;gap:9px">
+              <div style="width:26px;height:26px;border-radius:50%;box-shadow:inset 0 0 0 5px #F6F3EA;background:repeating-conic-gradient(from 0deg,#F6F3EA 0deg 5deg,#2F5D3F 5deg 45deg);display:grid;place-items:center"><div style="width:8px;height:8px;border-radius:50%;background:#C3DE4E"></div></div>
+              <div style="font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#C3DE4E">Pedido #1042 abierto</div>
+            </div>
+            <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:28px;line-height:1.08;letter-spacing:-0.03em;color:#F6F3EA">Falta un paso: hacé el SINPE</div>
+            <div style="font-size:14px;line-height:1.5;color:#F6F3EA">Tu pedido incluye las 2 piezas y el envío en un solo pago. Copiá los tres datos, pagá y volvé acá.</div>
+          </div>
+          <div style="padding:16px;display:flex;flex-direction:column;gap:12px">
+<div style="background:#FFFDF7;border:1px solid #CFCBBD;border-radius:2px;padding:16px;display:flex;flex-direction:column;gap:14px"><div style="font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#8A9189">Qué pasa después</div><div style="display:flex;gap:12px;align-items:flex-start"><div style="width:20px;height:20px;flex:none;border-radius:50%;background:#C3DE4E;display:grid;place-items:center;font-family:Archivo,sans-serif;font-weight:700;font-size:11px;color:#1C231E">1</div><div style="display:flex;flex-direction:column;gap:2px"><div style="font-weight:700;font-size:14px">Ana confirma tu pago</div><div style="font-size:12px;line-height:1.4;color:#5C665D">Te escribe por WhatsApp al 8712 4455.</div></div></div><div style="display:flex;gap:12px;align-items:flex-start"><div style="width:20px;height:20px;flex:none;border-radius:50%;background:#C3DE4E;display:grid;place-items:center;font-family:Archivo,sans-serif;font-weight:700;font-size:11px;color:#1C231E">2</div><div style="display:flex;flex-direction:column;gap:2px"><div style="font-weight:700;font-size:14px">Tu pedido se manda a confeccionar</div><div style="font-size:12px;line-height:1.4;color:#5C665D">Se hace por encargo: no hay fecha fija, depende del proveedor.</div></div></div><div style="display:flex;gap:12px;align-items:flex-start"><div style="width:20px;height:20px;flex:none;border-radius:50%;background:#C3DE4E;display:grid;place-items:center;font-family:Archivo,sans-serif;font-weight:700;font-size:11px;color:#1C231E">3</div><div style="display:flex;flex-direction:column;gap:2px"><div style="font-weight:700;font-size:14px">Ana te escribe en cada novedad</div><div style="font-size:12px;line-height:1.4;color:#5C665D">Por WhatsApp. Si necesitás una fecha, preguntale cuando quieras.</div></div></div></div>
+            <div style="background:#FFFDF7;border:1px solid #CFCBBD;border-radius:2px;padding:16px;display:flex;flex-direction:column;gap:8px">
+              <div style="font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#8A9189">1 · Número SINPE</div>
+              <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:34px;letter-spacing:-0.01em;font-variant-numeric:tabular-nums">8814 2073</div>
+              <div style="font-size:13px;color:#3E4740">Kiwi CR · Ana Vega Solano</div>
+              <div style="height:48px;border-radius:2px;background:#2F5D3F;color:#F6F3EA;display:flex;align-items:center;justify-content:center;gap:10px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F6F3EA" stroke-width="1.75"><rect x="8" y="8" width="12" height="12"></rect><path d="M16 8V4H4v12h4"></path></svg><span style="font-family:Archivo,sans-serif;font-weight:700;font-size:15px">Copiar número</span></div>
+            </div>
+            <div style="background:#FFFDF7;border:1px solid #CFCBBD;border-radius:2px;padding:16px;display:flex;flex-direction:column;gap:8px">
+              <div style="font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#8A9189">2 · Monto exacto</div>
+              <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:34px;letter-spacing:-0.02em;font-variant-numeric:tabular-nums">₡24.400</div>
+              <div style="font-size:13px;line-height:1.45;color:#3E4740">Piezas más el envío plano de ₡3.000. Si mandás otro monto, tenemos que devolverlo.</div>
+              <div style="height:48px;border-radius:2px;background:#2F5D3F;color:#F6F3EA;display:flex;align-items:center;justify-content:center;gap:10px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F6F3EA" stroke-width="1.75"><rect x="8" y="8" width="12" height="12"></rect><path d="M16 8V4H4v12h4"></path></svg><span style="font-family:Archivo,sans-serif;font-weight:700;font-size:15px">Copiar monto</span></div>
+            </div>
+            <div style="background:#C3DE4E;border:1px solid #2F5D3F;border-radius:2px;padding:16px;display:flex;flex-direction:column;gap:8px">
+              <div style="font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#1C231E">3 · Referencia obligatoria</div>
+              <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:34px;letter-spacing:0.02em;color:#1C231E;font-variant-numeric:tabular-nums">1042</div>
+              <div style="font-size:13px;line-height:1.45;color:#1C231E">Escribilo en la nota o descripción del SINPE. Es lo único que nos dice que ese pago es tuyo.</div>
+              <div style="height:48px;border-radius:2px;background:#1C231E;color:#F6F3EA;display:flex;align-items:center;justify-content:center;gap:10px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F6F3EA" stroke-width="1.75"><rect x="8" y="8" width="12" height="12"></rect><path d="M16 8V4H4v12h4"></path></svg><span style="font-family:Archivo,sans-serif;font-weight:700;font-size:15px">Copiar referencia</span></div>
+            </div>
+            <div style="display:flex;gap:10px;align-items:flex-start;padding:12px 14px;background:#FFFDF7;border:1px solid #CFCBBD;border-radius:2px">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3F4E7A" stroke-width="1.75" style="flex:none"><circle cx="12" cy="12" r="8"></circle><path d="M12 8v4l3 2"></path></svg>
+              <div style="font-size:13px;line-height:1.45;color:#3E4740">Pedido abierto hasta el dom 29 set, 6:15 p.m. (48 h). Si a las 24 h no hay pago te escribimos al 8712 4455. Si ya pagaste, subí la captura: el pedido no se cancela.</div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:10px;padding-top:16px;border-top:1px solid #E3DFD2">
+              <div style="font-family:Archivo,sans-serif;font-weight:600;font-size:19px;letter-spacing:-0.02em">Ya lo pagué</div>
+              <div style="font-size:13px;color:#3E4740">Mandanos la captura por donde te quede más fácil. Las dos vías llegan al mismo lugar. Archivos JPG, PNG o PDF, hasta 10 MB.</div>
+              <div style="display:flex;gap:10px">
+                <div style="flex:1;height:56px;border-radius:2px;background:#2F5D3F;color:#F6F3EA;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F6F3EA" stroke-width="1.75"><path d="M12 16V5m0 0L8 9m4-4l4 4"></path><path d="M4 15v4h16v-4"></path></svg><span style="font-family:Archivo,sans-serif;font-weight:700;font-size:14px">Subir captura</span></div>
+                <div style="flex:1;height:56px;border-radius:2px;border:1.5px solid #2F5D3F;color:#2F5D3F;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2F5D3F" stroke-width="1.75"><path d="M20 12a8 8 0 1 1-3.2-6.4"></path><path d="M4 20l1.6-4"></path><path d="M9 10c1 3 4 5 6 5"></path></svg><span style="font-family:Archivo,sans-serif;font-weight:700;font-size:14px">Por WhatsApp</span></div>
+              </div>
+              <div style="font-size:12px;color:#5C665D">Por WhatsApp el mensaje ya va con el número de pedido escrito.</div>
+            </div>
+          </div>
+          <div style="margin-top:8px;padding:12px 16px;background:#1C231E;display:flex;align-items:center;gap:12px">
+            <div style="flex:1;display:flex;flex-direction:column;gap:2px">
+              <div style="font-weight:700;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#8A9189">Pedido 1042 · pendiente de pago</div>
+              <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:16px;color:#F6F3EA;font-variant-numeric:tabular-nums">8814 2073 · ₡24.400 · ref 1042</div>
+            </div>
+            <div style="height:40px;padding:0 14px;border-radius:2px;background:#C3DE4E;color:#1C231E;display:grid;place-items:center;font-family:Archivo,sans-serif;font-weight:700;font-size:13px">Copiar todo</div>
+          </div>
+        </div>
+        <div style="width:375px;font-size:12px;color:#5C665D;line-height:1.45">Barra fija al pie: sobrevive al ir y venir de la app bancaria. Es lo primero que se ve al volver. ₡24.400 es el total: piezas y envío.</div>
+      </div>
+      <!-- móvil estado B -->
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:0.06em;color:#8A9189">MÓVIL 375 · COMPROBANTE RECIBIDO</div>
+        <div style="width:375px;background:#F6F3EA;border:1px solid #CFCBBD;border-radius:2px;display:flex;flex-direction:column">
+          <div style="background:#2F5D3F;padding:20px 16px;display:flex;flex-direction:column;gap:8px">
+            <div style="display:flex;align-items:center;gap:9px">
+              <div style="width:26px;height:26px;border-radius:50%;background:#C3DE4E;display:grid;place-items:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1C231E" stroke-width="2.5"><path d="M5 13l4 4 10-10"></path></svg></div>
+              <div style="font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#C3DE4E">Comprobante recibido</div>
+            </div>
+            <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:28px;line-height:1.08;letter-spacing:-0.03em;color:#F6F3EA">Lo estamos verificando</div>
+            <div style="font-size:14px;line-height:1.5;color:#F6F3EA">Ana revisa los pagos a mano. Te escribimos al 8712 4455 en cuanto quede confirmado — no tenés que hacer nada más.</div>
+          </div>
+          <div style="padding:16px;display:flex;flex-direction:column;gap:16px">
+            <div style="background:#FFFDF7;border:1px solid #CFCBBD;border-radius:2px;padding:16px;display:flex;flex-direction:column;gap:14px">
+              <div style="font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#8A9189">Estado del pedido 1042</div>
+              <div style="display:flex;gap:12px;align-items:flex-start">
+                <div style="width:20px;height:20px;flex:none;border-radius:50%;background:#2F5D3F;display:grid;place-items:center"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#F6F3EA" stroke-width="2.5"><path d="M5 13l4 4 10-10"></path></svg></div>
+                <div style="display:flex;flex-direction:column;gap:2px"><div style="font-weight:700;font-size:14px">Comprobante recibido</div><div style="font-size:12px;color:#5C665D">Hoy, 8:42 p.m.</div></div>
+              </div>
+              <div style="display:flex;gap:12px;align-items:flex-start">
+                <div style="width:20px;height:20px;flex:none;border-radius:50%;box-shadow:inset 0 0 0 3px #2F5D3F;background:repeating-conic-gradient(from 0deg,#2F5D3F 0deg 6deg,#FFFDF7 6deg 45deg)"></div>
+                <div style="display:flex;flex-direction:column;gap:2px"><div style="font-weight:700;font-size:14px">Verificando el pago</div><div style="font-size:12px;color:#5C665D">Ana concilia contra el movimiento del banco</div></div>
+              </div>
+              <div style="display:flex;gap:12px;align-items:flex-start">
+                <div style="width:20px;height:20px;flex:none;border-radius:50%;box-shadow:inset 0 0 0 2px #CFCBBD"></div>
+                <div style="display:flex;flex-direction:column;gap:2px"><div style="font-weight:700;font-size:14px;color:#5C665D">Pedido confirmado</div><div style="font-size:12px;color:#5C665D">Ana lo confirma a mano y te escribe por WhatsApp</div></div>
+              </div>
+              <div style="display:flex;gap:12px;align-items:flex-start">
+                <div style="width:20px;height:20px;flex:none;border-radius:50%;box-shadow:inset 0 0 0 2px #CFCBBD"></div>
+                <div style="display:flex;flex-direction:column;gap:2px"><div style="font-weight:700;font-size:14px;color:#5C665D">Confección por encargo</div><div style="font-size:12px;color:#5C665D">Sin fecha fija. Ana te escribe en cada novedad</div></div>
+              </div>
+            </div>
+            <div style="background:#FFFDF7;border:1px solid #CFCBBD;border-radius:2px;padding:14px;display:flex;gap:12px;align-items:center">
+              <div style="width:52px;height:52px;flex:none;border-radius:2px;background:repeating-linear-gradient(45deg,#E3DFD2 0 6px,#F1EEE2 6px 12px);display:grid;place-items:center"><span style="font-family:ui-monospace,Menlo,monospace;font-size:8px;color:#8A9189">IMG</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;gap:2px"><div style="font-weight:700;font-size:14px">sinpe-1042.jpg</div><div style="font-size:12px;color:#5C665D">Recibido · si te equivocaste, podés reemplazarlo</div></div>
+              <div style="font-weight:700;font-size:13px;color:#2F5D3F">Cambiar</div>
+            </div>
+            <div style="display:flex;gap:18px;align-items:flex-start;padding:12px 14px;background:#F1EEE2;border-radius:2px">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3F4E7A" stroke-width="1.75" style="flex:none"><rect x="4" y="10" width="16" height="10"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg>
+              <div style="font-size:13px;line-height:1.45;color:#1C231E">Si el monto o la referencia no cuadran, te escribimos por WhatsApp antes de tocar el pedido.</div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <div style="height:52px;border-radius:2px;border:1.5px solid #2F5D3F;color:#2F5D3F;display:flex;align-items:center;justify-content:center;gap:10px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2F5D3F" stroke-width="1.75"><path d="M20 12a8 8 0 1 1-3.2-6.4"></path><path d="M4 20l1.6-4"></path><path d="M9 10c1 3 4 5 6 5"></path></svg><span style="font-family:Archivo,sans-serif;font-weight:600;font-size:15px">Escribirle a Ana</span></div>
+              <div style="height:48px;border-radius:2px;background:#C3DE4E;color:#1C231E;display:grid;place-items:center;font-family:Archivo,sans-serif;font-weight:700;font-size:15px">Seguir viendo la tienda</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- escritorio gracias -->
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:0.06em;color:#8A9189">ESCRITORIO 1440</div>
+        <div style="width:766px;background:#F6F3EA;border:1px solid #CFCBBD;border-radius:2px;overflow:hidden">
+          <div style="width:1440px;zoom:0.532;background:#F6F3EA">
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:18px 40px;border-bottom:1px solid #E3DFD2">
+              <div style="display:flex;align-items:center;gap:11px">
+                <div style="width:36px;height:36px;border-radius:50%;box-shadow:inset 0 0 0 6px #2F5D3F;background:repeating-conic-gradient(from 0deg,#2F5D3F 0deg 4deg,#F6F3EA 4deg 45deg);display:grid;place-items:center"><div style="width:11px;height:11px;border-radius:50%;background:#C3DE4E"></div></div>
+                <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:26px;letter-spacing:0.02em;color:#2F5D3F">KIWI</div>
+              </div>
+              <div style="display:flex;align-items:center;gap:12px;font-weight:700;font-size:13px;letter-spacing:0.06em;text-transform:uppercase"><span style="color:#5C665D">Carrito</span><span style="color:#CFCBBD">·</span><span style="color:#5C665D">Datos y pago</span><span style="color:#CFCBBD">·</span><span style="color:#1C231E">SINPE</span></div>
+            </div>
+            <div style="background:#2F5D3F;padding:40px">
+              <div style="display:flex;flex-direction:column;gap:12px;max-width:820px">
+                <div style="font-weight:700;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#C3DE4E">Pedido #1042 abierto · pendiente de pago</div>
+                <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:52px;line-height:1;letter-spacing:-0.035em;color:#F6F3EA">Falta un paso: hacé el SINPE</div>
+                <div style="font-size:17px;line-height:1.55;color:#F6F3EA;max-width:620px">Tu pedido se confirma al verificar tu pago. Si estás en la computadora, escaneá el resumen desde el celular o copiá los datos y pagá desde tu app.</div>
+              </div>
+            </div>
+            <div style="padding:36px 40px 52px;display:grid;grid-template-columns:minmax(0,1fr) 420px;gap:36px;align-items:start">
+              <div style="display:flex;flex-direction:column;gap:20px">
+                <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px">
+                  <div style="background:#FFFDF7;border:1px solid #CFCBBD;border-radius:2px;padding:20px;display:flex;flex-direction:column;gap:10px">
+                    <div style="font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#8A9189">1 · Número SINPE</div>
+                    <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:32px;font-variant-numeric:tabular-nums;letter-spacing:-0.01em">8814 2073</div>
+                    <div style="font-size:13px;color:#3E4740">Kiwi CR · Ana Vega Solano</div>
+                    <div style="height:44px;border-radius:2px;background:#2F5D3F;color:#F6F3EA;display:grid;place-items:center;font-family:Archivo,sans-serif;font-weight:700;font-size:14px">Copiar número</div>
+                  </div>
+                  <div style="background:#FFFDF7;border:1px solid #CFCBBD;border-radius:2px;padding:20px;display:flex;flex-direction:column;gap:10px">
+                    <div style="font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#8A9189">2 · Monto exacto</div>
+                    <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:32px;font-variant-numeric:tabular-nums;letter-spacing:-0.02em">₡24.400</div>
+                    <div style="font-size:13px;color:#3E4740">Piezas y envío en un solo monto. Otro monto se devuelve.</div>
+                    <div style="height:44px;border-radius:2px;background:#2F5D3F;color:#F6F3EA;display:grid;place-items:center;font-family:Archivo,sans-serif;font-weight:700;font-size:14px">Copiar monto</div>
+                  </div>
+                  <div style="background:#C3DE4E;border:1px solid #2F5D3F;border-radius:2px;padding:20px;display:flex;flex-direction:column;gap:10px">
+                    <div style="font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#1C231E">3 · Referencia</div>
+                    <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:32px;color:#1C231E;font-variant-numeric:tabular-nums;letter-spacing:0.02em">1042</div>
+                    <div style="font-size:13px;color:#1C231E">Va en la nota del SINPE. Obligatorio.</div>
+                    <div style="height:44px;border-radius:2px;background:#1C231E;color:#F6F3EA;display:grid;place-items:center;font-family:Archivo,sans-serif;font-weight:700;font-size:14px">Copiar referencia</div>
+                  </div>
+                </div>
+                <div style="background:#FFFDF7;border:1px solid #CFCBBD;border-radius:2px;padding:24px;display:grid;grid-template-columns:minmax(0,1fr) 220px;gap:24px;align-items:center">
+                  <div style="display:flex;flex-direction:column;gap:12px">
+                    <div style="font-family:Archivo,sans-serif;font-weight:600;font-size:24px;letter-spacing:-0.02em">Ya lo pagué</div>
+                    <div style="font-size:15px;line-height:1.5;color:#3E4740;max-width:520px">Mandanos la captura por donde te quede más fácil: las dos vías llegan al mismo lugar y el WhatsApp ya va con el número de pedido escrito.</div>
+                    <div style="display:flex;gap:12px">
+                      <div style="height:52px;padding:0 22px;border-radius:2px;background:#2F5D3F;color:#F6F3EA;display:flex;align-items:center;gap:10px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F6F3EA" stroke-width="1.75"><path d="M12 16V5m0 0L8 9m4-4l4 4"></path><path d="M4 15v4h16v-4"></path></svg><span style="font-family:Archivo,sans-serif;font-weight:700;font-size:16px">Subir captura</span></div>
+                      <div style="height:52px;padding:0 22px;border-radius:2px;border:1.5px solid #2F5D3F;color:#2F5D3F;display:flex;align-items:center;gap:10px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2F5D3F" stroke-width="1.75"><path d="M20 12a8 8 0 1 1-3.2-6.4"></path><path d="M4 20l1.6-4"></path><path d="M9 10c1 3 4 5 6 5"></path></svg><span style="font-family:Archivo,sans-serif;font-weight:600;font-size:16px">Por WhatsApp</span></div>
+                    </div>
+                  </div>
+                  <div style="display:flex;flex-direction:column;gap:8px;align-items:center">
+                    <div style="width:140px;height:140px;border-radius:2px;background:repeating-linear-gradient(45deg,#E3DFD2 0 6px,#F1EEE2 6px 12px);display:grid;place-items:center;text-align:center"><span style="font-family:ui-monospace,Menlo,monospace;font-size:9px;color:#8A9189;line-height:1.5">QR AL MISMO<br>PEDIDO</span></div>
+                    <div style="font-size:12px;color:#5C665D;text-align:center">Seguí en el celular</div>
+                  </div>
+                </div>
+                <div style="display:flex;gap:12px;align-items:flex-start;padding:16px;background:#F1EEE2;border-radius:2px">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3F4E7A" stroke-width="1.75" style="flex:none"><circle cx="12" cy="12" r="8"></circle><path d="M12 8v4l3 2"></path></svg>
+                  <div style="font-size:14px;line-height:1.5;color:#1C231E">Pedido abierto hasta el dom 29 set, 6:15 p.m. (48 h). Si a las 24 h no hay pago, Ana te escribe al 8712 4455. Si ya pagaste, subí la captura: el pedido no se cancela.</div>
+                </div>
+<div style="background:#FFFDF7;border:1px solid #CFCBBD;border-radius:2px;padding:20px;display:flex;flex-direction:column;gap:14px"><div style="font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#8A9189">Qué pasa después</div><div style="display:flex;gap:12px;align-items:flex-start"><div style="width:20px;height:20px;flex:none;border-radius:50%;background:#C3DE4E;display:grid;place-items:center;font-family:Archivo,sans-serif;font-weight:700;font-size:11px;color:#1C231E">1</div><div style="display:flex;flex-direction:column;gap:2px"><div style="font-weight:700;font-size:14px">Ana confirma tu pago</div><div style="font-size:12px;line-height:1.4;color:#5C665D">Te escribe por WhatsApp al 8712 4455.</div></div></div><div style="display:flex;gap:12px;align-items:flex-start"><div style="width:20px;height:20px;flex:none;border-radius:50%;background:#C3DE4E;display:grid;place-items:center;font-family:Archivo,sans-serif;font-weight:700;font-size:11px;color:#1C231E">2</div><div style="display:flex;flex-direction:column;gap:2px"><div style="font-weight:700;font-size:14px">Tu pedido se manda a confeccionar</div><div style="font-size:12px;line-height:1.4;color:#5C665D">Se hace por encargo: no hay fecha fija, depende del proveedor.</div></div></div><div style="display:flex;gap:12px;align-items:flex-start"><div style="width:20px;height:20px;flex:none;border-radius:50%;background:#C3DE4E;display:grid;place-items:center;font-family:Archivo,sans-serif;font-weight:700;font-size:11px;color:#1C231E">3</div><div style="display:flex;flex-direction:column;gap:2px"><div style="font-weight:700;font-size:14px">Ana te escribe en cada novedad</div><div style="font-size:12px;line-height:1.4;color:#5C665D">Por WhatsApp. Si necesitás una fecha, preguntale cuando quieras.</div></div></div></div>
+              </div>
+              <div style="background:#FFFDF7;border:1px solid #CFCBBD;border-radius:2px;padding:24px;display:flex;flex-direction:column;gap:16px">
+                <div style="font-family:Archivo,sans-serif;font-weight:600;font-size:21px;letter-spacing:-0.02em">Pedido #1042</div>
+                <div style="display:flex;gap:12px;align-items:center">
+                  <div style="width:56px;height:56px;border-radius:2px;background:repeating-linear-gradient(45deg,#E3DFD2 0 6px,#F1EEE2 6px 12px)"></div>
+                  <div style="flex:1;display:flex;flex-direction:column;gap:2px"><div style="font-weight:700;font-size:14px">Aro Marina</div><div style="font-size:12px;color:#5C665D">Talla 4 cm · 1</div></div>
+                  <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:15px;font-variant-numeric:tabular-nums">₡12.500</div>
+                </div>
+                <div style="display:flex;gap:12px;align-items:center">
+                  <div style="width:56px;height:56px;border-radius:2px;background:repeating-linear-gradient(45deg,#E3DFD2 0 6px,#F1EEE2 6px 12px)"></div>
+                  <div style="flex:1;display:flex;flex-direction:column;gap:2px"><div style="font-weight:700;font-size:14px">Collar Bruma</div><div style="font-size:12px;color:#5C665D">Talla 40 cm · 1</div></div>
+                  <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:15px;font-variant-numeric:tabular-nums">₡8.900</div>
+                </div>
+                <div style="display:flex;justify-content:space-between;font-size:14px;color:#3E4740;padding-top:14px;border-top:1px solid #E3DFD2"><span>Subtotal</span><span style="font-variant-numeric:tabular-nums">₡21.400</span></div>
+<div style="display:flex;justify-content:space-between;font-size:14px;color:#3E4740"><span>Envío</span><span style="font-variant-numeric:tabular-nums">₡3.000</span></div>
+                <div style="display:flex;justify-content:space-between;align-items:baseline;padding-top:14px;border-top:1px solid #E3DFD2"><div style="font-weight:700;font-size:15px">Pagás hoy</div><div style="font-family:Archivo,sans-serif;font-weight:700;font-size:28px;letter-spacing:-0.02em;font-variant-numeric:tabular-nums">₡24.400</div></div>
+                <div style="display:flex;flex-direction:column;gap:8px;padding-top:14px;border-top:1px solid #E3DFD2">
+                  <div style="font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#8A9189">Entrega</div>
+                  <div style="font-size:14px;color:#3E4740">Ana Villalobos · Rincón de Sabanilla, San Pablo, Heredia</div>
+                  <div style="font-size:14px;color:#3E4740">Se confecciona por encargo · sin fecha fija</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ============ DOCUMENTACIÓN ============ -->
+  <div data-screen-label="Decisiones" style="display:flex;flex-direction:column;gap:22px;border-top:1px solid #CFCBBD;padding-top:36px">
+    <div style="display:flex;align-items:baseline;gap:16px;flex-wrap:wrap">
+      <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:13px;letter-spacing:0.1em;color:#2F5D3F">11</div>
+      <div style="font-family:Archivo,sans-serif;font-weight:600;font-size:30px;letter-spacing:-0.02em">Decisiones de producto</div>
+      <div style="font-size:15px;color:#5C665D">Mismo formato del README del handoff. Se anexa también al bundle.</div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px">
+      <div style="background:#F6F3EA;border:1px solid #CFCBBD;border-radius:2px;padding:24px;display:flex;flex-direction:column;gap:14px">
+        <div style="font-family:Archivo,sans-serif;font-weight:600;font-size:21px;letter-spacing:-0.02em">Carrito</div>
+        <div style="font-size:14px;line-height:1.55;color:#3E4740"><strong>La talla viaja con el ítem.</strong> En joyería la talla es el motivo #1 de cambio; verla en el carrito evita el «pedí la equivocada».</div>
+        <div style="font-size:14px;line-height:1.55;color:#3E4740"><strong>Sin barra de envío gratis, y sin reemplazo.</strong> La barra subía el ticket con una promesa que ya no existe. Cualquier sustituto —descuento o regalo por monto— es una política comercial que nadie definió; inventarla repite el error que motivó este cambio. El bloque se cierra. Además el envío es plano, así que tampoco hay umbral que medir.</div>
+        <div style="font-size:14px;line-height:1.55;color:#3E4740"><strong>Cantidad con controles de 44 px,</strong> no un select nativo: se edita con el pulgar sin abrir hoja.</div>
+        <div style="font-size:14px;line-height:1.55;color:#3E4740"><strong>WhatsApp es secundario, no gemelo del checkout.</strong> Copy «Preguntar», no «Comprar»: es la salida de la duda, no un segundo camino de pago.</div>
+        <div style="font-size:14px;line-height:1.55;color:#3E4740"><strong>Vacío con doble entrada.</strong> El carrito vacío es el mejor lugar para el público de regalo: repite «Es un regalo y no sé la talla», el único lima sólido de la vista. Su copy advierte desde el principio que es por encargo y no tiene fecha fija.</div>
+<div style="font-size:14px;line-height:1.55;color:#3E4740"><strong>El envío es una línea propia con monto, antes del total.</strong> «Envío · ₡3.000», tarifa plana por pedido: no cambia con las piezas ni con el destino. El total, «Pagás hoy», ya lo incluye.</div>
+<div style="font-size:14px;line-height:1.55;color:#3E4740"><strong>Por encargo, dicho en el carrito.</strong> Un aviso con el glifo de chat explica que todo se confecciona al comprar y que por eso no hay fecha fija. No pide disculpas: describe cómo se hace y abre la pregunta antes de pagar.</div>
+      </div>
+      <div style="background:#F6F3EA;border:1px solid #CFCBBD;border-radius:2px;padding:24px;display:flex;flex-direction:column;gap:14px">
+        <div style="font-family:Archivo,sans-serif;font-weight:600;font-size:21px;letter-spacing:-0.02em">Checkout</div>
+        <div style="font-size:14px;line-height:1.55;color:#3E4740"><strong>Sin bloque de facturación electrónica.</strong> El negocio no está inscrito ante Hacienda todavía: pedir cédula sin poder emitir factura solo agrega fricción y datos que nadie usa. El checkout queda en tres bloques —contacto, entrega, pago— y el orden es innegociable igual que antes.</div>
+        <div style="font-size:14px;line-height:1.55;color:#3E4740"><strong>El pago se explica en tres pasos antes del botón.</strong> Con SINPE manual, la mayor causa de pedidos muertos es sorpresa: el cliente esperaba pagar con tarjeta. El botón dice «Confirmar pedido», y debajo «Todavía no se cobra nada».</div>
+        <div style="font-size:14px;line-height:1.55;color:#3E4740"><strong>Vigencia de 48 h: solo cierra pedidos sin pago.</strong> Aviso por WhatsApp a las 24 h y cancelación a las 48 h, dichos con fecha y hora exactas. El reloj se detiene cuando el cliente reporta el pago.</div>
+        <div style="font-size:14px;line-height:1.55;color:#3E4740"><strong>El teléfono se pide como canal, no como dato.</strong> «Es el número por el que te confirmamos el pago» convierte un campo en promesa.</div>
+<div style="font-size:14px;line-height:1.55;color:#3E4740"><strong>La tarjeta de envío muestra el monto plano.</strong> «Envío a [dirección]» con «₡3.000», sin zonas ni tarifas. La fila de WhatsApp al pie dice «¿Necesitás una fecha?» y está a un toque de donde nace la duda.</div>
+<div style="font-size:14px;line-height:1.55;color:#3E4740"><strong>Un solo SINPE por el total.</strong> Referencia = número de pedido (1042); piezas y envío en una sola cifra que Ana concilia contra una sola referencia.</div>
+<div style="font-size:14px;line-height:1.55;color:#3E4740"><strong>La explicación va dentro del pago, antes del botón.</strong> «Se confecciona por encargo» está en la tarjeta de pago, sobre los tres pasos: es lo último que se lee antes de confirmar y habla de tiempo sin nombrar uno.</div>
+      </div>
+      <div style="background:#F6F3EA;border:1px solid #CFCBBD;border-radius:2px;padding:24px;display:flex;flex-direction:column;gap:14px">
+        <div style="font-family:Archivo,sans-serif;font-weight:600;font-size:21px;letter-spacing:-0.02em">Gracias / pago</div>
+<div style="font-size:14px;line-height:1.55;color:#3E4740"><strong>Un pago, y qué pasa después.</strong> La tarjeta «Qué pasa después» nombra quién escribe (Ana), por dónde (WhatsApp) y sobre qué (cada novedad del pedido). Sin fecha, el siguiente contacto es la información que calma.</div>
+        <div style="font-size:14px;line-height:1.55;color:#3E4740"><strong>No dice «gracias por tu compra».</strong> Dice «falta un paso». La compra no terminó y prometer lo contrario genera pedidos que nunca se pagan.</div>
+        <div style="font-size:14px;line-height:1.55;color:#3E4740"><strong>Tres tarjetas numeradas, un dato por tarjeta,</strong> cada una con su propio botón de copiar de 48 px. El cliente hace tres viajes a la app bancaria; cada viaje necesita un solo dato en el portapapeles.</div>
+        <div style="font-size:14px;line-height:1.55;color:#3E4740"><strong>La referencia es el único bloque lima.</strong> Es el dato que el cliente olvida y sin el cual el pago es huérfano; se le da el color de mayor atención del sistema y texto grafito.</div>
+        <div style="font-size:14px;line-height:1.55;color:#3E4740"><strong>Barra fija al pie con los tres datos y «copiar todo».</strong> Diseñada para el regreso desde el banco: al volver, la pantalla no exige re-leer nada.</div>
+        <div style="font-size:14px;line-height:1.55;color:#3E4740"><strong>Subir captura y WhatsApp con el mismo peso,</strong> lado a lado. Quien ya vive en WhatsApp usa WhatsApp; quien está en la web sube el archivo. El mensaje sale con el número de pedido prellenado.</div>
+        <div style="font-size:14px;line-height:1.55;color:#3E4740"><strong>El estado posterior nombra a una persona.</strong> «Ana revisa los pagos a mano» explica la demora sin pedir disculpas y hace creíble el «no tenés que hacer nada más».</div>
+        <div style="font-size:14px;line-height:1.55;color:#3E4740"><strong>El comprobante se puede reemplazar.</strong> Subir la captura equivocada es frecuente; sin «Cambiar», esa corrección se convierte en un mensaje de soporte.</div>
+      </div>
+    </div>
+    <div style="background:#FFFDF7;border:1px solid #C0523A;border-radius:2px;padding:24px;display:flex;flex-direction:column;gap:12px">
+      <div style="font-family:Archivo,sans-serif;font-weight:600;font-size:19px;letter-spacing:-0.02em;color:#1C231E">Decisiones pendientes (no se inventó ningún valor)</div>
+      <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 24px;font-size:14px;line-height:1.5;color:#3E4740">
+        <div><strong>Cuatro iconos fuera del set base:</strong> copiar, adjuntar/subir, reloj y check. Dibujados en la misma grilla 24 / trazo 1.75 / sin relleno, pero requieren aprobación e incorporación formal al set.</div>
+        <div><strong>Icono de WhatsApp:</strong> el sistema prohíbe logos de terceros dentro de la iconografía de marca; acá va un glifo genérico de chat. Definir si se usa el logo oficial o el glifo.</div>
+<div><strong>Tarifa de envío:</strong> ₡3.000 plano por pedido, dentro del mismo SINPE. Sin peso, sin zonas. Kiwi absorbe la diferencia con lo que cobre Correos.</div>
+<div><strong>Peso de cada pieza:</strong> no se usa en el sitio.</div>
+<div><strong>Cadencia de avisos (nuevo):</strong> la página de gracias promete que Ana escribe por WhatsApp en cada novedad del pedido. Ana debe confirmar que puede sostenerlo y en qué eventos (pago confirmado, salida a confección, envío).</div>
+        <div><strong>Aviso y cancelación:</strong> resueltos. Aviso a las 24 h, cancelación a las 48 h, solo en pedidos sin pago reportado.</div>
+        <div><strong>Monto distinto:</strong> resuelto. Se ajusta por WhatsApp, sin plazo límite ni liberación automática. Ver Estados de excepción.</div>
+        <div><strong>Vigencia y saldo de la tarjeta de regalo:</strong> ¿vence? ¿si la compra cuesta menos, queda saldo a favor o se pierde? Es política comercial; el diseño la nombra como pendiente en vez de prometer.</div>
+        <div><strong>Icono de regalo:</strong> no existe en el set cerrado. La sección 12 usa el aro radial y tipografía en su lugar; definir si se dibuja un icono de regalo o se mantiene sin él.</div>
+        <div><strong>Facturación electrónica:</strong> el bloque salió del checkout porque el negocio todavía no está inscrito ante Hacienda. Vuelve entre «Pago» y el resumen, con tipo de identificación, número y correo del XML (ver README).</div>
+        <div><strong>Vencimiento en WooCommerce:</strong> cancelar a las 48 h solo pedidos on-hold sin la marca «pago reportado»; los de monto distinto quedan fuera.</div>
+      </div>
+    </div>
+    <div style="background:#F6F3EA;border:1px solid #CFCBBD;border-radius:2px;padding:24px;display:flex;flex-direction:column;gap:12px">
+      <div style="font-family:Archivo,sans-serif;font-weight:600;font-size:19px;letter-spacing:-0.02em">Notas de implementación en WooCommerce</div>
+      <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 24px;font-size:14px;line-height:1.5;color:#3E4740">
+        <div>Carrito y checkout con los bloques nativos de Woo, restilizados con los tokens del sistema; no se reescribe el core ni se reordenan campos por PHP. Sin impuestos configurados: el precio del producto es el monto final.</div>
+        <div>SINPE Móvil como pasarela offline (patrón de transferencia bancaria): el pedido nace <em>on-hold</em>; el número, el nombre y el texto de instrucciones son opciones del método, no texto duro.</div>
+        <div>Sin campos de facturación electrónica: no se instala plugin de factura ni se piden cédula ni correo XML mientras el negocio no esté inscrito ante Hacienda. La reposición está documentada en el README.</div>
+        <div>La página de gracias es la plantilla <em>order-received</em>, con la referencia = número de pedido de Woo. Los botones de copiar usan la API de portapapeles con estado «copiado» en el mismo botón.</div>
+        <div>Subida de comprobante: adjunto ligado al pedido con límite de 10 MB y validación de tipo (JPG, PNG, PDF); visible al cliente en «mi cuenta» y reemplazable mientras el pedido esté pendiente.</div>
+<div>Envío: un solo método «Envío plano» de ₡3.000, sin zonas ni clases de envío, que se suma al total del pedido y del SINPE. Productos sin gestión de inventario: siempre comprables, todas las tallas.</div>
+        <div>El paso de <em>on-hold</em> a <em>processing</em> es siempre manual. La conciliación (monto + referencia) queda en el admin del pedido, no automatizada.</div>
+      </div>
+    </div>
+  </div>
+  <!-- ============ 12 REGALO ============ -->
+  <div data-screen-label="12 Es un regalo" style="display:flex;flex-direction:column;gap:22px;border-top:1px solid #CFCBBD;padding-top:36px">
+    <div style="display:flex;align-items:baseline;gap:16px;flex-wrap:wrap">
+      <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:13px;letter-spacing:0.1em;color:#2F5D3F">12</div>
+      <div style="font-family:Archivo,sans-serif;font-weight:600;font-size:30px;letter-spacing:-0.02em">Es un regalo y no sé la talla</div>
+      <div style="font-size:15px;color:#5C665D;max-width:820px;text-wrap:pretty">Tarjeta de regalo por monto. Tres pasos en una sola página: monto → para quién → SINPE. La talla la escoge quien la recibe, así que el problema desaparece en lugar de resolverse.</div>
+    </div>
+    <div style="display:flex;gap:24px;align-items:flex-start;flex-wrap:wrap">
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:0.06em;color:#8A9189">MÓVIL 375 · TARJETA DE REGALO</div>
+        <div style="width:375px;background:#F6F3EA;border:1px solid #CFCBBD;border-radius:2px;overflow:hidden;display:flex;flex-direction:column">
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border-bottom:1px solid #E3DFD2">
+            <div style="display:flex;align-items:center;gap:9px">
+              <div style="width:28px;height:28px;border-radius:50%;box-shadow:inset 0 0 0 5px #2F5D3F;background:repeating-conic-gradient(from 0deg,#2F5D3F 0deg 4deg,#F6F3EA 4deg 45deg);display:grid;place-items:center"><div style="width:9px;height:9px;border-radius:50%;background:#C3DE4E"></div></div>
+              <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:19px;letter-spacing:0.02em;color:#2F5D3F">KIWI</div>
+            </div>
+            <div style="font-weight:700;font-size:13px;color:#5C665D">Cerrar</div>
+          </div>
+          <div style="padding:18px 16px;background:#C3DE4E;border-bottom:1px solid #2F5D3F;display:flex;flex-direction:column;gap:8px">
+            <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:26px;line-height:1.08;letter-spacing:-0.03em;color:#1C231E;text-wrap:pretty">Regalá el monto, que ella escoja la talla</div>
+            <div style="font-size:14px;line-height:1.5;color:#1C231E">Tres pasos y listo. No tenés que adivinar nada.</div>
+          </div>
+          <div style="padding:14px 16px;display:flex;align-items:center;gap:8px;border-bottom:1px solid #E3DFD2;background:#FFFDF7">
+            <div style="display:flex;align-items:center;gap:7px"><div style="width:22px;height:22px;border-radius:50%;background:#2F5D3F;color:#F6F3EA;display:grid;place-items:center;font-family:Archivo,sans-serif;font-weight:700;font-size:12px">1</div><span style="font-weight:700;font-size:13px;color:#1C231E">Monto</span></div>
+            <div style="flex:1;height:1px;background:#CFCBBD"></div>
+            <div style="display:flex;align-items:center;gap:7px"><div style="width:22px;height:22px;border-radius:50%;box-shadow:inset 0 0 0 1.5px #CFCBBD;color:#5C665D;display:grid;place-items:center;font-family:Archivo,sans-serif;font-weight:700;font-size:12px">2</div><span style="font-weight:700;font-size:13px;color:#5C665D">Para quién</span></div>
+            <div style="flex:1;height:1px;background:#CFCBBD"></div>
+            <div style="display:flex;align-items:center;gap:7px"><div style="width:22px;height:22px;border-radius:50%;box-shadow:inset 0 0 0 1.5px #CFCBBD;color:#5C665D;display:grid;place-items:center;font-family:Archivo,sans-serif;font-weight:700;font-size:12px">3</div><span style="font-weight:700;font-size:13px;color:#5C665D">Pago</span></div>
+          </div>
+          <div style="padding:20px 16px;display:flex;flex-direction:column;gap:12px;border-bottom:1px solid #E3DFD2">
+            <div style="display:flex;align-items:baseline;gap:8px"><div style="font-family:Archivo,sans-serif;font-weight:600;font-size:20px;letter-spacing:-0.02em">1 · Elegí el monto</div></div>
+            <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px">
+              <div style="height:56px;border:1px solid #CFCBBD;border-radius:2px;background:#FFFDF7;display:grid;place-items:center;font-family:Archivo,sans-serif;font-weight:700;font-size:18px;font-variant-numeric:tabular-nums;color:#1C231E">₡10.000</div>
+              <div style="height:56px;border:1.5px solid #2F5D3F;border-radius:2px;background:#FFFDF7;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px">
+                <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:18px;font-variant-numeric:tabular-nums;color:#1C231E">₡15.000</div>
+                <div style="font-weight:700;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#2F5D3F">Más regalado</div>
+              </div>
+              <div style="height:56px;border:1px solid #CFCBBD;border-radius:2px;background:#FFFDF7;display:grid;place-items:center;font-family:Archivo,sans-serif;font-weight:700;font-size:18px;font-variant-numeric:tabular-nums;color:#1C231E">₡25.000</div>
+              <div style="height:56px;border:1px dashed #CFCBBD;border-radius:2px;background:#F1EEE2;display:grid;place-items:center;font-weight:700;font-size:14px;color:#3E4740">Otro monto</div>
+            </div>
+          </div>
+          <div style="padding:20px 16px;display:flex;flex-direction:column;gap:14px;border-bottom:1px solid #E3DFD2">
+            <div style="font-family:Archivo,sans-serif;font-weight:600;font-size:20px;letter-spacing:-0.02em">2 · ¿Para quién es?</div>
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <div style="font-weight:700;font-size:12px;color:#3E4740">Nombre de quien la recibe</div>
+              <div style="height:48px;border:1px solid #CFCBBD;border-radius:2px;background:#FFFDF7;display:flex;align-items:center;padding:0 12px;font-size:15px;color:#1C231E">Allison<br></div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <div style="display:flex;justify-content:space-between;align-items:baseline"><div style="font-weight:700;font-size:12px;color:#3E4740">Mensaje corto</div><div style="font-size:11px;color:#8A9189">opcional · 90</div></div>
+              <div style="height:64px;border:1px solid #CFCBBD;border-radius:2px;background:#FFFDF7;padding:10px 12px;font-size:15px;line-height:1.4;color:#5C665D">Feliz cumple, escogé lo que más te guste.</div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <div style="font-weight:700;font-size:12px;color:#3E4740">¿A quién se la enviamos?</div>
+              <div style="border:1.5px solid #2F5D3F;border-radius:2px;background:#FFFDF7;padding:12px;display:flex;gap:10px;align-items:flex-start">
+                <div style="width:18px;height:18px;border-radius:50%;box-shadow:inset 0 0 0 1.5px #2F5D3F;display:grid;place-items:center;flex:none;margin-top:1px"><div style="width:9px;height:9px;border-radius:50%;background:#2F5D3F"></div></div>
+                <div style="display:flex;flex-direction:column;gap:3px"><div style="font-weight:700;font-size:14px;color:#1C231E">A mi correo, la entrego yo</div><div style="font-size:12px;line-height:1.4;color:#5C665D">Te llega el PDF y lo mandás o lo imprimís.</div></div>
+              </div>
+              <div style="border:1px solid #CFCBBD;border-radius:2px;background:#FFFDF7;padding:12px;display:flex;gap:10px;align-items:flex-start">
+                <div style="width:18px;height:18px;border-radius:50%;box-shadow:inset 0 0 0 1.5px #CFCBBD;flex:none;margin-top:1px"></div>
+                <div style="display:flex;flex-direction:column;gap:3px"><div style="font-weight:700;font-size:14px;color:#1C231E">Al correo de ella</div><div style="font-size:12px;line-height:1.4;color:#5C665D">Se lo mandamos cuando confirmemos tu pago.</div></div>
+              </div>
+            </div>
+          </div>
+          <div style="padding:20px 16px;display:flex;flex-direction:column;gap:12px">
+            <div style="font-family:Archivo,sans-serif;font-weight:600;font-size:20px;letter-spacing:-0.02em">3 · Pagás por SINPE</div>
+            <div style="display:flex;justify-content:space-between;align-items:baseline;padding-bottom:12px;border-bottom:1px solid #E3DFD2"><div style="font-weight:700;font-size:15px">Total</div><div style="font-family:Archivo,sans-serif;font-weight:700;font-size:26px;letter-spacing:-0.02em;font-variant-numeric:tabular-nums">₡15.000</div></div>
+            <div style="font-size:13px;line-height:1.5;color:#3E4740">Sin envío: la tarjeta es digital. En la pantalla siguiente te damos el número, el nombre y la referencia del SINPE.</div>
+            <div style="height:52px;border-radius:2px;background:#2F5D3F;color:#F6F3EA;display:grid;place-items:center;font-family:Archivo,sans-serif;font-weight:700;font-size:16px">Continuar y ver cómo pagar</div>
+            <div style="text-align:center;font-size:12px;color:#5C665D">Todavía no se cobra nada.</div>
+            <div style="height:52px;border-radius:2px;border:1.5px solid #2F5D3F;color:#2F5D3F;display:grid;place-items:center;font-family:Archivo,sans-serif;font-weight:600;font-size:15px">Mejor preguntame por WhatsApp</div>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:0.06em;color:#8A9189">ESCRITORIO 1440 · TARJETA DE REGALO</div>
+        <div style="width:766px;background:#F6F3EA;border:1px solid #CFCBBD;border-radius:2px;overflow:hidden">
+          <div style="width:1440px;zoom:0.532;background:#F6F3EA">
+            <div style="background:#2F5D3F;padding:9px 0;display:flex;align-items:center;justify-content:center;gap:10px"><div style="width:6px;height:6px;border-radius:50%;background:#C3DE4E"></div><div style="font-weight:700;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#F6F3EA">Tarjeta de regalo digital · llega por correo cuando confirmamos el pago</div></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:18px 40px;border-bottom:1px solid #E3DFD2">
+              <div style="display:flex;align-items:center;gap:11px">
+                <div style="width:38px;height:38px;border-radius:50%;box-shadow:inset 0 0 0 6px #2F5D3F;background:repeating-conic-gradient(from 0deg,#2F5D3F 0deg 4deg,#F6F3EA 4deg 45deg);display:grid;place-items:center"><div style="width:12px;height:12px;border-radius:50%;background:#C3DE4E"></div></div>
+                <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:26px;letter-spacing:0.02em;color:#2F5D3F">KIWI</div>
+              </div>
+              <div style="display:flex;align-items:center;gap:10px">
+                <div style="display:flex;align-items:center;gap:8px"><div style="width:26px;height:26px;border-radius:50%;background:#2F5D3F;color:#F6F3EA;display:grid;place-items:center;font-family:Archivo,sans-serif;font-weight:700;font-size:13px">1</div><span style="font-weight:700;font-size:14px;color:#1C231E">Monto</span></div>
+                <div style="width:44px;height:1px;background:#CFCBBD"></div>
+                <div style="display:flex;align-items:center;gap:8px"><div style="width:26px;height:26px;border-radius:50%;box-shadow:inset 0 0 0 1.5px #CFCBBD;color:#5C665D;display:grid;place-items:center;font-family:Archivo,sans-serif;font-weight:700;font-size:13px">2</div><span style="font-weight:700;font-size:14px;color:#5C665D">Para quién</span></div>
+                <div style="width:44px;height:1px;background:#CFCBBD"></div>
+                <div style="display:flex;align-items:center;gap:8px"><div style="width:26px;height:26px;border-radius:50%;box-shadow:inset 0 0 0 1.5px #CFCBBD;color:#5C665D;display:grid;place-items:center;font-family:Archivo,sans-serif;font-weight:700;font-size:13px">3</div><span style="font-weight:700;font-size:14px;color:#5C665D">Pago</span></div>
+              </div>
+            </div>
+            <div style="padding:32px 40px 44px;display:grid;grid-template-columns:minmax(0,1fr) 452px;gap:32px;align-items:start">
+              <div style="display:flex;flex-direction:column;gap:26px">
+                <div style="display:flex;flex-direction:column;gap:10px">
+                  <div style="font-weight:700;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#2F5D3F">Tarjeta de regalo</div>
+                  <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:44px;line-height:1.04;letter-spacing:-0.03em;max-width:620px;text-wrap:pretty">Regalá el monto, que ella escoja la talla</div>
+                  <div style="font-size:17px;line-height:1.55;color:#3E4740;max-width:560px">Tres pasos. Sirve para toda la tienda —aretes, cadenas, ropa— y quien la recibe escoge su talla y su color.</div>
+                </div>
+                <div style="border:1px solid #CFCBBD;border-radius:2px;background:#FFFDF7;padding:26px;display:flex;flex-direction:column;gap:16px">
+                  <div style="display:flex;align-items:center;gap:12px"><div style="width:30px;height:30px;border-radius:50%;background:#2F5D3F;color:#F6F3EA;display:grid;place-items:center;font-family:Archivo,sans-serif;font-weight:700;font-size:15px">1</div><div style="font-family:Archivo,sans-serif;font-weight:600;font-size:24px;letter-spacing:-0.02em">Elegí el monto</div></div>
+                  <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px">
+                    <div style="height:84px;border:1px solid #CFCBBD;border-radius:2px;display:grid;place-items:center;font-family:Archivo,sans-serif;font-weight:700;font-size:22px;font-variant-numeric:tabular-nums;color:#1C231E">₡10.000</div>
+                    <div style="height:84px;border:1.5px solid #2F5D3F;border-radius:2px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px"><div style="font-family:Archivo,sans-serif;font-weight:700;font-size:22px;font-variant-numeric:tabular-nums;color:#1C231E">₡15.000</div><div style="font-weight:700;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#2F5D3F">Más regalado</div></div>
+                    <div style="height:84px;border:1px solid #CFCBBD;border-radius:2px;display:grid;place-items:center;font-family:Archivo,sans-serif;font-weight:700;font-size:22px;font-variant-numeric:tabular-nums;color:#1C231E">₡25.000</div>
+                    <div style="height:84px;border:1px dashed #CFCBBD;border-radius:2px;background:#F1EEE2;display:grid;place-items:center;font-weight:700;font-size:15px;color:#3E4740">Otro monto</div>
+                  </div>
+                </div>
+                <div style="border:1px solid #CFCBBD;border-radius:2px;background:#FFFDF7;padding:26px;display:flex;flex-direction:column;gap:18px">
+                  <div style="display:flex;align-items:center;gap:12px"><div style="width:30px;height:30px;border-radius:50%;box-shadow:inset 0 0 0 1.5px #2F5D3F;color:#2F5D3F;display:grid;place-items:center;font-family:Archivo,sans-serif;font-weight:700;font-size:15px">2</div><div style="font-family:Archivo,sans-serif;font-weight:600;font-size:24px;letter-spacing:-0.02em">¿Para quién es?</div></div>
+                  <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px">
+                    <div style="display:flex;flex-direction:column;gap:7px"><div style="font-weight:700;font-size:13px;color:#3E4740">Nombre de quien la recibe</div><div style="height:50px;border:1px solid #CFCBBD;border-radius:2px;display:flex;align-items:center;padding:0 13px;font-size:16px;color:#1C231E">Mariana</div></div>
+                    <div style="display:flex;flex-direction:column;gap:7px"><div style="display:flex;justify-content:space-between;align-items:baseline"><div style="font-weight:700;font-size:13px;color:#3E4740">Mensaje corto</div><div style="font-size:12px;color:#8A9189">opcional</div></div><div style="height:50px;border:1px solid #CFCBBD;border-radius:2px;display:flex;align-items:center;padding:0 13px;font-size:16px;color:#5C665D">Feliz cumple, escogé lo que más…</div></div>
+                  </div>
+                  <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px">
+                    <div style="border:1.5px solid #2F5D3F;border-radius:2px;padding:14px;display:flex;gap:11px;align-items:flex-start">
+                      <div style="width:20px;height:20px;border-radius:50%;box-shadow:inset 0 0 0 1.5px #2F5D3F;display:grid;place-items:center;flex:none;margin-top:1px"><div style="width:10px;height:10px;border-radius:50%;background:#2F5D3F"></div></div>
+                      <div style="display:flex;flex-direction:column;gap:4px"><div style="font-weight:700;font-size:15px;color:#1C231E">A mi correo, la entrego yo</div><div style="font-size:13px;line-height:1.4;color:#5C665D">Te llega el PDF y lo mandás o lo imprimís.</div></div>
+                    </div>
+                    <div style="border:1px solid #CFCBBD;border-radius:2px;padding:14px;display:flex;gap:11px;align-items:flex-start">
+                      <div style="width:20px;height:20px;border-radius:50%;box-shadow:inset 0 0 0 1.5px #CFCBBD;flex:none;margin-top:1px"></div>
+                      <div style="display:flex;flex-direction:column;gap:4px"><div style="font-weight:700;font-size:15px;color:#1C231E">Al correo de ella</div><div style="font-size:13px;line-height:1.4;color:#5C665D">Se lo mandamos cuando confirmemos tu pago.</div></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:16px;position:sticky;top:0">
+                <div style="border:1px solid #2F5D3F;border-radius:2px;background:#C3DE4E;padding:26px;display:flex;flex-direction:column;gap:18px">
+                  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:16px">
+                    <div style="display:flex;flex-direction:column;gap:4px"><div style="font-weight:700;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#1C231E">Tarjeta Kiwi</div><div style="font-family:Archivo,sans-serif;font-weight:700;font-size:38px;line-height:1;letter-spacing:-0.03em;color:#1C231E;font-variant-numeric:tabular-nums">₡15.000</div></div>
+                    <div style="width:56px;height:56px;border-radius:50%;box-shadow:inset 0 0 0 9px #2F5D3F;background:repeating-conic-gradient(from 0deg,#2F5D3F 0deg 4deg,#C3DE4E 4deg 45deg);display:grid;place-items:center;flex:none"><div style="width:16px;height:16px;border-radius:50%;background:#C3DE4E"></div></div>
+                  </div>
+                  <div style="display:flex;flex-direction:column;gap:5px;padding-top:16px;border-top:1px solid #2F5D3F">
+                    <div style="font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#1C231E">Así se ve lo que recibe</div>
+                    <div style="font-size:14px;line-height:1.5;color:#1C231E">Un código de un uso, a nombre de Mariana, con tu mensaje. Se canjea en el checkout.</div>
+                  </div>
+                </div>
+                <div style="border:1px solid #CFCBBD;border-radius:2px;background:#FFFDF7;padding:24px;display:flex;flex-direction:column;gap:14px">
+                  <div style="display:flex;align-items:center;gap:12px"><div style="width:30px;height:30px;border-radius:50%;box-shadow:inset 0 0 0 1.5px #2F5D3F;color:#2F5D3F;display:grid;place-items:center;font-family:Archivo,sans-serif;font-weight:700;font-size:15px">3</div><div style="font-family:Archivo,sans-serif;font-weight:600;font-size:24px;letter-spacing:-0.02em">Pagás por SINPE</div></div>
+                  <div style="display:flex;justify-content:space-between;font-size:15px;color:#3E4740"><span>Tarjeta de regalo</span><span style="font-variant-numeric:tabular-nums">₡15.000</span></div>
+                  <div style="display:flex;justify-content:space-between;font-size:15px;color:#3E4740"><span>Envío</span><span>No lleva: es digital</span></div>
+                  <div style="display:flex;justify-content:space-between;align-items:baseline;padding-top:14px;border-top:1px solid #E3DFD2"><div style="font-weight:700;font-size:16px">Total</div><div style="font-family:Archivo,sans-serif;font-weight:700;font-size:32px;letter-spacing:-0.025em;font-variant-numeric:tabular-nums">₡15.000</div></div>
+                  <div style="height:56px;border-radius:2px;background:#2F5D3F;color:#F6F3EA;display:grid;place-items:center;font-family:Archivo,sans-serif;font-weight:700;font-size:17px">Continuar y ver cómo pagar</div>
+                  <div style="text-align:center;font-size:13px;color:#5C665D">Todavía no se cobra nada. El SINPE es el mismo de siempre.</div>
+                  <div style="height:52px;border-radius:2px;border:1.5px solid #2F5D3F;color:#2F5D3F;display:grid;place-items:center;font-family:Archivo,sans-serif;font-weight:600;font-size:16px">Mejor preguntame por WhatsApp</div>
+                </div>
+                <div style="border:1px solid #CFCBBD;border-radius:2px;background:#F6F3EA;padding:20px;display:flex;flex-direction:column;gap:9px">
+                  <div style="font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#8A9189">Lo que hay que saber</div>
+                  <div style="font-size:14px;line-height:1.5;color:#3E4740">Sirve para cualquier pieza de la tienda, en cualquier talla.</div>
+                  <div style="font-size:14px;line-height:1.5;color:#3E4740">Se envía cuando Ana confirma el SINPE, no antes.</div>
+                  <div style="font-size:14px;line-height:1.5;color:#C0523A"><strong>Pendiente:</strong> vigencia de la tarjeta y qué pasa con el saldo si la compra cuesta menos.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;gap:14px;align-items:flex-start;background:#F6F3EA;border-left:3px solid #2F5D3F;padding:18px 22px">
+      <div style="font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#2F5D3F;min-width:110px;padding-top:2px">Por qué así</div>
+      <div style="font-size:15px;line-height:1.55;color:#3E4740;max-width:1180px;text-wrap:pretty">La tarjeta lima de la home prometía resolver la talla, y la única forma honesta de resolverla es no elegirla: quien recibe escoge. Por eso el flujo es una tarjeta por monto y no un cuestionario de estilo —un quiz de tres preguntas se siente listo y sigue entregando la talla equivocada. Los montos son tres botones antes que un campo numérico, con ₡15.000 marcado por frecuencia y ₡25.000 sin anotación (llevaba el umbral de envío gratis, que ya no existe); "otro monto" queda punteado para que se lea como escape, no como opción principal. El paso 2 pide dos cosas y solo una es obligatoria. La entrega por defecto es "a mi correo": con pago manual, la tarjeta no puede salir antes de conciliar, y el comprador que la entrega en persona no depende de eso. Y el paso 3 no es un checkout nuevo: es el mismo SINPE de la sección 09, con la misma frase "todavía no se cobra nada".</div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}"></script>
+</body>
+</html>

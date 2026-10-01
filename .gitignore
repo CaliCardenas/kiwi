@@ -1,0 +1,20 @@
+# Core de WordPress: lo maneja WordPress, no nosotros
+wp-admin/
+wp-includes/
+wp-content/upgrade/
+wp-content/languages/
+
+# Fotos de producto: se respaldan, no se versionan
+wp-content/uploads/
+
+# Plugins de terceros fuera, los propios dentro
+wp-content/plugins/*
+!wp-content/plugins/kiwi-*/
+
+# Configuración con credenciales
+wp-config.php
+.env
+
+# Basura del sistema
+.DS_Store
+Thumbs.db

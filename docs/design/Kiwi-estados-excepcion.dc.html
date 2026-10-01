@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&amp;family=Karla:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<style>
+  body { margin:0; background:#EDEAE0; }
+  a { color:#2F5D3F; text-decoration:underline; text-underline-offset:2px; }
+  a:hover { color:#C0523A; }
+</style>
+</helmet>
+
+<div style="width:1640px;padding:56px 56px 96px;box-sizing:border-box;background:#EDEAE0;font-family:Karla,sans-serif;color:#1C231E;display:flex;flex-direction:column;gap:44px">
+
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:40px;border-bottom:1px solid #CFCBBD;padding-bottom:28px">
+    <div style="max-width:860px;display:flex;flex-direction:column;gap:14px">
+      <div style="font-weight:700;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#2F5D3F">Kiwi · flujo de compra · estados de excepción · Setiembre 2026</div>
+      <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:52px;line-height:1;letter-spacing:-0.03em">Cuando algo sale mal con la plata</div>
+      <div style="font-size:17px;line-height:1.55;color:#3E4740;text-wrap:pretty">Cuatro estados del pago SINPE manual, en móvil 375 y escritorio 1440. No hay reversa automática: todo lo resuelve una persona por WhatsApp, y cada pantalla lo dice sin prometer lo que no existe. Mismos tokens, componentes y iconos del flujo entregado; cero valores nuevos.</div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px;min-width:400px">
+      <div style="background:#F6F3EA;border:1px solid #CFCBBD;padding:10px 14px;border-radius:2px;font-size:14px;color:#3E4740"><span style="font-weight:700;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#2F5D3F">Política aplicada</span><br>Sin pago: aviso a las 24 h, cancelación a las 48 h · Devolución: de 24 a 48 h por SINPE manual · Monto distinto: se ajusta por WhatsApp, sin plazo ni liberación automática · Sin botón «cancelar»</div>
+      <div style="background:#F6F3EA;border:1px solid #C0523A;padding:10px 14px;border-radius:2px;font-size:14px;color:#3E4740"><span style="font-weight:700;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#C0523A">Decisiones pendientes (sin inventar)</span><br>Aprobar 10 MB y JPG/PNG/PDF para el comprobante</div>
+    </div>
+  </div>
+
+  <sc-for list="{{ sections }}" as="s" hint-placeholder-count="4">
+  <div data-screen-label="{{ s.screen }}" style="display:flex;flex-direction:column;gap:22px;border-top:1px solid #CFCBBD;padding-top:36px">
+    <div style="display:flex;align-items:baseline;gap:16px;flex-wrap:wrap">
+      <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:13px;letter-spacing:0.1em;color:#2F5D3F">{{ s.n }}</div>
+      <div style="font-family:Archivo,sans-serif;font-weight:600;font-size:30px;letter-spacing:-0.02em">{{ s.title }}</div>
+      <div style="font-size:15px;color:#5C665D;max-width:900px">{{ s.sub }}</div>
+    </div>
+
+    <div style="display:flex;gap:24px;align-items:flex-start;flex-wrap:wrap">
+      <sc-for list="{{ s.mobiles }}" as="p" hint-placeholder-count="2">
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:0.06em;color:#8A9189">{{ p.label }}</div>
+        <div style="width:375px;background:#F6F3EA;border:1px solid #CFCBBD;border-radius:2px;display:flex;flex-direction:column">
+          <div style="background:{{ p.headBg }};padding:20px 16px;display:flex;flex-direction:column;gap:8px">
+            <div style="font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:{{ p.eyeInk }}">{{ p.eyebrow }}</div>
+            <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:28px;line-height:1.08;letter-spacing:-0.03em;color:{{ p.headInk }}">{{ p.title }}</div>
+            <div style="font-size:14px;line-height:1.5;color:{{ p.headInk }}">{{ p.lead }}</div>
+          </div>
+          <div style="padding:16px;display:flex;flex-direction:column;gap:12px">
+            <sc-for list="{{ p.cards }}" as="c" hint-placeholder-count="0">
+            <div style="background:{{ c.bg }};border:1px solid {{ c.bd }};border-radius:2px;padding:16px;display:flex;flex-direction:{{ c.dir }};gap:10px;align-items:{{ c.ai }}">
+              <div style="flex:1;display:flex;flex-direction:column;gap:6px">
+                <div style="font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:{{ c.lab }}">{{ c.label }}</div>
+                <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:{{ c.bigM }}px;letter-spacing:-0.02em;color:#1C231E;font-variant-numeric:tabular-nums">{{ c.big }}</div>
+                <div style="font-size:13px;line-height:1.45;color:#1C231E">{{ c.sub }}</div>
+              </div>
+              <sc-if value="{{ c.hasCta }}" hint-placeholder-val="{{ false }}">
+              <div style="height:{{ c.ctaH }};width:{{ c.ctaW }};flex:none;border-radius:2px;background:{{ c.ctaBg }};color:#F6F3EA;display:flex;align-items:center;justify-content:center;gap:10px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F6F3EA" stroke-width="1.75"><rect x="8" y="8" width="12" height="12"></rect><path d="M16 8V4H4v12h4"></path></svg><span style="font-family:Archivo,sans-serif;font-weight:700;font-size:15px">{{ c.ctaLabel }}</span></div>
+              </sc-if>
+            </div>
+            </sc-for>
+
+            <sc-if value="{{ p.hasFile }}" hint-placeholder-val="{{ false }}">
+            <div style="background:#FFFDF7;border:1px solid #CFCBBD;border-radius:2px;padding:14px;display:flex;flex-direction:column;gap:12px">
+              <div style="display:flex;gap:12px;align-items:center">
+                <div style="width:52px;height:52px;flex:none;border-radius:2px;background:repeating-linear-gradient(45deg,#E3DFD2 0 6px,#F1EEE2 6px 12px);display:grid;place-items:center"><span style="font-family:ui-monospace,Menlo,monospace;font-size:8px;color:#8A9189">IMG</span></div>
+                <div style="flex:1;display:flex;flex-direction:column;gap:2px"><div style="font-weight:700;font-size:14px">{{ p.file.name }}</div><div style="font-size:12px;color:#5C665D">{{ p.file.meta }}</div></div>
+                <div style="font-weight:700;font-size:13px;color:#2F5D3F">Cambiar</div>
+              </div>
+              <sc-if value="{{ p.file.hasBar }}" hint-placeholder-val="{{ false }}">
+              <div style="height:4px;background:#CFCBBD;border-radius:2px"><div style="height:4px;width:{{ p.file.pct }}%;background:#2F5D3F;border-radius:2px"></div></div>
+              </sc-if>
+            </div>
+            </sc-if>
+
+            <sc-if value="{{ p.hasSteps }}" hint-placeholder-val="{{ false }}">
+            <div style="background:#FFFDF7;border:1px solid #CFCBBD;border-radius:2px;padding:16px;display:flex;flex-direction:column;gap:14px">
+              <div style="font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#8A9189">{{ p.stepsTitle }}</div>
+              <sc-for list="{{ p.steps }}" as="st" hint-placeholder-count="3">
+              <div style="display:flex;gap:12px;align-items:flex-start">
+                <sc-if value="{{ st.done }}" hint-placeholder-val="{{ false }}"><div style="width:20px;height:20px;flex:none;border-radius:50%;background:#2F5D3F;display:grid;place-items:center"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#F6F3EA" stroke-width="2.5"><path d="M5 13l4 4 10-10"></path></svg></div></sc-if>
+                <sc-if value="{{ st.now }}" hint-placeholder-val="{{ false }}"><div style="width:20px;height:20px;flex:none;border-radius:50%;box-shadow:inset 0 0 0 3px #2F5D3F;background:repeating-conic-gradient(from 0deg,#2F5D3F 0deg 6deg,#FFFDF7 6deg 45deg)"></div></sc-if>
+                <sc-if value="{{ st.todo }}" hint-placeholder-val="{{ false }}"><div style="width:20px;height:20px;flex:none;border-radius:50%;box-shadow:inset 0 0 0 2px #CFCBBD"></div></sc-if>
+                <sc-if value="{{ st.fail }}" hint-placeholder-val="{{ false }}"><div style="width:20px;height:20px;flex:none;border-radius:50%;box-shadow:inset 0 0 0 2px #C0523A"></div></sc-if>
+                <div style="display:flex;flex-direction:column;gap:2px"><div style="font-weight:700;font-size:14px;color:{{ st.tc }}">{{ st.t }}</div><div style="font-size:12px;line-height:1.4;color:#5C665D">{{ st.s }}</div></div>
+              </div>
+              </sc-for>
+            </div>
+            </sc-if>
+
+            <sc-if value="{{ p.hasNote }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex;gap:12px;align-items:flex-start;padding:12px 14px;background:#F1EEE2;border-radius:2px">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3F4E7A" stroke-width="1.75" style="flex:none"><circle cx="12" cy="12" r="8"></circle><path d="M12 8v4l3 2"></path></svg>
+              <div style="display:flex;flex-direction:column;gap:3px"><div style="font-weight:700;font-size:13px">{{ p.note.t }}</div><div style="font-size:13px;line-height:1.45;color:#1C231E">{{ p.note.x }}</div></div>
+            </div>
+            </sc-if>
+
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <div style="height:56px;border-radius:2px;background:#2F5D3F;color:#F6F3EA;display:grid;place-items:center;font-family:Archivo,sans-serif;font-weight:700;font-size:16px">{{ p.b1 }}</div>
+              <div style="height:48px;border-radius:2px;background:{{ p.b2bg }};border:1.5px solid #2F5D3F;color:{{ p.b2ink }};display:flex;align-items:center;justify-content:center;gap:10px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="{{ p.b2ink }}" stroke-width="1.75"><path d="M20 12a8 8 0 1 1-3.2-6.4"></path><path d="M4 20l1.6-4"></path><path d="M9 10c1 3 4 5 6 5"></path></svg><span style="font-family:Archivo,sans-serif;font-weight:600;font-size:15px">{{ p.b2 }}</span></div>
+              <div style="font-size:12px;line-height:1.45;color:#5C665D">{{ p.foot }}</div>
+              <sc-if value="{{ p.hasHelp }}" hint-placeholder-val="{{ false }}"><div style="display:flex;flex-direction:column;gap:4px;padding-top:14px;border-top:1px solid #E3DFD2"><div style="font-weight:700;font-size:13px">{{ p.help.t }}</div><div style="font-size:13px;line-height:1.45;color:#3E4740">{{ p.help.x }}</div><div style="min-height:44px;display:flex;align-items:center;font-weight:700;font-size:13px;color:#2F5D3F">Escribirle a Ana por WhatsApp</div></div></sc-if>
+            </div>
+          </div>
+        </div>
+        <div style="width:375px;font-size:12px;line-height:1.45;color:#C0523A;font-weight:700">{{ p.pend }}</div>
+      </div>
+      </sc-for>
+
+      <sc-for list="{{ s.desktops }}" as="p" hint-placeholder-count="1">
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:0.06em;color:#8A9189">{{ p.dlabel }}</div>
+        <div style="width:766px;background:#F6F3EA;border:1px solid #CFCBBD;border-radius:2px;overflow:hidden">
+          <div style="width:1440px;zoom:0.532;background:#F6F3EA">
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:18px 40px;border-bottom:1px solid #E3DFD2">
+              <div style="display:flex;align-items:center;gap:11px">
+                <div style="width:36px;height:36px;border-radius:50%;box-shadow:inset 0 0 0 6px #2F5D3F;background:repeating-conic-gradient(from 0deg,#2F5D3F 0deg 4deg,#F6F3EA 4deg 45deg);display:grid;place-items:center"><div style="width:11px;height:11px;border-radius:50%;background:#C3DE4E"></div></div>
+                <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:26px;letter-spacing:0.02em;color:#2F5D3F">KIWI</div>
+              </div>
+              <div style="font-weight:700;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;color:#5C665D">{{ p.crumb }}</div>
+            </div>
+            <div style="background:{{ p.headBg }};padding:40px;border-bottom:{{ p.headBd }}">
+              <div style="display:flex;flex-direction:column;gap:12px;max-width:900px">
+                <div style="font-weight:700;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:{{ p.eyeInk }}">{{ p.eyebrow }}</div>
+                <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:52px;line-height:1;letter-spacing:-0.035em;color:{{ p.headInk }}">{{ p.title }}</div>
+                <div style="font-size:17px;line-height:1.55;color:{{ p.headInk }};max-width:680px">{{ p.lead }}</div>
+              </div>
+            </div>
+            <div style="padding:36px 40px 52px;display:grid;grid-template-columns:minmax(0,1fr) 420px;gap:36px;align-items:start">
+              <div style="display:flex;flex-direction:column;gap:20px">
+                <sc-if value="{{ p.hasCards }}" hint-placeholder-val="{{ false }}">
+                <div style="display:grid;grid-template-columns:{{ p.cols }};gap:18px">
+                  <sc-for list="{{ p.cards }}" as="c" hint-placeholder-count="0">
+                  <div style="background:{{ c.bg }};border:1px solid {{ c.bd }};border-radius:2px;padding:20px;display:flex;flex-direction:{{ c.dir }};gap:10px;align-items:{{ c.ai }}">
+                    <div style="flex:1;display:flex;flex-direction:column;gap:8px">
+                      <div style="font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:{{ c.lab }}">{{ c.label }}</div>
+                      <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:{{ c.bigD }}px;letter-spacing:-0.02em;color:#1C231E;font-variant-numeric:tabular-nums">{{ c.big }}</div>
+                      <div style="font-size:13px;line-height:1.45;color:#1C231E">{{ c.sub }}</div>
+                    </div>
+                    <sc-if value="{{ c.hasCta }}" hint-placeholder-val="{{ false }}">
+                    <div style="height:44px;width:{{ c.ctaWD }};flex:none;border-radius:2px;background:{{ c.ctaBg }};color:#F6F3EA;display:flex;align-items:center;justify-content:center;gap:8px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F6F3EA" stroke-width="1.75"><rect x="8" y="8" width="12" height="12"></rect><path d="M16 8V4H4v12h4"></path></svg><span style="font-family:Archivo,sans-serif;font-weight:700;font-size:14px">{{ c.ctaLabel }}</span></div>
+                    </sc-if>
+                  </div>
+                  </sc-for>
+                </div>
+                </sc-if>
+
+                <sc-if value="{{ p.hasSteps }}" hint-placeholder-val="{{ false }}">
+                <div style="background:#FFFDF7;border:1px solid #CFCBBD;border-radius:2px;padding:24px;display:flex;flex-direction:column;gap:16px">
+                  <div style="font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#8A9189">{{ p.stepsTitle }}</div>
+                  <sc-for list="{{ p.steps }}" as="st" hint-placeholder-count="3">
+                  <div style="display:flex;gap:14px;align-items:flex-start">
+                    <sc-if value="{{ st.done }}" hint-placeholder-val="{{ false }}"><div style="width:22px;height:22px;flex:none;border-radius:50%;background:#2F5D3F;display:grid;place-items:center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F6F3EA" stroke-width="2.5"><path d="M5 13l4 4 10-10"></path></svg></div></sc-if>
+                    <sc-if value="{{ st.now }}" hint-placeholder-val="{{ false }}"><div style="width:22px;height:22px;flex:none;border-radius:50%;box-shadow:inset 0 0 0 3px #2F5D3F;background:repeating-conic-gradient(from 0deg,#2F5D3F 0deg 6deg,#FFFDF7 6deg 45deg)"></div></sc-if>
+                    <sc-if value="{{ st.todo }}" hint-placeholder-val="{{ false }}"><div style="width:22px;height:22px;flex:none;border-radius:50%;box-shadow:inset 0 0 0 2px #CFCBBD"></div></sc-if>
+                    <sc-if value="{{ st.fail }}" hint-placeholder-val="{{ false }}"><div style="width:22px;height:22px;flex:none;border-radius:50%;box-shadow:inset 0 0 0 2px #C0523A"></div></sc-if>
+                    <div style="display:flex;flex-direction:column;gap:2px"><div style="font-weight:700;font-size:16px;color:{{ st.tc }}">{{ st.t }}</div><div style="font-size:14px;color:#5C665D">{{ st.s }}</div></div>
+                  </div>
+                  </sc-for>
+                </div>
+                </sc-if>
+
+                <sc-if value="{{ p.hasNote }}" hint-placeholder-val="{{ false }}">
+                <div style="display:flex;gap:12px;align-items:flex-start;padding:16px;background:#F1EEE2;border-radius:2px">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3F4E7A" stroke-width="1.75" style="flex:none"><circle cx="12" cy="12" r="8"></circle><path d="M12 8v4l3 2"></path></svg>
+                  <div style="display:flex;flex-direction:column;gap:4px"><div style="font-weight:700;font-size:15px">{{ p.note.t }}</div><div style="font-size:14px;line-height:1.5;color:#1C231E">{{ p.note.x }}</div></div>
+                </div>
+                </sc-if>
+
+                <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
+                  <div style="height:52px;padding:0 26px;border-radius:2px;background:#2F5D3F;color:#F6F3EA;display:flex;align-items:center;font-family:Archivo,sans-serif;font-weight:700;font-size:16px">{{ p.b1 }}</div>
+                  <div style="height:52px;padding:0 22px;border-radius:2px;background:{{ p.b2bg }};border:1.5px solid #2F5D3F;color:{{ p.b2ink }};display:flex;align-items:center;gap:10px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="{{ p.b2ink }}" stroke-width="1.75"><path d="M20 12a8 8 0 1 1-3.2-6.4"></path><path d="M4 20l1.6-4"></path><path d="M9 10c1 3 4 5 6 5"></path></svg><span style="font-family:Archivo,sans-serif;font-weight:600;font-size:16px">{{ p.b2 }}</span></div>
+                  <div style="font-size:13px;color:#5C665D;max-width:380px">{{ p.foot }}</div>
+                </div>
+                <sc-if value="{{ p.hasHelp }}" hint-placeholder-val="{{ false }}"><div style="display:flex;flex-direction:column;gap:4px;padding-top:16px;border-top:1px solid #E3DFD2;max-width:560px"><div style="font-weight:700;font-size:14px">{{ p.help.t }}</div><div style="font-size:14px;line-height:1.5;color:#3E4740">{{ p.help.x }}</div><div style="min-height:44px;display:flex;align-items:center;font-weight:700;font-size:14px;color:#2F5D3F">Escribirle a Ana por WhatsApp</div></div></sc-if>
+              </div>
+
+              <div style="background:#FFFDF7;border:1px solid #CFCBBD;border-radius:2px;padding:24px;display:flex;flex-direction:column;gap:16px">
+                <div style="font-family:Archivo,sans-serif;font-weight:600;font-size:21px;letter-spacing:-0.02em">{{ p.order.title }}</div>
+                <sc-for list="{{ p.order.items }}" as="it" hint-placeholder-count="2">
+                <div style="display:flex;gap:12px;align-items:center">
+                  <div style="width:56px;height:56px;flex:none;border-radius:2px;background:repeating-linear-gradient(45deg,#E3DFD2 0 6px,#F1EEE2 6px 12px)"></div>
+                  <div style="flex:1;display:flex;flex-direction:column;gap:2px"><div style="font-weight:700;font-size:14px">{{ it.n }}</div><div style="font-size:12px;color:{{ it.mc }}">{{ it.m }}</div></div>
+                  <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:15px;font-variant-numeric:tabular-nums">{{ it.p }}</div>
+                </div>
+                </sc-for>
+                <sc-for list="{{ p.order.lines }}" as="l" hint-placeholder-count="3">
+                <div style="display:flex;justify-content:space-between;align-items:baseline;font-size:14px;color:#3E4740;padding-top:14px;border-top:1px solid #E3DFD2"><span style="font-weight:{{ l.kw }};font-size:{{ l.kfs }}px;color:#1C231E">{{ l.k }}</span><span style="font-family:Archivo,sans-serif;font-weight:{{ l.vw }};font-size:{{ l.vfs }}px;letter-spacing:-0.02em;color:#1C231E;font-variant-numeric:tabular-nums">{{ l.v }}</span></div>
+                </sc-for>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="width:766px;font-size:12px;line-height:1.45;color:#C0523A;font-weight:700">{{ p.pend }}</div>
+      </div>
+      </sc-for>
+    </div>
+
+    <div style="display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:24px;align-items:start">
+      <div style="background:#F6F3EA;border:1px solid #CFCBBD;border-radius:2px;padding:22px 24px;display:flex;flex-direction:column;gap:14px">
+        <div style="font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#2F5D3F">Decisiones de producto</div>
+        <sc-for list="{{ s.decisions }}" as="d" hint-placeholder-count="5">
+        <div style="font-size:14px;line-height:1.5;color:#3E4740;text-wrap:pretty"><span style="font-weight:700;color:#1C231E">{{ d.t }}</span> {{ d.d }}</div>
+        </sc-for>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div style="background:#F6F3EA;border:1px solid #C0523A;border-radius:2px;padding:16px 18px;display:flex;flex-direction:column;gap:8px">
+          <div style="font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#C0523A">Pendiente</div>
+          <sc-for list="{{ s.pend }}" as="q" hint-placeholder-count="2">
+          <div style="font-size:13px;line-height:1.45;color:#3E4740">{{ q }}</div>
+          </sc-for>
+        </div>
+        <div style="background:#F6F3EA;border:1px solid #CFCBBD;border-radius:2px;padding:16px 18px;display:flex;flex-direction:column;gap:6px">
+          <div style="font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#2F5D3F">WooCommerce</div>
+          <div style="font-size:13px;line-height:1.45;color:#3E4740">{{ s.woo }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </sc-for>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const card = (label, big, sub, o = {}) => {
+      const cp = !!o.compact, li = !!o.lima;
+      return { label, big, sub, bg: li ? '#C3DE4E' : '#FFFDF7', bd: li ? '#2F5D3F' : '#CFCBBD', lab: li ? '#1C231E' : '#5C665D',
+        hasCta: !!o.cta, ctaLabel: cp ? '' : (o.cta || ''), ctaBg: li ? '#1C231E' : '#2F5D3F',
+        dir: cp ? 'row' : 'column', ai: cp ? 'center' : 'stretch',
+        bigM: cp ? 24 : (o.sm ? 24 : 34), bigD: o.sm ? 26 : 32,
+        ctaH: cp ? '44px' : '48px', ctaW: cp ? '44px' : 'auto', ctaWD: cp ? '44px' : 'auto' };
+    };
+    const st = (s, t, x) => ({ t, s: x, done: s === 'done', now: s === 'now', todo: s === 'todo', fail: s === 'fail', tc: s === 'todo' ? '#5C665D' : '#1C231E' });
+    const G = { headBg: '#2F5D3F', headInk: '#F6F3EA', eyeInk: '#C3DE4E', headBd: 'none' };
+    const N = { headBg: '#F1EEE2', headInk: '#1C231E', eyeInk: '#5C665D', headBd: 'none' };
+    const C = { headBg: '#F6F3EA', headInk: '#1C231E', eyeInk: '#5C665D', headBd: '1px solid #E3DFD2' };
+    const ln = (k, v, big) => ({ k, v, kw: big ? 700 : 400, kfs: big ? 15 : 14, vw: big ? 700 : 400, vfs: big ? 28 : 14 });
+    const O1 = { title: 'Pedido #1042', items: [{ n: 'Aro Marina', m: 'Talla 4 cm · 1', mc: '#5C665D', p: '₡12.500' }, { n: 'Collar Bruma', m: 'Talla 40 cm · 1', mc: '#5C665D', p: '₡8.900' }],
+      lines: [ln('Subtotal', '₡21.400'), ln('Envío', '₡3.000'), ln('Pagás hoy por SINPE', '₡24.400', true)] };
+    const O2a = { title: 'Pedido #1042', items: O1.items,
+      lines: [ln('Total del pedido', '₡24.400'), ln('Cobrado', '₡0', true)] };
+    const O4a = { title: 'Pedido #1042', items: O1.items,
+      lines: [ln('Total del pedido', '₡24.400'), ln('Recibido', '₡23.000'), ln('Falta transferir', '₡1.400', true)] };
+    const O4b = { title: 'Pedido #1042', items: O1.items,
+      lines: [ln('Total del pedido', '₡24.400'), ln('Recibido', '₡26.000'), ln('Se te devuelve', '₡1.600', true)] };
+    const fin = (p) => Object.assign({ b2bg: p.b2lima ? '#C3DE4E' : 'transparent', b2ink: p.b2lima ? '#1C231E' : '#2F5D3F' }, p);
+    const prep = (p) => { const q = fin(p); q.hasCards = !!(q.cards && q.cards.length); q.cols = 'repeat(' + (q.cards ? q.cards.length : 1) + ',minmax(0,1fr))';
+      q.hasHelp = !!q.help; q.hasSteps = !!q.steps; q.hasNote = !!q.note; q.hasFile = !!q.file; if (q.file) q.file.hasBar = q.file.pct > 0; q.cards = q.cards || []; q.steps = q.steps || []; return q; };
+
+    const subida = (label, dlabel, lead, file, note, b1, dsk) => prep(Object.assign({ label, dlabel, crumb: 'Carrito · Datos y pago · SINPE', eyebrow: 'Pedido #1042 · SINPE hecho', title: 'Tu pago está hecho. El archivo no subió.', lead,
+      stepsTitle: 'Dónde estamos', steps: [st('done', 'SINPE enviado desde tu app', '₡24.400 · referencia 1042'), st('fail', 'Comprobante', 'No subió: lo necesitamos para verificar el pago')],
+      file, note, b1, b2: 'Mandar por WhatsApp', foot: 'El WhatsApp ya va con el pedido 1042. Reintentar no duplica nada. Mientras lo resolvemos, tu pedido no se cancela.', order: O1,
+      pend: dsk ? '' : 'PENDIENTE · ' + (dsk === false ? '' : ''), mobile: true, desktop: !!dsk }, G));
+
+    const s1m = [
+      subida('MÓVIL 375 · ARCHIVO MUY PESADO', 'ESCRITORIO 1440 · SE CORTÓ LA CONEXIÓN', 'El archivo pesa más de 10 MB, el máximo que admitimos. Tu SINPE no se ve afectado y el pedido sigue abierto.',
+        { name: 'IMG_2291.jpg', meta: '14 MB · el máximo es 10 MB', pct: 0 }, { t: 'Probá con una captura de pantalla', x: 'Una captura de pantalla del comprobante pesa mucho menos que una foto. Si igual no sube, mandalo por WhatsApp.' }, 'Elegir otro archivo'),
+      subida('MÓVIL 375 · FORMATO NO ADMITIDO', '', 'Ese formato no lo podemos leer. Aceptamos JPG, PNG o PDF.',
+        { name: 'comprobante.webp', meta: 'Formato no admitido · JPG, PNG o PDF', pct: 0 }, { t: 'Guardalo como imagen o PDF', x: 'Desde tu app bancaria podés compartir el comprobante como captura (JPG o PNG) o PDF. Si no encontrás cómo, mandalo por WhatsApp tal como te quedó.' }, 'Elegir otro archivo'),
+      subida('MÓVIL 375 · SE CORTÓ LA CONEXIÓN', 'ESCRITORIO 1440 · SE CORTÓ LA CONEXIÓN', 'Se cortó la conexión a mitad de la subida. No sabemos si llegó completo, así que hay que subirlo otra vez.',
+        { name: 'sinpe-1042.jpg', meta: 'Se cortó al 60 %', pct: 60 }, { t: 'Con mejor señal, reintentá', x: 'El archivo sigue elegido: no lo tenés que buscar de nuevo. Si tu señal está floja, mandalo por WhatsApp.' }, 'Reintentar subida', true)
+    ];
+    s1m[0].pend = 'Propuesta: máximo 10 MB. Justificación en el README.';
+    s1m[1].pend = 'Propuesta: JPG, PNG o PDF. Justificación en el README.';
+    s1m[2].pend = ''; s1m[2].dlabel = 'ESCRITORIO 1440 · SE CORTÓ LA CONEXIÓN';
+    const s1d = [Object.assign({}, s1m[2], { pend: 'Las otras dos causas cambian solo el titular de causa, el archivo y el bloque de ayuda; la estructura no cambia.' })];
+
+    const p2a = prep(Object.assign({ label: 'MÓVIL 375 · (A) NUNCA SE PAGÓ', dlabel: 'ESCRITORIO 1440 · (A) NUNCA SE PAGÓ', crumb: 'Mi cuenta · Pedidos · #1042',
+      eyebrow: 'Pedido #1042 · cancelado', title: 'Cancelamos tu pedido: no recibimos el pago', lead: 'Te avisamos por WhatsApp a las 24 h y no vimos el SINPE. A las 48 h el pedido se cancela. No se te cobró nada.',
+      stepsTitle: 'Qué pasó', steps: [st('done', 'Pedido hecho', 'Vie 27 set, 6:15 p.m.'), st('done', 'Aviso por WhatsApp a las 24 h', 'Sáb 28 set, 6:15 p.m. · «se cancela si no hay pago en 24 h»'), st('done', 'Pedido cancelado a las 48 h', 'Dom 29 set, 6:15 p.m. · pedido cerrado')],
+      note: { t: '¿Pagaste y no lo vimos?', x: 'Mandá el comprobante por WhatsApp con el número de pedido. Ana lo revisa y te responde.' },
+      b1: 'Volver a pedir lo mismo', b2: 'Escribirle a Ana', foot: 'Podés volver a pedir cuando quieras: todo se confecciona por encargo, no hay piezas que se agoten.', order: O2a,
+      pend: '', mobile: true, desktop: true }, N));
+
+    const p3 = prep(Object.assign({ label: 'MÓVIL 375 · DESDE EL CORREO', dlabel: 'ESCRITORIO 1440 · DESDE MI CUENTA', crumb: 'Mi cuenta · Pedidos · #1042',
+      eyebrow: 'Pedido #1042 · pendiente de pago', title: 'Abierto hasta el dom 29 set, 6:15 p.m.', lead: 'Lo pediste hace 1 día (vie 27 set, 6:15 p.m.). Si no hay pago antes de esa hora, el pedido se cancela. Se confirma al verificar tu pago. El monto no cambió.',
+      cards: [card('1 · Número SINPE', '8814 2073', 'Kiwi CR · Ana Vega Solano', { cta: 'Copiar', compact: true }), card('2 · Monto exacto', '₡24.400', 'Piezas y envío en un solo pago', { cta: 'Copiar', compact: true }), card('3 · Referencia', '1042', 'Va en la nota del SINPE', { cta: 'Copiar', compact: true, lima: true })],
+      note: { t: 'Ana te escribió el sáb 28 set, 6:15 p.m.', x: 'Es el aviso de las 24 h. Si ya pagaste, subí la captura o escribile: mientras se revisa, el pedido no se cancela.' },
+      help: { t: '¿Algo del pedido no está bien?', x: 'Dirección, talla o cualquier duda: escribile a Ana con el número #1042. Ella te dice si todavía se puede cambiar.' },
+      b1: 'Ya pagué: subir captura', b2: 'Por WhatsApp', foot: 'JPG, PNG o PDF, hasta 10 MB.', order: O1,
+      pend: 'Sin botón «Cancelar pedido»: se consulta por WhatsApp (A4).', mobile: true, desktop: true }, C));
+
+    const p4a = prep(Object.assign({ label: 'MÓVIL 375 · TRANSFIRIÓ DE MENOS', dlabel: 'ESCRITORIO 1440 · TRANSFIRIÓ DE MENOS', crumb: 'Mi cuenta · Pedidos · #1042',
+      eyebrow: 'Pedido #1042 · falta una diferencia', title: 'Nos llegaron ₡23.000 de ₡24.400', lead: 'Tu pedido sigue abierto y no vence. Ana te escribe por WhatsApp para ajustar la diferencia.',
+      cards: [card('Ya recibimos', '₡23.000', 'Ana lo verificó contra el banco.', { sm: true }), card('Falta transferir', '₡1.400', 'Al 8814 2073 · Kiwi CR', { lima: true, cta: 'Copiar monto' }), card('Referencia', '1042', 'La misma del primer SINPE.', { cta: 'Copiar', sm: true })],
+      stepsTitle: 'Qué sigue', steps: [st('done', 'SINPE de ₡23.000 recibido', 'Referencia 1042'), st('now', 'Ana te escribe y ajusta la diferencia', 'Por WhatsApp · sin plazo límite · faltan ₡1.400'), st('todo', 'Pedido confirmado', 'Ana lo pasa a confirmado a mano')],
+      note: { t: 'Sin plazo límite', x: 'El pedido no se cancela solo mientras se ajusta. Si querés adelantarte, escribile a Ana.' },
+      b1: 'Subir comprobante de la diferencia', b2: 'Ajustar por WhatsApp', foot: 'El WhatsApp va con el pedido 1042 y la diferencia escrita.', order: O4a,
+      pend: '', mobile: true, desktop: true }, N));
+    const p4b = prep(Object.assign({ label: 'MÓVIL 375 · TRANSFIRIÓ DE MÁS', dlabel: 'ESCRITORIO 1440 · TRANSFIRIÓ DE MÁS', crumb: 'Mi cuenta · Pedidos · #1042',
+      eyebrow: 'Pedido #1042 · confirmado', title: 'Nos llegó de más: ₡1.600', lead: 'Tu pedido quedó confirmado por el monto exacto y sigue igual. El excedente se te devuelve por SINPE.',
+      cards: [card('Pedido confirmado', '₡24.400', 'Recibimos ₡26.000.', { sm: true }), card('Te devolvemos', '₡1.600', 'El excedente, por SINPE manual a •••• 4455.', { lima: true }), card('Cuándo', 'De 24 a 48 h', 'Ana confirma lo sucedido y te devuelve el excedente por SINPE.', { sm: true })],
+      stepsTitle: 'Estado del pedido', steps: [st('done', 'Pago recibido', '₡26.000 · referencia 1042'), st('done', 'Pedido confirmado', 'Se manda a confeccionar; la devolución no lo demora'), st('now', 'Ana devuelve el excedente', 'De 24 a 48 horas, por SINPE manual'), st('todo', 'Devolución hecha', 'Te mandamos el comprobante por WhatsApp')],
+      note: { t: 'Si cambió tu número de SINPE', x: 'Avisanos por WhatsApp para devolverlo al correcto.' },
+      b1: 'Escribirle a Ana', b2: 'Seguir viendo la tienda', b2lima: true, foot: 'No hace falta que reclames el excedente.', order: O4b,
+      pend: 'Las 24–48 h cuentan desde que se confirma lo sucedido.', mobile: true, desktop: true }, G));
+
+    const d = (t, x) => ({ t, d: x });
+    const sections = [
+      { n: '13', screen: '13 Error al subir comprobante', title: 'Error al subir el comprobante',
+        sub: 'El cliente ya hizo el SINPE: su plata ya salió. Cada pantalla separa «el pago está hecho» de «el archivo no subió».',
+        mobiles: s1m, desktops: s1d,
+        decisions: [
+          d('Dos filas de estado, no una.', 'Verde con check para «SINPE enviado» y anillo guayaba para «Comprobante». El pago y el archivo son cosas distintas y se ven como tales.'),
+          d('El titular afirma el pago.', '«Tu pago está hecho. El archivo no subió.» Nunca «falló», «error» ni «no se procesó»: quien ya transfirió lee eso como plata perdida.'),
+          d('Una causa, una línea, una salida concreta.', 'Pesado → captura en vez de foto; formato → imagen o PDF; conexión → el archivo sigue elegido. No se muestra código de error.'),
+          d('Reintentar y WhatsApp siempre presentes.', 'Reintentar es el primario porque conserva el archivo; WhatsApp mantiene el mismo peso que en la página de gracias y ya lleva el número de pedido.'),
+          d('La conexión cortada muestra la barra en 60 %.', 'No se adivina si llegó: se dice que no sabemos y se pide repetir. Reintentar no duplica nada.'),
+          d('Guayaba una sola vez.', 'Solo el anillo de la fila «Comprobante». Sin banners rojos ni titulares alarmistas; el resto es grafito sobre verde y crema.')
+        ],
+        pend: ['Tamaño máximo del archivo y lista exacta de formatos: el diseño no muestra números.', 'Icono de alerta: no existe en el set cerrado; no se usó.'],
+        woo: 'Validación de tipo y tamaño en cliente y servidor. Un fallo de subida no cambia el estado del pedido (sigue on-hold). Registrar el intento en una nota interna del pedido.' },
+      { n: '14', screen: '14 Pedido cancelado por falta de pago', title: 'Pedido cancelado por falta de pago',
+        sub: 'Un solo caso: no se pagó y a las 48 h se cierra el pedido. Ya no hay pieza vendida a otro pedido ni despacho parcial: no hay inventario.',
+        mobiles: [p2a], desktops: [p2a],
+        decisions: [
+          d('Encabezado neutro `#F1EEE2`, ni verde ni guayaba.', 'Verde celebra y guayaba grita. Una cancelación se comunica en calma y empieza por «no se te cobró nada».'),
+          d('La línea de tiempo usa fechas reales.', 'Pedido hecho → aviso por WhatsApp → cancelado. Muestra que hubo aviso previo.'),
+          d('Salida para quien sí pagó.', '«¿Pagaste y no lo vimos?» lleva a WhatsApp con el comprobante. Evita el peor caso: un pago real tratado como impago.'),
+          d('«Volver a pedir lo mismo» restaura el carrito', 'con las mismas piezas y tallas. Siempre se puede: nada se agota.')
+        ],
+        pend: ['Ninguna.'],
+        woo: 'cancelled a las 48 h sin reembolso, solo en pedidos on-hold sin la marca «pago reportado».' },
+      { n: '15', screen: '15 Reintento de pago', title: 'Reintento de pago',
+        sub: 'El cliente vuelve horas o días después, desde el correo o «Mi cuenta», y recupera número, monto y referencia sin pasar por el checkout.',
+        mobiles: [p3], desktops: [p3],
+        decisions: [
+          d('Qué cambió respecto a la página de gracias:', 'ya no hay hero «Falta un paso». Los tres datos siguen a un toque cada uno, pero compactos (fila con botón de copiar de 44 px) para que estén en la primera pantalla.'),
+          d('El tiempo se dice en relativo y en absoluto.', '«Hecho hace 2 días» como titular y la fecha exacta en la bajada. Nunca cuenta regresiva: en pago manual no hay reloj.'),
+          d('El aviso de WhatsApp aparece como evento.', '«Ana te escribió el sábado 28 set» explica el estado y dice qué pasa si se atrasa, sin plazo.'),
+          d('Confirma que nada cambió.', '«Sigue abierto» y «el monto no cambió» responden las dos dudas de quien vuelve.'),
+          d('Sin login obligatorio desde el correo.', 'El enlace del correo lleva al pedido con clave del pedido; «Mi cuenta» muestra la misma vista.'),
+          d('El vencimiento se dice con fecha y hora exactas,', 'no con temporizador. «Abierto hasta el dom 29 set, 6:15 p.m.» es honesto y no hace falta una cuenta regresiva viva.'),
+          d('Sin botón «Cancelar».', 'La cancelación se consulta por WhatsApp y la dueña decide si todavía se puede. Va como ayuda general al pie («¿Algo del pedido no está bien?»), con dirección, talla y dudas, sin la palabra cancelar. No está en el resumen ni cerca del botón de pago.')
+        ],
+        pend: ['Ninguna: aviso a las 24 h y cancelación a las 48 h definidos (ver sección de conflictos).'],
+        woo: 'Vista de pedido on-hold en order-received/view-order con datos del método offline. Enlace del correo con order key. Mostrar «Ana te escribió» leyendo una nota de pedido marcada.' },
+      { n: '16', screen: '16 Monto distinto al esperado', title: 'Monto distinto al esperado',
+        sub: 'La dueña concilia y el monto no cuadra. Menor: se pide la diferencia. Mayor: se devuelve el excedente por SINPE manual.',
+        mobiles: [p4a, p4b], desktops: [p4a, p4b],
+        decisions: [
+          d('Tres cifras siempre: total, recibido, diferencia.', 'Tabulares y en el mismo orden. La diferencia es la tarjeta lima con «Copiar monto».'),
+          d('Menor: Ana te escribe y ajusta la diferencia.', 'Es una conversación por WhatsApp, no un trámite. El dato a transferir sigue visible y con la misma referencia. El copy dice «nos llegaron», no «te equivocaste».'),
+          d('Menor: sin plazo límite.', 'El pedido no vence ni libera piezas solo; lo dice la tarjeta «Sin plazo límite». Es una excepción consciente a las 48 h de los pedidos sin pago.'),
+          d('Mayor: el pedido se confirma y se despacha.', 'El excedente se devuelve por SINPE manual y no demora el envío.'),
+          d('Mayor: de 24 a 48 h.', 'Mismo plazo que en la cancelación (b), tras la confirmación de lo sucedido.'),
+          d('Ambos estados se ven distintos de un vistazo.', 'Menor: encabezado neutro y paso en curso «falta la diferencia». Mayor: encabezado verde porque el pedido sí quedó confirmado.')
+        ],
+        pend: ['Ninguna: monto menor sin plazo (A5); excedente en 24–48 h desde la confirmación.'],
+        woo: 'La conciliación manual escribe el monto recibido en una nota. Menor: on-hold con la marca «monto distinto» (excluido del vencimiento). Mayor: processing + reembolso parcial manual por el excedente.' },
+      { n: 'A6', screen: 'A6 Comprobante', title: 'Comprobante: tamaño y formatos', sub: 'Propuesta para lo que la gente manda: capturas de pantalla y fotos del celular.', mobiles: [], desktops: [],
+        decisions: [d('Formatos: JPG, PNG y PDF.', 'Capturas de iPhone y Android salen en PNG o JPG; las apps bancarias comparten PDF. Con esos tres cubrimos casi todo lo que llega por la web.'), d('Tamaño máximo: 10 MB.', 'Una captura pesa de 0,3 a 3 MB; una foto de celular de 12 MP, de 3 a 6 MB, y una de 48 MP, hasta unos 10 MB. 10 MB cubre esos casos sin dejar entrar videos ni archivos pesados.'), d('HEIC, WebP y GIF quedan fuera.', 'Ana no puede abrirlos de forma fiable en todos los navegadores. Al restringir el selector a JPG/PNG/PDF, iPhone convierte HEIC a JPG solo.'), d('Un archivo, reemplazable.', 'Un comprobante por pedido; «Cambiar» lo sustituye. Varios archivos complican la conciliación.'), d('El mensaje de error dice el límite y la salida.', '«14 MB · el máximo es 10 MB» y la pista de usar una captura. Nunca solo «archivo no válido».'), d('Mejor que rechazar: reducir.', 'Si se puede, redimensionar la imagen en el navegador a 2000 px antes de subir. Así el límite casi nunca se ve.')],
+        pend: ['Aprobar 10 MB y JPG/PNG/PDF.'], woo: 'Subir upload_max_filesize y post_max_size del servidor a 12 MB o más; muchos hostings traen 2 MB. accept="image/jpeg,image/png,application/pdf" en el input. Validar tipo real (MIME) en el servidor.' },
+      { n: 'C', screen: 'Conflictos de política', title: 'Vigencia del pedido', sub: 'Una sola regla de tiempo: la del pago.', mobiles: [], desktops: [],
+        decisions: [d('Vigencia de 48 h: solo cierra pedidos sin pago.', 'No hay stock que apartar ni liberar. Se avisa a las 24 h y el vencimiento se muestra con fecha y hora exactas, nunca con un temporizador vivo. Reportar el pago detiene el reloj.'), d('Derogado en la revisión 5.', 'El conflicto de la pieza vendida a otro pedido ya no existe: no hay inventario.')],
+        pend: ['Ninguna: reportar el pago detiene el reloj (confirmado).'], woo: 'Cancelar a las 48 h solo pedidos on-hold sin la marca «pago reportado» (automático o con lista diaria de Ana). Los pedidos con la marca o con «monto distinto» quedan fuera del vencimiento.' }
+    ];
+    sections.forEach(s => { s.mobiles = s.mobiles.map(x => Object.assign({}, x)); });
+    return { sections };
+  }
+}
+
+</script>
+</body>
+</html>

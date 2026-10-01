@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+  body { margin:0; background:#EDEAE0; }
+  a { color:#2F5D3F; text-decoration:underline; text-underline-offset:2px; }
+  a:hover { color:#C0523A; }
+</style>
+</helmet>
+
+<div style="width:1640px;padding:56px 56px 96px;box-sizing:border-box;background:#EDEAE0;font-family:Karla,sans-serif;color:#1C231E;display:flex;flex-direction:column;gap:40px">
+
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:40px;border-bottom:1px solid #CFCBBD;padding-bottom:28px">
+    <div style="max-width:820px;display:flex;flex-direction:column;gap:14px">
+      <div style="font-family:Karla,sans-serif;font-weight:700;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#2F5D3F">Dirección de arte · Identidad de marca · Setiembre 2026</div>
+      <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:52px;line-height:1;letter-spacing:-0.03em">Kiwi — evolución del sistema de marca</div>
+      <div style="font-size:17px;line-height:1.55;color:#3E4740;text-wrap:pretty">Tienda de accesorios, ropa y joyería en Costa Rica. Ticket accesible, compra desde el celular. El encargo no es una marca nueva: es sacar el equity que ya funciona —el corte radial y el verde— de un envase que hoy lee <em>alimentos</em> y meterlo en un sistema que lee moda y que hace obvio comprar.</div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px;min-width:300px">
+      <div style="display:flex;gap:10px;align-items:center;background:#F6F3EA;border:1px solid #CFCBBD;padding:10px 14px;border-radius:2px"><span style="font-family:Karla;font-weight:700;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#2F5D3F">Se conserva</span><span style="font-size:14px;color:#3E4740">círculo con ritmo radial · verde</span></div>
+      <div style="display:flex;gap:10px;align-items:center;background:#F6F3EA;border:1px solid #CFCBBD;padding:10px 14px;border-radius:2px"><span style="font-family:Karla;font-weight:700;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#C0523A">Sale</span><span style="font-size:14px;color:#3E4740">marrón cáscara · script · sticker · foto y datos dentro de la marca</span></div>
+    </div>
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:22px">
+    <div style="display:flex;align-items:baseline;gap:16px">
+      <div style="font-family:Archivo;font-weight:700;font-size:13px;letter-spacing:0.1em;color:#2F5D3F">01</div>
+      <div style="font-family:Archivo,sans-serif;font-weight:600;font-size:30px;letter-spacing:-0.02em">Tres rutas de evolución</div>
+      <div style="font-size:15px;color:#5C665D">Una sola línea de descendencia: cada ruta abstrae un grado más que la anterior. Todas comparten grilla, ritmo de 8 y el mismo verde.</div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px">
+
+      <div style="background:#F6F3EA;border:1px solid #CFCBBD;border-radius:2px;padding:26px;display:flex;flex-direction:column;gap:22px">
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="width:26px;height:26px;border-radius:50%;background:#2F5D3F;color:#F6F3EA;display:grid;place-items:center;font-family:Archivo;font-weight:700;font-size:13px">A</div>
+            <div style="font-family:Archivo,sans-serif;font-weight:600;font-size:22px;letter-spacing:-0.01em">Conservadora</div>
+          </div>
+          <div style="font-size:15px;line-height:1.5;color:#3E4740;text-wrap:pretty">El mismo emblema sin el marrón y sin el sticker: semillas uniformes, keyline verde y wordmark en grotesca. Quien ya compra, lo reconoce sin explicación.</div>
+        </div>
+
+        <div style="background:#EDEAE0;border-radius:2px;padding:28px;display:grid;place-items:center;min-height:220px;position:relative">
+          <div style="position:relative;width:4em;height:4em;font-size:38px;border-radius:50%;background:#C3DE4E;box-shadow:inset 0 0 0 0.1em #2F5D3F;display:grid;place-items:center">
+            <div style="position:absolute;width:0.48em;height:0.6em;border-radius:50%;box-shadow:0 -1.6em 0 #1C231E, 1.131em -1.131em 0 #1C231E, 1.6em 0 0 #1C231E, 1.131em 1.131em 0 #1C231E, 0 1.6em 0 #1C231E, -1.131em 1.131em 0 #1C231E, -1.6em 0 0 #1C231E, -1.131em -1.131em 0 #1C231E"></div>
+            <div style="position:relative;width:2.4em;height:2.4em;border-radius:50%;background:#F6F3EA;display:grid;place-items:center">
+              <span style="font-family:Archivo,sans-serif;font-weight:700;font-size:0.42em;letter-spacing:0.02em;color:#2F5D3F">KIWI</span>
+            </div>
+            <sc-if value="{{ construccion }}" hint-placeholder-val="{{ false }}">
+              <div style="position:absolute;inset:-0.3em;border:1px dashed rgba(47,93,63,.45);border-radius:50%"></div>
+              <div style="position:absolute;left:50%;top:-0.3em;bottom:-0.3em;width:1px;background:rgba(47,93,63,.35)"></div>
+              <div style="position:absolute;top:50%;left:-0.3em;right:-0.3em;height:1px;background:rgba(47,93,63,.35)"></div>
+            </sc-if>
+          </div>
+          <div style="position:absolute;left:14px;bottom:12px;font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:0.06em;color:#8A9189">EMBLEMA</div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div style="font-family:Karla;font-weight:700;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#8A9189">Horizontal · header web</div>
+          <div style="background:#EDEAE0;border-radius:2px;padding:20px;display:flex;align-items:center;gap:12px">
+            <div style="position:relative;width:4em;height:4em;font-size:9px;border-radius:50%;background:#C3DE4E;box-shadow:inset 0 0 0 0.1em #2F5D3F;display:grid;place-items:center">
+              <div style="position:absolute;width:0.48em;height:0.6em;border-radius:50%;box-shadow:0 -1.6em 0 #1C231E, 1.131em -1.131em 0 #1C231E, 1.6em 0 0 #1C231E, 1.131em 1.131em 0 #1C231E, 0 1.6em 0 #1C231E, -1.131em 1.131em 0 #1C231E, -1.6em 0 0 #1C231E, -1.131em -1.131em 0 #1C231E"></div>
+              <div style="width:1.5em;height:1.5em;border-radius:50%;background:#F6F3EA"></div>
+            </div>
+            <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:30px;letter-spacing:-0.02em;color:#2F5D3F">KIWI</div>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+          <div style="background:#EDEAE0;border-radius:2px;padding:16px;display:flex;flex-direction:column;gap:10px;align-items:center">
+            <div style="position:relative;width:4em;height:4em;font-size:13px;border-radius:50%;background:transparent;box-shadow:inset 0 0 0 0.1em #1C231E;display:grid;place-items:center">
+              <div style="position:absolute;width:0.48em;height:0.6em;border-radius:50%;box-shadow:0 -1.6em 0 #1C231E, 1.131em -1.131em 0 #1C231E, 1.6em 0 0 #1C231E, 1.131em 1.131em 0 #1C231E, 0 1.6em 0 #1C231E, -1.131em 1.131em 0 #1C231E, -1.6em 0 0 #1C231E, -1.131em -1.131em 0 #1C231E"></div>
+              <div style="width:1.5em;height:1.5em;border-radius:50%;background:#EDEAE0"></div>
+            </div>
+            <div style="font-family:ui-monospace,Menlo,monospace;font-size:10px;color:#8A9189">1 TINTA +</div>
+          </div>
+          <div style="background:#1C231E;border-radius:2px;padding:16px;display:flex;flex-direction:column;gap:10px;align-items:center">
+            <div style="position:relative;width:4em;height:4em;font-size:13px;border-radius:50%;background:transparent;box-shadow:inset 0 0 0 0.1em #F6F3EA;display:grid;place-items:center">
+              <div style="position:absolute;width:0.48em;height:0.6em;border-radius:50%;box-shadow:0 -1.6em 0 #F6F3EA, 1.131em -1.131em 0 #F6F3EA, 1.6em 0 0 #F6F3EA, 1.131em 1.131em 0 #F6F3EA, 0 1.6em 0 #F6F3EA, -1.131em 1.131em 0 #F6F3EA, -1.6em 0 0 #F6F3EA, -1.131em -1.131em 0 #F6F3EA"></div>
+              <div style="width:1.5em;height:1.5em;border-radius:50%;background:#1C231E"></div>
+            </div>
+            <div style="font-family:ui-monospace,Menlo,monospace;font-size:10px;color:#8A9189">1 TINTA −</div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:10px">
+          <div style="flex:1;background:#EDEAE0;border-radius:2px;padding:16px;display:flex;align-items:center;gap:12px">
+            <div style="position:relative;width:4em;height:4em;font-size:{{ redFs }};border-radius:50%;background:#C3DE4E;box-shadow:inset 0 0 0 0.12em #2F5D3F;display:grid;place-items:center">
+              <div style="position:absolute;width:0.5em;height:0.62em;border-radius:50%;box-shadow:0 -1.6em 0 #1C231E, 1.131em -1.131em 0 #1C231E, 1.6em 0 0 #1C231E, 1.131em 1.131em 0 #1C231E, 0 1.6em 0 #1C231E, -1.131em 1.131em 0 #1C231E, -1.6em 0 0 #1C231E, -1.131em -1.131em 0 #1C231E"></div>
+              <div style="width:1.4em;height:1.4em;border-radius:50%;background:#F6F3EA"></div>
+            </div>
+            <div style="font-family:ui-monospace,Menlo,monospace;font-size:10px;line-height:1.5;color:#5C665D">{{ redLabel }} · cae el wordmark interno, quedan disco + 8 semillas + centro</div>
+          </div>
+        </div>
+
+        <div style="border-radius:2px;overflow:hidden;background:repeating-linear-gradient(135deg,#3A4038 0 9px,#2A2F29 9px 18px);padding:18px;display:flex;align-items:center;justify-content:space-between;gap:12px">
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="position:relative;width:4em;height:4em;font-size:8px;border-radius:50%;background:#C3DE4E;display:grid;place-items:center">
+              <div style="position:absolute;width:0.48em;height:0.6em;border-radius:50%;box-shadow:0 -1.6em 0 #1C231E, 1.131em -1.131em 0 #1C231E, 1.6em 0 0 #1C231E, 1.131em 1.131em 0 #1C231E, 0 1.6em 0 #1C231E, -1.131em 1.131em 0 #1C231E, -1.6em 0 0 #1C231E, -1.131em -1.131em 0 #1C231E"></div>
+              <div style="width:1.5em;height:1.5em;border-radius:50%;background:#F6F3EA"></div>
+            </div>
+            <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:20px;letter-spacing:-0.02em;color:#F6F3EA">KIWI</div>
+          </div>
+          <div style="font-family:ui-monospace,Menlo,monospace;font-size:10px;color:#CFCBBD">SOBRE FOTO</div>
+        </div>
+      </div>
+
+      <div style="background:#F6F3EA;border:1px solid #CFCBBD;border-radius:2px;padding:26px;display:flex;flex-direction:column;gap:22px">
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="width:26px;height:26px;border-radius:50%;background:#2F5D3F;color:#F6F3EA;display:grid;place-items:center;font-family:Archivo;font-weight:700;font-size:13px">B</div>
+            <div style="font-family:Archivo,sans-serif;font-weight:600;font-size:22px;letter-spacing:-0.01em">Intermedia</div>
+          </div>
+          <div style="font-size:15px;line-height:1.5;color:#3E4740;text-wrap:pretty">El corte se vuelve sistema: aro, ocho radios y centro. La fruta se intuye pero ya no se dibuja; el mismo ritmo sirve de patrón, sello y separador.</div>
+        </div>
+
+        <div style="background:#EDEAE0;border-radius:2px;padding:28px;display:grid;place-items:center;min-height:220px;position:relative">
+          <div style="position:relative;width:4em;height:4em;font-size:38px;border-radius:50%;background:#F6F3EA;box-shadow:inset 0 0 0 0.17em #2F5D3F;display:grid;place-items:center">
+            <div style="position:absolute;inset:0.55em;border-radius:50%;background:{{ tickB }};-webkit-mask:radial-gradient(circle,transparent 33%,#000 33%);mask:radial-gradient(circle,transparent 33%,#000 33%)"></div>
+            <div style="width:0.86em;height:0.86em;border-radius:50%;background:#C3DE4E;box-shadow:0 0 0 0.1em #F6F3EA"></div>
+            <sc-if value="{{ construccion }}" hint-placeholder-val="{{ false }}">
+              <div style="position:absolute;inset:-0.3em;border:1px dashed rgba(47,93,63,.45);border-radius:50%"></div>
+              <div style="position:absolute;left:50%;top:-0.3em;bottom:-0.3em;width:1px;background:rgba(47,93,63,.35)"></div>
+              <div style="position:absolute;top:50%;left:-0.3em;right:-0.3em;height:1px;background:rgba(47,93,63,.35)"></div>
+            </sc-if>
+          </div>
+          <div style="position:absolute;left:14px;bottom:12px;font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:0.06em;color:#8A9189">EMBLEMA</div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div style="font-family:Karla;font-weight:700;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#8A9189">Horizontal · header web</div>
+          <div style="background:#EDEAE0;border-radius:2px;padding:20px;display:flex;align-items:center;gap:12px">
+            <div style="position:relative;width:4em;height:4em;font-size:9px;border-radius:50%;background:transparent;box-shadow:inset 0 0 0 0.17em #2F5D3F;display:grid;place-items:center">
+              <div style="position:absolute;inset:0.55em;border-radius:50%;background:{{ tickB }};-webkit-mask:radial-gradient(circle,transparent 33%,#000 33%);mask:radial-gradient(circle,transparent 33%,#000 33%)"></div>
+              <div style="width:0.86em;height:0.86em;border-radius:50%;background:#C3DE4E"></div>
+            </div>
+            <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:30px;letter-spacing:0.02em;color:#2F5D3F">KIWI</div>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+          <div style="background:#EDEAE0;border-radius:2px;padding:16px;display:flex;flex-direction:column;gap:10px;align-items:center">
+            <div style="position:relative;width:4em;height:4em;font-size:13px;border-radius:50%;box-shadow:inset 0 0 0 0.17em #1C231E;display:grid;place-items:center">
+              <div style="position:absolute;inset:0.55em;border-radius:50%;background:{{ tickMono }};-webkit-mask:radial-gradient(circle,transparent 33%,#000 33%);mask:radial-gradient(circle,transparent 33%,#000 33%)"></div>
+              <div style="width:0.86em;height:0.86em;border-radius:50%;background:#1C231E"></div>
+            </div>
+            <div style="font-family:ui-monospace,Menlo,monospace;font-size:10px;color:#8A9189">1 TINTA +</div>
+          </div>
+          <div style="background:#1C231E;border-radius:2px;padding:16px;display:flex;flex-direction:column;gap:10px;align-items:center">
+            <div style="position:relative;width:4em;height:4em;font-size:13px;border-radius:50%;box-shadow:inset 0 0 0 0.17em #F6F3EA;display:grid;place-items:center">
+              <div style="position:absolute;inset:0.55em;border-radius:50%;background:{{ tickLight }};-webkit-mask:radial-gradient(circle,transparent 33%,#000 33%);mask:radial-gradient(circle,transparent 33%,#000 33%)"></div>
+              <div style="width:0.86em;height:0.86em;border-radius:50%;background:#F6F3EA"></div>
+            </div>
+            <div style="font-family:ui-monospace,Menlo,monospace;font-size:10px;color:#8A9189">1 TINTA −</div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:10px">
+          <div style="flex:1;background:#EDEAE0;border-radius:2px;padding:16px;display:flex;align-items:center;gap:12px">
+            <div style="position:relative;width:4em;height:4em;font-size:{{ redFs }};border-radius:50%;box-shadow:inset 0 0 0 0.2em #2F5D3F;display:grid;place-items:center">
+              <div style="position:absolute;inset:0.6em;border-radius:50%;background:{{ tickBSmall }};-webkit-mask:radial-gradient(circle,transparent 30%,#000 30%);mask:radial-gradient(circle,transparent 30%,#000 30%)"></div>
+              <div style="width:0.8em;height:0.8em;border-radius:50%;background:#C3DE4E"></div>
+            </div>
+            <div style="font-family:ui-monospace,Menlo,monospace;font-size:10px;line-height:1.5;color:#5C665D">{{ redLabel }} · radios engrosan a 8° y el aro sube a 0.2em para no empastarse</div>
+          </div>
+        </div>
+
+        <div style="border-radius:2px;overflow:hidden;background:repeating-linear-gradient(135deg,#3A4038 0 9px,#2A2F29 9px 18px);padding:18px;display:flex;align-items:center;justify-content:space-between;gap:12px">
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="position:relative;width:4em;height:4em;font-size:8px;border-radius:50%;box-shadow:inset 0 0 0 0.17em #F6F3EA;display:grid;place-items:center">
+              <div style="position:absolute;inset:0.55em;border-radius:50%;background:{{ tickLight }};-webkit-mask:radial-gradient(circle,transparent 33%,#000 33%);mask:radial-gradient(circle,transparent 33%,#000 33%)"></div>
+              <div style="width:0.86em;height:0.86em;border-radius:50%;background:#C3DE4E"></div>
+            </div>
+            <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:20px;letter-spacing:0.02em;color:#F6F3EA">KIWI</div>
+          </div>
+          <div style="font-family:ui-monospace,Menlo,monospace;font-size:10px;color:#CFCBBD">SOBRE FOTO</div>
+        </div>
+      </div>
+
+      <div style="background:#F6F3EA;border:1px solid #CFCBBD;border-radius:2px;padding:26px;display:flex;flex-direction:column;gap:22px">
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="width:26px;height:26px;border-radius:50%;background:#2F5D3F;color:#F6F3EA;display:grid;place-items:center;font-family:Archivo;font-weight:700;font-size:13px">C</div>
+            <div style="font-family:Archivo,sans-serif;font-weight:600;font-size:22px;letter-spacing:-0.01em">Ruptura</div>
+          </div>
+          <div style="font-size:15px;line-height:1.5;color:#3E4740;text-wrap:pretty">Queda el wordmark y un destello de ocho radios finos: el kiwi sobrevive como color y como ritmo. Aguanta joyería fina sin dejar de ser la misma marca.</div>
+        </div>
+
+        <div style="background:#EDEAE0;border-radius:2px;padding:28px;display:grid;place-items:center;min-height:220px;position:relative">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:14px">
+            <div style="position:relative;width:4em;height:4em;font-size:38px;display:grid;place-items:center">
+              <div style="position:absolute;inset:0;border-radius:50%;background:{{ tickC }};-webkit-mask:radial-gradient(circle,transparent 38%,#000 38% 100%);mask:radial-gradient(circle,transparent 38%,#000 38% 100%)"></div>
+              <div style="width:0.3em;height:0.3em;border-radius:50%;background:#C3DE4E"></div>
+              <sc-if value="{{ construccion }}" hint-placeholder-val="{{ false }}">
+                <div style="position:absolute;inset:0;border:1px dashed rgba(47,93,63,.45);border-radius:50%"></div>
+                <div style="position:absolute;left:50%;top:0;bottom:0;width:1px;background:rgba(47,93,63,.35)"></div>
+                <div style="position:absolute;top:50%;left:0;right:0;height:1px;background:rgba(47,93,63,.35)"></div>
+              </sc-if>
+            </div>
+            <div style="font-family:Archivo,sans-serif;font-weight:500;font-size:22px;letter-spacing:0.34em;color:#1C231E;padding-left:0.34em">KIWI</div>
+          </div>
+          <div style="position:absolute;left:14px;bottom:12px;font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:0.06em;color:#8A9189">EMBLEMA</div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div style="font-family:Karla;font-weight:700;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#8A9189">Horizontal · header web</div>
+          <div style="background:#EDEAE0;border-radius:2px;padding:20px;display:flex;align-items:center;gap:14px">
+            <div style="position:relative;width:4em;height:4em;font-size:10px;display:grid;place-items:center">
+              <div style="position:absolute;inset:0;border-radius:50%;background:{{ tickCMid }};-webkit-mask:radial-gradient(circle,transparent 38%,#000 38% 100%);mask:radial-gradient(circle,transparent 38%,#000 38% 100%)"></div>
+              <div style="width:0.3em;height:0.3em;border-radius:50%;background:#C3DE4E"></div>
+            </div>
+            <div style="font-family:Archivo,sans-serif;font-weight:500;font-size:26px;letter-spacing:0.3em;color:#1C231E">KIWI</div>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+          <div style="background:#EDEAE0;border-radius:2px;padding:16px;display:flex;flex-direction:column;gap:10px;align-items:center">
+            <div style="position:relative;width:4em;height:4em;font-size:13px;display:grid;place-items:center">
+              <div style="position:absolute;inset:0;border-radius:50%;background:{{ tickCMono }};-webkit-mask:radial-gradient(circle,transparent 38%,#000 38% 100%);mask:radial-gradient(circle,transparent 38%,#000 38% 100%)"></div>
+              <div style="width:0.3em;height:0.3em;border-radius:50%;background:#1C231E"></div>
+            </div>
+            <div style="font-family:ui-monospace,Menlo,monospace;font-size:10px;color:#8A9189">1 TINTA +</div>
+          </div>
+          <div style="background:#1C231E;border-radius:2px;padding:16px;display:flex;flex-direction:column;gap:10px;align-items:center">
+            <div style="position:relative;width:4em;height:4em;font-size:13px;display:grid;place-items:center">
+              <div style="position:absolute;inset:0;border-radius:50%;background:{{ tickCLight }};-webkit-mask:radial-gradient(circle,transparent 38%,#000 38% 100%);mask:radial-gradient(circle,transparent 38%,#000 38% 100%)"></div>
+              <div style="width:0.3em;height:0.3em;border-radius:50%;background:#F6F3EA"></div>
+            </div>
+            <div style="font-family:ui-monospace,Menlo,monospace;font-size:10px;color:#8A9189">1 TINTA −</div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:10px">
+          <div style="flex:1;background:#EDEAE0;border-radius:2px;padding:16px;display:flex;align-items:center;gap:12px">
+            <div style="position:relative;width:4em;height:4em;font-size:{{ redFs }};display:grid;place-items:center">
+              <div style="position:absolute;inset:0;border-radius:50%;background:{{ tickCSmall }};-webkit-mask:radial-gradient(circle,transparent 30%,#000 30% 100%);mask:radial-gradient(circle,transparent 30%,#000 30% 100%)"></div>
+              <div style="width:0.34em;height:0.34em;border-radius:50%;background:#C3DE4E"></div>
+            </div>
+            <div style="font-family:ui-monospace,Menlo,monospace;font-size:10px;line-height:1.5;color:#5C665D">{{ redLabel }} · a este tamaño el destello va solo, sin wordmark</div>
+          </div>
+        </div>
+
+        <div style="border-radius:2px;overflow:hidden;background:repeating-linear-gradient(135deg,#3A4038 0 9px,#2A2F29 9px 18px);padding:18px;display:flex;align-items:center;justify-content:space-between;gap:12px">
+          <div style="display:flex;align-items:center;gap:12px">
+            <div style="position:relative;width:4em;height:4em;font-size:9px;display:grid;place-items:center">
+              <div style="position:absolute;inset:0;border-radius:50%;background:{{ tickCPhoto }};-webkit-mask:radial-gradient(circle,transparent 38%,#000 38% 100%);mask:radial-gradient(circle,transparent 38%,#000 38% 100%)"></div>
+              <div style="width:0.3em;height:0.3em;border-radius:50%;background:#C3DE4E"></div>
+            </div>
+            <div style="font-family:Archivo,sans-serif;font-weight:500;font-size:20px;letter-spacing:0.28em;color:#F6F3EA">KIWI</div>
+          </div>
+          <div style="font-family:ui-monospace,Menlo,monospace;font-size:10px;color:#CFCBBD">SOBRE FOTO</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:14px;align-items:flex-start;background:#F6F3EA;border-left:3px solid #2F5D3F;padding:18px 22px">
+      <div style="font-family:Karla;font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#2F5D3F;min-width:110px;padding-top:2px">Recomendación</div>
+      <div style="font-size:15px;line-height:1.55;color:#3E4740;max-width:1180px;text-wrap:pretty">Ruta B. Con ticket accesible y compra por celular, la marca tiene que ser reconocible en un avatar de 24 px y repetible como patrón sin costo de producción: el aro de ocho radios hace las dos cosas y todavía se lee "kiwi". La A es el paso mínimo si hay miedo a perder clientela; la C es el destino a 2–3 años, cuando la línea de joyería justifique el silencio. Las tres comparten el mismo verde y el mismo ritmo de 8, así que migrar entre ellas no reinicia el reconocimiento.</div>
+    </div>
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:22px;border-top:1px solid #CFCBBD;padding-top:36px">
+    <div style="display:flex;align-items:baseline;gap:16px">
+      <div style="font-family:Archivo;font-weight:700;font-size:13px;letter-spacing:0.1em;color:#2F5D3F">02</div>
+      <div style="font-family:Archivo,sans-serif;font-weight:600;font-size:30px;letter-spacing:-0.02em">Paleta</div>
+      <div style="font-size:15px;color:#5C665D">Base neutra cálida, color en dosis dirigidas. Sin degradados, sin dorado, sin marrón.</div>
+    </div>
+
+    <div style="display:flex;gap:14px;align-items:flex-start;background:#F6F3EA;border:1px solid #CFCBBD;padding:18px 22px;border-radius:2px">
+      <div style="display:flex;gap:8px;align-items:center;min-width:210px">
+        <div style="width:44px;height:44px;border-radius:50%;background:#A4C93F"></div>
+        <div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#8A9189">#A4C93F<br>ACTUAL</div>
+      </div>
+      <div style="font-size:15px;line-height:1.55;color:#3E4740;max-width:1180px;text-wrap:pretty"><strong style="color:#1C231E">Decisión sobre el verde: se conserva, en dos temperaturas.</strong> El lima actual es el equity, pero tiene dos problemas: mezclado con marrón lee fruta, y es tan claro que ningún texto blanco alcanza AA encima —por eso hoy el botón de compra no puede ser verde. La solución no es reemplazarlo: se lo limpia hacia <strong style="color:#1C231E">Lima Kiwi #C3DE4E</strong> (menos amarillo, más frío: deja de leer "maduro" y empieza a leer color de moda) y se lo acompaña de <strong style="color:#1C231E">Verde Kiwi #2F5D3F</strong>, la misma familia en versión tinta, que sí carga texto blanco a 7.6:1 y hace todo el trabajo de interfaz. El cliente sigue viendo verde Kiwi; ahora hay uno para gritar y otro para vender.</div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px">
+      <div style="border:1px solid #CFCBBD;border-radius:2px;overflow:hidden;background:#F6F3EA">
+        <div style="height:120px;background:#2F5D3F;display:flex;align-items:flex-end;justify-content:space-between;padding:12px">
+          <span style="font-family:Karla;font-weight:700;font-size:10px;letter-spacing:0.12em;color:#F6F3EA">PRIMARIO</span>
+          <span style="font-family:Karla;font-weight:700;font-size:10px;letter-spacing:0.06em;color:#F6F3EA;background:rgba(0,0,0,.28);padding:4px 7px;border-radius:2px">BOTÓN DE COMPRA</span>
+        </div>
+        <div style="padding:14px;display:flex;flex-direction:column;gap:6px">
+          <div style="font-family:Archivo;font-weight:600;font-size:17px">Verde Kiwi</div>
+          <div style="font-family:ui-monospace,Menlo,monospace;font-size:12px;color:#5C665D">#2F5D3F</div>
+          <div style="font-size:13px;line-height:1.45;color:#3E4740">Tinta de marca, header, botón de compra, iconos. Blanco encima: 7.6:1.</div>
+        </div>
+      </div>
+      <div style="border:1px solid #CFCBBD;border-radius:2px;overflow:hidden;background:#F6F3EA">
+        <div style="height:120px;background:#C3DE4E;display:flex;align-items:flex-end;padding:12px"><span style="font-family:Karla;font-weight:700;font-size:10px;letter-spacing:0.12em;color:#1C231E">SECUNDARIO</span></div>
+        <div style="padding:14px;display:flex;flex-direction:column;gap:6px">
+          <div style="font-family:Archivo;font-weight:600;font-size:17px">Lima Kiwi</div>
+          <div style="font-family:ui-monospace,Menlo,monospace;font-size:12px;color:#5C665D">#C3DE4E</div>
+          <div style="font-size:13px;line-height:1.45;color:#3E4740">Equity visible: emblema, sellos, resaltados, patrón radial. Siempre con texto grafito (10.8:1), nunca blanco.</div>
+        </div>
+      </div>
+      <div style="border:1px solid #CFCBBD;border-radius:2px;overflow:hidden;background:#F6F3EA">
+        <div style="height:120px;background:#C0523A;display:flex;align-items:flex-end;padding:12px"><span style="font-family:Karla;font-weight:700;font-size:10px;letter-spacing:0.12em;color:#F6F3EA">ACENTO 01</span></div>
+        <div style="padding:14px;display:flex;flex-direction:column;gap:6px">
+          <div style="font-family:Archivo;font-weight:600;font-size:17px">Guayaba</div>
+          <div style="font-family:ui-monospace,Menlo,monospace;font-size:12px;color:#5C665D">#C0523A</div>
+          <div style="font-size:13px;line-height:1.45;color:#3E4740">La calidez del sistema: rebajas, favoritos. Nunca en botón primario. Blanco encima: 4.6:1.</div>
+        </div>
+      </div>
+      <div style="border:1px solid #CFCBBD;border-radius:2px;overflow:hidden;background:#F6F3EA">
+        <div style="height:120px;background:#3F4E7A;display:flex;align-items:flex-end;padding:12px"><span style="font-family:Karla;font-weight:700;font-size:10px;letter-spacing:0.12em;color:#F6F3EA">ACENTO 02</span></div>
+        <div style="padding:14px;display:flex;flex-direction:column;gap:6px">
+          <div style="font-family:Archivo;font-weight:600;font-size:17px">Índigo</div>
+          <div style="font-family:ui-monospace,Menlo,monospace;font-size:12px;color:#5C665D">#3F4E7A</div>
+          <div style="font-size:13px;line-height:1.45;color:#3E4740">Sólo información que da confianza: envío, cambios, pago seguro. Blanco encima: 7.9:1.</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px">
+      <div style="border:1px solid #CFCBBD;border-radius:2px;background:#F6F3EA;display:flex;align-items:center;gap:16px;padding:14px">
+        <div style="width:76px;height:76px;background:#F6F3EA;border:1px solid #CFCBBD;border-radius:2px;flex:none"></div>
+        <div style="display:flex;flex-direction:column;gap:4px">
+          <div style="font-family:Archivo;font-weight:600;font-size:16px">Crema <span style="font-family:ui-monospace,Menlo,monospace;font-weight:400;font-size:12px;color:#5C665D">#F6F3EA</span></div>
+          <div style="font-size:13px;line-height:1.45;color:#3E4740">Fondo de tienda y de ficha. Hereda el centro crema del emblema original.</div>
+        </div>
+      </div>
+      <div style="border:1px solid #CFCBBD;border-radius:2px;background:#F6F3EA;display:flex;align-items:center;gap:16px;padding:14px">
+        <div style="width:76px;height:76px;background:#CFCBBD;border-radius:2px;flex:none"></div>
+        <div style="display:flex;flex-direction:column;gap:4px">
+          <div style="font-family:Archivo;font-weight:600;font-size:16px">Bruma <span style="font-family:ui-monospace,Menlo,monospace;font-weight:400;font-size:12px;color:#5C665D">#CFCBBD</span></div>
+          <div style="font-size:13px;line-height:1.45;color:#3E4740">Bordes y divisores. Nunca texto sobre crema.</div>
+        </div>
+      </div>
+      <div style="border:1px solid #CFCBBD;border-radius:2px;background:#F6F3EA;display:flex;align-items:center;gap:16px;padding:14px">
+        <div style="width:76px;height:76px;background:#1C231E;border-radius:2px;flex:none"></div>
+        <div style="display:flex;flex-direction:column;gap:4px">
+          <div style="font-family:Archivo;font-weight:600;font-size:16px">Grafito <span style="font-family:ui-monospace,Menlo,monospace;font-weight:400;font-size:12px;color:#5C665D">#1C231E</span></div>
+          <div style="font-size:13px;line-height:1.45;color:#3E4740">Texto, precios y toda versión monocromo. Sobre crema: 15.2:1.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:22px;border-top:1px solid #CFCBBD;padding-top:36px">
+    <div style="display:flex;align-items:baseline;gap:16px">
+      <div style="font-family:Archivo;font-weight:700;font-size:13px;letter-spacing:0.1em;color:#2F5D3F">03</div>
+      <div style="font-family:Archivo,sans-serif;font-weight:600;font-size:30px;letter-spacing:-0.02em">Tipografía</div>
+      <div style="font-size:15px;color:#5C665D">Dos familias de Google Fonts. Archivo ordena y da autoridad; Karla acerca y humaniza.</div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:340px minmax(0,1fr);gap:20px">
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <div style="background:#2F5D3F;color:#F6F3EA;border-radius:2px;padding:22px;display:flex;flex-direction:column;gap:10px">
+          <div style="font-family:Karla;font-weight:700;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;opacity:.85">Display</div>
+          <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:56px;line-height:1;letter-spacing:-0.03em">Archivo</div>
+          <div style="font-family:Archivo,sans-serif;font-weight:500;font-size:15px;line-height:1.5;opacity:.9">Grotesca de rejilla estrecha. Wordmark, títulos, precios. Pesos 500/600/700, tracking negativo en tamaños grandes.</div>
+        </div>
+        <div style="background:#F6F3EA;border:1px solid #CFCBBD;border-radius:2px;padding:22px;display:flex;flex-direction:column;gap:10px">
+          <div style="font-family:Karla;font-weight:700;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#8A9189">Texto</div>
+          <div style="font-family:Karla,sans-serif;font-weight:700;font-size:56px;line-height:1;letter-spacing:-0.01em">Karla</div>
+          <div style="font-family:Karla,sans-serif;font-size:15px;line-height:1.5;color:#3E4740">Humanista de terminaciones abiertas. Cuerpo, etiquetas, ayuda al comprador. Pesos 400/500/700.</div>
+        </div>
+      </div>
+
+      <div style="background:#F6F3EA;border:1px solid #CFCBBD;border-radius:2px;padding:28px;display:flex;flex-direction:column">
+        <div style="display:flex;align-items:baseline;gap:24px;padding-bottom:18px;border-bottom:1px solid #E3DFD2">
+          <div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#8A9189;min-width:230px;flex:none">H1 · ARCHIVO 700 · 44/46 · −0.03em</div>
+          <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:44px;line-height:1.05;letter-spacing:-0.03em">Aretes que aguantan la oficina y la salida</div>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:24px;padding:18px 0;border-bottom:1px solid #E3DFD2">
+          <div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#8A9189;min-width:230px;flex:none">H2 · ARCHIVO 600 · 28/32 · −0.02em</div>
+          <div style="font-family:Archivo,sans-serif;font-weight:600;font-size:28px;line-height:1.15;letter-spacing:-0.02em">Nuevo esta semana</div>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:24px;padding:18px 0;border-bottom:1px solid #E3DFD2">
+          <div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#8A9189;min-width:230px;flex:none">H3 · KARLA 700 · 18/24</div>
+          <div style="font-family:Karla,sans-serif;font-weight:700;font-size:18px;line-height:1.3">¿Es un regalo? Elegí por color, no por talla</div>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:24px;padding:18px 0;border-bottom:1px solid #E3DFD2">
+          <div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#8A9189;min-width:230px;flex:none">CUERPO · KARLA 400 · 16/25</div>
+          <div style="font-family:Karla,sans-serif;font-size:16px;line-height:1.55;color:#3E4740;max-width:640px">Baño de acero dorado mate, 3 cm de largo, livianos. Si no te queda como esperabas, lo cambiamos: tenés 15 días y el envío de vuelta lo pagamos nosotros.</div>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:24px;padding:18px 0;border-bottom:1px solid #E3DFD2">
+          <div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#8A9189;min-width:230px;flex:none">PRECIO · ARCHIVO 700 · 22 · TABULAR</div>
+          <div style="display:flex;align-items:baseline;gap:12px">
+            <span style="font-family:Archivo,sans-serif;font-weight:700;font-size:22px;letter-spacing:-0.02em;font-variant-numeric:tabular-nums">₡12.500</span>
+            <span style="font-family:Archivo,sans-serif;font-weight:500;font-size:16px;color:#8A9189;text-decoration:line-through;font-variant-numeric:tabular-nums">₡15.900</span>
+            <span style="font-family:Karla;font-weight:700;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#F6F3EA;background:#C0523A;padding:4px 8px;border-radius:2px">−21%</span>
+          </div>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:24px;padding:18px 0;border-bottom:1px solid #E3DFD2">
+          <div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#8A9189;min-width:230px;flex:none">ETIQUETA · KARLA 700 · 11 · 0.12em</div>
+          <div style="display:flex;gap:10px">
+            <span style="font-family:Karla;font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#1C231E;background:#C3DE4E;padding:5px 9px;border-radius:2px">Envíos a todo el país</span>
+            <span style="font-family:Karla;font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#F6F3EA;background:#3F4E7A;padding:5px 9px;border-radius:2px">Pago por SINPE</span>
+          </div>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:24px;padding-top:18px">
+          <div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#8A9189;min-width:230px;flex:none">LEGAL · KARLA 400 · 12/17</div>
+          <div style="font-family:Karla,sans-serif;font-size:12px;line-height:1.4;color:#5C665D;max-width:560px">Precios en colones con IVA incluido. Cambios sujetos a que la pieza no haya sido usada. Kiwi CR, San José, Costa Rica.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:22px;border-top:1px solid #CFCBBD;padding-top:36px">
+    <div style="display:flex;align-items:baseline;gap:16px">
+      <div style="font-family:Archivo;font-weight:700;font-size:13px;letter-spacing:0.1em;color:#2F5D3F">04</div>
+      <div style="font-family:Archivo,sans-serif;font-weight:600;font-size:30px;letter-spacing:-0.02em">Sistema de iconos</div>
+      <div style="font-size:15px;color:#5C665D">Grilla 24 · trazo 1.75 · terminaciones rectas · esquinas 2 · sin relleno · un solo color. Cada icono cabe en el mismo círculo de 20 que el emblema.</div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px">
+      <div style="background:#F6F3EA;border:1px solid #CFCBBD;border-radius:2px;padding:20px;display:flex;flex-direction:column;gap:14px;align-items:center">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#2F5D3F" stroke-width="1.75"><path d="M2.5 4h2.6l2.3 9.6h9.3L19 6.6H6"></path><circle cx="9" cy="18.5" r="1.6"></circle><circle cx="16.6" cy="18.5" r="1.6"></circle></svg>
+        <div style="font-family:Karla;font-weight:700;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#3E4740">Carrito</div>
+      </div>
+      <div style="background:#F6F3EA;border:1px solid #CFCBBD;border-radius:2px;padding:20px;display:flex;flex-direction:column;gap:14px;align-items:center">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#2F5D3F" stroke-width="1.75"><path d="M1.8 6h11.4v11H1.8z"></path><path d="M13.2 9.4h4.3L21.2 13v4h-8z"></path><circle cx="6.4" cy="18.6" r="1.5"></circle><circle cx="16.4" cy="18.6" r="1.5"></circle></svg>
+        <div style="font-family:Karla;font-weight:700;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#3E4740">Envío</div>
+      </div>
+      <div style="background:#F6F3EA;border:1px solid #CFCBBD;border-radius:2px;padding:20px;display:flex;flex-direction:column;gap:14px;align-items:center">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#2F5D3F" stroke-width="1.75"><path d="M2 8.6h20v6.8H2z"></path><path d="M7 8.6v3.4M12 8.6v4.4M17 8.6v3.4"></path></svg>
+        <div style="font-family:Karla;font-weight:700;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#3E4740">Guía de tallas</div>
+      </div>
+      <div style="background:#F6F3EA;border:1px solid #CFCBBD;border-radius:2px;padding:20px;display:flex;flex-direction:column;gap:14px;align-items:center">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#2F5D3F" stroke-width="1.75"><path d="M3.4 12a8.6 8.6 0 1 0 2.6-6.1"></path><path d="M3.2 3.4v4.6h4.6"></path></svg>
+        <div style="font-family:Karla;font-weight:700;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#3E4740">Devolución</div>
+      </div>
+      <div style="background:#F6F3EA;border:1px solid #CFCBBD;border-radius:2px;padding:20px;display:flex;flex-direction:column;gap:14px;align-items:center">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#2F5D3F" stroke-width="1.75"><path d="M12 2.4v19.2M2.4 12h19.2M5.2 5.2l13.6 13.6M18.8 5.2 5.2 18.8"></path></svg>
+        <div style="font-family:Karla;font-weight:700;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#3E4740">Favoritos</div>
+      </div>
+      <div style="background:#F6F3EA;border:1px solid #CFCBBD;border-radius:2px;padding:20px;display:flex;flex-direction:column;gap:14px;align-items:center">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#2F5D3F" stroke-width="1.75"><path d="M4.6 10.4h14.8v11H4.6z"></path><path d="M8.2 10.4V7a3.8 3.8 0 0 1 7.6 0v3.4"></path></svg>
+        <div style="font-family:Karla;font-weight:700;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#3E4740">Pago seguro</div>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:14px;align-items:flex-start;background:#F6F3EA;border-left:3px solid #C3DE4E;padding:16px 22px">
+      <div style="font-family:Karla;font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#2F5D3F;min-width:110px;padding-top:2px">Nota</div>
+      <div style="font-size:15px;line-height:1.55;color:#3E4740;max-width:1180px;text-wrap:pretty">Favoritos no usa corazón: usa el destello de ocho radios de la marca. Es el único icono con carga de marca y por eso es el único que puede ir en Lima sobre foto. El resto son estructurales y van siempre en Verde Kiwi o Grafito.</div>
+    </div>
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:22px;border-top:1px solid #CFCBBD;padding-top:36px">
+    <div style="display:flex;align-items:baseline;gap:16px">
+      <div style="font-family:Archivo;font-weight:700;font-size:13px;letter-spacing:0.1em;color:#2F5D3F">05</div>
+      <div style="font-family:Archivo,sans-serif;font-weight:600;font-size:30px;letter-spacing:-0.02em">Aplicación</div>
+      <div style="font-size:15px;color:#5C665D">Ruta B aplicada. La prueba real del sistema: ¿se puede comprar sin pensar?</div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:26px;align-items:start">
+
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div style="font-family:Karla;font-weight:700;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#8A9189">a · Ficha de producto · 375 px</div>
+        <div style="width:375px;background:#F6F3EA;border:1px solid #CFCBBD;border-radius:2px;overflow:hidden;display:flex;flex-direction:column">
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid #E3DFD2">
+            <div style="display:flex;align-items:center;gap:9px">
+              <div style="position:relative;width:4em;height:4em;font-size:7px;border-radius:50%;box-shadow:inset 0 0 0 0.19em #2F5D3F;display:grid;place-items:center">
+                <div style="position:absolute;inset:0.6em;border-radius:50%;background:{{ tickBSmall }};-webkit-mask:radial-gradient(circle,transparent 30%,#000 30%);mask:radial-gradient(circle,transparent 30%,#000 30%)"></div>
+                <div style="width:0.8em;height:0.8em;border-radius:50%;background:#C3DE4E"></div>
+              </div>
+              <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:19px;letter-spacing:0.02em;color:#2F5D3F">KIWI</div>
+            </div>
+            <div style="display:flex;gap:16px;align-items:center">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1C231E" stroke-width="1.75"><path d="M12 2.4v19.2M2.4 12h19.2M5.2 5.2l13.6 13.6M18.8 5.2 5.2 18.8"></path></svg>
+              <div style="position:relative">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1C231E" stroke-width="1.75"><path d="M2.5 4h2.6l2.3 9.6h9.3L19 6.6H6"></path><circle cx="9" cy="18.5" r="1.6"></circle><circle cx="16.6" cy="18.5" r="1.6"></circle></svg>
+                <div style="position:absolute;top:-4px;right:-5px;min-width:16px;height:16px;border-radius:8px;background:#C0523A;color:#F6F3EA;font-family:Archivo;font-weight:700;font-size:10px;display:grid;place-items:center">2</div>
+              </div>
+            </div>
+          </div>
+
+          <div style="position:relative;height:400px;background:repeating-linear-gradient(135deg,#E7E3D6 0 9px,#F1EEE2 9px 18px);display:grid;place-items:center">
+            <div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:0.08em;color:#8A9189;text-align:center;line-height:1.7">FOTO DE PRODUCTO<br>1:1 · fondo crema · pieza puesta</div>
+            <div style="position:absolute;top:14px;left:14px;font-family:Karla;font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#1C231E;background:#C3DE4E;padding:6px 10px;border-radius:2px">Nuevo</div>
+            <div style="position:absolute;bottom:14px;right:14px;display:flex;gap:5px;align-items:center">
+              <div style="width:7px;height:7px;border-radius:50%;background:#2F5D3F"></div>
+              <div style="width:7px;height:7px;border-radius:50%;background:#CFCBBD"></div>
+              <div style="width:7px;height:7px;border-radius:50%;background:#CFCBBD"></div>
+              <div style="width:7px;height:7px;border-radius:50%;background:#CFCBBD"></div>
+            </div>
+          </div>
+
+          <div style="padding:18px 16px 20px;display:flex;flex-direction:column;gap:16px">
+            <div style="display:flex;flex-direction:column;gap:7px">
+              <div style="font-family:Karla;font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#5C665D">Aretes</div>
+              <div style="font-family:Archivo,sans-serif;font-weight:600;font-size:24px;line-height:1.15;letter-spacing:-0.02em">Aro Marina · acero dorado mate</div>
+              <div style="display:flex;align-items:baseline;gap:10px">
+                <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:26px;letter-spacing:-0.02em;font-variant-numeric:tabular-nums">₡12.500</div>
+                <div style="font-family:Archivo,sans-serif;font-weight:500;font-size:16px;color:#8A9189;text-decoration:line-through;font-variant-numeric:tabular-nums">₡15.900</div>
+              </div>
+            </div>
+
+            <div style="display:flex;flex-direction:column;gap:9px">
+              <div style="display:flex;align-items:center;justify-content:space-between">
+                <div style="font-family:Karla;font-weight:700;font-size:13px">Talla del aro</div>
+                <div style="display:flex;align-items:center;gap:6px">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#3F4E7A" stroke-width="1.75"><path d="M2 8.6h20v6.8H2z"></path><path d="M7 8.6v3.4M12 8.6v4.4M17 8.6v3.4"></path></svg>
+                  <a href="#" style="font-family:Karla;font-weight:700;font-size:13px;color:#3F4E7A">Guía de tallas</a>
+                </div>
+              </div>
+              <div style="display:flex;gap:8px">
+                <div style="flex:1;height:48px;border:1px solid #CFCBBD;border-radius:2px;display:grid;place-items:center;font-family:Archivo;font-weight:600;font-size:15px;background:#FFFDF7">2 cm</div>
+                <div style="flex:1;height:48px;border:1.5px solid #2F5D3F;border-radius:2px;display:grid;place-items:center;font-family:Archivo;font-weight:600;font-size:15px;background:#2F5D3F;color:#F6F3EA">3 cm</div>
+                <div style="flex:1;height:48px;border:1px solid #CFCBBD;border-radius:2px;display:grid;place-items:center;font-family:Archivo;font-weight:600;font-size:15px;background:#FFFDF7">4 cm</div>
+              </div>
+            </div>
+
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <div style="height:56px;border-radius:2px;background:#2F5D3F;color:#F6F3EA;display:flex;align-items:center;justify-content:center;gap:10px;font-family:Archivo;font-weight:700;font-size:17px;letter-spacing:0.01em">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F6F3EA" stroke-width="1.9"><path d="M2.5 4h2.6l2.3 9.6h9.3L19 6.6H6"></path><circle cx="9" cy="18.5" r="1.6"></circle><circle cx="16.6" cy="18.5" r="1.6"></circle></svg>
+                Agregar · ₡12.500
+              </div>
+              <div style="height:48px;border-radius:2px;border:1.5px solid #2F5D3F;color:#2F5D3F;display:grid;place-items:center;font-family:Archivo;font-weight:600;font-size:15px">Comprar por WhatsApp</div>
+            </div>
+
+            <div style="display:flex;flex-direction:column;gap:10px;border-top:1px solid #E3DFD2;padding-top:14px">
+              <div style="display:flex;align-items:center;gap:10px;background:#C3DE4E;padding:11px 12px;border-radius:2px">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1C231E" stroke-width="1.75"><path d="M20 12a8 8 0 1 1-3.2-6.4"></path><path d="M4 20l1.6-4"></path><path d="M9 10c1 3 4 5 6 5"></path></svg>
+                <div style="font-family:Karla;font-weight:700;font-size:13px;color:#1C231E">¿Necesitás fecha? Escribinos por WhatsApp</div>
+              </div>
+              <div style="display:flex;gap:10px;align-items:flex-start"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3F4E7A" stroke-width="1.75" style="flex:none"><circle cx="12" cy="12" r="8"></circle><path d="M12 8v4l3 2"></path></svg><div style="font-family:Karla;font-size:12px;line-height:1.45;color:#3E4740"><strong>Se confecciona por encargo.</strong> No hay fecha fija: el tiempo depende del proveedor.</div></div>
+              <div style="display:flex;gap:18px">
+                <div style="display:flex;align-items:center;gap:7px">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5C665D" stroke-width="1.75"><path d="M3.4 12a8.6 8.6 0 1 0 2.6-6.1"></path><path d="M3.2 3.4v4.6h4.6"></path></svg>
+                  <span style="font-family:Karla;font-size:12px;color:#3E4740">Cambio en 15 días</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:7px">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5C665D" stroke-width="1.75"><path d="M4.6 10.4h14.8v11H4.6z"></path><path d="M8.2 10.4V7a3.8 3.8 0 0 1 7.6 0v3.4"></path></svg>
+                  <span style="font-family:Karla;font-size:12px;color:#3E4740">Pago por SINPE Móvil</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div style="font-family:Karla;font-weight:700;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#8A9189">b · Tarjeta de agradecimiento · 105 × 148 mm, dos caras</div>
+          <div style="display:flex;gap:18px;flex-wrap:wrap">
+            <div style="width:398px;height:560px;background:#F6F3EA;border:1px solid #CFCBBD;border-radius:2px;padding:34px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden">
+              <div style="position:absolute;right:18px;bottom:86px;width:212px;height:212px;border-radius:50%;background:{{ tickPattern }};-webkit-mask:radial-gradient(circle,transparent 24%,#000 24%);mask:radial-gradient(circle,transparent 24%,#000 24%);opacity:.65"></div>
+              <div style="display:flex;flex-direction:column;gap:26px;position:relative">
+                <div style="position:relative;width:4em;height:4em;font-size:13px;border-radius:50%;box-shadow:inset 0 0 0 0.17em #2F5D3F;display:grid;place-items:center">
+                  <div style="position:absolute;inset:0.55em;border-radius:50%;background:{{ tickB }};-webkit-mask:radial-gradient(circle,transparent 33%,#000 33%);mask:radial-gradient(circle,transparent 33%,#000 33%)"></div>
+                  <div style="width:0.86em;height:0.86em;border-radius:50%;background:#C3DE4E"></div>
+                </div>
+                <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:34px;line-height:1.08;letter-spacing:-0.03em;color:#1C231E;max-width:280px">Gracias por elegir algo pequeño y bueno.</div>
+                <div style="font-family:Karla,sans-serif;font-size:14px;line-height:1.55;color:#3E4740;max-width:270px">Si algo no te queda como esperabas, escribinos y lo resolvemos el mismo día.</div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:12px;position:relative">
+                <div style="border-top:1px solid #CFCBBD;padding-top:14px;display:flex;align-items:flex-end;justify-content:space-between;gap:12px">
+                  <div style="font-family:Karla;font-weight:700;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#8A9189">Kiwi · San José, CR</div>
+                  <div style="font-family:Karla;font-weight:500;font-size:12px;color:#5C665D">@kiwi_accesories_cr</div>
+                </div>
+              </div>
+            </div>
+
+            <div style="width:398px;height:560px;background:#FFFDF7;border:1px solid #CFCBBD;border-radius:2px;padding:34px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:space-between">
+              <div style="display:flex;flex-direction:column;gap:18px">
+                <div style="font-family:Karla;font-weight:700;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#8A9189">Una nota para vos</div>
+                <div style="display:flex;flex-direction:column;gap:34px;padding-top:6px">
+                  <div style="height:1px;background:#E3DFD2"></div>
+                  <div style="height:1px;background:#E3DFD2"></div>
+                  <div style="height:1px;background:#E3DFD2"></div>
+                  <div style="height:1px;background:#E3DFD2"></div>
+                  <div style="height:1px;background:#E3DFD2"></div>
+                </div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:14px">
+                <div style="background:#C3DE4E;border-radius:2px;padding:18px;display:flex;flex-direction:column;gap:8px">
+                  <div style="font-family:Karla;font-weight:700;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#1C231E">15 % en tu próxima compra</div>
+                  <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:32px;letter-spacing:0.06em;color:#1C231E">DEVUELTA15</div>
+                  <div style="font-family:Karla;font-size:12px;line-height:1.45;color:#1C231E">Válido 60 días en kiwicr.com o por WhatsApp. Un uso por persona.</div>
+                </div>
+                <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid #E3DFD2;padding-top:12px">
+                  <div style="font-family:Karla;font-size:12px;color:#5C665D">Pedido</div>
+                  <div style="font-family:ui-monospace,Menlo,monospace;font-size:12px;color:#3E4740">#KW-2481</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;background:#F6F3EA;border-left:3px solid #2F5D3F;padding:18px 22px">
+          <div style="font-family:Karla;font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#2F5D3F;min-width:110px;padding-top:2px">Por qué así</div>
+          <div style="font-size:15px;line-height:1.55;color:#3E4740;max-width:820px;text-wrap:pretty">El botón de compra es lo único Verde Kiwi sólido en toda la pantalla: no compite con nada, así que no hay que buscarlo. El selector de talla ya no tiene estado agotado: todo se confecciona por encargo y todas las tallas están siempre disponibles, así que solo quedan dos estados (normal y seleccionada). Bajo el botón, el sello Lima no promete fecha: ofrece la consulta por WhatsApp justo donde surge la duda, y la fila de abajo explica por qué no hay fecha. Y los datos de contacto salieron del logo y viven donde corresponde: al pie de la tarjeta.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:22px;border-top:1px solid #CFCBBD;padding-top:36px">
+    <div style="display:flex;align-items:baseline;gap:16px">
+      <div style="font-family:Archivo;font-weight:700;font-size:13px;letter-spacing:0.1em;color:#2F5D3F">06</div>
+      <div style="font-family:Archivo,sans-serif;font-weight:600;font-size:30px;letter-spacing:-0.02em">Extensiones de marca</div>
+      <div style="font-size:15px;color:#5C665D">Ruta B en pieza de comunicación. Regla única: el aro radial nunca se mezcla con el wordmark en la misma dosis — o manda el símbolo, o manda la palabra.</div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px">
+
+      <div style="background:#F6F3EA;border:1px solid #CFCBBD;border-radius:2px;padding:26px;display:flex;flex-direction:column;gap:18px">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:14px">
+          <div style="font-family:Archivo,sans-serif;font-weight:600;font-size:20px;letter-spacing:-0.01em">Cartel · punto de venta</div>
+          <div style="font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:0.06em;color:#8A9189">A2 · 420 × 594 MM</div>
+        </div>
+        <div style="background:repeating-linear-gradient(135deg,#E7E3D6 0 9px,#F1EEE2 9px 18px);border-radius:2px;padding:26px;display:flex;gap:20px;justify-content:center">
+          <div style="width:272px;height:384px;background:#F6F3EA;box-shadow:0 14px 28px rgba(28,35,30,.14);padding:30px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden">
+            <div style="position:absolute;left:-96px;bottom:-96px;width:272px;height:272px;border-radius:50%;background:{{ tickPattern }};-webkit-mask:radial-gradient(circle,transparent 24%,#000 24%);mask:radial-gradient(circle,transparent 24%,#000 24%);opacity:.7"></div>
+            <div style="position:relative;display:flex;flex-direction:column;gap:20px">
+              <div style="position:relative;width:4em;height:4em;font-size:10px;border-radius:50%;box-shadow:inset 0 0 0 0.17em #2F5D3F;display:grid;place-items:center">
+                <div style="position:absolute;inset:0.55em;border-radius:50%;background:{{ tickB }};-webkit-mask:radial-gradient(circle,transparent 33%,#000 33%);mask:radial-gradient(circle,transparent 33%,#000 33%)"></div>
+                <div style="width:0.86em;height:0.86em;border-radius:50%;background:#C3DE4E"></div>
+              </div>
+              <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:38px;line-height:1.02;letter-spacing:-0.035em;color:#1C231E">Nueva<br>colección<br>de aros</div>
+              <div style="font-family:Karla,sans-serif;font-size:14px;line-height:1.5;color:#3E4740;max-width:190px">Acero dorado mate. Tres largos. Del escritorio a la cena sin cambiarte nada más.</div>
+            </div>
+            <div style="position:relative;display:flex;align-items:center;justify-content:space-between;gap:10px">
+              <div style="font-family:Karla;font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#1C231E;background:#C3DE4E;padding:7px 11px;border-radius:2px">Desde ₡8.900</div>
+              <div style="font-family:Karla;font-weight:700;font-size:11px;letter-spacing:0.06em;color:#5C665D">kiwicr.com</div>
+            </div>
+          </div>
+          <div style="width:272px;height:384px;background:#2F5D3F;box-shadow:0 14px 28px rgba(28,35,30,.2);padding:0;box-sizing:border-box;display:flex;flex-direction:column;overflow:hidden">
+            <div style="flex:1;background:repeating-linear-gradient(135deg,#3E5C46 0 9px,#365140 9px 18px);display:grid;place-items:center;position:relative">
+              <div style="font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:0.08em;color:#B9C9AF;text-align:center;line-height:1.7">FOTO DE CAMPAÑA<br>4:5 · pieza puesta</div>
+              <div style="position:absolute;top:18px;left:18px;position:relative;width:4em;height:4em;font-size:9px;border-radius:50%;box-shadow:inset 0 0 0 0.17em #F6F3EA;display:grid;place-items:center">
+                <div style="position:absolute;inset:0.55em;border-radius:50%;background:{{ tickLight }};-webkit-mask:radial-gradient(circle,transparent 33%,#000 33%);mask:radial-gradient(circle,transparent 33%,#000 33%)"></div>
+                <div style="width:0.86em;height:0.86em;border-radius:50%;background:#C3DE4E"></div>
+              </div>
+            </div>
+            <div style="padding:22px 24px 24px;display:flex;flex-direction:column;gap:12px">
+              <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:30px;line-height:1.05;letter-spacing:-0.03em;color:#F6F3EA">Hecho por<br>encargo</div>
+              <div style="font-family:Karla,sans-serif;font-size:13px;line-height:1.5;color:#DCE6D4">Envío a todo el país: ₡3.000 por pedido.</div>
+            </div>
+          </div>
+        </div>
+        <div style="font-size:14px;line-height:1.55;color:#3E4740;text-wrap:pretty">Dos plantillas y nada más: fondo crema con titular grande cuando el mensaje es producto, y bloque Verde Kiwi con foto arriba cuando el mensaje es servicio. El patrón radial aparece cortado por el borde —es textura, no logo repetido.</div>
+      </div>
+
+      <div style="background:#F6F3EA;border:1px solid #CFCBBD;border-radius:2px;padding:26px;display:flex;flex-direction:column;gap:18px">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:14px">
+          <div style="font-family:Archivo,sans-serif;font-weight:600;font-size:20px;letter-spacing:-0.01em">Anuncio · Instagram</div>
+          <div style="font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:0.06em;color:#8A9189">FEED 1:1 · STORY 9:16</div>
+        </div>
+        <div style="background:repeating-linear-gradient(135deg,#E7E3D6 0 9px,#F1EEE2 9px 18px);border-radius:2px;padding:26px;display:flex;gap:20px;justify-content:center;align-items:flex-start">
+          <div style="width:268px;background:#F6F3EA;box-shadow:0 12px 24px rgba(28,35,30,.12);display:flex;flex-direction:column">
+            <div style="position:relative;height:268px;background:repeating-linear-gradient(135deg,#E7E3D6 0 9px,#F1EEE2 9px 18px);display:grid;place-items:center">
+              <div style="font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:0.08em;color:#8A9189;text-align:center;line-height:1.7">FOTO 1:1<br>producto puesto</div>
+              <div style="position:absolute;left:0;right:0;bottom:0;padding:16px;background:linear-gradient(0deg,rgba(28,35,30,.92) 0%,rgba(28,35,30,.86) 62%,rgba(28,35,30,.66) 88%,rgba(28,35,30,0) 100%);display:flex;align-items:flex-end;justify-content:space-between;gap:10px">
+                <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:22px;line-height:1.08;letter-spacing:-0.025em;color:#F6F3EA">¿Es un regalo?<br>Elegí por color</div>
+                <div style="position:relative;width:4em;height:4em;font-size:8px;border-radius:50%;box-shadow:inset 0 0 0 0.19em #F6F3EA;display:grid;place-items:center;flex:none">
+                  <div style="position:absolute;inset:0.6em;border-radius:50%;background:{{ tickPhoto }};-webkit-mask:radial-gradient(circle,transparent 30%,#000 30%);mask:radial-gradient(circle,transparent 30%,#000 30%)"></div>
+                  <div style="width:0.8em;height:0.8em;border-radius:50%;background:#C3DE4E"></div>
+                </div>
+              </div>
+            </div>
+            <div style="padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid #E3DFD2">
+              <div style="font-family:Karla,sans-serif;font-size:13px;line-height:1.4;color:#3E4740">Sin saber la talla.<br>Cambio gratis en 15 días.</div>
+              <div style="font-family:Archivo;font-weight:700;font-size:13px;color:#F6F3EA;background:#2F5D3F;padding:11px 14px;border-radius:2px;white-space:nowrap">Ver aros</div>
+            </div>
+          </div>
+          <div style="width:190px;height:338px;background:#1C231E;box-shadow:0 12px 24px rgba(28,35,30,.18);display:flex;flex-direction:column;overflow:hidden">
+            <div style="flex:1;background:repeating-linear-gradient(135deg,#2A2F29 0 9px,#232823 9px 18px);display:grid;place-items:center;position:relative">
+              <div style="font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:0.08em;color:#8A9189;text-align:center;line-height:1.7">FOTO 9:16<br>vertical</div>
+              <div style="position:absolute;top:16px;left:16px;display:flex;align-items:center;gap:8px">
+                <div style="position:relative;width:4em;height:4em;font-size:7px;border-radius:50%;box-shadow:inset 0 0 0 0.19em #F6F3EA;display:grid;place-items:center">
+                  <div style="position:absolute;inset:0.6em;border-radius:50%;background:{{ tickPhoto }};-webkit-mask:radial-gradient(circle,transparent 30%,#000 30%);mask:radial-gradient(circle,transparent 30%,#000 30%)"></div>
+                  <div style="width:0.8em;height:0.8em;border-radius:50%;background:#C3DE4E"></div>
+                </div>
+                <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:14px;letter-spacing:0.02em;color:#F6F3EA">KIWI</div>
+              </div>
+            </div>
+            <div style="padding:18px 18px 20px;display:flex;flex-direction:column;gap:12px">
+              <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:24px;line-height:1.05;letter-spacing:-0.03em;color:#F6F3EA">A todo<br>el país</div>
+              <div style="height:42px;border-radius:2px;background:#C3DE4E;color:#1C231E;display:grid;place-items:center;font-family:Archivo;font-weight:700;font-size:14px">Comprar ahora</div>
+            </div>
+          </div>
+        </div>
+        <div style="font-size:14px;line-height:1.55;color:#3E4740;text-wrap:pretty">Sobre foto el aro va siempre en crema con radios engrosados y el centro en Lima: es el único elemento que garantiza reconocimiento sin caja de fondo. En story el CTA sí puede ser Lima sobre grafito —10.8:1— porque ahí no compite con el botón real de la tienda.</div>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:14px;align-items:flex-start;background:#F6F3EA;border-left:3px solid #C3DE4E;padding:16px 22px">
+      <div style="font-family:Karla;font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#2F5D3F;min-width:110px;padding-top:2px">Regla</div>
+      <div style="font-size:15px;line-height:1.55;color:#3E4740;max-width:1180px;text-wrap:pretty">En pieza de venta (cartel, anuncio) el titular es el protagonista y la marca firma en esquina, a un tamaño fijo del 8 % del ancho. Verde Kiwi sólido queda reservado para superficie grande o botón; Lima nunca cubre más de un cuarto de la pieza.</div>
+    </div>
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:22px;border-top:1px solid #CFCBBD;padding-top:36px">
+    <div style="display:flex;align-items:baseline;gap:16px">
+      <div style="font-family:Archivo;font-weight:700;font-size:13px;letter-spacing:0.1em;color:#2F5D3F">07</div>
+      <div style="font-family:Archivo,sans-serif;font-weight:600;font-size:30px;letter-spacing:-0.02em">Tienda en línea · versión web</div>
+      <div style="font-size:15px;color:#5C665D">1440 px. Home y listado en una sola vista. La diferenciación es operativa: dos caminos de entrada —"para mí" y "es un regalo"— desde el primer scroll.</div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div style="font-family:Karla;font-weight:700;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#8A9189">Home · escritorio 1440 px</div>
+      <div style="width:1440px;background:#F6F3EA;border:1px solid #CFCBBD;border-radius:2px;overflow:hidden;display:flex;flex-direction:column">
+
+        <div style="background:#2F5D3F;padding:9px 0;display:flex;align-items:center;justify-content:center;gap:10px">
+          <div style="width:6px;height:6px;border-radius:50%;background:#C3DE4E"></div>
+          <div style="font-family:Karla;font-weight:700;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#F6F3EA">Hecho por encargo · Envío ₡3.000 a todo el país</div>
+        </div>
+
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:32px;padding:18px 40px;border-bottom:1px solid #E3DFD2;background:#F6F3EA">
+          <div style="display:flex;align-items:center;gap:11px">
+            <div style="position:relative;width:4em;height:4em;font-size:9px;border-radius:50%;box-shadow:inset 0 0 0 0.17em #2F5D3F;display:grid;place-items:center">
+              <div style="position:absolute;inset:0.55em;border-radius:50%;background:{{ tickB }};-webkit-mask:radial-gradient(circle,transparent 33%,#000 33%);mask:radial-gradient(circle,transparent 33%,#000 33%)"></div>
+              <div style="width:0.86em;height:0.86em;border-radius:50%;background:#C3DE4E"></div>
+            </div>
+            <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:26px;letter-spacing:0.02em;color:#2F5D3F">KIWI</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:26px">
+            <a href="#" style="font-family:Karla;font-weight:700;font-size:14px;color:#1C231E;text-decoration:none">Novedades</a>
+            <a href="#" style="font-family:Karla;font-weight:700;font-size:14px;color:#1C231E;text-decoration:none">Joyería</a>
+            <a href="#" style="font-family:Karla;font-weight:700;font-size:14px;color:#1C231E;text-decoration:none">Accesorios</a>
+            <a href="#" style="font-family:Karla;font-weight:700;font-size:14px;color:#1C231E;text-decoration:none">Ropa</a>
+            <a href="#" style="font-family:Karla;font-weight:700;font-size:14px;color:#C0523A;text-decoration:none">Rebajas</a>
+          </div>
+          <div style="display:flex;align-items:center;gap:14px">
+            <div style="width:296px;height:42px;border:1px solid #CFCBBD;border-radius:2px;background:#FFFDF7;display:flex;align-items:center;gap:9px;padding:0 12px">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#8A9189" stroke-width="1.75"><circle cx="10.6" cy="10.6" r="7.2"></circle><path d="M15.8 15.8 21 21"></path></svg>
+              <span style="font-family:Karla;font-size:14px;color:#5C665D">Buscar aretes, cadenas, blusas…</span>
+            </div>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1C231E" stroke-width="1.75"><path d="M12 2.4v19.2M2.4 12h19.2M5.2 5.2l13.6 13.6M18.8 5.2 5.2 18.8"></path></svg>
+            <div style="position:relative">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1C231E" stroke-width="1.75"><path d="M2.5 4h2.6l2.3 9.6h9.3L19 6.6H6"></path><circle cx="9" cy="18.5" r="1.6"></circle><circle cx="16.6" cy="18.5" r="1.6"></circle></svg>
+              <div style="position:absolute;top:-4px;right:-5px;min-width:16px;height:16px;border-radius:8px;background:#C0523A;color:#F6F3EA;font-family:Archivo;font-weight:700;font-size:10px;display:grid;place-items:center">2</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:minmax(0,1fr) 620px;gap:0;align-items:stretch;border-bottom:1px solid #E3DFD2">
+          <div style="padding:52px 44px 52px 40px;display:flex;flex-direction:column;gap:26px;justify-content:center">
+            <div style="font-family:Karla;font-weight:700;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#2F5D3F">Nueva colección · setiembre</div>
+            <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:60px;line-height:1;letter-spacing:-0.035em;color:#1C231E;max-width:620px;text-wrap:pretty">Aretes que aguantan la oficina y la salida</div>
+            <div style="font-family:Karla,sans-serif;font-size:17px;line-height:1.55;color:#3E4740;max-width:520px">Acero dorado mate, tres largos, livianos. Escogés en dos toques.</div>
+            <div style="display:flex;gap:12px;padding-top:4px">
+              <div style="height:52px;padding:0 26px;border-radius:2px;background:#2F5D3F;color:#F6F3EA;display:grid;place-items:center;font-family:Archivo;font-weight:700;font-size:16px">Ver la colección</div>
+              <div style="height:52px;padding:0 26px;border-radius:2px;border:1.5px solid #2F5D3F;color:#2F5D3F;display:grid;place-items:center;font-family:Archivo;font-weight:600;font-size:16px">Es un regalo</div>
+            </div>
+          </div>
+          <div style="position:relative;min-height:420px;overflow:hidden;background:repeating-linear-gradient(135deg,#E7E3D6 0 9px,#F1EEE2 9px 18px);display:grid;place-items:center">
+            <div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:0.08em;color:#8A9189;text-align:center;line-height:1.7">FOTO DE PORTADA<br>620 × 420 · modelo con la pieza puesta</div>
+            <div style="position:absolute;left:-70px;bottom:24px;width:180px;height:180px;border-radius:50%;background:{{ tickPattern }};-webkit-mask:radial-gradient(circle,transparent 26%,#000 26%);mask:radial-gradient(circle,transparent 26%,#000 26%);opacity:.55"></div>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;padding:28px 40px;border-bottom:1px solid #E3DFD2">
+          <div style="border:1px solid #CFCBBD;border-radius:2px;padding:22px 24px;display:flex;align-items:center;justify-content:space-between;gap:18px;background:#FFFDF7">
+            <div style="display:flex;flex-direction:column;gap:5px">
+              <div style="font-family:Archivo,sans-serif;font-weight:600;font-size:21px;letter-spacing:-0.01em;color:#1C231E">Compro para mí</div>
+              <div style="font-family:Karla;font-size:14px;color:#3E4740">Filtrá por estilo, largo y precio.</div>
+            </div>
+            <div style="font-family:Archivo;font-weight:700;font-size:14px;color:#2F5D3F;white-space:nowrap">Explorar →</div>
+          </div>
+          <div style="border:1px solid #2F5D3F;border-radius:2px;padding:22px 24px;display:flex;align-items:center;justify-content:space-between;gap:18px;background:#C3DE4E">
+            <div style="display:flex;flex-direction:column;gap:5px">
+              <div style="font-family:Archivo,sans-serif;font-weight:600;font-size:21px;letter-spacing:-0.01em;color:#1C231E">Es un regalo y no sé la talla</div>
+              <div style="font-family:Karla;font-size:14px;color:#1C231E">Elegí por color y precio. Cambio gratis si no le queda.</div>
+            </div>
+            <div style="font-family:Archivo;font-weight:700;font-size:14px;color:#1C231E;white-space:nowrap">Guiame →</div>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:236px minmax(0,1fr);gap:0">
+          <div style="border-right:1px solid #E3DFD2;padding:26px 24px 40px;display:flex;flex-direction:column;gap:24px">
+            <div style="font-family:Archivo,sans-serif;font-weight:600;font-size:17px;letter-spacing:-0.01em">Filtros</div>
+            <div style="display:flex;flex-direction:column;gap:11px">
+              <div style="font-family:Karla;font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#8A9189">Categoría</div>
+              <div style="display:flex;flex-direction:column;gap:9px">
+                <div style="display:flex;align-items:center;gap:9px"><div style="width:15px;height:15px;border-radius:2px;background:#2F5D3F"></div><span style="font-family:Karla;font-size:14px;color:#1C231E">Aretes (42)</span></div>
+                <div style="display:flex;align-items:center;gap:9px"><div style="width:15px;height:15px;border-radius:2px;border:1px solid #CFCBBD"></div><span style="font-family:Karla;font-size:14px;color:#3E4740">Cadenas (28)</span></div>
+                <div style="display:flex;align-items:center;gap:9px"><div style="width:15px;height:15px;border-radius:2px;border:1px solid #CFCBBD"></div><span style="font-family:Karla;font-size:14px;color:#3E4740">Anillos (19)</span></div>
+                <div style="display:flex;align-items:center;gap:9px"><div style="width:15px;height:15px;border-radius:2px;border:1px solid #CFCBBD"></div><span style="font-family:Karla;font-size:14px;color:#3E4740">Pulseras (23)</span></div>
+              </div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:11px">
+              <div style="font-family:Karla;font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#8A9189">Precio</div>
+              <div style="display:flex;flex-direction:column;gap:8px">
+                <div style="height:4px;border-radius:2px;background:#CFCBBD;position:relative">
+                  <div style="position:absolute;left:0;right:36%;top:0;bottom:0;border-radius:2px;background:#2F5D3F"></div>
+                  <div style="position:absolute;right:36%;top:-5px;width:14px;height:14px;border-radius:50%;background:#2F5D3F"></div>
+                </div>
+                <div style="display:flex;justify-content:space-between"><span style="font-family:Karla;font-size:12px;color:#5C665D">₡5.000</span><span style="font-family:Karla;font-weight:700;font-size:12px;color:#1C231E">₡18.000</span></div>
+              </div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:11px">
+              <div style="font-family:Karla;font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#8A9189">Color</div>
+              <div style="display:flex;gap:8px;flex-wrap:wrap">
+                <div style="width:26px;height:26px;border-radius:50%;background:#C9A227;box-shadow:0 0 0 1px #CFCBBD"></div>
+                <div style="width:26px;height:26px;border-radius:50%;background:#B6B6B6;box-shadow:0 0 0 1px #CFCBBD"></div>
+                <div style="width:26px;height:26px;border-radius:50%;background:#1C231E;box-shadow:0 0 0 1px #CFCBBD"></div>
+                <div style="width:26px;height:26px;border-radius:50%;background:#C0523A;box-shadow:0 0 0 1px #CFCBBD"></div>
+                <div style="width:26px;height:26px;border-radius:50%;background:#3F4E7A;box-shadow:0 0 0 1px #CFCBBD"></div>
+                <div style="width:26px;height:26px;border-radius:50%;background:#C3DE4E;box-shadow:0 0 0 2px #2F5D3F"></div>
+              </div>
+            </div>
+            <div style="margin-top:4px;padding-top:16px;border-top:1px solid #E3DFD2">
+              <a href="#" style="font-family:Karla;font-weight:700;font-size:13px;color:#2F5D3F">Limpiar filtros</a>
+            </div>
+          </div>
+
+          <div style="padding:26px 40px 40px;display:flex;flex-direction:column;gap:20px">
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:20px">
+              <div style="display:flex;align-items:baseline;gap:12px">
+                <div style="font-family:Archivo,sans-serif;font-weight:600;font-size:24px;letter-spacing:-0.02em">Aretes</div>
+                <div style="font-family:Karla;font-size:14px;color:#5C665D">42 piezas</div>
+              </div>
+              <div style="display:flex;align-items:center;gap:10px">
+                <div style="height:38px;padding:0 12px;border:1px solid #CFCBBD;border-radius:2px;display:flex;align-items:center;gap:8px;background:#FFFDF7">
+                  <span style="font-family:Karla;font-weight:700;font-size:13px;color:#1C231E">Más nuevos</span>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#1C231E" stroke-width="2"><path d="M4 8l8 8 8-8"></path></svg>
+                </div>
+              </div>
+            </div>
+
+            <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px">
+              <div style="display:flex;flex-direction:column;gap:10px">
+                <div style="position:relative;aspect-ratio:1;background:repeating-linear-gradient(135deg,#E7E3D6 0 9px,#F1EEE2 9px 18px);border-radius:2px;display:grid;place-items:center">
+                  <div style="font-family:ui-monospace,Menlo,monospace;font-size:10px;color:#8A9189">FOTO 1:1</div>
+                  <div style="position:absolute;top:10px;left:10px;font-family:Karla;font-weight:700;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#1C231E;background:#C3DE4E;padding:5px 8px;border-radius:2px">Nuevo</div>
+                  <div style="position:absolute;bottom:10px;right:10px;width:30px;height:30px;border-radius:50%;background:#F6F3EA;display:grid;place-items:center;box-shadow:0 1px 3px rgba(28,35,30,.16)">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#2F5D3F" stroke-width="1.9"><path d="M12 2.4v19.2M2.4 12h19.2M5.2 5.2l13.6 13.6M18.8 5.2 5.2 18.8"></path></svg>
+                  </div>
+                </div>
+                <div style="font-family:Karla;font-weight:700;font-size:15px;line-height:1.3;color:#1C231E">Aro Marina 3 cm</div>
+                <div style="display:flex;align-items:baseline;gap:8px">
+                  <span style="font-family:Archivo;font-weight:700;font-size:17px;font-variant-numeric:tabular-nums">₡12.500</span>
+                  <span style="font-family:Archivo;font-weight:500;font-size:13px;color:#8A9189;text-decoration:line-through;font-variant-numeric:tabular-nums">₡15.900</span>
+                </div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:10px">
+                <div style="position:relative;aspect-ratio:1;background:repeating-linear-gradient(135deg,#E7E3D6 0 9px,#F1EEE2 9px 18px);border-radius:2px;display:grid;place-items:center">
+                  <div style="font-family:ui-monospace,Menlo,monospace;font-size:10px;color:#8A9189">FOTO 1:1</div>
+                  <div style="position:absolute;bottom:10px;right:10px;width:30px;height:30px;border-radius:50%;background:#F6F3EA;display:grid;place-items:center;box-shadow:0 1px 3px rgba(28,35,30,.16)">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#2F5D3F" stroke-width="1.9"><path d="M12 2.4v19.2M2.4 12h19.2M5.2 5.2l13.6 13.6M18.8 5.2 5.2 18.8"></path></svg>
+                  </div>
+                </div>
+                <div style="font-family:Karla;font-weight:700;font-size:15px;line-height:1.3;color:#1C231E">Argolla lisa 2 cm</div>
+                <div style="font-family:Archivo;font-weight:700;font-size:17px;font-variant-numeric:tabular-nums">₡8.900</div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:10px">
+                <div style="position:relative;aspect-ratio:1;background:repeating-linear-gradient(135deg,#E7E3D6 0 9px,#F1EEE2 9px 18px);border-radius:2px;display:grid;place-items:center">
+                  <div style="font-family:ui-monospace,Menlo,monospace;font-size:10px;color:#8A9189">FOTO 1:1</div>
+                  <div style="position:absolute;bottom:10px;right:10px;width:30px;height:30px;border-radius:50%;background:#F6F3EA;display:grid;place-items:center;box-shadow:0 1px 3px rgba(28,35,30,.16)">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#2F5D3F" stroke-width="1.9"><path d="M12 2.4v19.2M2.4 12h19.2M5.2 5.2l13.6 13.6M18.8 5.2 5.2 18.8"></path></svg>
+                  </div>
+                </div>
+                <div style="font-family:Karla;font-weight:700;font-size:15px;line-height:1.3;color:#1C231E">Perla gota mate</div>
+                <div style="font-family:Archivo;font-weight:700;font-size:17px;font-variant-numeric:tabular-nums">₡14.900</div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:10px">
+                <div style="position:relative;aspect-ratio:1;background:repeating-linear-gradient(135deg,#E7E3D6 0 9px,#F1EEE2 9px 18px);border-radius:2px;display:grid;place-items:center">
+                  <div style="font-family:ui-monospace,Menlo,monospace;font-size:10px;color:#8A9189">FOTO 1:1</div>
+                  <div style="position:absolute;bottom:10px;right:10px;width:30px;height:30px;border-radius:50%;background:#F6F3EA;display:grid;place-items:center;box-shadow:0 1px 3px rgba(28,35,30,.16)">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#2F5D3F" stroke-width="1.9"><path d="M12 2.4v19.2M2.4 12h19.2M5.2 5.2l13.6 13.6M18.8 5.2 5.2 18.8"></path></svg>
+                  </div>
+                </div>
+                <div style="font-family:Karla;font-weight:700;font-size:15px;line-height:1.3;color:#1C231E">Aro texturado 4 cm</div>
+                <div style="font-family:Archivo;font-weight:700;font-size:17px;font-variant-numeric:tabular-nums">₡13.500</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:1px solid #E3DFD2;background:#FFFDF7">
+          <div style="padding:22px 24px;display:flex;align-items:center;gap:12px;border-right:1px solid #E3DFD2">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2F5D3F" stroke-width="1.75"><path d="M1.8 6h11.4v11H1.8z"></path><path d="M13.2 9.4h4.3L21.2 13v4h-8z"></path><circle cx="6.4" cy="18.6" r="1.5"></circle><circle cx="16.4" cy="18.6" r="1.5"></circle></svg>
+            <div style="font-family:Karla;font-weight:700;font-size:13px;color:#1C231E">Envío plano ₡3.000</div>
+          </div>
+          <div style="padding:22px 24px;display:flex;align-items:center;gap:12px;border-right:1px solid #E3DFD2">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2F5D3F" stroke-width="1.75"><path d="M3.4 12a8.6 8.6 0 1 0 2.6-6.1"></path><path d="M3.2 3.4v4.6h4.6"></path></svg>
+            <div style="font-family:Karla;font-weight:700;font-size:13px;color:#1C231E">Cambio en 15 días</div>
+          </div>
+          <div style="padding:22px 24px;display:flex;align-items:center;gap:12px;border-right:1px solid #E3DFD2">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2F5D3F" stroke-width="1.75"><path d="M2 8.6h20v6.8H2z"></path><path d="M7 8.6v3.4M12 8.6v4.4M17 8.6v3.4"></path></svg>
+            <div style="font-family:Karla;font-weight:700;font-size:13px;color:#1C231E">Guía de tallas por pieza</div>
+          </div>
+          <div style="padding:22px 24px;display:flex;align-items:center;gap:12px">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2F5D3F" stroke-width="1.75"><path d="M4.6 10.4h14.8v11H4.6z"></path><path d="M8.2 10.4V7a3.8 3.8 0 0 1 7.6 0v3.4"></path></svg>
+            <div style="font-family:Karla;font-weight:700;font-size:13px;color:#1C231E">Pago por SINPE Móvil</div>
+          </div>
+        </div>
+
+        <div style="background:#1C231E;padding:38px 40px;display:grid;grid-template-columns:minmax(0,1.2fr) repeat(3,minmax(0,1fr));gap:32px">
+          <div style="display:flex;flex-direction:column;gap:16px">
+            <div style="display:flex;align-items:center;gap:11px">
+              <div style="position:relative;width:4em;height:4em;font-size:9px;border-radius:50%;box-shadow:inset 0 0 0 0.17em #C3DE4E;display:grid;place-items:center">
+                <div style="position:absolute;inset:0.55em;border-radius:50%;background:{{ tickLima }};-webkit-mask:radial-gradient(circle,transparent 33%,#000 33%);mask:radial-gradient(circle,transparent 33%,#000 33%)"></div>
+                <div style="width:0.86em;height:0.86em;border-radius:50%;background:#C3DE4E"></div>
+              </div>
+              <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:24px;letter-spacing:0.02em;color:#F6F3EA">KIWI</div>
+            </div>
+            <div style="font-family:Karla;font-size:14px;line-height:1.55;color:#CFCBBD;max-width:300px">Accesorios, joyería y ropa para todos los días. San José, Costa Rica.</div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:11px">
+            <div style="font-family:Karla;font-weight:700;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#8A9189">Comprar</div>
+            <a href="#" style="font-family:Karla;font-size:14px;color:#F6F3EA;text-decoration:none">Novedades</a>
+            <a href="#" style="font-family:Karla;font-size:14px;color:#F6F3EA;text-decoration:none">Joyería</a>
+            <a href="#" style="font-family:Karla;font-size:14px;color:#F6F3EA;text-decoration:none">Accesorios</a>
+            <a href="#" style="font-family:Karla;font-size:14px;color:#F6F3EA;text-decoration:none">Tarjeta de regalo</a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:11px">
+            <div style="font-family:Karla;font-weight:700;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#8A9189">Ayuda</div>
+            <a href="#" style="font-family:Karla;font-size:14px;color:#F6F3EA;text-decoration:none">Guía de tallas</a>
+            <a href="#" style="font-family:Karla;font-size:14px;color:#F6F3EA;text-decoration:none">Envíos y entregas</a>
+            <a href="#" style="font-family:Karla;font-size:14px;color:#F6F3EA;text-decoration:none">Cambios y devoluciones</a>
+            <a href="#" style="font-family:Karla;font-size:14px;color:#F6F3EA;text-decoration:none">Escribinos por WhatsApp</a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <div style="font-family:Karla;font-weight:700;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#8A9189">Enterate primero</div>
+            <div style="font-family:Karla;font-size:14px;line-height:1.5;color:#CFCBBD">Lo nuevo y las rebajas, una vez por semana.</div>
+            <div style="display:flex;gap:8px">
+              <div style="flex:1;height:44px;border:1px solid #4A524B;border-radius:2px;display:flex;align-items:center;padding:0 12px;font-family:Karla;font-size:13px;color:#8A9189">tu correo</div>
+              <div style="height:44px;padding:0 16px;border-radius:2px;background:#C3DE4E;color:#1C231E;display:grid;place-items:center;font-family:Archivo;font-weight:700;font-size:14px">Unirme</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:20px;padding-top:8px">
+      <div style="display:flex;align-items:baseline;gap:14px;flex-wrap:wrap">
+        <div style="font-family:Karla;font-weight:700;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#8A9189">Estados del listado · escritorio 1440 px</div>
+        <div style="font-family:Karla;font-size:14px;color:#5C665D">Los tres estados que hoy no existen en el tema y que la dueña va a ver en internet malo, en filtros cruzados y en caídas de hosting.</div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;align-items:center;gap:10px"><div style="width:7px;height:7px;border-radius:50%;background:#8A9189"></div><div style="font-family:Archivo,sans-serif;font-weight:600;font-size:17px;letter-spacing:-0.01em">Cargando</div><div style="font-family:Karla;font-size:14px;color:#5C665D">Skeletons en #E3DFD2. Mismo esqueleto que el resultado real: nada se mueve de lugar cuando llega el dato.</div></div>
+        <div style="width:1440px;background:#F6F3EA;border:1px solid #CFCBBD;border-radius:2px;overflow:hidden;display:grid;grid-template-columns:236px minmax(0,1fr)">
+          <div style="border-right:1px solid #E3DFD2;padding:26px 24px 36px;display:flex;flex-direction:column;gap:24px">
+            <div style="width:74px;height:17px;border-radius:2px;background:#E3DFD2"></div>
+            <div style="display:flex;flex-direction:column;gap:11px">
+              <div style="width:82px;height:11px;border-radius:2px;background:#E3DFD2"></div>
+              <div style="display:flex;flex-direction:column;gap:9px">
+                <div style="display:flex;align-items:center;gap:9px"><div style="width:15px;height:15px;border-radius:2px;background:#E3DFD2"></div><div style="width:104px;height:14px;border-radius:2px;background:#E3DFD2"></div></div>
+                <div style="display:flex;align-items:center;gap:9px"><div style="width:15px;height:15px;border-radius:2px;background:#E3DFD2"></div><div style="width:120px;height:14px;border-radius:2px;background:#E3DFD2"></div></div>
+                <div style="display:flex;align-items:center;gap:9px"><div style="width:15px;height:15px;border-radius:2px;background:#E3DFD2"></div><div style="width:96px;height:14px;border-radius:2px;background:#E3DFD2"></div></div>
+                <div style="display:flex;align-items:center;gap:9px"><div style="width:15px;height:15px;border-radius:2px;background:#E3DFD2"></div><div style="width:112px;height:14px;border-radius:2px;background:#E3DFD2"></div></div>
+              </div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:11px">
+              <div style="width:52px;height:11px;border-radius:2px;background:#E3DFD2"></div>
+              <div style="height:4px;border-radius:2px;background:#E3DFD2"></div>
+              <div style="display:flex;justify-content:space-between"><div style="width:52px;height:12px;border-radius:2px;background:#E3DFD2"></div><div style="width:52px;height:12px;border-radius:2px;background:#E3DFD2"></div></div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:11px">
+              <div style="width:44px;height:11px;border-radius:2px;background:#E3DFD2"></div>
+              <div style="display:flex;gap:8px;flex-wrap:wrap">
+                <div style="width:26px;height:26px;border-radius:50%;background:#E3DFD2"></div>
+                <div style="width:26px;height:26px;border-radius:50%;background:#E3DFD2"></div>
+                <div style="width:26px;height:26px;border-radius:50%;background:#E3DFD2"></div>
+                <div style="width:26px;height:26px;border-radius:50%;background:#E3DFD2"></div>
+                <div style="width:26px;height:26px;border-radius:50%;background:#E3DFD2"></div>
+                <div style="width:26px;height:26px;border-radius:50%;background:#E3DFD2"></div>
+              </div>
+            </div>
+          </div>
+          <div style="padding:26px 40px 40px;display:flex;flex-direction:column;gap:20px">
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:20px">
+              <div style="display:flex;align-items:center;gap:12px"><div style="width:112px;height:24px;border-radius:2px;background:#E3DFD2"></div><div style="width:78px;height:14px;border-radius:2px;background:#E3DFD2"></div></div>
+              <div style="width:124px;height:38px;border-radius:2px;background:#E3DFD2"></div>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px">
+              <div style="display:flex;flex-direction:column;gap:10px"><div style="aspect-ratio:1;border-radius:2px;background:#E3DFD2"></div><div style="width:70%;height:15px;border-radius:2px;background:#E3DFD2"></div><div style="width:44%;height:17px;border-radius:2px;background:#E3DFD2"></div><div style="width:34%;height:11px;border-radius:2px;background:#E3DFD2"></div></div>
+              <div style="display:flex;flex-direction:column;gap:10px"><div style="aspect-ratio:1;border-radius:2px;background:#E3DFD2"></div><div style="width:82%;height:15px;border-radius:2px;background:#E3DFD2"></div><div style="width:38%;height:17px;border-radius:2px;background:#E3DFD2"></div><div style="width:34%;height:11px;border-radius:2px;background:#E3DFD2"></div></div>
+              <div style="display:flex;flex-direction:column;gap:10px"><div style="aspect-ratio:1;border-radius:2px;background:#E3DFD2"></div><div style="width:64%;height:15px;border-radius:2px;background:#E3DFD2"></div><div style="width:44%;height:17px;border-radius:2px;background:#E3DFD2"></div><div style="width:34%;height:11px;border-radius:2px;background:#E3DFD2"></div></div>
+              <div style="display:flex;flex-direction:column;gap:10px"><div style="aspect-ratio:1;border-radius:2px;background:#E3DFD2"></div><div style="width:76%;height:15px;border-radius:2px;background:#E3DFD2"></div><div style="width:40%;height:17px;border-radius:2px;background:#E3DFD2"></div><div style="width:34%;height:11px;border-radius:2px;background:#E3DFD2"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;align-items:center;gap:10px"><div style="width:7px;height:7px;border-radius:50%;background:#3F4E7A"></div><div style="font-family:Archivo,sans-serif;font-weight:600;font-size:17px;letter-spacing:-0.01em">Sin resultados tras filtrar</div><div style="font-family:Karla;font-size:14px;color:#5C665D">La salida no es "intentá otra cosa": es el nombre del filtro que sobra, con su botón para quitarlo.</div></div>
+        <div style="width:1440px;background:#F6F3EA;border:1px solid #CFCBBD;border-radius:2px;overflow:hidden;display:grid;grid-template-columns:236px minmax(0,1fr)">
+          <div style="border-right:1px solid #E3DFD2;padding:26px 24px 36px;display:flex;flex-direction:column;gap:24px">
+            <div style="font-family:Archivo,sans-serif;font-weight:600;font-size:17px;letter-spacing:-0.01em">Filtros</div>
+            <div style="display:flex;flex-direction:column;gap:11px">
+              <div style="font-family:Karla;font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#8A9189">Categoría</div>
+              <div style="display:flex;flex-direction:column;gap:9px">
+                <div style="display:flex;align-items:center;gap:9px"><div style="width:15px;height:15px;border-radius:2px;background:#2F5D3F"></div><span style="font-family:Karla;font-size:14px;color:#1C231E">Aretes (42)</span></div>
+                <div style="display:flex;align-items:center;gap:9px"><div style="width:15px;height:15px;border-radius:2px;border:1px solid #CFCBBD"></div><span style="font-family:Karla;font-size:14px;color:#3E4740">Cadenas (28)</span></div>
+                <div style="display:flex;align-items:center;gap:9px"><div style="width:15px;height:15px;border-radius:2px;border:1px solid #CFCBBD"></div><span style="font-family:Karla;font-size:14px;color:#3E4740">Anillos (19)</span></div>
+                <div style="display:flex;align-items:center;gap:9px"><div style="width:15px;height:15px;border-radius:2px;border:1px solid #CFCBBD"></div><span style="font-family:Karla;font-size:14px;color:#3E4740">Pulseras (23)</span></div>
+              </div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:11px">
+              <div style="font-family:Karla;font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#8A9189">Precio</div>
+              <div style="display:flex;flex-direction:column;gap:8px">
+                <div style="height:4px;border-radius:2px;background:#CFCBBD;position:relative">
+                  <div style="position:absolute;left:0;right:74%;top:0;bottom:0;border-radius:2px;background:#C0523A"></div>
+                  <div style="position:absolute;right:74%;top:-5px;width:14px;height:14px;border-radius:50%;background:#C0523A"></div>
+                </div>
+                <div style="display:flex;justify-content:space-between"><span style="font-family:Karla;font-size:12px;color:#5C665D">₡5.000</span><span style="font-family:Karla;font-weight:700;font-size:12px;color:#C0523A">₡8.000</span></div>
+              </div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:11px">
+              <div style="font-family:Karla;font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#8A9189">Color</div>
+              <div style="display:flex;gap:8px;flex-wrap:wrap">
+                <div style="width:26px;height:26px;border-radius:50%;background:#C9A227;box-shadow:0 0 0 1px #CFCBBD"></div>
+                <div style="width:26px;height:26px;border-radius:50%;background:#B6B6B6;box-shadow:0 0 0 1px #CFCBBD"></div>
+                <div style="width:26px;height:26px;border-radius:50%;background:#1C231E;box-shadow:0 0 0 1px #CFCBBD"></div>
+                <div style="width:26px;height:26px;border-radius:50%;background:#C0523A;box-shadow:0 0 0 1px #CFCBBD"></div>
+                <div style="width:26px;height:26px;border-radius:50%;background:#3F4E7A;box-shadow:0 0 0 1px #CFCBBD"></div>
+                <div style="width:26px;height:26px;border-radius:50%;background:#C3DE4E;box-shadow:0 0 0 2px #2F5D3F"></div>
+              </div>
+            </div>
+            <div style="margin-top:4px;padding-top:16px;border-top:1px solid #E3DFD2">
+              <a href="#" style="font-family:Karla;font-weight:700;font-size:13px;color:#2F5D3F">Limpiar filtros</a>
+            </div>
+          </div>
+          <div style="padding:26px 40px 44px;display:flex;flex-direction:column;gap:20px">
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:20px">
+              <div style="display:flex;align-items:baseline;gap:12px">
+                <div style="font-family:Archivo,sans-serif;font-weight:600;font-size:24px;letter-spacing:-0.02em">Aretes</div>
+                <div style="font-family:Karla;font-size:14px;color:#5C665D">0 piezas</div>
+              </div>
+              <div style="height:38px;padding:0 12px;border:1px solid #CFCBBD;border-radius:2px;display:flex;align-items:center;gap:8px;background:#FFFDF7">
+                <span style="font-family:Karla;font-weight:700;font-size:13px;color:#1C231E">Más nuevos</span>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#1C231E" stroke-width="2"><path d="M4 8l8 8 8-8"></path></svg>
+              </div>
+            </div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+              <span style="font-family:Karla;font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#8A9189;margin-right:4px">Filtros activos</span>
+              <div style="display:flex;align-items:center;gap:8px;height:30px;padding:0 10px;border:1px solid #CFCBBD;border-radius:2px;background:#FFFDF7"><span style="font-family:Karla;font-weight:700;font-size:13px;color:#1C231E">Aretes</span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#5C665D" stroke-width="2.4"><path d="M5 5l14 14M19 5 5 19"></path></svg></div>
+              <div style="display:flex;align-items:center;gap:8px;height:30px;padding:0 10px;border:1px solid #C0523A;border-radius:2px;background:#FFFDF7"><span style="font-family:Karla;font-weight:700;font-size:13px;color:#C0523A">Hasta ₡8.000</span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#C0523A" stroke-width="2.4"><path d="M5 5l14 14M19 5 5 19"></path></svg></div>
+              <div style="display:flex;align-items:center;gap:8px;height:30px;padding:0 10px;border:1px solid #CFCBBD;border-radius:2px;background:#FFFDF7"><span style="font-family:Karla;font-weight:700;font-size:13px;color:#1C231E">Color lima</span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#5C665D" stroke-width="2.4"><path d="M5 5l14 14M19 5 5 19"></path></svg></div>
+            </div>
+            <div style="display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:32px;align-items:start;border-top:1px solid #E3DFD2;padding-top:32px">
+              <div style="display:flex;flex-direction:column;gap:18px;max-width:600px">
+                <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:34px;line-height:1.1;letter-spacing:-0.025em;color:#1C231E;text-wrap:pretty">Ningún arete lima cuesta menos de ₡8.000</div>
+                <div style="font-family:Karla;font-size:16px;line-height:1.55;color:#3E4740;text-wrap:pretty">Es el filtro de precio el que está dejando la pantalla vacía: sin él hay <strong>7 aretes lima</strong>, desde ₡8.900.</div>
+                <div style="display:flex;gap:12px;flex-wrap:wrap;padding-top:4px">
+                  <div style="height:52px;padding:0 24px;border-radius:2px;background:#2F5D3F;color:#F6F3EA;display:grid;place-items:center;font-family:Archivo;font-weight:700;font-size:16px">Quitar el filtro de precio</div>
+                  <div style="height:52px;padding:0 24px;border-radius:2px;border:1.5px solid #2F5D3F;color:#2F5D3F;display:grid;place-items:center;font-family:Archivo;font-weight:600;font-size:16px">Limpiar todos los filtros</div>
+                </div>
+              </div>
+              <div style="border:1px solid #CFCBBD;border-radius:2px;background:#FFFDF7;padding:22px;display:flex;flex-direction:column;gap:10px">
+                <div style="font-family:Archivo,sans-serif;font-weight:600;font-size:18px;letter-spacing:-0.01em;color:#1C231E">¿Buscás algo puntual?</div>
+                <div style="font-family:Karla;font-size:14px;line-height:1.5;color:#3E4740">Contános qué andás buscando y te decimos si se puede hacer.</div>
+                <div style="margin-top:4px;height:46px;padding:0 18px;border-radius:2px;border:1.5px solid #2F5D3F;color:#2F5D3F;display:inline-grid;place-items:center;font-family:Archivo;font-weight:600;font-size:15px;justify-self:start">Escribir por WhatsApp</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;align-items:center;gap:10px"><div style="width:7px;height:7px;border-radius:50%;background:#C0523A"></div><div style="font-family:Archivo,sans-serif;font-weight:600;font-size:17px;letter-spacing:-0.01em">Error de carga</div><div style="font-family:Karla;font-size:14px;color:#5C665D">Terracota una sola vez, en el borde. El error no es culpa del cliente y no se le grita.</div></div>
+        <div style="width:1440px;background:#F6F3EA;border:1px solid #CFCBBD;border-radius:2px;overflow:hidden;display:grid;grid-template-columns:236px minmax(0,1fr)">
+          <div style="border-right:1px solid #E3DFD2;padding:26px 24px 36px;display:flex;flex-direction:column;gap:24px;opacity:.45">
+            <div style="width:74px;height:17px;border-radius:2px;background:#E3DFD2"></div>
+            <div style="display:flex;flex-direction:column;gap:9px">
+              <div style="width:82px;height:11px;border-radius:2px;background:#E3DFD2"></div>
+              <div style="width:104px;height:14px;border-radius:2px;background:#E3DFD2"></div>
+              <div style="width:120px;height:14px;border-radius:2px;background:#E3DFD2"></div>
+              <div style="width:96px;height:14px;border-radius:2px;background:#E3DFD2"></div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:9px">
+              <div style="width:52px;height:11px;border-radius:2px;background:#E3DFD2"></div>
+              <div style="height:4px;border-radius:2px;background:#E3DFD2"></div>
+            </div>
+          </div>
+          <div style="padding:26px 40px 44px;display:flex;flex-direction:column;gap:20px">
+            <div style="display:flex;align-items:baseline;gap:12px">
+              <div style="font-family:Archivo,sans-serif;font-weight:600;font-size:24px;letter-spacing:-0.02em">Aretes</div>
+            </div>
+            <div style="border:1px solid #C0523A;border-radius:2px;background:#FFFDF7;padding:34px 36px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px;align-items:center">
+              <div style="display:flex;gap:18px;align-items:flex-start;max-width:660px">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#C0523A" stroke-width="1.75" style="flex:none;margin-top:4px"><path d="M3.4 12a8.6 8.6 0 1 0 2.6-6.1"></path><path d="M3.2 3.4v4.6h4.6"></path></svg>
+                <div style="display:flex;flex-direction:column;gap:10px">
+                  <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:28px;line-height:1.12;letter-spacing:-0.025em;color:#1C231E">No pudimos cargar las piezas</div>
+                  <div style="font-family:Karla;font-size:16px;line-height:1.55;color:#3E4740;text-wrap:pretty">Suele ser la conexión. Tus filtros y tu carrito siguen guardados: volvé a cargar y seguís donde estabas.</div>
+                </div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:10px;min-width:236px">
+                <div style="height:52px;padding:0 24px;border-radius:2px;background:#2F5D3F;color:#F6F3EA;display:grid;place-items:center;font-family:Archivo;font-weight:700;font-size:16px">Volver a cargar</div>
+                <div style="height:52px;padding:0 24px;border-radius:2px;border:1.5px solid #2F5D3F;color:#2F5D3F;display:grid;place-items:center;font-family:Archivo;font-weight:600;font-size:16px">Escribir por WhatsApp</div>
+                <div style="font-family:Karla;font-size:13px;line-height:1.45;color:#5C665D;text-align:center">Si pasa dos veces seguidas, avisale a Ana.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:14px;align-items:flex-start;background:#F6F3EA;border-left:3px solid #2F5D3F;padding:18px 22px">
+      <div style="font-family:Karla;font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#2F5D3F;min-width:110px;padding-top:2px">Por qué así</div>
+      <div style="font-size:15px;line-height:1.55;color:#3E4740;max-width:1180px;text-wrap:pretty">La marca aparece tres veces en toda la página —barra superior, header y pie— y nunca compite con producto. El único Lima sólido del cuerpo es la tarjeta "es un regalo": ahí vive el público secundario, que necesita permiso explícito para comprar sin saber tallas. Cada card declara disponibilidad en lugar de estrellas o reseñas: la duda real es si la pieza existe hoy, no si gusta —y con una sola dueña conciliando pedidos a mano, prometer fecha de entrega en la card sería prometer lo que no se puede sostener. Por eso se cayó el filtro "llega mañana": no hay dato de SLA que lo respalde. Lo que sí hay es inventario, y de ahí vive la línea de estado: "Disponible" en Azul, "Agotado" en Verde apagado, nunca rojo —agotado no es un error.</div>
+    </div>
+  </div>
+
+  <div style="border-top:1px solid #CFCBBD;padding-top:28px;display:flex;gap:40px;flex-wrap:wrap">
+    <div style="display:flex;flex-direction:column;gap:6px">
+      <div style="font-family:Karla;font-weight:700;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#8A9189">Contraste verificado</div>
+      <div style="font-size:14px;color:#3E4740">Grafito/Crema 15.2:1 · Blanco/Verde 7.6:1 · Grafito/Lima 10.8:1 · Blanco/Índigo 7.9:1 · Blanco/Guayaba 4.6:1</div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:6px">
+      <div style="font-family:Karla;font-weight:700;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#8A9189">Pendiente de definir</div>
+      <div style="font-size:14px;color:#3E4740">Guía de fotografía (fondo, encuadre, modelo) — es la mitad del problema de "difícil de comprar" y no se resuelve con logo.</div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1640,&quot;height&quot;:3600},&quot;semillas&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:8,&quot;min&quot;:4,&quot;max&quot;:16,&quot;step&quot;:1,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Sistema de marca&quot;},&quot;escalaReduccion&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:24,&quot;min&quot;:16,&quot;max&quot;:64,&quot;step&quot;:4,&quot;unit&quot;:&quot;px&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Sistema de marca&quot;},&quot;mostrarConstruccion&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sistema de marca&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const n = Math.max(4, Math.min(16, this.props.semillas ?? 8));
+    const step = 360 / n;
+    const ring = (w, color) =>
+      `repeating-conic-gradient(from ${-w / 2}deg, ${color} 0 ${w}deg, transparent ${w}deg ${step}deg)`;
+    const red = this.props.escalaReduccion ?? 24;
+    return {
+      construccion: this.props.mostrarConstruccion ?? false,
+      tickB: ring(6, "#2F5D3F"),
+      tickBSmall: ring(8, "#2F5D3F"),
+      tickMono: ring(6, "#1C231E"),
+      tickLight: ring(6, "#F6F3EA"),
+      tickC: ring(1.6, "#1C231E"),
+      tickCMid: ring(4.5, "#1C231E"),
+      tickCMono: ring(4, "#1C231E"),
+      tickCLight: ring(4, "#F6F3EA"),
+      tickCPhoto: ring(5.5, "#F6F3EA"),
+      tickCSmall: ring(8, "#1C231E"),
+      tickPattern: ring(5, "#C3DE4E"),
+      tickLima: ring(6, "#C3DE4E"),
+      tickPhoto: ring(8, "#F6F3EA"),
+      redFs: (red / 4).toFixed(2) + "px",
+      redLabel: red + " px"
+    };
+  }
+}
+</script>
+</body>
+</html>
