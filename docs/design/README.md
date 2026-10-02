@@ -245,13 +245,15 @@ Decisión sobre el verde: **se conserva, en dos temperaturas.** El lima original
 ## Sistema de iconos
 Grilla 24 · trazo **1.75** · terminaciones **rectas** · esquinas 2 · **sin relleno** · un solo color. Cada icono cabe en el mismo círculo de 20 que el emblema.
 
-Set base: carrito, envío, guía de tallas, devolución, favoritos, pago seguro. Set ampliado (setiembre 2026): copiar, adjuntar/subir, reloj y check, más el glifo de WhatsApp como excepción documentada. Los once archivos están en `assets/icons/` y se describen en «Assets de producción». Van siempre en `#2F5D3F` o `#1C231E` (`currentColor`).
+Set propio (14 con los nuevos): carrito, envío, guía de tallas, devolución, favoritos, pago seguro, copiar, subir, reloj, check, **lupa, chevron y candado** (revisión 6). Más dos versiones del logo oficial de WhatsApp (`whatsapp-mono.svg`, `whatsapp-color.svg`), regidas por «Revisión 6 · Logos de terceros». Van siempre en `#2F5D3F` o `#1C231E` (`currentColor`).
+
+> **⚠ DEROGADO en la revisión 6 — «WhatsApp como excepción documentada en una tinta» y el glifo genérico de chat.** Ver «Revisión 6».
 
 **Excepción deliberada**: *favoritos* **no usa corazón** — usa el destello de ocho radios de la marca (cuatro trazos cruzados a 45°). Es el único icono con carga de marca y por eso el único que puede ir en lima sobre foto. No sustituir por un corazón de librería.
 
 ## Assets
 - **Logo**: cinco SVG listos para producción en `assets/logo/` (emblema, lockup horizontal, monocromo positivo, monocromo negativo y reducción ≤ 24 px), con el código en `Kiwi-assets-produccion.dc.html`. Sin gradientes, máscaras ni fuentes externas. El wordmark «KIWI» del lockup está construido con rutas geométricas que imitan Archivo 700; si se quiere el contorno exacto de la fuente, reemplazar solo esa parte. Ver «Assets de producción».
-- **Iconos**: once SVG en `assets/icons/` (seis del set base, cuatro nuevos y el glifo de WhatsApp provisional), todos en `viewBox 0 0 24 24`, trazo 1.75 y `currentColor`. Listos para convertir en componentes.
+- **Iconos**: catorce SVG propios y dos de WhatsApp en `assets/icons/`, todos en `viewBox 0 0 24 24`. Los propios en trazo 1.75 y `currentColor`. **`whatsapp-mono.svg` y `whatsapp-color.svg` son marcadores**: reemplazar por los SVG oficiales de Meta sin modificarlos. Listos para convertir en componentes.
 - **Fuentes**: Archivo y Karla desde Google Fonts (o self-hosted; preferible por rendimiento). Pesos usados: Archivo 500/600/700, Karla 400/500/700.
 - **Fotografía**: la entrega el proveedor. Los placeholders rayados de los lienzos se reemplazan por esas fotos.
 - **Archivos de referencia originales** de la marca anterior (etiqueta circular con foto, emblema vectorial marrón/lima): están en `uploads/` del proyecto, fuera de este bundle. No usar en producción — la evolución los reemplaza.
@@ -403,7 +405,7 @@ En escritorio los tres botones y el campo de cédula van en un grid `340px minma
 
 ### Decisiones pendientes (ningún valor inventado)
 - **Cuatro iconos nuevos (copiar, subir, reloj, check)**: **resueltos**; verificados, ajustados a la grilla e incorporados al set (`assets/icons/`). Queda por aprobar la regla del check a 2.5 dentro de discos de ≤ 26 px.
-- **Icono de WhatsApp**: resuelto como excepción documentada (glifo oficial, una tinta, solo en acciones que abren un chat). Falta descargar el archivo oficial: `whatsapp-provisional.svg` es un trazo de reserva y no debe publicarse.
+- **Icono de WhatsApp**: regla resuelta en «Revisión 6». Falta descargar los dos SVG oficiales (monocromo y color) y confirmar los lineamientos vigentes de Meta; los archivos actuales son marcadores.
 - **Peso de cada pieza** y **tarifas de envío con IVA incluido**: ver «Envío sin umbral».
 - **Aviso por WhatsApp a las 24 h y cancelación a las 48 h**: resuelto; ver «Cierre de políticas».
 - **Monto distinto o parcial, error de subida, cancelación y reintento**: resueltos en «Estados de excepción del flujo de compra» (secciones 13–16). Quedan pendientes solo los plazos allí listados.
@@ -861,3 +863,61 @@ Cada pieza se confecciona cuando alguien la compra, en la cantidad y las tallas 
 - **Cambio en 15 días** en una pieza hecha por encargo: política comercial por definir; el diseño no la toca.
 - **Diferencia con Correos**: Kiwi absorbe la diferencia entre ₡3.000 y lo que cobre Correos.
 - **Barra superior en móvil 375**: verificar con la fuente real que «Hecho por encargo · Envío ₡3.000 a todo el país» entra en una línea o dejar que envuelva.
+
+
+## Revisión 6 — Logos de terceros y set de iconos (octubre 2026)
+
+Archivo de referencia: `Kiwi-assets-produccion.dc.html`, secciones **19–21**. **Ningún token cambió**: colores, Archivo/Karla, escala de 4 px y radios de 2 px. El verde de WhatsApp pertenece al archivo del logo, no a la paleta.
+
+### 1. WhatsApp en el set
+
+- **Dos versiones, un archivo oficial cada una**: `whatsapp-mono.svg` (una tinta, `currentColor`) y `whatsapp-color.svg`. Sin recolorear, deformar ni recortar. Hoy son marcadores de trazo.
+- **Tamaño**: caja 24, cuerpo inscrito en el círculo de 20 (el del emblema). Se renderiza a **20 px**, como el carrito. Mínimo 20 px a color, 16 px monocromo. Siempre con etiqueta de texto.
+- **Peso óptico**: el oficial es sólido y pesa más que un icono de trazo; no se compensa con tamaño ni contorno.
+- **Alineación**: centro de la caja = centro de las mayúsculas de la etiqueta (`align-items:center`), gap 10 en botones de 48/56 y 8 en sellos. El rabillo no se desplaza. Espacio libre ≥ 4 px (o el de Meta, si es mayor).
+- **Convivencia con `#2F5D3F`**: el verde queda encerrado en el glifo; nunca en fondos, bordes, hover ni texto. A color solo sobre `#F6F3EA`, `#FFFDF7`, `#F1EEE2`, `#E3DFD2`. Sobre `#2F5D3F`, `#1C231E`, fotos o avisos de error: monocromo `#F6F3EA` o tinta del texto. Hover/foco/activo no tocan el logo.
+
+### 2. Dónde aparece
+
+| Superficie | Versión | Criterio |
+|---|---|---|
+| Ficha · botón secundario | Color | Aporta: la duda que corta la venta; promete «abre mi chat». |
+| Sello de consulta de fecha | Color | Aporta: la fecha es el motivo central en un negocio por encargo. |
+| Carrito | Color | Aporta: salida de la duda junto a «Continuar». El aviso «por encargo» usa reloj. |
+| Checkout · botón | Color | Aporta; un solo logo a color por vista. |
+| Checkout · enlace en línea | Sin icono | Ruido: el texto ya dice WhatsApp. |
+| Gracias · «Por WhatsApp» / «Escribirle a Ana» | Color (el primero), mono (un segundo en la misma vista) | Máximo valor: resolver un pago que no cuadra. Menciones en la línea de tiempo: solo texto. |
+| Estados de excepción | Mono | Ruido en color: el estado ya tiene su señal (Guayaba). |
+| Footer | Mono | Enlace de bajo peso sobre fondo oscuro. |
+
+Regla de conteo: **un logo a color por vista**.
+
+### 3. Regla actualizada de logos de terceros
+
+Se permite el logo oficial de una marca de terceros en la iconografía **solo si cumple las ocho**: (1) **Destino**: el clic abre ese servicio; no decora ni avala. (2) **Duda real**: resuelve una ambigüedad que el texto no resuelve. (3) **Archivo oficial** sin modificar, solo variantes publicadas por la marca. (4) **Con texto**, nunca solo. (5) **Un color por vista**. (6) **Sin contagio**: su color no es token. (7) **Registro**: toda marca entra con fila en esta tabla (destino, archivo, versión, fecha de revisión de lineamientos, aprobación); sin fila, no entra. (8) **Fuera de alcance**: medios de pago (SINPE, tarjetas) requieren decisión propia.
+
+| Marca | Destino | Archivos | Lineamientos revisados | Aprobada |
+|---|---|---|---|---|
+| WhatsApp | Chat con Ana | `whatsapp-mono.svg`, `whatsapp-color.svg` (marcadores) | **Pendiente** | Revisión 6 |
+
+### 4. Glifo de chat genérico: eliminado
+
+Nunca tuvo archivo. Acción que abre chat → logo de WhatsApp; aviso que informa (p. ej. «hecho por encargo») → **reloj**; enlace «¿Dudas…?» → solo texto. **Migración pendiente** en los lienzos 08–16 (aviso «por encargo» del carrito y fila de duda de envío).
+
+### 5. Iconos nuevos
+
+Grilla 24, trazo 1.75, terminaciones rectas, esquinas 2, sin relleno, `currentColor`; zona viva 2.5–21.5.
+- **Lupa** (`lupa.svg`): círculo `cx10 cy10 r7.5`, mango `M15.5 15.5 L21.5 21.5`.
+- **Chevron** (`chevron.svg`): `M5 8.5 L12 15.5 L19 8.5`, apunta abajo; centro vertical en 12 para rotar con `transform: rotate()` (derecha −90°, arriba 180°, izquierda 90°). Hit target ≥ 44 px.
+- **Candado** (`candado.svg`): cuerpo `rect x4.5 y10.5 w15 h10.5 rx2`, grillete `M8 10.5V7a4 4 0 0 1 8 0v3.5`, ojo `M12 14.5v3`.
+
+### 6. Derogado y vigente
+
+| Antes | Ahora | Estado |
+|---|---|---|
+| Prohibido usar logos de terceros en la iconografía | Permitido bajo las ocho condiciones | **Derogado** |
+| WhatsApp: excepción en una tinta, solo en acciones que abren chat | Color en la mayoría de salidas; mono en footer, excepciones y fondos oscuros | **Derogado** |
+| Glifo genérico de chat | Eliminado | **Derogado** |
+| `whatsapp-provisional.svg` | `whatsapp-mono.svg` + `whatsapp-color.svg` | **Reemplazado** |
+| Iconos propios: sin relleno, un color, trazo 1.75 | Igual, solo para iconos propios | Vigente |
+| Colores, tipografía, escala de 4 px, radios de 2 px | Igual | Vigente |
