@@ -39,11 +39,21 @@ Tienda WooCommerce con tema de bloques propio (`themes/kiwi`). Costa Rica, espa�
 
 ## Iconografía
 - Solo los SVG de `themes/kiwi/assets/icons/`. Sin librerías de iconos.
-- Grilla 24, trazo 1.75, terminaciones rectas, sin relleno, `currentColor`, solo en `verde-kiwi` o `grafito`.
+- Logos de terceros: permitidos (la prohibición se levantó en octubre de 2026). Se usan tal cual los entrega su dueño, nunca redibujados. Hoy el único caso es WhatsApp (ver abajo).
+- Grilla 24, trazo 1.75, terminaciones rectas, sin relleno, `currentColor`. El color lo fija el lienzo según el contexto:
+  - `grafito`: utilidades del header (favoritos, carrito) y sobre lima (sello de la ficha).
+  - `verde-kiwi`: franja de garantías y acentos de marca.
+  - `crema`: dentro de botones `verde-kiwi` y sobre fondos oscuros.
+  - `indigo`: información de confianza, como el reloj del aviso «Se confecciona por encargo» y el enlace «Guía de tallas».
+  - `texto-muted`: fila de confianza secundaria de la ficha (iconos de 18 px).
+  - `guayaba`: solo en el estado «Error de carga» del listado, junto a su borde guayaba (es el mismo uso único por pantalla).
+  - `lima-kiwi`: solo favoritos sobre foto.
+  - `texto-debil`: la lupa del buscador, que todavía no existe en el set.
 - Favoritos = destello de ocho radios. Nunca corazón. Es el único que puede ir lima sobre foto.
 - «Quitar» es texto, nunca basurero.
 - Icono que no existe en el set (lupa, chevron, chat, candado, regalo, alerta): no lo dibujes ni lo importes. Preguntá.
-- WhatsApp es la única excepción: glifo oficial de Meta, una tinta (nunca el verde de WhatsApp), solo en acciones que abren un chat, siempre con texto. El glifo oficial todavía no está en el repo (el provisional se retiró): hasta que llegue, el botón va solo con texto. No dibujes uno.
+- WhatsApp: logo oficial de Meta. Sus lineamientos no permiten recolorearlo ni deformarlo, así que su verde no se fuerza a la paleta de Kiwi. Esta regla deroga el punto «una tinta, no se usa el verde de WhatsApp» del §19 del handoff.
+- El asset definitivo de WhatsApp y sus reglas de uso vienen de diseño. Hasta que lleguen, los botones de WhatsApp van solo con texto. No dibujes ni descargues uno.
 - Prohibidos: percha, corona, diamante, labios, mariposas.
 
 ## Modelo de negocio (condiciona el código)
@@ -118,7 +128,7 @@ El tráfico viene de Instagram y es mayoritariamente móvil. Hoy, debajo de 782 
 - Las medidas de componente (punto, iconos, badge, buscador, logo) no son espaciado: van como presets `dimensionSizes` en `theme.json`.
 - Nombres de token `aviso` (#F1EEE2) y `borde-oscuro` (#4A524B): el handoff usa el valor pero no le da nombre.
 - `fluid: true` en la tipografía: WordPress genera tamaños intermedios que el handoff no define.
-- Iconos inexistentes: lupa, chevron, chat, candado, regalo, alerta. Falta el glifo oficial de WhatsApp.
+- Iconos inexistentes: lupa, chevron, chat, candado, regalo, alerta. Falta el asset de WhatsApp y sus reglas de uso (diseño).
 - Comprobante JPG/PNG/PDF hasta 10 MB: es una propuesta sin aprobar.
 - Check a trazo 2.5 dentro de discos ≤26 px; «esquinas 2»; wordmark exacto de Archivo 700.
 - Layouts entre 375 y 1440 px (el breakpoint es 782, pero no hay diseño intermedio); estados de error del checkout y de validación del newsletter.
