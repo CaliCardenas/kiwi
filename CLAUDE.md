@@ -3,7 +3,7 @@
 Tienda WooCommerce con tema de bloques propio (`themes/kiwi`). Costa Rica, español con voseo.
 
 ## Fuente de verdad
-- `docs/design/README.md` manda. Vale el estado final: Revisión 5 > Revisión 4 > Revisión 3 > texto original.
+- `docs/design/README.md` manda. Vale el estado final: Revisión 6 > Revisión 5 > Revisión 4 > Revisión 3 > texto original.
 - Las tablas «Qué queda derogado» derogan aunque el párrafo original no tenga la marca ⚠. Antes de implementar una sección, buscá si una revisión posterior la toca.
 - Los `.dc.html` son referencia visual, no código. No copies sus estilos inline.
 - Cuando el handoff habla de `assets/logo/` y `assets/icons/`, se refiere a `themes/kiwi/assets/`, la única copia que existe.
@@ -39,8 +39,7 @@ Tienda WooCommerce con tema de bloques propio (`themes/kiwi`). Costa Rica, espa�
 
 ## Iconografía
 - Solo los SVG de `themes/kiwi/assets/icons/`. Sin librerías de iconos.
-- Logos de terceros: permitidos (la prohibición se levantó en octubre de 2026). Se usan tal cual los entrega su dueño, nunca redibujados. Hoy el único caso es WhatsApp (ver abajo).
-- Grilla 24, trazo 1.75, terminaciones rectas, sin relleno, `currentColor`. El color lo fija el lienzo según el contexto:
+- Iconos propios: grilla 24, trazo 1.75, terminaciones rectas, sin relleno, `currentColor`. El color lo fija el lienzo según el contexto:
   - `grafito`: utilidades del header (favoritos, carrito) y sobre lima (sello de la ficha).
   - `verde-kiwi`: franja de garantías y acentos de marca.
   - `crema`: dentro de botones `verde-kiwi` y sobre fondos oscuros.
@@ -48,13 +47,36 @@ Tienda WooCommerce con tema de bloques propio (`themes/kiwi`). Costa Rica, espa�
   - `texto-muted`: fila de confianza secundaria de la ficha (iconos de 18 px).
   - `guayaba`: solo en el estado «Error de carga» del listado, junto a su borde guayaba (es el mismo uso único por pantalla).
   - `lima-kiwi`: solo favoritos sobre foto.
-  - `texto-debil`: la lupa del buscador, que todavía no existe en el set.
+  - `texto-debil`: la lupa del buscador.
 - Favoritos = destello de ocho radios. Nunca corazón. Es el único que puede ir lima sobre foto.
 - «Quitar» es texto, nunca basurero.
-- Icono que no existe en el set (lupa, chevron, chat, candado, regalo, alerta): no lo dibujes ni lo importes. Preguntá.
-- WhatsApp: logo oficial de Meta. Sus lineamientos no permiten recolorearlo ni deformarlo, así que su verde no se fuerza a la paleta de Kiwi. Esta regla deroga el punto «una tinta, no se usa el verde de WhatsApp» del §19 del handoff.
-- El asset definitivo de WhatsApp y sus reglas de uso vienen de diseño. Hasta que lleguen, los botones de WhatsApp van solo con texto. No dibujes ni descargues uno.
+- Lupa, chevron y candado existen desde la revisión 6. El chevron apunta abajo y se rota con `transform: rotate()` (derecha −90°, arriba 180°, izquierda 90°); su hit target es ≥44 px.
+- Glifo de chat genérico: eliminado, no existe. Una acción que abre chat lleva el logo de WhatsApp; un aviso que informa (p. ej. «Se confecciona por encargo») lleva el reloj; un enlace «¿Dudas…?» va solo con texto.
+- Icono que no existe en el set (regalo, alerta, menú): no lo dibujes ni lo importes. Preguntá.
 - Prohibidos: percha, corona, diamante, labios, mariposas.
+
+### Logos de terceros (revisión 6 del handoff)
+- Un logo oficial de terceros entra en la iconografía **solo si cumple las ocho condiciones**:
+  1. **Destino**: el clic abre ese servicio; no decora ni avala.
+  2. **Duda real**: resuelve una ambigüedad que el texto no resuelve.
+  3. **Archivo oficial** sin modificar: solo variantes publicadas por la marca. Sin recolorear, deformar ni recortar.
+  4. **Con texto**, nunca solo.
+  5. **Un logo a color por vista.**
+  6. **Sin contagio**: su color no es token.
+  7. **Registro**: toda marca tiene fila en la tabla del §3 de la revisión 6 (destino, archivo, versión, fecha de revisión de lineamientos, aprobación). Sin fila, no entra.
+  8. **Fuera de alcance**: los medios de pago (SINPE, tarjetas) requieren una decisión propia.
+- **Un logo a color por vista.** Si en la misma vista hay una segunda aparición, va en monocromo.
+- **Sin contagio del color.** El verde de WhatsApp no es token: vive solo dentro del glifo. Nunca en fondos, bordes, hover, foco, activo ni texto. Hover, foco y activo no tocan el logo.
+- WhatsApp es la única marca aprobada. Dos archivos: `whatsapp-color.svg` y `whatsapp-mono.svg` (`currentColor`).
+  - Se renderiza a 20 px (mínimo 20 a color, 16 en monocromo), siempre con etiqueta de texto. No se compensa su peso óptico con tamaño ni contorno.
+  - Va centrado con las mayúsculas de la etiqueta. Gap 10 en botones de 48/56 px y 8 en sellos. Espacio libre ≥4 px (o el de Meta, si es mayor).
+  - A color solo sobre `crema`, `crema-alta`, `aviso` o `divisor`. Sobre `verde-kiwi`, `grafito`, fotos o avisos de error va en monocromo (`crema` o la tinta del texto).
+  - Dónde va (tabla del §2 de la revisión 6):
+    - A color: botón secundario de la ficha, sello de consulta de fecha, carrito y botón del checkout.
+    - En gracias: el primero a color y un segundo en monocromo.
+    - En monocromo: estados de excepción y footer.
+    - Sin icono: el enlace en línea del checkout y las menciones en la línea de tiempo.
+  - **Bloquea publicar:** los dos SVG del repo son marcadores de trazo, no los archivos oficiales de Meta, y la revisión de lineamientos figura como pendiente. Hay que reemplazarlos por los oficiales antes de publicar. Se pueden usar en desarrollo.
 
 ## Modelo de negocio (condiciona el código)
 - **Sin inventario.** Todo se confecciona por encargo y nunca se agota. Productos sin gestión de stock, siempre comprables. No construyas: agotado, stock por talla, reposición, «últimas N», reserva, apartado, liberar stock, filtro de disponibilidad.
@@ -108,7 +130,7 @@ Tienda WooCommerce con tema de bloques propio (`themes/kiwi`). Costa Rica, espa�
 Están en manos de diseño o de la dueña. Si una tarea depende de uno, frená y preguntá.
 
 **BLOQUEADOR — móvil sin navegación, búsqueda ni footer**
-El tráfico viene de Instagram y es mayoritariamente móvil. Hoy, debajo de 782 px, el header muestra solo logo y carrito, y el footer no se muestra: no hay diseño a 375 de navegación, búsqueda ni footer, y no existen los iconos de menú ni de lupa. Pedido a diseño. No inventes UI para cubrirlo.
+El tráfico viene de Instagram y es mayoritariamente móvil. Hoy, debajo de 782 px, el header muestra solo logo y carrito, y el footer no se muestra: no hay diseño a 375 de navegación, búsqueda ni footer, y no existe el icono de menú (la lupa sí, desde la revisión 6). Pedido a diseño. No inventes UI para cubrirlo.
 
 **Header y footer**
 - Navegación: los lienzos se contradicen (identidad: Novedades / Joyería / Accesorios / Ropa / Rebajas; flujo y ayuda: Ropa / Regalos / Rebajas) y las dos listas son del catálogo viejo (hoy: vestidos por encargo). El header usa el menú `menu-principal` (vacío) y el footer `menu-pie-comprar` (vacío) y `menu-pie-ayuda`; las categorías se cargan desde el editor de sitio.
@@ -128,7 +150,8 @@ El tráfico viene de Instagram y es mayoritariamente móvil. Hoy, debajo de 782 
 - Las medidas de componente (punto, iconos, badge, buscador, logo) no son espaciado: van como presets `dimensionSizes` en `theme.json`.
 - Nombres de token `aviso` (#F1EEE2) y `borde-oscuro` (#4A524B): el handoff usa el valor pero no le da nombre.
 - `fluid: true` en la tipografía: WordPress genera tamaños intermedios que el handoff no define.
-- Iconos inexistentes: lupa, chevron, chat, candado, regalo, alerta. Falta el asset de WhatsApp y sus reglas de uso (diseño).
+- Iconos inexistentes: regalo, alerta, menú. Los SVG de WhatsApp son marcadores: faltan los oficiales de Meta y la revisión de sus lineamientos.
+- Migración pendiente en los lienzos 08–16: el glifo de chat (aviso «por encargo» del carrito, fila de duda de envío) todavía aparece dibujado. Vale la regla de la revisión 6, no el lienzo.
 - Comprobante JPG/PNG/PDF hasta 10 MB: es una propuesta sin aprobar.
 - Check a trazo 2.5 dentro de discos ≤26 px; «esquinas 2»; wordmark exacto de Archivo 700.
 - Layouts entre 375 y 1440 px (el breakpoint es 782, pero no hay diseño intermedio); estados de error del checkout y de validación del newsletter.
