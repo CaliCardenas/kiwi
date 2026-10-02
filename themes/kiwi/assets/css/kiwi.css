@@ -1,0 +1,139 @@
+/*
+ * Kiwi — CSS que theme.json y los atributos de bloque no pueden expresar.
+ * Solo tokens: var(--wp--preset--*) y var(--wp--custom--*). Sin px ni hex sueltos.
+ * Mobile first: los valores base son los de 375; el bloque @media es escritorio.
+ * El único literal es el breakpoint (782px): una variable CSS no puede usarse en @media.
+ */
+
+/* ── 1. Foco visible ──────────────────────────────────────────────────────
+ * theme.json no puede cambiar el color del anillo según el fondo:
+ * verde sobre claro, lima sobre la barra verde y el footer grafito. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+	outline: var(--wp--custom--foco--ancho) solid var(--wp--preset--color--verde-kiwi);
+	outline-offset: var(--wp--custom--foco--separacion);
+}
+
+.kiwi-barra :focus-visible,
+.kiwi-pie :focus-visible {
+	outline-color: var(--wp--preset--color--lima-kiwi);
+}
+
+/* ── 2. Transiciones ──────────────────────────────────────────────────────
+ * theme.json no tiene propiedad de transición. Solo color, opacidad y sombra. */
+.kiwi-header a,
+.kiwi-header input,
+.kiwi-pie a {
+	transition-property: color, background-color, border-color, opacity, box-shadow;
+	transition-duration: var(--wp--custom--transicion--duracion);
+	transition-timing-function: var(--wp--custom--transicion--curva);
+}
+
+/* ── 3. Objetivo táctil y 4. badge del carrito ────────────────────────────
+ * El icono mide 22 y el área táctil tiene que medir 44. El badge va
+ * superpuesto al icono, y eso no se puede hacer con bloques. */
+.kiwi-carrito,
+.kiwi-carrito:hover {
+	color: var(--wp--preset--color--grafito);
+}
+
+.kiwi-carrito {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: var(--wp--preset--dimension--objetivo-tactil);
+	min-height: var(--wp--preset--dimension--objetivo-tactil);
+}
+
+.kiwi-carrito__icono {
+	position: relative;
+	display: block;
+	width: var(--wp--preset--dimension--icono);
+	height: var(--wp--preset--dimension--icono);
+}
+
+.kiwi-carrito__icono svg {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.kiwi-carrito__badge {
+	position: absolute;
+	top: calc(-1 * var(--wp--preset--spacing--10));
+	right: calc(-1 * var(--wp--preset--spacing--10));
+	display: grid;
+	place-items: center;
+	box-sizing: border-box;
+	min-width: var(--wp--preset--dimension--badge);
+	height: var(--wp--preset--dimension--badge);
+	border-radius: var(--wp--preset--border-radius--badge);
+	background: var(--wp--preset--color--guayaba);
+	color: var(--wp--preset--color--crema);
+	font-family: var(--wp--preset--font-family--archivo);
+	font-weight: 700;
+	font-size: var(--wp--preset--font-size--10);
+}
+
+.kiwi-carrito__badge[hidden] {
+	display: none;
+}
+
+/* ── 5. Buscador ──────────────────────────────────────────────────────────
+ * core/search no expone alto ni ancho fijos del campo ni el color del placeholder.
+ * Borde, fondo y tipografía viven en theme.json (styles.blocks.core/search). */
+.kiwi-buscador .wp-block-search__input {
+	box-sizing: border-box;
+	width: var(--wp--preset--dimension--buscador-ancho);
+	height: var(--wp--preset--dimension--buscador-alto);
+	padding: 0 var(--wp--preset--spacing--30);
+}
+
+.kiwi-buscador .wp-block-search__input::placeholder {
+	color: var(--wp--preset--color--texto-muted);
+	opacity: 1;
+}
+
+/* ── 6. Hover de la navegación del header ─────────────────────────────────
+ * El core de navigation declara
+ *   .wp-block-navigation .wp-block-navigation-item__content.wp-block-navigation-item__content { color: inherit }
+ * con especificidad (0,3,0), en todos los estados. El hover que genera theme.json
+ * queda envuelto en :where() y nunca le gana. Repetimos la clase del ítem para
+ * llegar a (0,4,0) sin !important. */
+.kiwi-nav .wp-block-navigation-item__content.wp-block-navigation-item__content:hover {
+	color: var(--wp--preset--color--verde-kiwi);
+}
+
+/* ── 7. Grid del footer ───────────────────────────────────────────────────
+ * El grid nativo solo genera columnas iguales (repeat(N, minmax(0,1fr))).
+ * El handoff pide la columna de marca a 1.2fr. El layout de WordPress declara
+ * grid-template-columns en una clase .wp-container-* (0,1,0); hoy se imprime
+ * antes que esta hoja, pero ese orden no está garantizado (los estilos de layout
+ * pueden ir al pie). .wp-block-group.kiwi-pie (0,2,0) gana en cualquier orden. */
+.wp-block-group.kiwi-pie {
+	grid-template-columns: minmax(0, 1.2fr) repeat(3, minmax(0, 1fr));
+}
+
+/* ── 8. Breakpoint ────────────────────────────────────────────────────────
+ * Los bloques no tienen visibilidad ni padding por ancho de pantalla. */
+
+/* Header: padding móvil 14/16. Escritorio 18/40. */
+.kiwi-header {
+	padding: var(--wp--preset--spacing--35) var(--wp--preset--spacing--40);
+}
+
+/* Navegación, búsqueda y footer: solo escritorio (bloqueador de diseño móvil, ver CLAUDE.md).
+ * !important porque el layout de WordPress declara el display con
+ * «body .is-layout-flex / -grid» y el orden de carga de las hojas no está garantizado. */
+@media (max-width: 781px) {
+	.kiwi-solo-escritorio {
+		display: none !important;
+	}
+}
+
+@media (min-width: 782px) {
+	.kiwi-header {
+		padding: var(--wp--preset--spacing--45) var(--wp--preset--spacing--80);
+	}
+}

@@ -3,6 +3,17 @@
   "version": 3,
   "settings": {
     "appearanceTools": true,
+    "border": {
+      "radiusSizes": [
+        { "slug": "base",  "size": "2px", "name": "Base" },
+        { "slug": "badge", "size": "8px", "name": "Badge del carrito" }
+      ]
+    },
+    "custom": {
+      "borde": { "fino": "1px" },
+      "foco": { "ancho": "2px", "separacion": "2px" },
+      "transicion": { "duracion": "200ms", "curva": "ease-out" }
+    },
     "color": {
       "custom": false,
       "customDuotone": false,
@@ -106,6 +117,17 @@
         { "slug": "90", "size": "52px", "name": "52" }
       ]
     },
+    "dimensions": {
+      "dimensionSizes": [
+        { "slug": "punto",           "size": "6px",   "name": "Punto de la barra" },
+        { "slug": "badge",           "size": "16px",  "name": "Badge del carrito" },
+        { "slug": "icono",           "size": "22px",  "name": "Icono del header" },
+        { "slug": "logo",            "size": "36px",  "name": "Logo del header" },
+        { "slug": "buscador-alto",   "size": "42px",  "name": "Buscador · alto" },
+        { "slug": "objetivo-tactil", "size": "44px",  "name": "Objetivo táctil mínimo" },
+        { "slug": "buscador-ancho",  "size": "296px", "name": "Buscador · ancho" }
+      ]
+    },
     "layout": {
       "contentSize": "1360px",
       "wideSize": "1440px"
@@ -120,6 +142,24 @@
       "fontFamily": "var(--wp--preset--font-family--karla)",
       "fontSize": "var(--wp--preset--font-size--cuerpo)",
       "lineHeight": "1.55"
+    },
+    "blocks": {
+      "core/search": {
+        "border": {
+          "color": "var(--wp--preset--color--bruma)",
+          "style": "solid",
+          "width": "var(--wp--custom--borde--fino)",
+          "radius": "var(--wp--preset--border-radius--base)"
+        },
+        "color": {
+          "background": "var(--wp--preset--color--crema-alta)",
+          "text": "var(--wp--preset--color--grafito)"
+        },
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--karla)",
+          "fontSize": "var(--wp--preset--font-size--14)"
+        }
+      }
     },
     "elements": {
       "heading": {
