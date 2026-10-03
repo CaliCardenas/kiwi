@@ -147,7 +147,6 @@ Solo existe el listado a 1440 (§2.5). Debajo de 782 px se ocultan los filtros y
 - Orden del catálogo: por defecto «Más nuevos» (`date`), sin «valoración» (no hay reseñas) ni orden manual. Tallas ordenadas XS → 3XL por `term meta order` del atributo `pa_talla` (orden `menu_order`).
 - Conflicto abierto: los puntos de la galería miden 7 px (diseño) y no llegan a 44 px táctiles. Se puede deslizar, pero los puntos son clicables. Llevar a diseño.
 - La categoría de la ficha (eyebrow) es un enlace (`post-terms`) de 11 px, sin área táctil de 44. Llevar a diseño: ¿enlace o texto?
-- WooCommerce no tiene la traducción es_CR instalada: el orden del catálogo, las leyendas de los filtros y los avisos salen en inglés. Instalarla es una decisión de la dueña (`wp language plugin install woocommerce es_CR`).
 - El sitio está en modo «Próximamente» de Woo (solo páginas de tienda): sin sesión, la ficha y el listado muestran esa página.
 
 **Header y footer**
