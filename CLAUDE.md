@@ -3,32 +3,36 @@
 Tienda WooCommerce con tema de bloques propio (`themes/kiwi`). Costa Rica, español con voseo.
 
 ## Fuente de verdad
-- `docs/design/README.md` manda. Vale el estado final: Revisión 6 > Revisión 5 > Revisión 4 > Revisión 3 > texto original.
+- `docs/design/README.md` manda. Vale el estado final: Revisión 7 > Revisión 6 > Revisión 5 > Revisión 4 > Revisión 3 > texto original.
 - Las tablas «Qué queda derogado» derogan aunque el párrafo original no tenga la marca ⚠. Antes de implementar una sección, buscá si una revisión posterior la toca.
 - Los `.dc.html` son referencia visual, no código. No copies sus estilos inline.
-- Cuando el handoff habla de `assets/logo/` y `assets/icons/`, se refiere a `themes/kiwi/assets/`, la única copia que existe.
+- Cuando el handoff habla de `assets/logo/` y `assets/icons/`, el tema usa `themes/kiwi/assets/`. `docs/design/assets/` es la copia que entrega diseño (desde la revisión 7): de ahí se copian al tema los SVG nuevos (`menu.svg`, `cerrar.svg`), sin modificarlos. El tema nunca enlaza a `docs/`.
 - Si el handoff no define algo, no lo inventes: preguntá.
 
 ## Sistema de diseño cerrado
 - Usá solo tokens: `theme.json` y valores literales del handoff. No inventes color, tamaño, peso, interlínea, tracking, espaciado, radio, sombra, duración ni breakpoint. No derives («un paso más oscuro», «un poco más chico»). Si falta un valor, preguntá.
 - Un valor del handoff que no está en `theme.json`: agregalo como preset en `theme.json` y usá la variable. Nunca hex ni px sueltos en CSS o en atributos de bloque.
+- Escala de espaciado cerrada (revisión 7, §C): **4 / 8 / 12 / 16 / 20 / 24 / 32 / 40 / 48 / 52**. Presets `spacing--`: 10=4, 20=8, 30=12, 40=16, 50=20, 60=24, 70=32, 80=40, 85=48, 90=52. No existen 10, 14, 18, 22 ni 26. Un valor fuera de escala en un lienzo se sustituye por la tabla del §C (5→4; 6, 7, 9, 10→8; 11, 13→12; 14, 15, 18→16; 22, 26→24; 36, 38, 44→40). Los lienzos de flujo, excepciones y ayuda todavía tienen valores fuera de escala: vale la tabla, no el lienzo.
+- Las medidas de componente (alto de botón, icono, punto, badge) no son espaciado: van como presets `dimensionSizes` y la escala no las restringe.
 - Radio `2px` en todo. `50%` solo en emblema, swatches, puntos y botón circular de favorito.
 - Sombra única: `0 1px 3px rgba(28,35,30,.16)` en el favorito flotante. Nunca en cards ni botones.
 - Tipografía: Archivo 500/600/700 (títulos, precios, botones, wordmark); Karla 400/500/700 (cuerpo, labels). Self-hosted. Precios siempre `tabular-nums`.
 - Color con función fija:
   - `verde-kiwi`: único sólido de compra en la vista.
   - `lima-kiwi`: siempre con texto grafito. Un solo bloque lima sólido por vista.
-  - `guayaba`: rebajas y badge del carrito; en estados de excepción, una vez por pantalla y solo como borde o anillo. Nunca botón primario, titular ni banner.
+  - `guayaba`: rebajas y badge del carrito; en estados de excepción, una vez por pantalla y solo como borde o anillo. Nunca botón primario, titular ni banner. Nunca texto sobre crema (4,2:1): el enlace «Rebajas» va en grafito con subrayado guayaba de 2. El número del badge del carrito va en blanco (4,7:1), no en crema.
   - `indigo`: solo información de confianza.
   - `bruma`: bordes y divisores, nunca texto.
 - Transiciones 200 ms `ease-out` (token `custom.transicion`), solo color/opacidad/sombra. Sin escala.
+- Cada pantalla se maqueta solo con diseño en los dos anchos. Faltan (revisión 7, «Método»): home móvil, estados del listado móvil, carrito vacío escritorio, gracias escritorio B y dos causas de error de subida en escritorio; las páginas de ayuda están sin verificar. No las maquetes sin diseño.
 - Solo hay diseño a 375 y 1440 px. No inventes layouts intermedios: preguntá. Breakpoint único: 782 px (debajo, layout móvil; desde 782, escritorio).
 - Logo del header: `kiwi-lockup-horizontal.svg` a 36 px de alto en móvil y escritorio. Footer: `kiwi-monocromo-negativo.svg` (falta la variante con aro lima).
 - Logo: los SVG de `assets/logo/`. Bajo 32 px, `kiwi-emblema-reduccion.svg`. Sobre foto, aro crema sin caja. Nunca datos de contacto dentro de la marca.
 - Evitá siempre: rosa pastel + dorado, degradados decorativos, foil, mármol, script, verde + marrón, ilustración literal de kiwi.
 
 ## Accesibilidad
-- Contraste WCAG AA en todo par texto/fondo. Nunca texto blanco/crema sobre lima. `texto-debil` (#8A9189) solo ≥16 px o metadato no esencial; nunca a 14 px sobre crema. Placeholders en `texto-muted`.
+- Contraste WCAG AA en todo par texto/fondo. Nunca texto blanco/crema sobre lima. `texto-debil` (#8A9189) **nunca como texto sobre crema**, a ningún tamaño (2,9:1): etiquetas de filtro, conteos y precio anterior tachado van en `texto-muted` (5,4:1). Placeholders en `texto-muted`.
+- Contraste no textual ≥3:1 (WCAG 1.4.11) en límites de control: casillas de filtro con borde 1,5 en `texto-muted`; puntos inactivos de la galería como aro hueco de 1,5 en `texto-muted` (el activo, lleno). El borde `#CFCBBD` (1,4:1) no sirve como límite de control.
 - Excepción justificada, no revertir: sobre fondo `grafito` los placeholders van en `texto-debil`. `texto-muted` sobre grafito da 2,69:1 (no pasa AA); `texto-debil` sobre grafito da 4,96:1 (pasa). Aprobado por la dueña del proyecto (octubre 2026).
 - Focus visible en todo control: anillo 2 px `verde-kiwi`, offset 2 px; sobre fondo oscuro, `lima-kiwi`.
 - Hit targets ≥44 px.
@@ -50,9 +54,10 @@ Tienda WooCommerce con tema de bloques propio (`themes/kiwi`). Costa Rica, espa�
   - `texto-debil`: la lupa del buscador.
 - Favoritos = destello de ocho radios. Nunca corazón. Es el único que puede ir lima sobre foto.
 - «Quitar» es texto, nunca basurero.
+- `menu.svg` y `cerrar.svg` existen desde la revisión 7 (navegación móvil; el menú pasa a cerrar al abrir el panel).
 - Lupa, chevron y candado existen desde la revisión 6. El chevron apunta abajo y se rota con `transform: rotate()` (derecha −90°, arriba 180°, izquierda 90°); su hit target es ≥44 px.
 - Glifo de chat genérico: eliminado, no existe. Una acción que abre chat lleva el logo de WhatsApp; un aviso que informa (p. ej. «Se confecciona por encargo») lleva el reloj; un enlace «¿Dudas…?» va solo con texto.
-- Icono que no existe en el set (regalo, alerta, menú): no lo dibujes ni lo importes. Preguntá.
+- Icono que no existe en el set (regalo, alerta): no lo dibujes ni lo importes. Preguntá.
 - Prohibidos: percha, corona, diamante, labios, mariposas.
 
 ### Logos de terceros (revisión 6 del handoff)
@@ -66,16 +71,17 @@ Tienda WooCommerce con tema de bloques propio (`themes/kiwi`). Costa Rica, espa�
   7. **Registro**: toda marca tiene fila en la tabla del §3 de la revisión 6 (destino, archivo, versión, fecha de revisión de lineamientos, aprobación). Sin fila, no entra.
   8. **Fuera de alcance**: los medios de pago (SINPE, tarjetas) requieren una decisión propia.
 - **Un logo a color por vista.** Si en la misma vista hay una segunda aparición, va en monocromo.
+- **Mismo destino dos veces en una vista: solo el botón lleva logo** (revisión 7, D2). La otra aparición es texto sin icono.
 - **Sin contagio del color.** El verde de WhatsApp no es token: vive solo dentro del glifo. Nunca en fondos, bordes, hover, foco, activo ni texto. Hover, foco y activo no tocan el logo.
 - WhatsApp es la única marca aprobada. Dos archivos: `whatsapp-color.svg` y `whatsapp-mono.svg` (`currentColor`).
   - Se renderiza a 20 px (mínimo 20 a color, 16 en monocromo), siempre con etiqueta de texto. No se compensa su peso óptico con tamaño ni contorno.
-  - Va centrado con las mayúsculas de la etiqueta. Gap 10 en botones de 48/56 px y 8 en sellos. Espacio libre ≥4 px (o el de Meta, si es mayor).
+  - Va centrado con las mayúsculas de la etiqueta. Gap 8 con la etiqueta (revisión 7: antes 10 en botones). Espacio libre ≥4 px (o el de Meta, si es mayor).
   - A color solo sobre `crema`, `crema-alta`, `aviso` o `divisor`. Sobre `verde-kiwi`, `grafito`, fotos o avisos de error va en monocromo (`crema` o la tinta del texto).
   - Dónde va (tabla del §2 de la revisión 6):
-    - A color: botón secundario de la ficha, sello de consulta de fecha, carrito y botón del checkout.
+    - A color: botón secundario de la ficha, botón del panel de menú móvil, carrito y botón del checkout. (El sello de consulta de fecha ya no existe: revisión 7, D2.)
     - En gracias: el primero a color y un segundo en monocromo.
     - En monocromo: estados de excepción y footer.
-    - Sin icono: el enlace en línea del checkout y las menciones en la línea de tiempo.
+    - Sin icono: el enlace en línea del checkout, las menciones en la línea de tiempo y «¿Necesitás fecha? Escribile a Ana.» dentro del aviso «por encargo» de la ficha.
   - **Bloquea publicar:** los dos SVG del repo son marcadores de trazo, no los archivos oficiales de Meta, y la revisión de lineamientos figura como pendiente. Hay que reemplazarlos por los oficiales antes de publicar. Se pueden usar en desarrollo.
 
 ## Modelo de negocio (condiciona el código)
@@ -92,6 +98,8 @@ Tienda WooCommerce con tema de bloques propio (`themes/kiwi`). Costa Rica, espa�
 - Comprobante: un archivo, reemplazable, validado en cliente y servidor (MIME real). Un fallo de subida no cambia el estado del pedido.
 - Tarjeta de regalo: cupón de un uso emitido al pasar a `processing`, nunca desde `on-hold`.
 - Las cards declaran producto y precio; sin estrellas ni reseñas.
+- Productos relacionados en la ficha (revisión 7, B2): misma categoría, sin la pieza actual, más nuevos primero; 4 en escritorio, 2 en móvil; título «Más {categoría}»; si la categoría tiene menos de 2 piezas, el bloque no se muestra. Misma card del listado.
+- Descripción larga (revisión 7, B1): un párrafo y tres encabezados fijos escritos en Woo, **Material**, **Calce y medidas**, **Cuidado**. Acordeón en móvil (Descripción abierta), tres columnas en escritorio bajo un párrafo de 18 px. Calce enlaza a la guía de tallas.
 
 ## Copy prohibido
 - Cualquier plazo de entrega: días, rangos, «aproximadamente», «llega mañana», ejemplos de plazo. (Única cifra de tiempo permitida: devolución de dinero «de 24 a 48 h».)
@@ -130,33 +138,37 @@ Tienda WooCommerce con tema de bloques propio (`themes/kiwi`). Costa Rica, espa�
 ## Pendientes: no los resuelvas por tu cuenta
 Están en manos de diseño o de la dueña. Si una tarea depende de uno, frená y preguntá.
 
-**BLOQUEADOR — móvil sin navegación, búsqueda ni footer**
-El tráfico viene de Instagram y es mayoritariamente móvil. Hoy, debajo de 782 px, el header muestra solo logo y carrito, y el footer no se muestra: no hay diseño a 375 de navegación, búsqueda ni footer, y no existe el icono de menú (la lupa sí, desde la revisión 6). Pedido a diseño. No inventes UI para cubrirlo.
+**Revisión 7: diseñado, falta maquetar**
+Ya no son bloqueadores de diseño; el código todavía tiene la salida provisoria:
+- Header móvil (A3): hoy solo logo y carrito. Diseño: header fijo de 60 (padding 8 / 4) con menú · logo · lupa · favoritos · carrito; búsqueda a pantalla completa; panel de menú. Barra superior móvil: «Hecho por encargo · Envío ₡3.000» (Karla 700 / 12, una línea).
+- Footer móvil (A4): hoy no se muestra. Diseño: grafito, padding 40 / 16 / 24, acordeones Comprar y Ayuda de 56, WhatsApp en monocromo crema.
+- Ficha 1440 (A1): hoy la columna de 520 (preset `ficha-ancho`). Diseño: grid `minmax(0,1fr) 480px`, gap 48, padding 40, miniaturas verticales de 88, info sticky a 24, migas. El sello lima desaparece (D2).
+- Listado 375 (A2): hoy 2 columnas sin filtros ni garantías. Diseño: conteo, Filtros + Ordenar (48), chips quitables, grilla 2 col (gap 8 / 24), «Ver más piezas» incremental, garantías 2 × 2, hoja de filtros a pantalla completa.
 
-**BLOQUEADOR — ficha de producto sin diseño de escritorio**
-Solo existe la ficha a 375 (§1). Desde 782 px se muestra la misma columna centrada a 520 px (preset `ficha-ancho`, la medida de lectura de la bajada del hero, §2.3). Es provisorio y deliberado: no inventes un layout de dos columnas. Pedido a diseño.
-
-**BLOQUEADOR — listado sin diseño móvil (a confirmar con la dueña)**
-Solo existe el listado a 1440 (§2.5). Debajo de 782 px se ocultan los filtros y la franja de garantías y las cards pasan a 2 columnas (sugerencia 4→3→2 del handoff). La hoja inferior de filtros queda para diseño. Esta salida la propuso Claude y todavía no la confirmó la dueña.
+**Conflictos de la revisión 7 con reglas del proyecto (preguntá antes de maquetar esa pieza)**
+- Búsqueda móvil: el lienzo pone «Cancelar» para cerrar, y «Cancelar» está prohibido en cualquier vista del cliente.
+- Hoja de filtros: incluye el grupo Color, pero no hay atributo color en el catálogo.
+- Panel de menú: Novedades / Joyería (Aretes, Cadenas, Anillos, Pulseras) / Accesorios / Ropa / Rebajas es el catálogo viejo (hoy: vestidos por encargo).
+- Footer móvil: maqueta el newsletter apilado, pero el newsletter no tiene destino (sigue fuera).
+- Header móvil: favoritos sin comportamiento definido. Tarjeta lima «Es un regalo y no sé la talla» del menú: la página de regalo (§7) no está construida.
+- Campos de formulario: el borde `#CFCBBD` sobre `#FFFDF7` da 1,4:1 (no llega a 3:1). Propuesta de diseño: borde en `texto-muted`. Decisión de la dueña, no aplicada: cambia todos los campos del flujo.
 
 **Ficha y listado**
-- Logo de WhatsApp en la ficha: el botón secundario va **a color** y el sello lima va **en monocromo**. Lo decide la regla de superficies de la revisión 6: el color solo va sobre crema, crema-alta, aviso o divisor, y el sello es lima. Así se cumple «un logo a color por vista», que la tabla del §2 rompía al pedir color en los dos.
+- Logo de WhatsApp en la ficha: solo el botón «Preguntar por WhatsApp», a color. El sello lima ya no es salida (revisión 7, D2): pasa a texto «¿Necesitás fecha? Escribile a Ana.» (enlace en línea, sin icono) dentro del aviso «por encargo». La ficha pierde el bloque lima y no se compensa.
 - «Cambio en 15 días» no se muestra (política sin resolver). Lugar reservado: segundo ítem de la fila `kiwi-confianza` de la ficha y cuarta celda de la franja de garantías (la grilla ya es de 4).
 - Badge «Nuevo»: omitido, nadie definió qué lo dispara. Filtros del listado: solo categoría y precio (no hay atributo color; la talla nunca se agota).
-- Labels de grupo de filtros en `texto-muted`, no en el `texto-debil` del lienzo: a 11 px sobre crema, `texto-debil` no pasa AA.
+- Labels de grupo de filtros en `texto-muted` (confirmado por la revisión 7, D3).
 - Orden del catálogo: por defecto «Más nuevos» (`date`), sin «valoración» (no hay reseñas) ni orden manual. Tallas ordenadas XS → 3XL por `term meta order` del atributo `pa_talla` (orden `menu_order`).
-- Conflicto abierto: los puntos de la galería miden 7 px (diseño) y no llegan a 44 px táctiles. Se puede deslizar, pero los puntos son clicables. Llevar a diseño.
+- Puntos de la galería (revisión 7, D4): visual 8, área de toque 44 × 44 sin solaparse (paso 44, fila de 176), **bajo la foto**. Son un atajo; el gesto principal es deslizar. El código todavía los tiene a 7 sobre la foto.
 - La categoría de la ficha (eyebrow) es un enlace (`post-terms`) de 11 px, sin área táctil de 44. Llevar a diseño: ¿enlace o texto?
 - El sitio está en modo «Próximamente» de Woo (solo páginas de tienda): sin sesión, la ficha y el listado muestran esa página.
 
 **Header y footer**
-- Navegación: los lienzos se contradicen (identidad: Novedades / Joyería / Accesorios / Ropa / Rebajas; flujo y ayuda: Ropa / Regalos / Rebajas) y las dos listas son del catálogo viejo (hoy: vestidos por encargo). El header usa el menú `menu-principal` (vacío) y el footer `menu-pie-comprar` (vacío) y `menu-pie-ayuda`; las categorías se cargan desde el editor de sitio.
+- Navegación: los lienzos se contradicen (identidad y panel móvil de la revisión 7: Novedades / Joyería / Accesorios / Ropa / Rebajas; flujo y ayuda: Ropa / Regalos / Rebajas) y las dos listas son del catálogo viejo (hoy: vestidos por encargo). El header usa el menú `menu-principal` (vacío) y el footer `menu-pie-comprar` (vacío) y `menu-pie-ayuda`; las categorías se cargan desde el editor de sitio.
 - Descripción del footer («Accesorios, joyería y ropa para todos los días») también es del catálogo viejo: no se publicó. Falta el copy.
 - Badge del carrito: el handoff pide `border-radius: 8px`, fuera de la regla de 2 px; se agregó como preset `badge` siguiendo el handoff.
 
 **Contradicciones del handoff**
-- Ficha §1: el botón secundario dice «Comprar por WhatsApp», pero §4 establece «Preguntar, no Comprar». Resuelto por la dueña a favor de «Preguntar»; falta que diseño corrija el lienzo.
-- Revisión 6, §2: pide el logo de WhatsApp a color en el botón secundario y en el sello de la ficha, contra «un logo a color por vista». Resuelto en el código por la regla de superficies (ver «Ficha y listado»); llevar a diseño.
 - Cancelación a las 48 h: las «Notas Woo» hablan de cancelar a las 48 h y §10 dice «desactivar cron». Ya está resuelto por regla del proyecto (manual, ver «Modelo de negocio»), pero el handoff sigue diciendo las dos cosas.
 - Texto sin la marca ⚠ que una revisión posterior deroga: «State Management» (`llegaManana`, conteo de entrega, tarifas y peso), «Notas Woo» (dos zonas, IVA de Correos), §1 sello de envío y §2.1 barra (copy anterior a la revisión 5).
 - Botón primario: el hover y el active piden «oscurecer un paso», pero ese valor no existe.
@@ -164,15 +176,15 @@ Solo existe el listado a 1440 (§2.5). Debajo de 782 px se ocultan los filtros y
 
 **Valores que faltan o están sin aprobar**
 - Tamaño del valor en las tarjetas de dato de la página de gracias (§6): «32–34 px» es un rango; no se agregó al `theme.json`.
-- Espaciados usados en las pantallas pero fuera de la escala declarada (6, 9, 11, 24, 28, 36, 38, 44): no se agregaron. Header y footer usan el valor de la escala más cercano, pendiente de validar con diseño: 9→8 (logo móvil; padding vertical de la barra superior), 11→12 (logo escritorio, enlaces del footer), 38→40 (padding del footer), 5→4 (desplazamiento del badge del carrito), y 14 vs 18 entre lienzos (utilidades del header)→16. Ficha y listado: 7→8 (encabezado de la ficha), 9→8 (grupo de talla, casillas), 6→8 (icono de «Guía de tallas»), 5→4 (puntos de la galería), 11→12 (grupos de filtros, sello lima), 24→26 (padding y gap del sidebar, padding lateral de garantías). Los que caían entre dos valores se redondean hacia arriba (6→8, 24→26, 36→40): decisión de la dueña, a validar con diseño.
-- Las medidas de componente (punto, iconos, badge, buscador, logo) no son espaciado: van como presets `dimensionSizes` en `theme.json`.
+- Espaciados: resuelto por la revisión 7 (§C, ver «Sistema de diseño cerrado»). El código ya usa la escala nueva. 28 no está en la tabla de sustitución: si aparece en un lienzo, preguntá.
 - Nombres de token `aviso` (#F1EEE2) y `borde-oscuro` (#4A524B): el handoff usa el valor pero no le da nombre.
 - `fluid: true` en la tipografía: WordPress genera tamaños intermedios que el handoff no define.
-- Iconos inexistentes: regalo, alerta, menú. Los SVG de WhatsApp son marcadores: faltan los oficiales de Meta y la revisión de sus lineamientos.
+- Iconos inexistentes: regalo, alerta. Los SVG de WhatsApp son marcadores: faltan los oficiales de Meta y la revisión de sus lineamientos.
 - Migración pendiente en los lienzos 08–16: el glifo de chat (aviso «por encargo» del carrito, fila de duda de envío) todavía aparece dibujado. Vale la regla de la revisión 6, no el lienzo.
 - Comprobante JPG/PNG/PDF hasta 10 MB: es una propuesta sin aprobar.
 - Check a trazo 2.5 dentro de discos ≤26 px; «esquinas 2»; wordmark exacto de Archivo 700.
 - Layouts entre 375 y 1440 px (el breakpoint es 782, pero no hay diseño intermedio); estados de error del checkout y de validación del newsletter.
+- El handoff dice que el par blanco/guayaba da 4,6:1, pero mide 4,7:1 (deuda de documentación de diseño).
 
 **Políticas y datos de negocio**
 - Tarjeta de regalo: vigencia, saldo remanente y con qué se implementa.
