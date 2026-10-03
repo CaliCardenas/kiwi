@@ -120,7 +120,7 @@ input:focus-visible {
 
 /* Header: padding móvil 14/16. Escritorio 18/40. */
 .kiwi-header {
-	padding: var(--wp--preset--spacing--35) var(--wp--preset--spacing--40);
+	padding: var(--wp--preset--spacing--40) var(--wp--preset--spacing--40);
 }
 
 /* Navegación, búsqueda y footer: solo escritorio (bloqueador de diseño móvil, ver CLAUDE.md).
@@ -134,7 +134,7 @@ input:focus-visible {
 
 @media (min-width: 782px) {
 	.kiwi-header {
-		padding: var(--wp--preset--spacing--45) var(--wp--preset--spacing--80);
+		padding: var(--wp--preset--spacing--40) var(--wp--preset--spacing--80);
 	}
 }
 
@@ -225,8 +225,8 @@ input:focus-visible {
 
 .kiwi-galeria .flex-control-paging {
 	position: absolute;
-	right: var(--wp--preset--spacing--35);
-	bottom: var(--wp--preset--spacing--35);
+	right: var(--wp--preset--spacing--40);
+	bottom: var(--wp--preset--spacing--40);
 	z-index: 1;
 	display: flex;
 	gap: var(--wp--preset--spacing--10);
@@ -320,7 +320,7 @@ input:focus-visible {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	gap: var(--wp--preset--spacing--25);
+	gap: var(--wp--preset--spacing--20);
 	min-height: var(--wp--preset--dimension--boton-primario);
 	padding-block: 0;
 	letter-spacing: 0.01em;
@@ -337,7 +337,7 @@ input:focus-visible {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	gap: var(--wp--preset--spacing--25);
+	gap: var(--wp--preset--spacing--20);
 	min-height: var(--wp--preset--dimension--boton-secundario);
 	padding-block: 0;
 	border: var(--wp--custom--borde--medio) solid var(--wp--preset--color--verde-kiwi);
@@ -357,7 +357,7 @@ input:focus-visible {
 .kiwi-aviso-reloj {
 	position: relative;
 	margin: 0;
-	padding-inline-start: calc(var(--wp--preset--dimension--icono-18) + var(--wp--preset--spacing--25));
+	padding-inline-start: calc(var(--wp--preset--dimension--icono-18) + var(--wp--preset--spacing--20));
 }
 
 .kiwi-aviso-reloj::before {
@@ -377,7 +377,7 @@ input:focus-visible {
 .kiwi-precio {
 	display: flex;
 	align-items: baseline;
-	gap: var(--wp--preset--spacing--25);
+	gap: var(--wp--preset--spacing--20);
 	font-variant-numeric: tabular-nums;
 }
 
@@ -510,13 +510,13 @@ input:focus-visible {
 .kiwi-coleccion .wc-block-product-template.is-flex-container.kiwi-cards {
 	display: grid;
 	grid-template-columns: repeat(2, minmax(0, 1fr));
-	gap: var(--wp--preset--spacing--45);
+	gap: var(--wp--preset--spacing--40);
 }
 
 .kiwi-coleccion .wc-block-product-template.is-flex-container.kiwi-cards > li {
 	display: flex;
 	flex-direction: column;
-	gap: var(--wp--preset--spacing--25);
+	gap: var(--wp--preset--spacing--20);
 	width: auto;
 	margin: 0;
 }
