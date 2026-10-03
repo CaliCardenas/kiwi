@@ -92,7 +92,7 @@ Reglas de uso del logo:
 
 *Botones* — `gap: 10px`
 - Primario: `height:56px; border-radius:2px`, fondo `#2F5D3F`, texto `#F6F3EA` Archivo 700 / 17 px, con icono de carrito 20 px a la izquierda (`gap: 10px`), copy "Agregar · ₡12.500" (el precio va **en** el botón).
-- Secundario: `height:48px`, `border:1.5px solid #2F5D3F`, texto `#2F5D3F` Archivo 600 / 15 px, "Comprar por WhatsApp".
+- Secundario: `height:48px`, `border:1.5px solid #2F5D3F`, texto `#2F5D3F` Archivo 600 / 15 px, **«Preguntar por WhatsApp»** con el logo a color a 20 px, gap 8. > **⚠ DEROGADO en la revisión 7 — «Comprar por WhatsApp» (D1) y el sello lima «¿Necesitás fecha?» (D2).** Ver «Revisión 7».
 - Ambos ocupan el ancho completo. Altura mínima de hit target respetada (≥44 px).
 
 *Sellos de confianza* — `border-top:1px solid #E3DFD2`, `padding-top:14px`
@@ -188,6 +188,8 @@ Estados definidos (implementar con los patrones del codebase):
 - **Focus visible**: obligatorio en todo control. Anillo `#2F5D3F` de 2 px con 2 px de offset; sobre fondos oscuros, anillo `#C3DE4E`.
 - **Estados faltantes por definir con producto**: carga (skeletons con `#E3DFD2`), vacío de resultados de filtro, error de checkout, validación del correo del newsletter.
 
+> **⚠ ACTUALIZADO en la revisión 7 — ficha en escritorio, listado y navegación en móvil ya están diseñados.** Siguen sin diseñarse los anchos intermedios.
+
 **Responsive**: el mock de escritorio es 1440 px y el de ficha 375 px; los breakpoints intermedios no están diseñados. Sugerido: grid de producto 4 → 3 → 2 columnas; sidebar de filtros colapsa a hoja inferior en móvil; la doble entrada pasa a una columna. Confirmar con diseño antes de inventar layouts.
 
 ## State Management
@@ -218,7 +220,7 @@ Estados definidos (implementar con los patrones del codebase):
 | `grafito` | `#1C231E` | Texto, precios, monocromo. Sobre crema 15.2:1 |
 | `texto-medio` | `#3E4740` | Cuerpo secundario |
 | `texto-muted` | `#5C665D` | Notas, conteos, **placeholders** (mínimo AA a 14 px) |
-| `texto-débil` | `#8A9189` | Solo labels ≥16 px o metadatos no esenciales; **no usar a 14 px sobre crema** |
+| `texto-débil` | `#8A9189` | **Solo sobre grafito** (4.96:1). **Nunca texto sobre crema** (2.9:1) a ningún tamaño; sobre claro, `texto-muted`. Excepción: placeholders de foto. *(Regla endurecida en la revisión 7.)* |
 
 Decisión sobre el verde: **se conserva, en dos temperaturas.** El lima original `#A4C93F` era el equity pero mezclado con marrón leía fruta y es tan claro que ningún texto blanco alcanza AA encima — por eso el botón de compra no podía ser verde. Se limpió hacia `#C3DE4E` (menos amarillo, más frío) y se acompañó de `#2F5D3F`, la misma familia en versión tinta, que sí carga texto blanco a 7.6:1. El cliente sigue viendo verde Kiwi; ahora hay uno para gritar y otro para vender.
 
@@ -236,7 +238,7 @@ Decisión sobre el verde: **se conserva, en dos temperaturas.** El lima original
 | Etiqueta | Karla 700 | 11, uppercase | 0.12em |
 | Legal | Karla 400 | 12 / 17 | — |
 
-**Espaciado**: escala de 4 px. Valores recurrentes 4 / 8 / 10 / 12 / 14 / 16 / 18 / 20 / 22 / 26 / 32 / 40 / 52. Padding horizontal de página: 40 px (escritorio), 16 px (móvil).
+**Espaciado**: escala cerrada **4 / 8 / 12 / 16 / 20 / 24 / 32 / 40 / 48 / 52**. > **⚠ CORREGIDO en la revisión 7** — la lista anterior incluía 10, 14, 18, 22 y 26, que no son múltiplos de 4. Ver «Revisión 7 · C». Padding horizontal de página: 40 px (escritorio), 16 px (móvil).
 
 **Radios**: `2px` en todo (botones, cards, badges, campos). El único radio orgánico es `50%`, reservado al lenguaje del emblema, swatches, puntos y botones circulares de favorito.
 
@@ -818,7 +820,7 @@ Cada pieza se confecciona cuando alguien la compra, en la cantidad y las tallas 
 | Lugar | Antes (rev. 4) | Ahora | Función |
 |---|---|---|---|
 | Barra superior | «Envíos por Correos · el envío se paga aparte» | «Hecho por encargo · Envío ₡3.000 a todo el país» | Identidad: el proceso es la marca. Dos hechos verificables, sin plazo. |
-| Sello lima bajo el botón | «Envíos por Correos, se paga aparte» | «¿Necesitás fecha? Escribinos por WhatsApp» (glifo de chat) | Acción: la duda surge aquí y aquí se resuelve. Pregunta, no excusa. |
+| Sello lima bajo el botón | «Envíos por Correos, se paga aparte» | «¿Necesitás fecha? Escribinos por WhatsApp» (glifo de chat) — **derogado en la revisión 7: pasa a texto dentro del aviso «por encargo»** | Acción: la duda surge aquí y aquí se resuelve. Pregunta, no excusa. |
 | Ficha, fila bajo el sello | «Disponibilidad sujeta a confirmación del pago…» | **«Se confecciona por encargo.** No hay fecha fija: el tiempo depende del proveedor.» | Explicación, aviso con icono de reloj. |
 | Franja de garantías | «Envío al costo de Correos» | «Envío plano ₡3.000»; «SINPE · tarjeta · WhatsApp» pasa a «Pago por SINPE Móvil» (no hay tarjeta) | Solo hechos. |
 | Carrito | «Disponibilidad sujeta a confirmación…» | **«Se confecciona por encargo.** No hay fecha de entrega fija… ¿Tenés un día en mente? Preguntanos antes de pagar.» | Segundo contacto, antes del checkout. |
@@ -881,8 +883,8 @@ Archivo de referencia: `Kiwi-assets-produccion.dc.html`, secciones **19–21**. 
 
 | Superficie | Versión | Criterio |
 |---|---|---|
-| Ficha · botón secundario | Color | Aporta: la duda que corta la venta; promete «abre mi chat». |
-| Sello de consulta de fecha | Color | Aporta: la fecha es el motivo central en un negocio por encargo. |
+| Ficha · botón secundario | Color (único logo de la vista, revisión 7) | Aporta: la duda que corta la venta; promete «abre mi chat». |
+| Sello de consulta de fecha | **Sin icono (texto)** — *derogado en la revisión 7* | Antes «color». Ahora es un enlace en línea dentro del aviso «por encargo». |
 | Carrito | Color | Aporta: salida de la duda junto a «Continuar». El aviso «por encargo» usa reloj. |
 | Checkout · botón | Color | Aporta; un solo logo a color por vista. |
 | Checkout · enlace en línea | Sin icono | Ruido: el texto ya dice WhatsApp. |
@@ -921,3 +923,92 @@ Grilla 24, trazo 1.75, terminaciones rectas, esquinas 2, sin relleno, `currentCo
 | `whatsapp-provisional.svg` | `whatsapp-mono.svg` + `whatsapp-color.svg` | **Reemplazado** |
 | Iconos propios: sin relleno, un color, trazo 1.75 | Igual, solo para iconos propios | Vigente |
 | Colores, tipografía, escala de 4 px, radios de 2 px | Igual | Vigente |
+
+---
+
+## Revisión 7 — Ancho completo, navegación móvil y ficha (octubre 2026)
+
+Archivos: `Kiwi-identidad.dc.html` (secciones **05** y **07**: ficha 375 y 1440; header, listado, menú, búsqueda, filtros y footer a 375) y `Kiwi-assets-produccion.dc.html` (22). **Ningún token nuevo.** Se agregan dos iconos al set (`menu.svg`, `cerrar.svg`): son la única adición y salen de la navegación móvil.
+
+### A · Pantallas a medio ancho
+
+- **A1 · Ficha 1440** (05 · c). Padding de página 40. Grid `minmax(0,1fr) 480px`, gap 48. Galería: miniaturas verticales de 88 (gap 8) + foto 1:1 (gap 16). Información en 480, `position:sticky; top:24`: categoría, título Archivo 600 / 32, precio 28, talla, **Agregar** (56) y **Preguntar por WhatsApp** (48) apilados, aviso «por encargo» y sellos. Migas arriba (Karla 13 / `#5C665D`). Descripción, relacionados, garantías y footer a ancho completo.
+- **A2 · Listado 375** (07 · d). Título + conteo («42 piezas») en una línea. Barra de dos botones de 48: **Filtros** (borde verde y contador cuando hay activos) y **Ordenar** (selector nativo, no se rediseña; opciones: Más nuevos, Precio de menor a mayor, Precio de mayor a menor). Filtros activos como **chips quitables** (32 visual, 44 de toque) + «Limpiar». Grilla de 2 columnas, gap 8 entre columnas y 24 entre filas. «Mostrando 4 de 42» + «Ver más piezas» (carga incremental, sin paginación numérica). Franja de garantías en 2 × 2.
+- **Filtros 375** (07 · e): hoja a pantalla completa, grupos Categoría (filas de 48, caja de 20), Precio (barra de 4, tiradores de 24 con toque de 44) y Color (círculos de 32 con toque de 44). Barra inferior fija: «Limpiar» + **«Ver N piezas»** (56) con el conteo vivo.
+- **A3 · Header, navegación y búsqueda 375** (07 · b, c). Header de 60 (padding 8 / 4): **menú · logo · lupa · favoritos · carrito**, cada icono en toque de 44. El header es fijo; la barra superior no. La **lupa** abre la búsqueda a pantalla completa (campo de 48 con borde verde, «Cancelar», atajos por categoría); «Buscar» lleva al listado con el título «Resultados para “aro”». El **menú** abre un panel: Novedades, Joyería (expandible: Ver toda, Aretes, Cadenas, Anillos, Pulseras), Accesorios, Ropa, Rebajas; tarjeta lima «Es un regalo y no sé la talla»; **Preguntar por WhatsApp** (logo a color, único de la vista); enlaces de ayuda. El icono de menú pasa a cerrar.
+- **Barra superior en móvil**: «Hecho por encargo · Envío ₡3.000» (una línea a 375, Karla 700 / 12). «A todo el país» se queda en Envíos y footer. **Cierra el pendiente de la revisión 5** (¿cabe en una línea?).
+- **A4 · Footer 375** (07 · f). Fondo grafito, padding 40 / 16 / 24. Marca y descripción; **Comprar** y **Ayuda** como acordeones de 56 (cerrado: etiqueta + chevron; abierto: enlaces de 44); newsletter **apilado** (campo 48 + botón lima 48, ancho completo); línea legal. WhatsApp en **monocromo crema** (regla de fondos oscuros).
+
+### B · Faltantes de la ficha
+
+- **B1 · Descripción larga.** En Woo se escribe con tres encabezados fijos: **Material**, **Calce y medidas**, **Cuidado**, precedidos de un párrafo de descripción. El tema los renderiza como **acordeón en móvil** (Descripción abierta; los otros tres cerrados, filas de 56) y como **tres columnas en escritorio** bajo un párrafo de 18 px. Calce enlaza a la guía de tallas: en una pieza por encargo que no se puede probar, es lo que pesa. Los textos del lienzo son de muestra.
+- **B2 · Productos relacionados — sí va.** Criterio: **misma categoría**, excluyendo la pieza actual, **más nuevos primero**. **4 piezas en escritorio, 2 en móvil**, bajo la descripción y sobre las garantías. Título «Más {categoría}». Si la categoría tiene menos de 2 piezas, el bloque no se muestra. Usa la misma tarjeta del listado.
+
+### C · Espaciados
+
+**La escala del README estaba mal.** Listaba 10, 14, 18, 22 y 26, que no son múltiplos de 4. Escala cerrada: **4 / 8 / 12 / 16 / 20 / 24 / 32 / 40 / 48 / 52**. Sustituciones aplicadas:
+
+| Valor | Pasa a | Nota |
+|---|---|---|
+| 5 | 4 | badge del carrito (`right`) |
+| 6, 7, 9, 10 | 8 | logo móvil, barra superior, gaps de icono y etiqueta |
+| 11, 13 | 12 | logo y enlaces de footer |
+| 14, 15, 18 | 16 | separación entre iconos |
+| 22, **26** | **24** | **No se confirma 24 → 26 de tu tabla**: 24 ya está en la escala y 26 no. |
+| 36, 38, 44 | 40 | padding de footer, hero |
+
+Aplicado **completo** en 05 y 07 de `Kiwi-identidad`. En los demás lienzos (flujo, excepciones, ayuda) solo se corrigieron las piezas de la tabla: logo, barra superior, badge. **Siguen con valores fuera de escala** (10, 14, 18, 22, 26) en el resto de esos lienzos, y no se tocan porque cambiarían el layout de pantallas ya cerradas. Pendiente: barrer esos tres archivos con la misma tabla.
+
+### D · Contradicciones y contraste
+
+- **D1.** El botón es **«Preguntar por WhatsApp»** (§1 corregido; §4 ya decía «Preguntar»).
+- **D2. Resuelto: solo el botón lleva logo a color.** El sello lima deja de ser salida y pasa a texto dentro del aviso «por encargo»: «¿Necesitás fecha? Escribile a Ana.» (enlace en línea, sin icono). Regla añadida: **si el mismo destino aparece dos veces en una vista, solo el botón lleva logo.** La ficha pierde el lima; no se compensa.
+- **D3. Contraste.** Confirmadas ambas correcciones. Más casos del mismo tipo, **corregidos** en 05 y 07:
+
+| Caso | Par | Contraste | Resolución |
+|---|---|---|---|
+| Etiquetas de filtro, conteos, precio anterior tachado | `texto-débil` sobre crema | 2.9:1 | `texto-muted` (5.4:1) |
+| Placeholder del newsletter | `texto-muted` sobre grafito | 2.7:1 | `texto-débil` (4.96:1) |
+| **Enlace «Rebajas»** | guayaba sobre crema | **4.2:1** | grafito con subrayado guayaba de 2 |
+| **Número del badge del carrito** | crema sobre guayaba | **4.2:1** | blanco (4.7:1) |
+| **Puntos inactivos de la galería** | `#CFCBBD` sobre crema | **1.4:1** (mínimo 3:1 en no-texto) | aro hueco de 1.5 en `texto-muted`; el activo es lleno |
+| **Casillas de filtro** | borde `#CFCBBD` | 1.4:1 | borde 1.5 en `texto-muted` |
+
+  **Sin resolver, decisión tuya:** los **campos de formulario** (borde `#CFCBBD` sobre `#FFFDF7`, 1.4:1) no alcanzan 3:1 como límite del control (WCAG 1.4.11). Propuesta sin token nuevo: borde en `texto-muted`. Cambia todos los campos del flujo, por eso no se aplicó. Otra deuda: el par blanco/guayaba del README dice 4.6 y mide 4.7.
+- **D4. Puntos de la galería.** Criterio confirmado: **tamaño visual 8, área de toque 44 × 44, sin solaparse**. Por eso el paso entre puntos es 44 y la fila ocupa 176; van **bajo la foto**, no encima. Los puntos son un atajo: el gesto principal es deslizar.
+
+### Método: cada pantalla en los dos anchos
+
+Auditoría hecha sobre los lienzos actuales:
+
+| Pantalla | 375 | 1440 | Estado |
+|---|---|---|---|
+| Ficha | Sí | Sí (rev. 7) | Completa |
+| Listado, header, menú, búsqueda, filtros, footer | Sí (rev. 7) | Sí | Completo |
+| **Home** | **No** | Sí | **Falta móvil** |
+| **Estados del listado** (carga, vacío, error) | **No** | Sí | **Falta móvil** |
+| Carrito con ítems | Sí | Sí | Completo |
+| **Carrito vacío** | Sí | **No** | **Falta escritorio** |
+| Checkout | Sí | Sí | Completo |
+| **Gracias** (A: falta el pago / B: comprobante recibido) | A y B | Una sola | **Falta confirmar el estado del escritorio** |
+| Regalo | Sí | Sí | Completo |
+| **Error de subida** | 3 causas | 1 causa | **Faltan 2 en escritorio** («la estructura no cambia») |
+| Cancelado, reintento, monto menor, monto mayor | Sí | Sí | Completos |
+| **Ayuda (B1–B3)** | — | — | **No verificado**: no están enmarcadas por ancho |
+
+**Faltan 6 versiones** (home móvil, estados del listado móvil, carrito vacío escritorio, gracias escritorio B, dos causas de subida en escritorio) y **3 páginas de ayuda sin verificar**. No se diseñaron en esta tanda. No las maquetes sin diseño.
+
+### Derogado y cambiado en la revisión 7
+
+| Antes | Ahora | Estado |
+|---|---|---|
+| «Comprar por WhatsApp» (§1) | «Preguntar por WhatsApp» | **Derogado** |
+| Sello lima «¿Necesitás fecha?» como salida con glifo | Texto dentro del aviso «por encargo» | **Derogado** |
+| Revisión 6: ficha con dos logos a color | Solo el botón | **Derogado** |
+| Ficha en móvil centrada a 520 en escritorio | Layout de escritorio de 1440 | **Derogado** |
+| Listado móvil de 2 columnas sin filtros ni garantías | Filtros, orden, chips, conteo y garantías | **Derogado** |
+| Header móvil solo con logo y carrito | Menú, lupa, favoritos y carrito | **Derogado** |
+| Escala 4/8/10/12/14/16/18/20/22/26/32/40/52 | 4/8/12/16/20/24/32/40/48/52 | **Corregido** |
+| `texto-débil` «no usar a 14 px sobre crema» | Nunca texto sobre crema | **Endurecido** |
+| Gap 10 en botones con logo de WhatsApp (rev. 6) | Gap 8 | **Corregido** |
+| Colores, tipografía, radios de 2 px, hit target ≥ 44 | Igual | Vigente |
