@@ -137,3 +137,433 @@ input:focus-visible {
 		padding: var(--wp--preset--spacing--45) var(--wp--preset--spacing--80);
 	}
 }
+
+/* ── 9. Iconos dentro de bloques ──────────────────────────────────────────
+ * Botones, párrafos y enlaces de bloque no aceptan icono. Se dibujan con el SVG
+ * del set como máscara, así toman el color del texto (currentColor) o el que fija
+ * el lienzo. El logo de WhatsApp a color va como imagen: no se recolorea. */
+.kiwi-boton-agregar .wp-block-button__link::before,
+.kiwi-wa-mono .wp-block-button__link::before,
+.kiwi-guia-tallas a::before,
+.kiwi-aviso-reloj::before,
+.kiwi-confianza__pago::before,
+.kiwi-garantia::before {
+	content: "";
+	display: inline-block;
+	flex: none;
+	width: var(--kiwi-icono-tam);
+	height: var(--kiwi-icono-tam);
+	background-color: var(--kiwi-icono-color, currentColor);
+	-webkit-mask: var(--kiwi-icono) center / contain no-repeat;
+	mask: var(--kiwi-icono) center / contain no-repeat;
+}
+
+.kiwi-boton-agregar .wp-block-button__link::before {
+	--kiwi-icono: url("../icons/carrito.svg");
+	--kiwi-icono-tam: var(--wp--preset--dimension--icono-20);
+}
+
+.kiwi-wa-mono .wp-block-button__link::before {
+	--kiwi-icono: url("../icons/whatsapp-mono.svg");
+	--kiwi-icono-tam: var(--wp--preset--dimension--icono-20);
+}
+
+.kiwi-wa-color .wp-block-button__link::before {
+	content: "";
+	display: inline-block;
+	flex: none;
+	width: var(--wp--preset--dimension--icono-20);
+	height: var(--wp--preset--dimension--icono-20);
+	background: url("../icons/whatsapp-color.svg") center / contain no-repeat;
+}
+
+.kiwi-guia-tallas a::before {
+	--kiwi-icono: url("../icons/guia-de-tallas.svg");
+	--kiwi-icono-tam: var(--wp--preset--dimension--icono-17);
+}
+
+.kiwi-aviso-reloj::before {
+	--kiwi-icono: url("../icons/reloj.svg");
+	--kiwi-icono-tam: var(--wp--preset--dimension--icono-18);
+	--kiwi-icono-color: var(--wp--preset--color--indigo);
+}
+
+.kiwi-confianza__pago::before {
+	--kiwi-icono: url("../icons/pago-seguro.svg");
+	--kiwi-icono-tam: var(--wp--preset--dimension--icono-18);
+	--kiwi-icono-color: var(--wp--preset--color--texto-muted);
+}
+
+.kiwi-garantia::before {
+	--kiwi-icono-tam: var(--wp--preset--dimension--icono);
+	--kiwi-icono-color: var(--wp--preset--color--verde-kiwi);
+}
+
+.kiwi-garantia--envio::before { --kiwi-icono: url("../icons/envio.svg"); }
+.kiwi-garantia--tallas::before { --kiwi-icono: url("../icons/guia-de-tallas.svg"); }
+.kiwi-garantia--pago::before { --kiwi-icono: url("../icons/pago-seguro.svg"); }
+
+/* ── 10. Ficha de producto ────────────────────────────────────────────────
+ * La galería clásica de Woo, las opciones de talla y el botón de agregar no
+ * exponen alto, grilla ni estados como atributos de bloque. */
+
+/* Galería: alto fijo, foto entera sobre crema y puntos abajo a la derecha. */
+.kiwi-galeria .woocommerce-product-gallery {
+	position: relative;
+	float: none;
+	width: 100%;
+	margin: 0;
+}
+
+.kiwi-galeria .woocommerce-product-gallery__image img {
+	display: block;
+	width: 100%;
+	height: var(--wp--preset--dimension--galeria-alto);
+	object-fit: contain;
+	background-color: var(--wp--preset--color--crema);
+}
+
+.kiwi-galeria .flex-control-paging {
+	position: absolute;
+	right: var(--wp--preset--spacing--35);
+	bottom: var(--wp--preset--spacing--35);
+	z-index: 1;
+	display: flex;
+	gap: var(--wp--preset--spacing--10);
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.kiwi-galeria .flex-control-paging li {
+	margin: 0;
+}
+
+.kiwi-galeria .flex-control-paging a {
+	display: block;
+	width: var(--wp--preset--dimension--punto-galeria);
+	height: var(--wp--preset--dimension--punto-galeria);
+	overflow: hidden;
+	border-radius: 50%;
+	background-color: var(--wp--preset--color--bruma);
+	font-size: 0;
+	cursor: pointer;
+}
+
+.kiwi-galeria .flex-control-paging a.flex-active {
+	background-color: var(--wp--preset--color--verde-kiwi);
+}
+
+/* Formulario de compra: 16 entre talla y botón (el layout flow del form usa su propio gap). */
+.kiwi-compra .wc-block-add-to-cart-with-options > * {
+	margin-block: 0;
+}
+
+.kiwi-compra .wc-block-add-to-cart-with-options > * + * {
+	margin-block-start: var(--wp--preset--spacing--40);
+}
+
+/* «Guía de tallas»: índigo, con su icono y área táctil de 44. */
+.kiwi-guia-tallas {
+	margin: 0;
+}
+
+.kiwi-guia-tallas a {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--wp--preset--spacing--20);
+	min-height: var(--wp--preset--dimension--objetivo-tactil);
+}
+
+/* Tallas: dos estados (normal / seleccionada), grilla de 4 → dos filas con 7 tallas. */
+.kiwi-talla .wc-block-product-filter-chips__items {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: var(--wp--preset--spacing--20);
+}
+
+.kiwi-talla .wc-block-product-filter-chips__item {
+	min-height: var(--wp--preset--dimension--talla);
+	padding: 0;
+	border: var(--wp--custom--borde--fino) solid var(--wp--preset--color--bruma);
+	border-radius: var(--wp--preset--border-radius--base);
+	background-color: var(--wp--preset--color--crema-alta);
+	color: var(--wp--preset--color--grafito);
+	font-family: var(--wp--preset--font-family--archivo);
+	font-weight: 600;
+	font-size: var(--wp--preset--font-size--15);
+}
+
+.kiwi-talla .wc-block-product-filter-chips__item[aria-checked="true"] {
+	border: var(--wp--custom--borde--medio) solid var(--wp--preset--color--verde-kiwi);
+	background-color: var(--wp--preset--color--verde-kiwi);
+	color: var(--wp--preset--color--crema);
+}
+
+/* El nativo pinta un contorno de 1 px en :focus (también al hacer clic); vale el anillo del sistema. */
+.kiwi-talla .wc-block-product-filter-chips__item:focus {
+	outline: none;
+}
+
+.kiwi-talla .wc-block-product-filter-chips__item:focus-visible {
+	outline: var(--wp--custom--foco--ancho) solid var(--wp--preset--color--verde-kiwi);
+	outline-offset: var(--wp--custom--foco--separacion);
+}
+
+/* Botón primario «Agregar · ₡15.000»: 56 de alto, ancho completo, icono a la izquierda. */
+.kiwi-boton-agregar,
+.kiwi-boton-agregar .wp-block-button__link {
+	width: 100%;
+}
+
+.kiwi-boton-agregar .wp-block-button__link {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: var(--wp--preset--spacing--25);
+	min-height: var(--wp--preset--dimension--boton-primario);
+	padding-block: 0;
+	letter-spacing: 0.01em;
+	font-variant-numeric: tabular-nums;
+}
+
+/* Woo oculta el botón con [hidden] hasta hidratar; el display:flex de arriba no debe pisarlo. */
+.kiwi-boton-agregar .wp-block-button__link[hidden] {
+	display: none;
+}
+
+/* Botón secundario «Preguntar por WhatsApp»: contorno de 1,5, 48 de alto. */
+.kiwi-boton-secundario .wp-block-button__link {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: var(--wp--preset--spacing--25);
+	min-height: var(--wp--preset--dimension--boton-secundario);
+	padding-block: 0;
+	border: var(--wp--custom--borde--medio) solid var(--wp--preset--color--verde-kiwi);
+}
+
+/* Sello lima: bloque entero clicable, texto a la izquierda, gap 8 (revisión 6). */
+.is-style-sello .wp-block-button__link {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	gap: var(--wp--preset--spacing--20);
+	min-height: var(--wp--preset--dimension--objetivo-tactil);
+	text-align: left;
+}
+
+/* Aviso «Se confecciona por encargo»: reloj a la izquierda del párrafo (con <strong> adentro no sirve flex). */
+.kiwi-aviso-reloj {
+	position: relative;
+	margin: 0;
+	padding-inline-start: calc(var(--wp--preset--dimension--icono-18) + var(--wp--preset--spacing--25));
+}
+
+.kiwi-aviso-reloj::before {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.kiwi-confianza__pago {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--wp--preset--spacing--20);
+	margin: 0;
+}
+
+/* Precios: siempre tabulares. Precio anterior después del actual, tachado y en Archivo 500. */
+.kiwi-precio {
+	display: flex;
+	align-items: baseline;
+	gap: var(--wp--preset--spacing--25);
+	font-variant-numeric: tabular-nums;
+}
+
+.kiwi-precio del {
+	order: 2;
+	color: var(--wp--preset--color--texto-debil);
+	font-weight: 500;
+}
+
+.kiwi-precio ins {
+	text-decoration: none;
+}
+
+.kiwi-ficha .kiwi-precio del {
+	font-size: var(--wp--preset--font-size--cuerpo);
+}
+
+/* ── 11. Listado ──────────────────────────────────────────────────────────
+ * La columna fija de 236, la grilla de cards y el selector de orden no se
+ * pueden expresar con los atributos de los bloques. */
+.wp-block-group.kiwi-listado__cuerpo {
+	grid-template-columns: minmax(0, 1fr);
+}
+
+.kiwi-resultados {
+	padding: var(--wp--preset--spacing--60) var(--wp--preset--spacing--40) var(--wp--preset--spacing--80);
+}
+
+.kiwi-resultados > * {
+	margin-block: 0;
+}
+
+.kiwi-resultados > * + * {
+	margin-block-start: var(--wp--preset--spacing--50);
+}
+
+.kiwi-resultados__barra .wc-block-product-results-count p {
+	margin: 0;
+}
+
+/* Filtros: separación entre grupos, casillas de 15 sin la marca de Woo (no es del set). */
+.kiwi-filtros .wc-block-product-filters__content {
+	display: flex;
+	flex-direction: column;
+	gap: var(--wp--preset--spacing--60);
+}
+
+.kiwi-casillas {
+	font-family: var(--wp--preset--font-family--karla);
+	font-size: var(--wp--preset--font-size--14);
+}
+
+.kiwi-casillas .wc-block-product-filter-checkbox-list__items {
+	display: flex;
+	flex-direction: column;
+	gap: var(--wp--preset--spacing--20);
+}
+
+.kiwi-casillas .wc-block-product-filter-checkbox-list__label {
+	gap: var(--wp--preset--spacing--20);
+}
+
+.kiwi-casillas input[type="checkbox"].wc-block-product-filter-checkbox-list__input {
+	width: var(--wp--preset--dimension--check);
+	height: var(--wp--preset--dimension--check);
+}
+
+.kiwi-casillas .wc-block-product-filter-checkbox-list__mark,
+.kiwi-casillas .wc-block-product-filter-checkbox-list__input-wrapper::before {
+	display: none;
+}
+
+.kiwi-casillas .wc-block-product-filter-checkbox-list__label:has(input:checked) {
+	color: var(--wp--preset--color--grafito);
+}
+
+/* «Limpiar filtros»: enlace de texto sobre un divisor, no botón. */
+.kiwi-limpiar-filtros {
+	margin-top: var(--wp--preset--spacing--10);
+	padding-top: var(--wp--preset--spacing--40);
+	border-top: var(--wp--custom--borde--fino) solid var(--wp--preset--color--divisor);
+}
+
+.kiwi-enlace .wp-block-button__link {
+	padding: 0;
+	border: 0;
+	background: none;
+	color: var(--wp--preset--color--verde-kiwi);
+	font-family: var(--wp--preset--font-family--karla);
+	font-weight: 700;
+	font-size: var(--wp--preset--font-size--13);
+}
+
+/* Selector de orden: chevron del set en lugar de la flecha nativa. En móvil, 44 de alto. */
+.kiwi-orden {
+	position: relative;
+}
+
+.kiwi-orden select.orderby {
+	-webkit-appearance: none;
+	appearance: none;
+	height: var(--wp--preset--dimension--objetivo-tactil);
+	padding: 0 calc(var(--wp--preset--spacing--30) + var(--wp--preset--dimension--icono-13) + var(--wp--preset--spacing--20)) 0 var(--wp--preset--spacing--30);
+	border: var(--wp--custom--borde--fino) solid var(--wp--preset--color--bruma);
+	border-radius: var(--wp--preset--border-radius--base);
+	background-color: var(--wp--preset--color--crema-alta);
+	color: var(--wp--preset--color--grafito);
+	font-family: var(--wp--preset--font-family--karla);
+	font-weight: 700;
+	font-size: var(--wp--preset--font-size--13);
+	cursor: pointer;
+}
+
+.kiwi-orden::after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	right: var(--wp--preset--spacing--30);
+	width: var(--wp--preset--dimension--icono-13);
+	height: var(--wp--preset--dimension--icono-13);
+	transform: translateY(-50%);
+	background-color: var(--wp--preset--color--grafito);
+	-webkit-mask: url("../icons/chevron.svg") center / contain no-repeat;
+	mask: url("../icons/chevron.svg") center / contain no-repeat;
+	pointer-events: none;
+}
+
+/* Cards: grilla propia (2 columnas en móvil, 4 en escritorio). El nativo usa flex con
+ * anchos calc() de especificidad (0,4,1); se replica la cadena de clases para ganarle. */
+.kiwi-coleccion .wc-block-product-template.is-flex-container.kiwi-cards {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: var(--wp--preset--spacing--45);
+}
+
+.kiwi-coleccion .wc-block-product-template.is-flex-container.kiwi-cards > li {
+	display: flex;
+	flex-direction: column;
+	gap: var(--wp--preset--spacing--25);
+	width: auto;
+	margin: 0;
+}
+
+.kiwi-cards > li > * {
+	margin: 0;
+}
+
+.kiwi-cards .wc-block-components-product-image,
+.kiwi-cards .wc-block-components-product-image img {
+	border-radius: var(--wp--preset--border-radius--base);
+}
+
+.kiwi-cards .wp-block-post-title a {
+	text-decoration: none;
+}
+
+.kiwi-cards .kiwi-precio {
+	gap: var(--wp--preset--spacing--20);
+}
+
+.kiwi-cards .kiwi-precio del {
+	font-size: var(--wp--preset--font-size--13);
+}
+
+/* Franja de garantías: icono de 22 en verde, gap 12. */
+.kiwi-garantia {
+	display: flex;
+	align-items: center;
+	gap: var(--wp--preset--spacing--30);
+	margin: 0;
+}
+
+@media (min-width: 782px) {
+	.wp-block-group.kiwi-listado__cuerpo {
+		grid-template-columns: var(--wp--preset--dimension--filtros-ancho) minmax(0, 1fr);
+	}
+
+	.kiwi-resultados {
+		padding: var(--wp--preset--spacing--60) var(--wp--preset--spacing--80) var(--wp--preset--spacing--80);
+	}
+
+	.kiwi-orden select.orderby {
+		height: var(--wp--preset--dimension--orden-alto);
+	}
+
+	.kiwi-coleccion .wc-block-product-template.is-flex-container.kiwi-cards {
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+	}
+}

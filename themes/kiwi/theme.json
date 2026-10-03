@@ -10,7 +10,8 @@
       ]
     },
     "custom": {
-      "borde": { "fino": "1px" },
+      "borde": { "fino": "1px", "medio": "1.5px" },
+      "interlinea": { "legal": "17px" },
       "foco": { "ancho": "2px", "separacion": "2px" },
       "transicion": { "duracion": "200ms", "curva": "ease-out" }
     },
@@ -125,6 +126,21 @@
         { "slug": "logo",            "size": "36px",  "name": "Logo del header" },
         { "slug": "buscador-alto",   "size": "42px",  "name": "Buscador · alto" },
         { "slug": "objetivo-tactil", "size": "44px",  "name": "Objetivo táctil mínimo" },
+        { "slug": "punto-galeria",   "size": "7px",   "name": "Punto de la galería" },
+        { "slug": "check",           "size": "15px",  "name": "Casilla de filtro" },
+        { "slug": "riel",            "size": "4px",   "name": "Riel del slider de precio" },
+        { "slug": "tirador",         "size": "14px",  "name": "Tirador del slider de precio" },
+        { "slug": "icono-13",        "size": "13px",  "name": "Icono 13 (chevron del orden)" },
+        { "slug": "icono-17",        "size": "17px",  "name": "Icono 17 (guía de tallas)" },
+        { "slug": "icono-18",        "size": "18px",  "name": "Icono 18 (avisos y fila de confianza)" },
+        { "slug": "icono-20",        "size": "20px",  "name": "Icono 20 (botones y sellos)" },
+        { "slug": "orden-alto",      "size": "38px",  "name": "Selector de orden · alto" },
+        { "slug": "boton-secundario","size": "48px",  "name": "Botón secundario · alto" },
+        { "slug": "talla",           "size": "48px",  "name": "Opción de talla · alto" },
+        { "slug": "boton-primario",  "size": "56px",  "name": "Botón primario · alto" },
+        { "slug": "filtros-ancho",   "size": "236px", "name": "Sidebar de filtros · ancho" },
+        { "slug": "galeria-alto",    "size": "400px", "name": "Galería de la ficha · alto" },
+        { "slug": "ficha-ancho",     "size": "520px", "name": "Ficha en escritorio · ancho" },
         { "slug": "buscador-ancho",  "size": "296px", "name": "Buscador · ancho" }
       ]
     },
@@ -144,6 +160,44 @@
       "lineHeight": "1.55"
     },
     "blocks": {
+      "core/button": {
+        "variations": {
+          "outline": {
+            "border": {
+              "color": "var(--wp--preset--color--verde-kiwi)",
+              "style": "solid",
+              "width": "var(--wp--custom--borde--medio)"
+            },
+            "color": {
+              "background": "transparent",
+              "text": "var(--wp--preset--color--verde-kiwi)"
+            },
+            "typography": {
+              "fontWeight": "600",
+              "fontSize": "var(--wp--preset--font-size--15)"
+            }
+          },
+          "sello": {
+            "color": {
+              "background": "var(--wp--preset--color--lima-kiwi)",
+              "text": "var(--wp--preset--color--grafito)"
+            },
+            "typography": {
+              "fontFamily": "var(--wp--preset--font-family--karla)",
+              "fontWeight": "700",
+              "fontSize": "var(--wp--preset--font-size--13)"
+            },
+            "spacing": {
+              "padding": {
+                "top": "var(--wp--preset--spacing--30)",
+                "bottom": "var(--wp--preset--spacing--30)",
+                "left": "var(--wp--preset--spacing--30)",
+                "right": "var(--wp--preset--spacing--30)"
+              }
+            }
+          }
+        }
+      },
       "core/search": {
         "border": {
           "color": "var(--wp--preset--color--bruma)",

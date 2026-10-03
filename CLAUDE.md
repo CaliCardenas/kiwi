@@ -85,7 +85,8 @@ Tienda WooCommerce con tema de bloques propio (`themes/kiwi`). Costa Rica, espa�
 - **SINPE Móvil manual, único medio de pago.** Pasarela offline (`bacs`, titulada «SINPE Móvil»). El pedido nace `on-hold`; `on-hold` → `processing` siempre a mano. Número, titular e instrucciones son opciones del método, nunca texto duro. Referencia = número de pedido. Monto = subtotal + ₡3.000.
 - **Sin impuestos.** Precio publicado = precio final. Sin líneas de IVA, sin campos de factura electrónica (cédula, correo XML).
 - Moneda CRC, separador de miles `.`, cero decimales: `₡12.500`.
-- WhatsApp es salida secundaria para consultar, nunca un segundo camino de pago.
+- WhatsApp es salida secundaria para consultar, nunca un segundo camino de pago. En la ficha el botón dice «Preguntar por WhatsApp», nunca «Comprar» (decisión de la dueña, octubre 2026; pendiente que diseño corrija el lienzo).
+- Número de WhatsApp: +506 8556 9119, **solo** en la constante `KIWI_WHATSAPP_NUMERO` del plugin `kiwi-whatsapp`. Plantillas, patterns y menús enlazan a `/whatsapp/`; el plugin lo reescribe a `https://wa.me/50685569119` al renderizar (y redirige si llega sin reescribir). Nunca escribas el número ni `wa.me` en una plantilla.
 - **Ningún cron, tarea programada ni automatismo cambia el estado de un pedido. Nunca.** Con SINPE manual, un automatismo cancelaría pedidos ya pagados que todavía no se conciliaron. El aviso de las 24 h y la cancelación de las 48 h los hace la dueña a mano. El código puede, como mucho, señalarle en el admin qué pedidos llegaron a ese punto.
 - No configures `woocommerce_hold_stock_minutes` ni nada que dispare la cancelación automática de Woo.
 - Comprobante: un archivo, reemplazable, validado en cliente y servidor (MIME real). Un fallo de subida no cambia el estado del pedido.
@@ -132,13 +133,31 @@ Están en manos de diseño o de la dueña. Si una tarea depende de uno, frená y
 **BLOQUEADOR — móvil sin navegación, búsqueda ni footer**
 El tráfico viene de Instagram y es mayoritariamente móvil. Hoy, debajo de 782 px, el header muestra solo logo y carrito, y el footer no se muestra: no hay diseño a 375 de navegación, búsqueda ni footer, y no existe el icono de menú (la lupa sí, desde la revisión 6). Pedido a diseño. No inventes UI para cubrirlo.
 
+**BLOQUEADOR — ficha de producto sin diseño de escritorio**
+Solo existe la ficha a 375 (§1). Desde 782 px se muestra la misma columna centrada a 520 px (preset `ficha-ancho`, la medida de lectura de la bajada del hero, §2.3). Es provisorio y deliberado: no inventes un layout de dos columnas. Pedido a diseño.
+
+**BLOQUEADOR — listado sin diseño móvil (a confirmar con la dueña)**
+Solo existe el listado a 1440 (§2.5). Debajo de 782 px se ocultan los filtros y la franja de garantías y las cards pasan a 2 columnas (sugerencia 4→3→2 del handoff). La hoja inferior de filtros queda para diseño. Esta salida la propuso Claude y todavía no la confirmó la dueña.
+
+**Ficha y listado**
+- Logo de WhatsApp en la ficha: el botón secundario va **a color** y el sello lima va **en monocromo**. Lo decide la regla de superficies de la revisión 6: el color solo va sobre crema, crema-alta, aviso o divisor, y el sello es lima. Así se cumple «un logo a color por vista», que la tabla del §2 rompía al pedir color en los dos.
+- «Cambio en 15 días» no se muestra (política sin resolver). Lugar reservado: segundo ítem de la fila `kiwi-confianza` de la ficha y cuarta celda de la franja de garantías (la grilla ya es de 4).
+- Badge «Nuevo»: omitido, nadie definió qué lo dispara. Filtros del listado: solo categoría y precio (no hay atributo color; la talla nunca se agota).
+- Labels de grupo de filtros en `texto-muted`, no en el `texto-debil` del lienzo: a 11 px sobre crema, `texto-debil` no pasa AA.
+- Orden del catálogo: por defecto «Más nuevos» (`date`), sin «valoración» (no hay reseñas) ni orden manual. Tallas ordenadas XS → 3XL por `term meta order` del atributo `pa_talla` (orden `menu_order`).
+- Conflicto abierto: los puntos de la galería miden 7 px (diseño) y no llegan a 44 px táctiles. Se puede deslizar, pero los puntos son clicables. Llevar a diseño.
+- La categoría de la ficha (eyebrow) es un enlace (`post-terms`) de 11 px, sin área táctil de 44. Llevar a diseño: ¿enlace o texto?
+- WooCommerce no tiene la traducción es_CR instalada: el orden del catálogo, las leyendas de los filtros y los avisos salen en inglés. Instalarla es una decisión de la dueña (`wp language plugin install woocommerce es_CR`).
+- El sitio está en modo «Próximamente» de Woo (solo páginas de tienda): sin sesión, la ficha y el listado muestran esa página.
+
 **Header y footer**
 - Navegación: los lienzos se contradicen (identidad: Novedades / Joyería / Accesorios / Ropa / Rebajas; flujo y ayuda: Ropa / Regalos / Rebajas) y las dos listas son del catálogo viejo (hoy: vestidos por encargo). El header usa el menú `menu-principal` (vacío) y el footer `menu-pie-comprar` (vacío) y `menu-pie-ayuda`; las categorías se cargan desde el editor de sitio.
 - Descripción del footer («Accesorios, joyería y ropa para todos los días») también es del catálogo viejo: no se publicó. Falta el copy.
 - Badge del carrito: el handoff pide `border-radius: 8px`, fuera de la regla de 2 px; se agregó como preset `badge` siguiendo el handoff.
 
 **Contradicciones del handoff**
-- Ficha §1: el botón secundario dice «Comprar por WhatsApp», pero §4 establece «Preguntar, no Comprar» y ninguna revisión lo corrige.
+- Ficha §1: el botón secundario dice «Comprar por WhatsApp», pero §4 establece «Preguntar, no Comprar». Resuelto por la dueña a favor de «Preguntar»; falta que diseño corrija el lienzo.
+- Revisión 6, §2: pide el logo de WhatsApp a color en el botón secundario y en el sello de la ficha, contra «un logo a color por vista». Resuelto en el código por la regla de superficies (ver «Ficha y listado»); llevar a diseño.
 - Cancelación a las 48 h: las «Notas Woo» hablan de cancelar a las 48 h y §10 dice «desactivar cron». Ya está resuelto por regla del proyecto (manual, ver «Modelo de negocio»), pero el handoff sigue diciendo las dos cosas.
 - Texto sin la marca ⚠ que una revisión posterior deroga: «State Management» (`llegaManana`, conteo de entrega, tarifas y peso), «Notas Woo» (dos zonas, IVA de Correos), §1 sello de envío y §2.1 barra (copy anterior a la revisión 5).
 - Botón primario: el hover y el active piden «oscurecer un paso», pero ese valor no existe.
@@ -146,7 +165,7 @@ El tráfico viene de Instagram y es mayoritariamente móvil. Hoy, debajo de 782 
 
 **Valores que faltan o están sin aprobar**
 - Tamaño del valor en las tarjetas de dato de la página de gracias (§6): «32–34 px» es un rango; no se agregó al `theme.json`.
-- Espaciados usados en las pantallas pero fuera de la escala declarada (6, 9, 11, 24, 28, 36, 38, 44): no se agregaron. Header y footer usan el valor de la escala más cercano, pendiente de validar con diseño: 9→8 (logo móvil; padding vertical de la barra superior), 11→12 (logo escritorio, enlaces del footer), 38→40 (padding del footer), 5→4 (desplazamiento del badge del carrito), y 14 vs 18 entre lienzos (utilidades del header)→16.
+- Espaciados usados en las pantallas pero fuera de la escala declarada (6, 9, 11, 24, 28, 36, 38, 44): no se agregaron. Header y footer usan el valor de la escala más cercano, pendiente de validar con diseño: 9→8 (logo móvil; padding vertical de la barra superior), 11→12 (logo escritorio, enlaces del footer), 38→40 (padding del footer), 5→4 (desplazamiento del badge del carrito), y 14 vs 18 entre lienzos (utilidades del header)→16. Ficha y listado: 7→8 (encabezado de la ficha), 9→8 (grupo de talla, casillas), 6→8 (icono de «Guía de tallas»), 5→4 (puntos de la galería), 11→12 (grupos de filtros, sello lima), 24→26 (padding y gap del sidebar, padding lateral de garantías). Los que caían entre dos valores se redondean hacia arriba (6→8, 24→26, 36→40): decisión de la dueña, a validar con diseño.
 - Las medidas de componente (punto, iconos, badge, buscador, logo) no son espaciado: van como presets `dimensionSizes` en `theme.json`.
 - Nombres de token `aviso` (#F1EEE2) y `borde-oscuro` (#4A524B): el handoff usa el valor pero no le da nombre.
 - `fluid: true` en la tipografía: WordPress genera tamaños intermedios que el handoff no define.
@@ -160,4 +179,4 @@ El tráfico viene de Instagram y es mayoritariamente móvil. Hoy, debajo de 782 
 - Tarjeta de regalo: vigencia, saldo remanente y con qué se implementa.
 - «Cambio en 15 días» en piezas hechas por encargo.
 - Favoritos y newsletter: sin proveedor ni comportamiento definido. El newsletter queda fuera del footer hasta que tenga destino: no se maqueta un formulario sin destino.
-- Datos reales: número y titular del SINPE, WhatsApp de Ana, ubicación para el footer. Mientras tanto, el footer va sin ubicación y el enlace «Escribinos por WhatsApp» va sin destino.
+- Datos reales: número y titular del SINPE, ubicación para el footer. Mientras tanto, el footer va sin ubicación. (WhatsApp de Ana: resuelto, ver «Modelo de negocio».)

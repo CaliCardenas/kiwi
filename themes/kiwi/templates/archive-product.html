@@ -1,0 +1,91 @@
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+
+<!-- wp:group {"tagName":"main","className":"kiwi-listado","layout":{"type":"default"}} -->
+<main class="wp-block-group kiwi-listado"><!-- wp:woocommerce/store-notices /-->
+
+<!-- wp:group {"className":"kiwi-listado__cuerpo","style":{"spacing":{"blockGap":"0"}},"layout":{"type":"grid","columnCount":2}} -->
+<div class="wp-block-group kiwi-listado__cuerpo"><!-- wp:group {"tagName":"aside","className":"kiwi-filtros kiwi-solo-escritorio","style":{"border":{"right":{"color":"var:preset|color|divisor","style":"solid","width":"var(--wp--custom--borde--fino)"}},"spacing":{"padding":{"top":"var:preset|spacing|60","right":"var:preset|spacing|60","bottom":"var:preset|spacing|80","left":"var:preset|spacing|60"}}},"layout":{"type":"default"}} -->
+<aside class="wp-block-group kiwi-filtros kiwi-solo-escritorio" style="border-right-color:var(--wp--preset--color--divisor);border-right-style:solid;border-right-width:var(--wp--custom--borde--fino);padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--80);padding-left:var(--wp--preset--spacing--60)"><!-- wp:woocommerce/product-filters {"showFilterDrawer":false} -->
+<!-- wp:heading {"fontSize":"17","fontFamily":"archivo","style":{"typography":{"fontWeight":"600","letterSpacing":"-0.01em"},"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
+<h2 class="wp-block-heading has-archivo-font-family has-17-font-size" style="margin-top:0;margin-bottom:0;font-weight:600;letter-spacing:-0.01em">Filtros</h2>
+<!-- /wp:heading -->
+
+<!-- wp:woocommerce/product-filter-taxonomy {"taxonomy":"product_cat","showCounts":true,"sortOrder":"name-asc"} -->
+<!-- wp:heading {"level":3,"className":"kiwi-filtro-titulo","textColor":"texto-muted","fontSize":"etiqueta","fontFamily":"karla","style":{"typography":{"fontWeight":"700","letterSpacing":"0.12em","textTransform":"uppercase"},"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|30"}}}} -->
+<h3 class="wp-block-heading kiwi-filtro-titulo has-texto-muted-color has-text-color has-karla-font-family has-etiqueta-font-size" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--30);font-weight:700;letter-spacing:0.12em;text-transform:uppercase">Categoría</h3>
+<!-- /wp:heading -->
+
+<!-- wp:woocommerce/product-filter-checkbox-list {"optionElementBorder":"bruma","optionElementSelected":"verde-kiwi","labelElement":"texto-medio","className":"kiwi-casillas"} /-->
+<!-- /wp:woocommerce/product-filter-taxonomy -->
+
+<!-- wp:woocommerce/product-filter-price -->
+<!-- wp:heading {"level":3,"className":"kiwi-filtro-titulo","textColor":"texto-muted","fontSize":"etiqueta","fontFamily":"karla","style":{"typography":{"fontWeight":"700","letterSpacing":"0.12em","textTransform":"uppercase"},"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|30"}}}} -->
+<h3 class="wp-block-heading kiwi-filtro-titulo has-texto-muted-color has-text-color has-karla-font-family has-etiqueta-font-size" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--30);font-weight:700;letter-spacing:0.12em;text-transform:uppercase">Precio</h3>
+<!-- /wp:heading -->
+
+<!-- wp:woocommerce/product-filter-price-slider {"showInputFields":false,"slider":"verde-kiwi","sliderHandle":"verde-kiwi","sliderHandleBorder":"verde-kiwi"} /-->
+<!-- /wp:woocommerce/product-filter-price -->
+
+<!-- wp:woocommerce/product-filter-clear-button {"className":"kiwi-limpiar-filtros"} -->
+<!-- wp:buttons -->
+<div class="wp-block-buttons"><!-- wp:button {"className":"wc-block-product-filter-clear-button kiwi-enlace"} -->
+<div class="wp-block-button wc-block-product-filter-clear-button kiwi-enlace"><a class="wp-block-button__link wp-element-button">Limpiar filtros</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons -->
+<!-- /wp:woocommerce/product-filter-clear-button -->
+<!-- /wp:woocommerce/product-filters --></aside>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"kiwi-resultados","layout":{"type":"default"}} -->
+<div class="wp-block-group kiwi-resultados"><!-- wp:group {"className":"kiwi-resultados__barra","style":{"spacing":{"blockGap":"var:preset|spacing|50"}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"}} -->
+<div class="wp-block-group kiwi-resultados__barra"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","flexWrap":"wrap","verticalAlignment":"bottom"}} -->
+<div class="wp-block-group"><!-- wp:query-title {"type":"archive","showPrefix":false,"fontSize":"24","fontFamily":"archivo","style":{"typography":{"fontWeight":"600","letterSpacing":"-0.02em"},"spacing":{"margin":{"top":"0","bottom":"0"}}}} /-->
+
+<!-- wp:woocommerce/product-results-count {"textColor":"texto-muted","fontSize":"14","fontFamily":"karla"} /--></div>
+<!-- /wp:group -->
+
+<!-- wp:woocommerce/catalog-sorting {"className":"kiwi-orden"} /--></div>
+<!-- /wp:group -->
+
+<!-- wp:woocommerce/product-collection {"queryId":0,"query":{"woocommerceAttributes":[],"woocommerceStockStatus":["instock","outofstock","onbackorder"],"taxQuery":{},"isProductCollectionBlock":true,"perPage":12,"pages":0,"offset":0,"postType":"product","order":"asc","orderBy":"title","author":"","search":"","exclude":[],"sticky":"","inherit":true},"tagName":"div","dimensions":{"widthType":"fill","fixedWidth":""},"displayLayout":{"type":"flex","columns":4,"shrinkColumns":false},"convertedFromProducts":false,"queryContextIncludes":["collection"],"className":"kiwi-coleccion"} -->
+<div class="wp-block-woocommerce-product-collection kiwi-coleccion"><!-- wp:woocommerce/product-template {"className":"kiwi-cards"} -->
+<!-- wp:woocommerce/product-image {"showSaleBadge":false,"imageSizing":"single","isDescendentOfQueryLoop":true,"aspectRatio":"1","scale":"cover"} /-->
+
+<!-- wp:post-title {"level":2,"isLink":true,"fontSize":"15","fontFamily":"karla","style":{"typography":{"fontWeight":"700","lineHeight":"1.3","letterSpacing":"0"},"spacing":{"margin":{"top":"0","bottom":"0"}},"elements":{"link":{"color":{"text":"var:preset|color|grafito"}}}},"__woocommerceNamespace":"woocommerce/product-collection/product-title"} /-->
+
+<!-- wp:woocommerce/product-price {"isDescendentOfQueryLoop":true,"className":"kiwi-precio","fontSize":"17","fontFamily":"archivo","style":{"typography":{"fontWeight":"700"}}} /-->
+<!-- /wp:woocommerce/product-template -->
+
+<!-- wp:query-pagination {"layout":{"type":"flex","justifyContent":"center"}} -->
+<!-- wp:query-pagination-previous /-->
+
+<!-- wp:query-pagination-numbers /-->
+
+<!-- wp:query-pagination-next /-->
+<!-- /wp:query-pagination -->
+
+<!-- wp:woocommerce/product-collection-no-results -->
+<!-- wp:group {"layout":{"type":"flex","orientation":"vertical","justifyContent":"center","flexWrap":"wrap"}} -->
+<div class="wp-block-group"><!-- wp:pattern {"slug":"woocommerce/no-products-found-clear-filters"} /--></div>
+<!-- /wp:group -->
+<!-- /wp:woocommerce/product-collection-no-results --></div>
+<!-- /wp:woocommerce/product-collection --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"kiwi-garantias kiwi-solo-escritorio","backgroundColor":"crema-alta","style":{"border":{"top":{"color":"var:preset|color|divisor","style":"solid","width":"var(--wp--custom--borde--fino)"}},"spacing":{"blockGap":"0"}},"layout":{"type":"grid","columnCount":4}} -->
+<div class="wp-block-group kiwi-garantias kiwi-solo-escritorio has-crema-alta-background-color has-background" style="border-top-color:var(--wp--preset--color--divisor);border-top-style:solid;border-top-width:var(--wp--custom--borde--fino)"><!-- wp:paragraph {"className":"kiwi-garantia kiwi-garantia--envio","textColor":"grafito","fontSize":"13","fontFamily":"karla","style":{"typography":{"fontWeight":"700"},"border":{"right":{"color":"var:preset|color|divisor","style":"solid","width":"var(--wp--custom--borde--fino)"}},"spacing":{"padding":{"top":"var:preset|spacing|55","right":"var:preset|spacing|60","bottom":"var:preset|spacing|55","left":"var:preset|spacing|60"}}}} -->
+<p class="kiwi-garantia kiwi-garantia--envio has-grafito-color has-text-color has-karla-font-family has-13-font-size" style="border-right-color:var(--wp--preset--color--divisor);border-right-style:solid;border-right-width:var(--wp--custom--borde--fino);padding-top:var(--wp--preset--spacing--55);padding-right:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--55);padding-left:var(--wp--preset--spacing--60);font-weight:700">Envío plano ₡3.000</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"kiwi-garantia kiwi-garantia--tallas","textColor":"grafito","fontSize":"13","fontFamily":"karla","style":{"typography":{"fontWeight":"700"},"border":{"right":{"color":"var:preset|color|divisor","style":"solid","width":"var(--wp--custom--borde--fino)"}},"spacing":{"padding":{"top":"var:preset|spacing|55","right":"var:preset|spacing|60","bottom":"var:preset|spacing|55","left":"var:preset|spacing|60"}}}} -->
+<p class="kiwi-garantia kiwi-garantia--tallas has-grafito-color has-text-color has-karla-font-family has-13-font-size" style="border-right-color:var(--wp--preset--color--divisor);border-right-style:solid;border-right-width:var(--wp--custom--borde--fino);padding-top:var(--wp--preset--spacing--55);padding-right:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--55);padding-left:var(--wp--preset--spacing--60);font-weight:700">Guía de tallas por pieza</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"kiwi-garantia kiwi-garantia--pago","textColor":"grafito","fontSize":"13","fontFamily":"karla","style":{"typography":{"fontWeight":"700"},"spacing":{"padding":{"top":"var:preset|spacing|55","right":"var:preset|spacing|60","bottom":"var:preset|spacing|55","left":"var:preset|spacing|60"}}}} -->
+<p class="kiwi-garantia kiwi-garantia--pago has-grafito-color has-text-color has-karla-font-family has-13-font-size" style="padding-top:var(--wp--preset--spacing--55);padding-right:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--55);padding-left:var(--wp--preset--spacing--60);font-weight:700">Pago por SINPE Móvil</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->

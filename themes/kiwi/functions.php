@@ -26,6 +26,27 @@ add_action(
 	}
 );
 
+// Galería de la ficha: solo deslizar y puntos. El zoom y el lightbox de Woo agregan
+// un disparador con lupa propia, ajena al set de iconos. Woo los activa en
+// template_redirect, así que se apagan con sus filtros y no quitando el soporte.
+// Prioridad 20: el bloque product-image-gallery los fuerza a true con prioridad 10.
+add_filter( 'woocommerce_single_product_zoom_enabled', '__return_false', 20 );
+add_filter( 'woocommerce_single_product_photoswipe_enabled', '__return_false', 20 );
+
+add_action(
+	'init',
+	static function () {
+		// Sello lima de la ficha («¿Necesitás fecha? …»): botón-enlace de bloque entero.
+		register_block_style(
+			'core/button',
+			array(
+				'name'  => 'sello',
+				'label' => __( 'Sello', 'kiwi' ),
+			)
+		);
+	}
+);
+
 /**
  * ID del menú de navegación (wp_navigation) con ese slug, para que los patterns
  * apunten a un menú editable desde el editor de sitio sin fijar IDs en las plantillas.
