@@ -1,0 +1,18 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "kiwi/descripcion",
+	"version": "0.1.0",
+	"title": "Descripción de la pieza (Kiwi)",
+	"category": "woocommerce",
+	"description": "Descripción larga del producto: párrafo y secciones Material, Calce y medidas y Cuidado. Acordeón en móvil, tres columnas en escritorio.",
+	"textdomain": "kiwi-producto",
+	"usesContext": [ "postId" ],
+	"supports": {
+		"html": false,
+		"multiple": false,
+		"reusable": false
+	},
+	"editorScript": "file:./editor.js",
+	"render": "file:./render.php"
+}

@@ -1,17 +1,26 @@
 <!-- wp:template-part {"slug":"header","tagName":"header"} /-->
 
-<!-- wp:group {"tagName":"main","className":"kiwi-ficha","layout":{"type":"constrained","contentSize":"var(--wp--preset--dimension--ficha-ancho)"}} -->
+<!-- wp:group {"tagName":"main","className":"kiwi-ficha","layout":{"type":"default"}} -->
 <main class="wp-block-group kiwi-ficha"><!-- wp:woocommerce/store-notices /-->
 
-<!-- wp:woocommerce/product-image-gallery {"className":"kiwi-galeria"} /-->
+<!-- wp:woocommerce/breadcrumbs {"className":"kiwi-migas kiwi-solo-escritorio","textColor":"texto-muted","fontSize":"13","fontFamily":"karla"} /-->
 
-<!-- wp:group {"className":"kiwi-ficha__info","style":{"spacing":{"padding":{"top":"var:preset|spacing|40","right":"var:preset|spacing|40","bottom":"var:preset|spacing|50","left":"var:preset|spacing|40"},"blockGap":"var:preset|spacing|40"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
-<div class="wp-block-group kiwi-ficha__info" style="padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--40)"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","orientation":"vertical"}} -->
+<!-- wp:group {"className":"kiwi-ficha__principal","layout":{"type":"default"}} -->
+<div class="wp-block-group kiwi-ficha__principal"><!-- wp:woocommerce/product-gallery {"hoverZoom":false,"fullScreenOnClick":false,"className":"kiwi-galeria"} -->
+<div class="wp-block-woocommerce-product-gallery kiwi-galeria"><!-- wp:woocommerce/product-gallery-thumbnails /-->
+
+<!-- wp:woocommerce/product-gallery-large-image -->
+<div class="wp-block-woocommerce-product-gallery-large-image"><!-- wp:woocommerce/product-image {"showProductLink":false,"showSaleBadge":false,"aspectRatio":"1","scale":"contain","isDescendentOfSingleProductBlock":true} /--></div>
+<!-- /wp:woocommerce/product-gallery-large-image --></div>
+<!-- /wp:woocommerce/product-gallery -->
+
+<!-- wp:group {"className":"kiwi-ficha__info","style":{"spacing":{"blockGap":"var:preset|spacing|40"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
+<div class="wp-block-group kiwi-ficha__info"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-group"><!-- wp:post-terms {"term":"product_cat","className":"kiwi-eyebrow","textColor":"texto-muted","fontSize":"etiqueta","fontFamily":"karla","style":{"typography":{"fontWeight":"700","letterSpacing":"0.12em","textTransform":"uppercase"},"elements":{"link":{"color":{"text":"var:preset|color|texto-muted"}}}}} /-->
 
-<!-- wp:post-title {"level":1,"fontSize":"24","fontFamily":"archivo","style":{"typography":{"fontWeight":"600","lineHeight":"1.15","letterSpacing":"-0.02em"}},"__woocommerceNamespace":"woocommerce/product-query/product-title"} /-->
+<!-- wp:post-title {"level":1,"className":"kiwi-ficha__titulo","fontFamily":"archivo","style":{"typography":{"fontWeight":"600","lineHeight":"1.15","letterSpacing":"-0.02em"}},"__woocommerceNamespace":"woocommerce/product-query/product-title"} /-->
 
-<!-- wp:woocommerce/product-price {"isDescendentOfSingleProductTemplate":true,"className":"kiwi-precio","fontSize":"26","fontFamily":"archivo","style":{"typography":{"fontWeight":"700","letterSpacing":"-0.02em"}}} /--></div>
+<!-- wp:woocommerce/product-price {"isDescendentOfSingleProductTemplate":true,"className":"kiwi-precio","fontFamily":"archivo","style":{"typography":{"fontWeight":"700","letterSpacing":"-0.02em"}}} /--></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"className":"kiwi-compra","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
@@ -24,23 +33,36 @@
 <!-- /wp:buttons --></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"className":"kiwi-sellos","style":{"border":{"top":{"color":"var:preset|color|divisor","style":"solid","width":"var(--wp--custom--borde--fino)"}},"spacing":{"padding":{"top":"var:preset|spacing|40"},"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
-<div class="wp-block-group kiwi-sellos" style="border-top-color:var(--wp--preset--color--divisor);border-top-style:solid;border-top-width:var(--wp--custom--borde--fino);padding-top:var(--wp--preset--spacing--40)"><!-- wp:buttons {"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
-<div class="wp-block-buttons"><!-- wp:button {"width":100,"className":"is-style-sello kiwi-wa-mono"} -->
-<div class="wp-block-button has-custom-width wp-block-button__width-100 is-style-sello kiwi-wa-mono"><a class="wp-block-button__link wp-element-button" href="/whatsapp/">¿Necesitás fecha? Escribinos por WhatsApp</a></div>
-<!-- /wp:button --></div>
-<!-- /wp:buttons -->
-
-<!-- wp:paragraph {"className":"kiwi-aviso-reloj","textColor":"texto-medio","fontSize":"legal","fontFamily":"karla","style":{"typography":{"lineHeight":"var(--wp--custom--interlinea--legal)"}}} -->
-<p class="kiwi-aviso-reloj has-texto-medio-color has-text-color has-karla-font-family has-legal-font-size" style="line-height:var(--wp--custom--interlinea--legal)"><strong>Se confecciona por encargo.</strong> No hay fecha fija: el tiempo depende del proveedor.</p>
+<!-- wp:group {"className":"kiwi-sellos","style":{"border":{"top":{"color":"var:preset|color|divisor","style":"solid","width":"var(--wp--custom--borde--fino)"}}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
+<div class="wp-block-group kiwi-sellos" style="border-top-color:var(--wp--preset--color--divisor);border-top-style:solid;border-top-width:var(--wp--custom--borde--fino)"><!-- wp:paragraph {"className":"kiwi-aviso-reloj","textColor":"texto-medio","fontFamily":"karla"} -->
+<p class="kiwi-aviso-reloj has-texto-medio-color has-text-color has-karla-font-family"><strong>Se confecciona por encargo.</strong> No hay fecha fija: el tiempo depende del proveedor. <a href="/whatsapp/">¿Necesitás fecha? Escribile a Ana.</a></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:group {"className":"kiwi-confianza","style":{"spacing":{"blockGap":"var:preset|spacing|40"}},"layout":{"type":"flex","flexWrap":"wrap"}} -->
-<div class="wp-block-group kiwi-confianza"><!-- wp:paragraph {"className":"kiwi-confianza__pago","textColor":"texto-medio","fontSize":"legal","fontFamily":"karla"} -->
-<p class="kiwi-confianza__pago has-texto-medio-color has-text-color has-karla-font-family has-legal-font-size">Pago por SINPE Móvil</p>
+<!-- wp:group {"className":"kiwi-confianza","layout":{"type":"flex","flexWrap":"wrap"}} -->
+<div class="wp-block-group kiwi-confianza"><!-- wp:paragraph {"className":"kiwi-confianza__pago","textColor":"texto-medio","fontFamily":"karla"} -->
+<p class="kiwi-confianza__pago has-texto-medio-color has-text-color has-karla-font-family">Pago por SINPE Móvil</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group -->
+
+<!-- wp:kiwi/descripcion /-->
+
+<!-- wp:woocommerce/product-collection {"queryId":1,"query":{"perPage":4,"pages":1,"offset":0,"postType":"product","order":"desc","orderBy":"date","search":"","exclude":[],"inherit":false,"taxQuery":{},"isProductCollectionBlock":true,"featured":false,"woocommerceOnSale":false,"woocommerceStockStatus":["instock","outofstock","onbackorder"],"woocommerceAttributes":[],"woocommerceHandPickedProducts":[],"filterable":false,"relatedBy":{"categories":true,"tags":false}},"tagName":"section","displayLayout":{"type":"flex","columns":4,"shrinkColumns":false},"dimensions":{"widthType":"fill"},"collection":"woocommerce/product-collection/related","hideControls":["inherit"],"queryContextIncludes":["collection"],"className":"kiwi-coleccion kiwi-relacionados"} -->
+<section class="wp-block-woocommerce-product-collection kiwi-coleccion kiwi-relacionados"><!-- wp:kiwi/relacionados-encabezado /-->
+
+<!-- wp:woocommerce/product-template {"className":"kiwi-cards"} -->
+<!-- wp:woocommerce/product-image {"showSaleBadge":false,"imageSizing":"single","isDescendentOfQueryLoop":true,"aspectRatio":"1","scale":"cover"} /-->
+
+<!-- wp:post-title {"level":3,"isLink":true,"fontSize":"15","fontFamily":"karla","style":{"typography":{"fontWeight":"700","lineHeight":"1.3","letterSpacing":"0"},"spacing":{"margin":{"top":"0","bottom":"0"}},"elements":{"link":{"color":{"text":"var:preset|color|grafito"}}}},"__woocommerceNamespace":"woocommerce/product-collection/product-title"} /-->
+
+<!-- wp:woocommerce/product-price {"isDescendentOfQueryLoop":true,"className":"kiwi-precio","fontSize":"17","fontFamily":"archivo","style":{"typography":{"fontWeight":"700"}}} /-->
+<!-- /wp:woocommerce/product-template --></section>
+<!-- /wp:woocommerce/product-collection -->
+
+<!-- wp:group {"className":"kiwi-solo-escritorio","layout":{"type":"default"}} -->
+<div class="wp-block-group kiwi-solo-escritorio"><!-- wp:pattern {"slug":"kiwi/garantias"} /--></div>
 <!-- /wp:group --></main>
 <!-- /wp:group -->
 

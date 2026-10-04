@@ -11,8 +11,9 @@
     },
     "custom": {
       "borde": { "fino": "1px", "medio": "1.5px" },
-      "interlinea": { "legal": "17px" },
+      "interlinea": { "legal": "17px", "aviso": "1.5", "lectura": "1.6" },
       "foco": { "ancho": "2px", "separacion": "2px" },
+      "subrayado": { "separacion": "2px" },
       "transicion": { "duracion": "200ms", "curva": "ease-out" }
     },
     "color": {
@@ -88,11 +89,13 @@
         { "slug": "17",       "size": "17px", "name": "17" },
         { "slug": "h3",       "size": "18px", "name": "H3" },
         { "slug": "19",       "size": "19px", "name": "19" },
+        { "slug": "20",       "size": "20px", "name": "20" },
         { "slug": "21",       "size": "21px", "name": "21" },
         { "slug": "precio",   "size": "22px", "name": "Precio" },
         { "slug": "24",       "size": "24px", "name": "24" },
         { "slug": "26",       "size": "26px", "name": "26" },
         { "slug": "h2",       "size": "28px", "name": "H2" },
+        { "slug": "32",       "size": "32px", "name": "32" },
         { "slug": "h1",       "size": "44px", "name": "H1" },
         { "slug": "52",       "size": "52px", "name": "52" },
         { "slug": "60",       "size": "60px", "name": "60" }
@@ -123,7 +126,7 @@
         { "slug": "logo",            "size": "36px",  "name": "Logo del header" },
         { "slug": "buscador-alto",   "size": "42px",  "name": "Buscador · alto" },
         { "slug": "objetivo-tactil", "size": "44px",  "name": "Objetivo táctil mínimo" },
-        { "slug": "punto-galeria",   "size": "7px",   "name": "Punto de la galería" },
+        { "slug": "punto-galeria",   "size": "8px",   "name": "Punto de la galería" },
         { "slug": "check",           "size": "15px",  "name": "Casilla de filtro" },
         { "slug": "riel",            "size": "4px",   "name": "Riel del slider de precio" },
         { "slug": "tirador",         "size": "14px",  "name": "Tirador del slider de precio" },
@@ -136,8 +139,11 @@
         { "slug": "talla",           "size": "48px",  "name": "Opción de talla · alto" },
         { "slug": "boton-primario",  "size": "56px",  "name": "Botón primario · alto" },
         { "slug": "filtros-ancho",   "size": "236px", "name": "Sidebar de filtros · ancho" },
-        { "slug": "galeria-alto",    "size": "400px", "name": "Galería de la ficha · alto" },
-        { "slug": "ficha-ancho",     "size": "520px", "name": "Ficha en escritorio · ancho" },
+        { "slug": "icono-24",        "size": "24px",  "name": "Icono 24 (chevron del acordeón)" },
+        { "slug": "miniatura",       "size": "88px",  "name": "Miniatura de la galería" },
+        { "slug": "detalles-titulo", "size": "240px", "name": "Detalles · columna del título" },
+        { "slug": "ficha-info",      "size": "480px", "name": "Ficha en escritorio · columna de información" },
+        { "slug": "detalles-texto",  "size": "720px", "name": "Detalles · medida del párrafo" },
         { "slug": "buscador-ancho",  "size": "296px", "name": "Buscador · ancho" }
       ]
     },
@@ -172,25 +178,6 @@
             "typography": {
               "fontWeight": "600",
               "fontSize": "var(--wp--preset--font-size--15)"
-            }
-          },
-          "sello": {
-            "color": {
-              "background": "var(--wp--preset--color--lima-kiwi)",
-              "text": "var(--wp--preset--color--grafito)"
-            },
-            "typography": {
-              "fontFamily": "var(--wp--preset--font-family--karla)",
-              "fontWeight": "700",
-              "fontSize": "var(--wp--preset--font-size--13)"
-            },
-            "spacing": {
-              "padding": {
-                "top": "var(--wp--preset--spacing--30)",
-                "bottom": "var(--wp--preset--spacing--30)",
-                "left": "var(--wp--preset--spacing--30)",
-                "right": "var(--wp--preset--spacing--30)"
-              }
             }
           }
         }

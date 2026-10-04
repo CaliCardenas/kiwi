@@ -123,11 +123,18 @@ input:focus-visible {
 	padding: var(--wp--preset--spacing--40) var(--wp--preset--spacing--40);
 }
 
-/* Navegación, búsqueda y footer: solo escritorio (bloqueador de diseño móvil, ver CLAUDE.md).
+/* Navegación, búsqueda y footer: solo escritorio hasta maquetar la revisión 7 (A3, A4).
  * !important porque el layout de WordPress declara el display con
  * «body .is-layout-flex / -grid» y el orden de carga de las hojas no está garantizado. */
 @media (max-width: 781px) {
 	.kiwi-solo-escritorio {
+		display: none !important;
+	}
+}
+
+/* Lo inverso: piezas con marcado propio para móvil (acordeón de la descripción). */
+@media (min-width: 782px) {
+	.kiwi-solo-movil {
 		display: none !important;
 	}
 }
@@ -184,7 +191,7 @@ input:focus-visible {
 
 .kiwi-aviso-reloj::before {
 	--kiwi-icono: url("../icons/reloj.svg");
-	--kiwi-icono-tam: var(--wp--preset--dimension--icono-18);
+	--kiwi-icono-tam: var(--kiwi-aviso-icono);
 	--kiwi-icono-color: var(--wp--preset--color--indigo);
 }
 
@@ -204,54 +211,111 @@ input:focus-visible {
 .kiwi-garantia--pago::before { --kiwi-icono: url("../icons/pago-seguro.svg"); }
 
 /* ── 10. Ficha de producto ────────────────────────────────────────────────
- * La galería clásica de Woo, las opciones de talla y el botón de agregar no
- * exponen alto, grilla ni estados como atributos de bloque. */
+ * La galería, las opciones de talla, el botón de agregar y la descripción no
+ * exponen grilla, alto ni estados como atributos de bloque. Tamaños que cambian
+ * entre anchos (título, precio, aviso) van acá y no como atributo: las clases
+ * has-*-font-size de WordPress llevan !important y no se pueden pisar por ancho. */
 
-/* Galería: alto fijo, foto entera sobre crema y puntos abajo a la derecha. */
-.kiwi-galeria .woocommerce-product-gallery {
-	position: relative;
-	float: none;
-	width: 100%;
+/* Página: en móvil todo va en una columna; el cierre inferior (24) lo da la página,
+ * no la columna de información, porque debajo siguen la descripción y los relacionados. */
+.kiwi-ficha {
+	padding-bottom: var(--wp--preset--spacing--60);
+}
+
+/* Los grupos con layout de flujo suman margin-block-start a cada hijo: acá los
+ * espacios los dan la grilla y los gap. */
+.kiwi-ficha > *,
+.kiwi-ficha__principal > *,
+.kiwi-relacionados > * {
+	margin-block: 0;
+}
+
+.kiwi-ficha__titulo {
+	font-size: var(--wp--preset--font-size--24);
+}
+
+.kiwi-ficha__info .kiwi-precio {
+	font-size: var(--wp--preset--font-size--26);
+}
+
+/* Galería (bloque Product Gallery de Woo): foto 1:1 sobre crema.
+ * Móvil: las miniaturas se muestran como puntos bajo la foto (revisión 7, D4):
+ * punto de 8, área de toque de 44 sin solaparse (paso 44), aro hueco de 1,5 en
+ * texto-muted y el activo lleno. La miniatura sigue siendo la opción del listbox
+ * de Woo (teclado y lector de pantalla); solo se vuelve transparente. */
+.kiwi-ficha .kiwi-galeria {
+	display: flex;
+	flex-direction: column;
+	gap: 0;
 	margin: 0;
 }
 
-.kiwi-galeria .woocommerce-product-gallery__image img {
-	display: block;
-	width: 100%;
-	height: var(--wp--preset--dimension--galeria-alto);
-	object-fit: contain;
+.kiwi-galeria .wc-block-product-gallery-large-image {
+	order: 1;
+}
+
+.kiwi-galeria .wc-block-components-product-image img {
 	background-color: var(--wp--preset--color--crema);
 }
 
-.kiwi-galeria .flex-control-paging {
-	position: absolute;
-	right: var(--wp--preset--spacing--40);
-	bottom: var(--wp--preset--spacing--40);
-	z-index: 1;
-	display: flex;
-	gap: var(--wp--preset--spacing--10);
-	margin: 0;
-	padding: 0;
-	list-style: none;
+.kiwi-galeria .wc-block-product-gallery-thumbnails {
+	order: 2;
+	/* Woo fija aspect-ratio con !important (5/1 bajo 600 px; proporcional arriba). */
+	aspect-ratio: auto !important;
+	width: 100%;
+	height: auto;
+	border-bottom: var(--wp--custom--borde--fino) solid var(--wp--preset--color--divisor);
 }
 
-.kiwi-galeria .flex-control-paging li {
-	margin: 0;
+.kiwi-galeria .wc-block-product-gallery-thumbnails__scrollable {
+	flex-direction: row;
+	justify-content: center;
+	gap: 0;
+	overflow: visible;
 }
 
-.kiwi-galeria .flex-control-paging a {
-	display: block;
+.kiwi-galeria .wc-block-product-gallery-thumbnails__thumbnail {
+	display: grid;
+	place-items: center;
+	flex: none;
+	width: var(--wp--preset--dimension--objetivo-tactil);
+	height: var(--wp--preset--dimension--objetivo-tactil);
+}
+
+.kiwi-galeria .wc-block-product-gallery-thumbnails__thumbnail::before {
+	content: "";
+	grid-area: 1 / 1;
+	box-sizing: border-box;
 	width: var(--wp--preset--dimension--punto-galeria);
 	height: var(--wp--preset--dimension--punto-galeria);
-	overflow: hidden;
+	border: var(--wp--custom--borde--medio) solid var(--wp--preset--color--texto-muted);
 	border-radius: 50%;
-	background-color: var(--wp--preset--color--bruma);
-	font-size: 0;
-	cursor: pointer;
 }
 
-.kiwi-galeria .flex-control-paging a.flex-active {
+.kiwi-galeria .wc-block-product-gallery-thumbnails__thumbnail:has(.wc-block-product-gallery-thumbnails__thumbnail__image--is-active)::before {
+	border-color: var(--wp--preset--color--verde-kiwi);
 	background-color: var(--wp--preset--color--verde-kiwi);
+}
+
+.kiwi-galeria .wc-block-product-gallery-thumbnails__thumbnail__image {
+	grid-area: 1 / 1;
+	width: 100%;
+	height: 100%;
+	max-width: none;
+	max-height: none;
+	opacity: 0;
+	outline: none;
+}
+
+/* El foco cae en la miniatura transparente: el anillo se dibuja en su casilla de 44. */
+.kiwi-galeria .wc-block-product-gallery-thumbnails__thumbnail:has(:focus-visible) {
+	outline: var(--wp--custom--foco--ancho) solid var(--wp--preset--color--verde-kiwi);
+	outline-offset: calc(-1 * var(--wp--custom--foco--ancho));
+}
+
+/* Información: padding móvil 16 / 16 / 0. */
+.kiwi-ficha__info {
+	padding: var(--wp--preset--spacing--40) var(--wp--preset--spacing--40) 0;
 }
 
 /* Formulario de compra: 16 entre talla y botón (el layout flow del form usa su propio gap). */
@@ -310,9 +374,12 @@ input:focus-visible {
 	outline-offset: var(--wp--custom--foco--separacion);
 }
 
-/* Botón primario «Agregar · ₡15.000»: 56 de alto, ancho completo, icono a la izquierda. */
+/* Botón primario «Agregar · ₡15.000»: 56 de alto, ancho completo, icono a la izquierda.
+ * Woo imprime en línea «.wp-block-button.wc-block-components-product-button .wp-block-button__link
+ * { width: auto }» (0,3,0), y puede ir después de esta hoja: se repite la cadena de clases
+ * y se suma la nuestra para llegar a (0,4,0). */
 .kiwi-boton-agregar,
-.kiwi-boton-agregar .wp-block-button__link {
+.wp-block-button.wc-block-components-product-button.kiwi-boton-agregar .wp-block-button__link {
 	width: 100%;
 }
 
@@ -332,7 +399,7 @@ input:focus-visible {
 	display: none;
 }
 
-/* Botón secundario «Preguntar por WhatsApp»: contorno de 1,5, 48 de alto. */
+/* Botón secundario «Preguntar por WhatsApp»: contorno de 1,5, 48 de alto, gap 8 con el logo. */
 .kiwi-boton-secundario .wp-block-button__link {
 	display: flex;
 	align-items: center;
@@ -343,21 +410,22 @@ input:focus-visible {
 	border: var(--wp--custom--borde--medio) solid var(--wp--preset--color--verde-kiwi);
 }
 
-/* Sello lima: bloque entero clicable, texto a la izquierda, gap 8 (revisión 6). */
-.is-style-sello .wp-block-button__link {
-	display: flex;
-	align-items: center;
-	justify-content: flex-start;
+/* Aviso y confianza. Móvil: padding superior 16, gap 8, texto 12. */
+.wp-block-group.kiwi-sellos {
 	gap: var(--wp--preset--spacing--20);
-	min-height: var(--wp--preset--dimension--objetivo-tactil);
-	text-align: left;
+	padding-top: var(--wp--preset--spacing--40);
 }
 
-/* Aviso «Se confecciona por encargo»: reloj a la izquierda del párrafo (con <strong> adentro no sirve flex). */
+/* Aviso «Se confecciona por encargo»: reloj a la izquierda del párrafo (con <strong> adentro no sirve flex).
+ * Lleva en línea «¿Necesitás fecha? Escribile a Ana.»: enlace sin icono, la única salida con logo es el botón (revisión 7, D2). */
 .kiwi-aviso-reloj {
+	--kiwi-aviso-icono: var(--wp--preset--dimension--icono-18);
+	--kiwi-aviso-gap: var(--wp--preset--spacing--20);
 	position: relative;
 	margin: 0;
-	padding-inline-start: calc(var(--wp--preset--dimension--icono-18) + var(--wp--preset--spacing--20));
+	padding-inline-start: calc(var(--kiwi-aviso-icono) + var(--kiwi-aviso-gap));
+	font-size: var(--wp--preset--font-size--13);
+	line-height: var(--wp--custom--interlinea--aviso);
 }
 
 .kiwi-aviso-reloj::before {
@@ -366,14 +434,229 @@ input:focus-visible {
 	left: 0;
 }
 
+.kiwi-aviso-reloj a {
+	color: var(--wp--preset--color--verde-kiwi);
+	font-weight: 700;
+	text-decoration: underline;
+	text-underline-offset: var(--wp--custom--subrayado--separacion);
+}
+
+.wp-block-group.kiwi-confianza {
+	gap: var(--wp--preset--spacing--40);
+}
+
 .kiwi-confianza__pago {
 	display: inline-flex;
 	align-items: center;
 	gap: var(--wp--preset--spacing--20);
 	margin: 0;
+	font-size: var(--wp--preset--font-size--legal);
 }
 
-/* Precios: siempre tabulares. Precio anterior después del actual, tachado y en Archivo 500. */
+/* Descripción larga (bloque kiwi/descripcion). Móvil: acordeón con filas de 56. */
+.kiwi-detalles {
+	margin: 0;
+	padding: var(--wp--preset--spacing--40) var(--wp--preset--spacing--40) 0;
+}
+
+.kiwi-acordeon {
+	border-top: var(--wp--custom--borde--fino) solid var(--wp--preset--color--divisor);
+}
+
+.kiwi-acordeon:last-child {
+	border-bottom: var(--wp--custom--borde--fino) solid var(--wp--preset--color--divisor);
+}
+
+.kiwi-acordeon__cabecera {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--wp--preset--spacing--40);
+	min-height: var(--wp--preset--dimension--boton-primario);
+	font-family: var(--wp--preset--font-family--archivo);
+	font-weight: 600;
+	font-size: var(--wp--preset--font-size--17);
+	letter-spacing: -0.01em;
+	list-style: none;
+	cursor: pointer;
+}
+
+.kiwi-acordeon__cabecera::-webkit-details-marker {
+	display: none;
+}
+
+/* Chevron del set en una casilla de 44, apuntando abajo; abierto, arriba (180°). */
+.kiwi-acordeon__cabecera::after {
+	content: "";
+	flex: none;
+	width: var(--wp--preset--dimension--objetivo-tactil);
+	height: var(--wp--preset--dimension--objetivo-tactil);
+	margin-right: calc(-1 * var(--wp--preset--spacing--20));
+	background-color: var(--wp--preset--color--grafito);
+	-webkit-mask: url("../icons/chevron.svg") center / var(--wp--preset--dimension--icono-24) no-repeat;
+	mask: url("../icons/chevron.svg") center / var(--wp--preset--dimension--icono-24) no-repeat;
+}
+
+.kiwi-acordeon[open] > .kiwi-acordeon__cabecera::after {
+	transform: rotate(180deg);
+}
+
+.kiwi-acordeon__cabecera:focus-visible {
+	outline: var(--wp--custom--foco--ancho) solid var(--wp--preset--color--verde-kiwi);
+	outline-offset: var(--wp--custom--foco--separacion);
+}
+
+.kiwi-acordeon__texto {
+	padding-bottom: var(--wp--preset--spacing--50);
+	color: var(--wp--preset--color--texto-medio);
+	font-size: var(--wp--preset--font-size--15);
+	line-height: var(--wp--custom--interlinea--lectura);
+}
+
+.kiwi-acordeon__texto > *,
+.kiwi-detalles__intro > *,
+.kiwi-detalles__texto > * {
+	margin-block: 0;
+}
+
+.kiwi-acordeon__texto > * + *,
+.kiwi-detalles__intro > * + *,
+.kiwi-detalles__texto > * + * {
+	margin-block-start: var(--wp--preset--spacing--30);
+}
+
+/* El enlace a la guía de tallas que la dueña escribe en «Calce y medidas» es
+ * información de confianza: índigo 700, como el «Guía de tallas» de la talla. */
+.kiwi-detalles a[href*="guia-de-tallas"] {
+	color: var(--wp--preset--color--indigo);
+	font-weight: 700;
+}
+
+/* Escritorio: título a la izquierda (240), párrafo de 18 y tres columnas. */
+.kiwi-detalles__escritorio {
+	grid-template-columns: var(--wp--preset--dimension--detalles-titulo) minmax(0, 1fr);
+	gap: var(--wp--preset--spacing--85);
+}
+
+.kiwi-detalles__titulo {
+	margin: 0;
+	font-weight: 600;
+	font-size: var(--wp--preset--font-size--h-2);
+	letter-spacing: -0.02em;
+}
+
+.kiwi-detalles__cuerpo {
+	display: flex;
+	flex-direction: column;
+	gap: var(--wp--preset--spacing--70);
+}
+
+.kiwi-detalles__intro {
+	max-width: var(--wp--preset--dimension--detalles-texto);
+	color: var(--wp--preset--color--grafito);
+	font-size: var(--wp--preset--font-size--h-3);
+	line-height: var(--wp--custom--interlinea--lectura);
+}
+
+.kiwi-detalles__columnas {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: var(--wp--preset--spacing--70);
+}
+
+.kiwi-detalles__columna {
+	display: flex;
+	flex-direction: column;
+	gap: var(--wp--preset--spacing--20);
+}
+
+.kiwi-detalles__subtitulo {
+	margin: 0;
+	font-weight: 600;
+	font-size: var(--wp--preset--font-size--17);
+	letter-spacing: -0.01em;
+}
+
+.kiwi-detalles__texto {
+	color: var(--wp--preset--color--texto-medio);
+	font-size: var(--wp--preset--font-size--15);
+	line-height: var(--wp--custom--interlinea--lectura);
+}
+
+/* Relacionados «Más {categoría}» (revisión 7, B2): misma card del listado.
+ * Móvil: 2 piezas (la colección trae 4 para escritorio), gap 8, título de 20. */
+.kiwi-relacionados.wp-block-woocommerce-product-collection {
+	display: flex;
+	flex-direction: column;
+	gap: var(--wp--preset--spacing--40);
+	margin: 0;
+	padding: var(--wp--preset--spacing--60) var(--wp--preset--spacing--40) 0;
+}
+
+.kiwi-relacionados__fila {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: var(--wp--preset--spacing--40);
+}
+
+.kiwi-relacionados__titulo {
+	margin: 0;
+	font-weight: 600;
+	font-size: var(--wp--preset--font-size--20);
+	letter-spacing: -0.02em;
+}
+
+.kiwi-relacionados__ver-todos {
+	display: inline-flex;
+	align-items: center;
+	min-height: var(--wp--preset--dimension--objetivo-tactil);
+	color: var(--wp--preset--color--verde-kiwi);
+	font-family: var(--wp--preset--font-family--archivo);
+	font-weight: 700;
+	font-size: var(--wp--preset--font-size--14);
+}
+
+.kiwi-relacionados.kiwi-coleccion .wc-block-product-template.is-flex-container.kiwi-cards {
+	gap: var(--wp--preset--spacing--20);
+}
+
+/* La card del listado declara display:flex con (0,4,1): se repite su cadena para ganarle. */
+@media (max-width: 781px) {
+	.kiwi-relacionados.kiwi-coleccion .wc-block-product-template.is-flex-container.kiwi-cards > li:nth-child(n + 3) {
+		display: none;
+	}
+}
+
+/* Migas (solo escritorio): Karla 13 en texto-muted, la pieza actual en grafito 700. */
+.kiwi-migas {
+	margin: 0;
+	padding: var(--wp--preset--spacing--40) var(--wp--preset--spacing--80) var(--wp--preset--spacing--20);
+}
+
+.kiwi-migas .woocommerce-breadcrumb {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--wp--preset--spacing--20);
+	margin: 0;
+}
+
+.kiwi-migas a {
+	color: var(--wp--preset--color--texto-muted);
+	text-decoration: none;
+}
+
+.kiwi-migas a:hover {
+	color: var(--wp--preset--color--grafito);
+}
+
+.kiwi-migas__item:last-child {
+	color: var(--wp--preset--color--grafito);
+	font-weight: 700;
+}
+
+/* Precios: siempre tabulares. Precio anterior después del actual, tachado, Archivo 500 en texto-muted
+ * (texto-debil nunca va como texto sobre crema, revisión 7, D3). */
 .kiwi-precio {
 	display: flex;
 	align-items: baseline;
@@ -383,7 +666,7 @@ input:focus-visible {
 
 .kiwi-precio del {
 	order: 2;
-	color: var(--wp--preset--color--texto-debil);
+	color: var(--wp--preset--color--texto-muted);
 	font-weight: 500;
 }
 
@@ -391,8 +674,147 @@ input:focus-visible {
 	text-decoration: none;
 }
 
-.kiwi-ficha .kiwi-precio del {
+.kiwi-ficha__info .kiwi-precio del {
 	font-size: var(--wp--preset--font-size--cuerpo);
+}
+
+@media (min-width: 782px) {
+	.kiwi-ficha {
+		padding-bottom: 0;
+	}
+
+	/* Ficha 1440 (revisión 7, A1): galería + columna de 480, gap 48, padding 8 / 40 / 52.
+	 * El lienzo pide 52 abajo como 56: fuera de escala, se usa el tope (ver CLAUDE.md). */
+	.kiwi-ficha__principal {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) var(--wp--preset--dimension--ficha-info);
+		gap: var(--wp--preset--spacing--85);
+		align-items: start;
+		padding: var(--wp--preset--spacing--20) var(--wp--preset--spacing--80) var(--wp--preset--spacing--90);
+	}
+
+	/* Galería: miniaturas verticales de 88 (gap 8) a la izquierda de la foto, gap 16. */
+	.kiwi-ficha .kiwi-galeria {
+		display: grid;
+		grid-template-columns: var(--wp--preset--dimension--miniatura) minmax(0, 1fr);
+		gap: var(--wp--preset--spacing--40);
+		align-items: start;
+	}
+
+	.kiwi-galeria .wc-block-product-gallery-large-image {
+		order: 0;
+		grid-column: 2;
+		grid-row: 1;
+	}
+
+	.kiwi-galeria .wc-block-product-gallery-thumbnails {
+		grid-column: 1;
+		grid-row: 1;
+		border-bottom: 0;
+	}
+
+	.kiwi-galeria .wc-block-product-gallery-thumbnails__scrollable {
+		flex-direction: column;
+		gap: var(--wp--preset--spacing--20);
+	}
+
+	.kiwi-galeria .wc-block-product-gallery-thumbnails__thumbnail {
+		display: block;
+		width: var(--wp--preset--dimension--miniatura);
+		height: var(--wp--preset--dimension--miniatura);
+	}
+
+	.kiwi-galeria .wc-block-product-gallery-thumbnails__thumbnail::before {
+		content: none;
+	}
+
+	/* Miniatura: borde 1 en bruma; la activa, 1,5 en verde-kiwi. */
+	/* display:block: inline, la línea base sobresale de la casilla y Woo la toma
+	 * como desborde (pinta una máscara degradada sobre la última miniatura). */
+	.kiwi-galeria .wc-block-product-gallery-thumbnails__thumbnail__image {
+		display: block;
+		box-sizing: border-box;
+		object-fit: cover;
+		opacity: 1;
+		border: var(--wp--custom--borde--fino) solid var(--wp--preset--color--bruma);
+		border-radius: var(--wp--preset--border-radius--base);
+		filter: none;
+	}
+
+	.kiwi-galeria .wc-block-product-gallery-thumbnails__thumbnail__image--is-active {
+		border: var(--wp--custom--borde--medio) solid var(--wp--preset--color--verde-kiwi);
+	}
+
+	.kiwi-galeria .wc-block-product-gallery-thumbnails__thumbnail:has(:focus-visible) {
+		outline-offset: var(--wp--custom--foco--separacion);
+	}
+
+	/* Información: columna fija a 24 del borde superior al desplazar, gap 24. */
+	.kiwi-ficha__info {
+		position: sticky;
+		top: var(--wp--preset--spacing--60);
+		padding: 0;
+	}
+
+	.wp-block-group.kiwi-ficha__info {
+		gap: var(--wp--preset--spacing--60);
+	}
+
+	.kiwi-ficha__titulo {
+		font-size: var(--wp--preset--font-size--32);
+	}
+
+	.kiwi-ficha__info .kiwi-precio {
+		font-size: var(--wp--preset--font-size--h-2);
+	}
+
+	.kiwi-ficha__info .kiwi-precio del {
+		font-size: var(--wp--preset--font-size--h-3);
+	}
+
+	.wp-block-group.kiwi-sellos {
+		gap: var(--wp--preset--spacing--40);
+		padding-top: var(--wp--preset--spacing--60);
+	}
+
+	.kiwi-aviso-reloj {
+		--kiwi-aviso-icono: var(--wp--preset--dimension--icono-20);
+		--kiwi-aviso-gap: var(--wp--preset--spacing--30);
+		font-size: var(--wp--preset--font-size--14);
+	}
+
+	.wp-block-group.kiwi-confianza {
+		gap: var(--wp--preset--spacing--60);
+	}
+
+	.kiwi-confianza__pago {
+		font-size: var(--wp--preset--font-size--13);
+	}
+
+	/* Detalles a ancho completo: borde superior, padding 52 / 40 (el lienzo pide 56). */
+	.kiwi-detalles {
+		padding: var(--wp--preset--spacing--90) var(--wp--preset--spacing--80);
+		border-top: var(--wp--custom--borde--fino) solid var(--wp--preset--color--divisor);
+	}
+
+	.kiwi-detalles__escritorio {
+		display: grid;
+	}
+
+	/* Relacionados a ancho completo: borde superior, padding 52 / 40 (el lienzo pide 56), 4 piezas con gap 24. */
+	.kiwi-relacionados.wp-block-woocommerce-product-collection {
+		gap: var(--wp--preset--spacing--60);
+		padding: var(--wp--preset--spacing--90) var(--wp--preset--spacing--80);
+		border-top: var(--wp--custom--borde--fino) solid var(--wp--preset--color--divisor);
+	}
+
+	.kiwi-relacionados__titulo {
+		font-size: var(--wp--preset--font-size--h-2);
+	}
+
+	.kiwi-relacionados.kiwi-coleccion .wc-block-product-template.is-flex-container.kiwi-cards {
+		gap: var(--wp--preset--spacing--60);
+	}
 }
 
 /* ── 11. Listado ──────────────────────────────────────────────────────────

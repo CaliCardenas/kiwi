@@ -1,0 +1,17 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "kiwi/relacionados-encabezado",
+	"version": "0.1.0",
+	"title": "Encabezado de relacionados (Kiwi)",
+	"category": "woocommerce",
+	"description": "Título «Más {categoría}» y enlace «Ver todos» a la categoría de la pieza.",
+	"textdomain": "kiwi-producto",
+	"usesContext": [ "postId" ],
+	"supports": {
+		"html": false,
+		"reusable": false
+	},
+	"editorScript": "file:./editor.js",
+	"render": "file:./render.php"
+}
