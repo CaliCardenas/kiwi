@@ -46,7 +46,7 @@
     "typography": {
       "customFontSize": false,
       "defaultFontSizes": false,
-      "fluid": true,
+      "fluid": false,
       "fontFamilies": [
         {
           "slug": "archivo",
